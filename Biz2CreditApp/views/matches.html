@@ -102,10 +102,10 @@
                     #if(lenderorg_id ==="334" || lenderorg_id ===334){#
                     
                         #if(statusid === "1"){#
-                            <a class="appy" id ="applyIteria"  data-appid="#= appid #" data-bind="click:applyIteriaLoan" data-role='button'>Itria Apply</a>
+                            <a class="appy" id ="applyIteria"  data-matchid="#= matchid #" data-appid="#= appid #" data-bind="click:applyIteriaLoan" data-role='button'>Itria Apply</a>
                         #}else if(statusid === "12" || statusid === 12){#
             
-                            <a class="pending" href="views/documentPending.html" data-role="button">Itria#: status_name #</a>
+                            <a class="pending" id ="docpending"  data-matchid="#= matchid #" data-appid="#= appid #" data-bind="click:docPendingIteriaLoan" data-role="button">Itria#: status_name #</a>
                            
                         #}else{#
                              <a class="pending" href="\#tabstrip-mess-third" data-rel="modalview" data-role="button">Itria#: status_name #</a>

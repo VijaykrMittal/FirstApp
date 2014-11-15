@@ -3,8 +3,13 @@
         app = global.app = global.app || {};
     
     DocumentPendingModel = kendo.data.ObservableObject.extend({
-        show:function()
+        show:function(e)
         {
+            var appid = e.view.params.appid;
+            matchid = e.view.params.matchid;
+            console.log(appid);
+               console.log(matchid);
+               console.log(e);
             /*Upload Document Toggle*/
             $(".documentList .wrap-content h2").unbind('.myPlugin');
             $(".documentList .wrap-content .row .name a").unbind(".myPlugin");

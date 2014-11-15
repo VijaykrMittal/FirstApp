@@ -543,9 +543,19 @@
             if(e.button.context.id === 'applyIteria')
             {
                 var appid = e.data['appid'];
-                apps.navigate("views/iteria.html?appid="+appid);
+                var matchid = e.data['matchid'];
+                apps.navigate("views/iteria.html?appid="+appid+"&matchid="+matchid);
             }  
         },
+        docPendingIteriaLoan:function(e)
+        {
+            if(e.button.context.id === 'docpending')
+            {
+                var appid = e.data['appid'];
+                var matchid = e.data['matchid'];
+                apps.navigate("views/documentPending.html?appid="+appid+"&matchid="+matchid);
+            }  
+        }
 
   
     });

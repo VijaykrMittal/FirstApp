@@ -3,12 +3,12 @@
         app = global.app = global.app || {};
     
     IteriaModel = kendo.data.ObservableObject.extend({
-       /* custid:'',
+        custid:localStorage.getItem("userID"),
         appid:'',
         matchID:'',
-        hnowners:'',*/
-        loanpro_auth:0,
-        authorization:0,
+        hnowners:'',
+        loanpro_auth:1,
+        authorization:1,
         show:function(e)
         {
             if(typeof viewIModel === 'undefined')
@@ -16,6 +16,8 @@
                 viewIModel = kendo.observable();
             }
             var appid = e.view.params.appid;
+            matchid = e.view.params.matchid;
+            console.log(e);
             app.loginService.viewModel.showloder();
             var dataSource = new kendo.data.DataSource({
                 transport:{
@@ -45,7 +47,7 @@
                 var data = Data[0]['results']["ownerList"];
                 if(Data[0]['results']['faultcode'] === 1 || Data[0]['results']['faultcode'] === '1')
                 {
-                    app.iteriaService.viewModel.setOwnerData(data);
+                    
                     var ownerDiv = Data[0]['results']["ownerList"]['length'];
                     html = '';
                     $('#controlField').html('');
@@ -89,7 +91,15 @@
                             }
                         });
                         app.iteriaService.viewModel.addBindDynamicIteria(c);
+                        
                     }
+                    app.iteriaService.viewModel.setOwnerData(data,matchid);
+                }
+                else
+                {
+                    $msg= "Something is wrong.Please try again.";
+                    app.loginService.viewModel.mobileNotification($msg,'info');
+                    apps.navigate("#:back");
                 }
             });
             
@@ -105,47 +115,45 @@
             });
         },
         
-        setOwnerData:function(data)
+        setOwnerData:function(data,matchid)
         {
+            console.log(matchid);
             dataParam={};
             var that = this;
             var totaldivs = Data[0]['results']["ownerList"]['length'];
             for(i=0;i<totaldivs;i++)
             {
-                 viewIModel.set('own_ssno'+(i+1),data[i]['own_ssno']);
-                 viewIModel.set('own_percent'+(i+1),data[i]['own_percent']);
+                viewIModel.set('hown_ssno'+(i+1),data[i]['own_ssno']);
+                var str = $.trim(data[i]['own_ssno']);
+                var res = str.substring(6);
+                viewIModel.set('hown_ssnoedit'+(i+1),'******'+res);
+                viewIModel.set('own_percent'+(i+1),data[i]['own_percent']);
             }
             that.set("appid",data[0]['caseid']);
             that.set("hnowners",data.length);
+            that.set("matchID",matchid);
+            //that.set("custid",data.length);
         },
         
         validationssn:function()
         {
             var nowners =  document.getElementById("hnowners").value; 
-            
             if(!app.iteriaService.viewModel.getssn(nowners))
             {                        
                 return false;
             }
-            else if(!$('#authorization').attr('checked')) 
+            else if(!$("#authorization").is(':checked')) 
             {
                 alert('Please accept the agreement.');
                 $('#authorization').focus();
                 return false;
             }
-            else if(!$('#loanpro_auth').attr('checked')) 
+            else if(!$("#loanpro_auth").is(':checked')) 
             {
                 alert('Please accept the loan process agreement');
                 $('#loanpro_auth').focus();
                 return false;
             }	
-            else 
-            {
-                /*document.getElementById("sub_f").style.visibility='hidden';
-                document.getElementById('loader').style.display='block';*/
-               //app.iteriaService.viewModel.submitSSNValue();
-                //return true;
-            }
 
         },
         getssn:function(nowners)
@@ -157,8 +165,7 @@
                 var varown_ssno = document.getElementById("own_ssno"+c).value;
                 var varown_ssnoedit = document.getElementById("hown_ssnoedit"+c).value;
                 var varown_percent = parseInt(document.getElementById("own_percent"+c).value);
-               
-                if(varown_ssno.trim()==="" && c===1 ) 
+                if($.trim(varown_ssno)==="" && c===1 ) 
                 {
                     alert( "Please enter owner social security number." );                   
                     document.getElementById("own_ssno"+c).focus();
@@ -172,28 +179,28 @@
                     vflag = 0;
                     break;
                 }
-                else if(varown_ssno !== varown_ssnoedit &&  !Number.isInteger(varown_ssno) && c===1) 
+                else if(varown_ssno !== varown_ssnoedit &&  !$.isNumeric(varown_ssno) && c === 1) 
                 {	  
                     alert( "Please enter numbers only in owner social security number");	
                     document.getElementById("own_ssno"+c).focus();
                     vflag = 0;
                     break;
                 }            
-                else if(c!==1&&  varown_ssno.trim()==="" && varown_percent > 20 ) 
+                else if(c !== 1 &&  varown_ssno.trim()==="" && varown_percent > 20 ) 
                 {
                     alert( "Please enter owner social security number." );	
                     document.getElementById("own_ssno"+c).focus();
                     vflag = 0;
                     break;
                 }  
-                else if(c!==1&& varown_ssno.length!==9 && varown_ssno.trim()!=="" ) 
+                else if(c!==1 && varown_ssno.length!==9 && varown_ssno.trim()!=="" ) 
                 {	  
                     alert( "Please enter 9-digit owner social security number" );	
                     document.getElementById("own_ssno"+c).focus();
                     vflag = 0;
                     break;
                 }  
-                else if(varown_ssno !== varown_ssnoedit && (!Number.isInteger(varown_ssno) && c!==1 && varown_ssno.trim()!=="")) 
+                else if(varown_ssno !== varown_ssnoedit && (!$.isNumeric(varown_ssno) && c!==1 && varown_ssno.trim()!=="")) 
                 {	  
                     alert( "Please enter numbers only in owner social security number");	
                     document.getElementById("own_ssno"+c).focus();
@@ -214,9 +221,14 @@
         },
         submitSSNValue:function()
         {
+            
+            var status = app.iteriaService.viewModel.validationssn();
+            if(status === false)
+            return status;
+            
             dataParam={};
             var that = this;
-            
+            dataParam['apiaction'] = 'saveadditionalinfo';
             dataParam['custid'] = that.get("custid");
             dataParam['appid'] = that.get("appid");
             dataParam['matchID'] = that.get("matchID");
@@ -228,9 +240,59 @@
                 dataParam['hown_ssno'+i]=viewIModel.get('hown_ssno'+i);
                 dataParam['hown_ssnoedit'+i]=viewIModel.get('hown_ssnoedit'+i);
             }
-            dataParam['authorization']=$("#authorization").is(':checked') ? 1 : 0;
-            dataParam['loanpro_auth']=$("#loanpro_auth").is(':checked') ? 1 : 0;
-            console.log(dataParam);
+                  
+            if(!window.connectionInfo.checkConnection()){
+                    navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
+                	if (confirmed === true || confirmed === 1) {
+                		app.iteriaService.viewModel.submitSSNValue();
+                	}
+
+                }, 'Connection Error?', 'Retry,Cancel');
+            }
+            else{
+                
+               /* apps.showLoading();
+                var dataSource = new kendo.data.DataSource({
+                transport: {
+                read: {
+                        url: localStorage.getItem("urlMobAppApiLoan"),
+                        type:"POST",
+                        dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        data: dataParam // search for tweets that contain "html5"
+                }
+                },
+                schema: {
+                    data: function(data)
+                	{
+                    	return [data];
+                	}
+                },
+                error: function (e) {
+               	  apps.hideLoading();
+                     navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                        function () { }, "Notification", 'OK');
+                },
+
+                });
+                dataSource.fetch(function(){
+                    
+                	var data = this.data();
+                    apps.hideLoading();
+                	if(data[0]['results']['faultcode'] === 1)
+                    {
+                         console.log(data);
+                    	 app.iteriaService.viewModel.appToNavigate();
+                    }
+                    else
+                    {
+                        $msg= "Something is wrong.Please try again.";
+                        app.loginService.viewModel.mobileNotification($msg,'info');
+                        return false;
+                    }
+                });   */ 
+            }
+            
+            
             app.iteriaService.viewModel.appToNavigate();
         },
         appToNavigate:function()
@@ -251,6 +313,7 @@
             kendo.bind($("#own_percent"+num), viewIModel);
             kendo.bind($("#hown_ssno"+num), viewIModel);
             kendo.bind($("#hown_ssnoedit"+num), viewIModel);
+            
         },
     });
     app.iteriaService = {

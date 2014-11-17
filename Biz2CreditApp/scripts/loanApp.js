@@ -202,6 +202,7 @@
             else
             {
                 var fid = e.data['fid'];
+                sessionStorage.setItem("matchesPageFid", fid);
                 app.loginService.viewModel.showloder();  
                 var dataSource = new kendo.data.DataSource({
                     transport: {

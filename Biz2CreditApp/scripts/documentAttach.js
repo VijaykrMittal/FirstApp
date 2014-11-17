@@ -3,22 +3,45 @@
         app = global.app = global.app || {};
     
     documentAttachModel = kendo.data.ObservableObject.extend({
+        uploadDocumentTab:true,
+        existingDocumentTab:false,
+        innerdocsAttachPage:false,
         show:function()
         {
-            app.loginService.viewModel.showloder();
+
             /*Upload Buutton*/
+            
             $("#uploadify").kendoUpload({
-                async: {
-                    saveUrl: "save",
-                    removeUrl: "remove"
-                },
-                localization:{
-                    select:"Browse..."
-                }
+            async: {
+            saveUrl: "/Simulator/saveHandler.php",
+            removeUrl: "remove"
+            },
+            localization:{
+            select:"Browse123..."
+            }
             });
             
-            /*Document API Load*/
-            parentId=0;
+            docsBackAttachHistory=[0];
+            app.documentAttach.viewModel.getDoumentsList();
+            app.documentAttach.viewModel.uploadDocumentClick();
+        },
+        getDoumentsList:function()
+        {
+            var that = this;
+            
+            if(docsBackAttachHistory[docsBackAttachHistory.length-1] === 0)
+            {
+                parentId=0;   
+                that.set('innerdocsAttachPage',false);
+            }
+            else
+            { 
+                parentId=docsBackAttachHistory[docsBackAttachHistory.length-1];  
+                that.set('innerdocsAttachPage',true);
+            }
+            
+            app.loginService.viewModel.showloder();
+            $("#document-attach").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
             var dataSource = new kendo.data.DataSource({         
             transport: {
             read: {
@@ -65,56 +88,42 @@
                 var that = this;
                 var data = that.data();
                 app.documentAttach.viewModel.existingDocumentList(data);
-                app.documentAttach.viewModel.uplocadDocumentList(data);
+                app.documentAttach.viewModel.uploadDocumentList(data);
             });
-
-            
-            
-            
-            
-            app.documentAttach.viewModel.uploadDocumentClick();
         },
         existingDocumentList:function(docsData)
         {
-           /* console.log(data);
-            var that = this;
-             $.each(data, function( index, value ) {
-                 
-                 
-                 console.log(value.length);
-                 for(i=0;i<value.length;i++)
-                 {
-                    if(value[i]['docType'] === "Folder" && value[i]['name'] !== "Shared Files" && value[i]['name'] !== "Shared Folders")
-                    {
-                        console.log(value[i]['name']);
-                        that.set('folderList',(value[i]!== false) ? value[i] : []);
-                    }
-                 }
-                 
-               
-        	});  */
-          //  console.log(docsData);
+
             var template = kendo.template($("#documentList-template").html());
-
-            //Create some dummy data
             var data = docsData;
-           // console.log(localStorage.getItem("userFName"));
-           // console.log(data[0].length);
-
+            console.log(data);
+            console.log(data);
             var result = template(data); //Execute the template
-            $("#documentList").html(result); //Append the result
+            if(data[0].length===0){
+                result='<tr data-bind="visible:innerdocsAttachPage"><td><a data-bind="click:goBackLastPage,visible:innerdocsAttachPage">Back</a></td></tr>';
+                result +='<tr><td>No file & folder exists!</td></tr>';
+                
+                $("#documentList").html(result); //Append the result
+                kendo.bind($("#documentList"), app.documentAttach.viewModel);
+            }
+            else
+            {
+                $("#documentList").html(result); //Append the result
+                kendo.bind($("#documentList"), app.documentAttach.viewModel);
+                
+            }
+            
+            
             app.loginService.viewModel.hideloder();
        
         },
-        uplocadDocumentList:function(docsData)
+        uploadDocumentList:function(docsData)
         {
            // console.log(docsData);
             var template = kendo.template($("#dropdownList-template").html());
 
             //Create some dummy data
             var data = docsData;
-            console.log(localStorage.getItem("userFName"));
-            console.log(data[0].length);
 
             var result = template(data); //Execute the template
             $("#dropdownList").html(result); //Append the result
@@ -148,7 +157,20 @@
         attachDocumentData:function()
         {
             alert("attach");
+        },
+        getInnerDocs:function(e)
+        {
+            var parentId =e.currentTarget.dataset.id;
+            docsBackAttachHistory.push(parentId);
+            app.documentAttach.viewModel.getDoumentsList();
+            
+        },
+        goBackLastPage:function()
+        {
+            docsBackAttachHistory.pop();
+            app.documentAttach.viewModel.getDoumentsList();
         }
+        
     });
     app.documentAttach = {
       viewModel:new documentAttachModel()  

@@ -3,7 +3,7 @@
         <div data-role="navbar">
             <span data-role="view-title">
                 <div class="matches-logo">
-                    <a href="#tabstrip-home">Back</a>
+                   <a class="docs-back" data-role="backbutton">Back</a>
                 </div>
             </span>
         </div>
@@ -49,8 +49,7 @@
                                 <div class="button-block clearfix">
                                    <!-- <input type="button" id="start" name="start" value="Upload">-->
                                     <input name="" type="button" data-role="button" value="Upload" data-name="Upload" data-bind="click:uploadDocumentData" class="BTgren">
-
-                                    <input name="button" type="button" onclick="parent.$.fancybox.close({});" value="Cancel" class="shareButton-gray">
+                                    <input name="button" type="button" data-role="backbutton" value="Cancel" class="shareButton-gray">
                                 </div>
                             </div>
                         </div>
@@ -106,8 +105,7 @@
                                             <input type="hidden" name="myid" value="94356">
                                             <input type="hidden" name="ids" value="">
                                             <input name="Attach" type="button" data-role="button" value="Attach" data-name="Attach" data-bind="click:attachDocumentData" class="BTgren">
-                                            <!--<input type="submit" name="submit" value="Attach" class="shareButton-green" onclick="return checkValidation();">-->
-                                            <input name="button" type="button" onclick="parent.$.fancybox.close({});" value="Cancel" class="shareButton-gray">
+                                            <input name="button" type="button" data-role="backbutton" value="Cancel" class="shareButton-gray">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -122,13 +120,14 @@
 
 <!--New exisiting Document Template-->
 <script id="documentList-template" type="text/x-kendo-template">
+    <tr data-bind="visible:innerdocsAttachPage"><td colspan="5"><a data-bind="click:goBackLastPage,visible:innerdocsAttachPage">Back</a></td></tr>
     # for (var i = 0; i < data[0].length; i++) { #
 
         # if(data[0][i]['docType'] ==='Folder' && data[0][i]['name'] !=='Shared Files' && data[0][i]['name'] !=='Shared Folders'){ #
 
             <tr>
                 <td width="5%" align="left" class="#: data[0][i]['docType'] #"></td>
-                <td width="40%" align="left" >#= data[0][i]['name']#</td>
+                <td width="40%" align="left" data-id="#: data[0][i]['id'] #" data-bind="click:getInnerDocs" >#= data[0][i]['name']#</td>
                 <td width="20%" align="left">#= localStorage.getItem("userFName")#</td>
                 <td width="25%" align="left">#= data[0][i]['dt']#</td>
                 <td width="10%" align="center"><input type="checkbox" name="checkbox[]" disabled="true" value="#: data[0][i]['id'] #"></td>
@@ -158,8 +157,9 @@
 
 <!--Dropdown document list template-->
 <script id="dropdownList-template" type="text/x-kendo-template">
+    <option value="">My Documents</option>
     #for (var i = 0; i < data[0].length; i++) { #
-
+    
         # if(data[0][i]['docType'] ==='Folder' && data[0][i]['name'] !=='Shared Files' && data[0][i]['name'] !=='Shared Folders'){ #
             <option value="#: data[0][i]['id'] #">#= data[0][i]['name']#</option>
         # }#

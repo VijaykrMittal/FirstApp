@@ -7,9 +7,7 @@
         {
             var appid = e.view.params.appid;
             matchid = e.view.params.matchid;
-            console.log(appid);
-               console.log(matchid);
-               console.log(e);
+
             /*Upload Document Toggle*/
             $(".documentList .wrap-content h2").unbind('.myPlugin');
             $(".documentList .wrap-content .row .name a").unbind(".myPlugin");
@@ -29,7 +27,40 @@
         },
         gobackMatchesPage:function()
         {
-            apps.navigate("views/matches.html");
+                var fid = sessionStorage.getItem("matchesPageFid");
+                app.loginService.viewModel.showloder();  
+                var dataSource = new kendo.data.DataSource({
+                    transport: {
+                        read: {
+                            url: localStorage.getItem("urlMobAppApiLoan"),
+                            type:"POST",
+                            dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                            data: { apiaction:"getmatchlists",cust_id:localStorage.getItem("userID"),fid:fid} // search for tweets that contain "html5"
+                        }
+                        
+                    },
+                    schema: {
+                        data: function(data)
+                        {
+                        	return [data];
+                        }
+                    },
+                    error: function (e) {
+                    	apps.hideLoading();
+                    	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                    	function () { }, "Notification", 'OK');
+                    },
+                });
+                dataSource.fetch(function(){
+                    var that = this;
+                    var data = that.data(); 
+                    apps.hideLoading();
+                    if(data[0]['results']['faultcode']===1 && data[0]['results']['faultmsg']==='success')
+                    {
+                         app.homesetting.viewModel.setMatches(data['0']['results']['matchrows']);
+                         apps.navigate("#views/matches.html");
+                    }
+                });
         }
     });
     app.documentService ={

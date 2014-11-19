@@ -55,15 +55,16 @@
                <a data-bind="click:UploadExisting" class="active appDocFile">Upload New/Select Existing</a>
             </div>
         </div>
-            <div class="filesBlock"><div class="sub-row clearfix" id="attachFilesList">  </div></div>
+            <div class="filesBlock"><div class="sub-row clearfix attachFilesList" >  </div></div>
                 #if(typeof data[i].DocFileDetails!=='undefined') {
                     
                     var template = kendo.template($("\\#attachFiles-template").html());
                     fileData=data[i].DocFileDetails;
                     var result = template(data[i].DocFileDetails); //Execute the template
                     console.log(result);
-                    $("\\#attachFilesList").html(result);
-                    kendo.bind($("\\#attachFilesList"), app.documentService.viewModel);
+                    $("\\.attachFilesList").html(result);
+                     //console.log($("\\#attachFilesList"));
+                    kendo.bind($("\\.attachFilesList"), app.documentService.viewModel);
                 }#
     #}#
 </script>

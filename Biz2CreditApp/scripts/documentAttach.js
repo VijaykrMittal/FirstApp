@@ -96,8 +96,6 @@
 
             var template = kendo.template($("#documentList-template").html());
             var data = docsData;
-            console.log(data);
-            console.log(data);
             var result = template(data); //Execute the template
             if(data[0].length===0){
                 result='<tr data-bind="visible:innerdocsAttachPage"><td><a data-bind="click:goBackLastPage,visible:innerdocsAttachPage">Back</a></td></tr>';

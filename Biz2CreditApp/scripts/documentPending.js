@@ -30,8 +30,6 @@
                             type:"POST",
                             dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
                            data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
-                            
-                          //  data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}// search for tweets that contain "html5"
                         }
                         
                     },
@@ -53,7 +51,7 @@
                     apps.hideLoading();
                     if(data[0]['results']['faultcode']===1 && data[0]['results']['faultmsg']==='success')
                     {
-                         app.documentService.viewModel.loadRequirementDocs(data['0']['results']['ReqDocs']);
+                         app.documentService.viewModel.loadRequirementDocs(data['0']['results']['ReqDocs'],data['0']['results']['DnldUrl']);
                          
                     }
                 });
@@ -101,7 +99,7 @@
                     }
                 });
         },
-        loadRequirementDocs:function(data)
+        loadRequirementDocs:function(data,DnldUrl)
         {
             html = '';
             $("#requireDocsList").html(html);
@@ -122,22 +120,34 @@
                 html+= '<div class="filesBlock">';
                 if(data[i].DocFileDetails !==false) { 
                     fileData =data[i].DocFileDetails;
-                    html+='<div class="sub-row clearfix" id="attachFilesList-'+data[i].id+'" >'; 
+                    
                     for (var j = 0; j < fileData.length; j++) {
-                        html+='<div class="file-iconjpg"></div><div class="file-name">'+fileData[j].name+'</div><div class="buttonSet"><a href="https://www.biz2beta.com/bizdownload.php?fid=82edc5c9e21035674d481640448049f3" title="Download" class="downloadBtn" target="_blank">Download</a><a href="javascript:void(0);" onclick="getDeleteMatchDocFile(22436,4226,94351,82945);" title="Delete" class="DeleteIC">Delete</a></div>';
+                        html+='<div class="sub-row clearfix">'; 
+                        html+='<div class="file-iconjpg"></div><div class="file-name">'+fileData[j].name+'</div><div class="buttonSet"><a data-fid="'+fileData[j].file_id+'" data-downurl="'+DnldUrl+fileData[j].encyptedID+'" data-filename="'+fileData[j].name+'" data-bind="click:downloadAttachFile" class="downloadBtn" data-role="button">Download</a><a href="javascript:void(0);" onclick="getDeleteMatchDocFile(22436,4226,94351,82945);" title="Delete" class="DeleteIC">Delete</a></div>';
+                        html+='</div>';
                     }
-                    html+='</div>';
+                   
                 }
                 html+='</div>';
             }
             $("#requireDocsList").html(html);
             kendo.bind($("#requireDocsList"), app.documentService.viewModel);
-
-            $('.requiredocs-name').click(function() {
-                $(this).parent().next().slideToggle('fast');
+            
+             $(".requiredocs-name").on("click.myPlugin", function() {
+                 $(this).parent().next().slideToggle();	
             });
             
         },
+        downloadAttachFile:function(e)
+        {
+            console.log(e);
+           // sessionStorage.currentFileId = e.touch.currentTarget.id;
+           //// sessionStorage.downloadLink = $.trim(e.touch.currentTarget.className);
+           // sessionStorage.currentFileName = e.touch.currentTarget.innerText;
+           // fileName = $.trim(e.touch.currentTarget.innerText);
+            //folderName = "biz2docs";
+            //app.documentsetting.viewModel.downloadFile(fileName,folderName);
+        }
         
     });
     app.documentService ={

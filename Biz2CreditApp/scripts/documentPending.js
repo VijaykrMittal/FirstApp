@@ -30,6 +30,7 @@
                             type:"POST",
                             dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
                            data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
+                            
                           //  data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}// search for tweets that contain "html5"
                         }
                         
@@ -103,6 +104,7 @@
         loadRequirementDocs:function(data)
         {
             html = '';
+            $("#requireDocsList").html(html);
             for (var i = 0; i < data.length; i++) { 
                 html+= '<div class="row clearfix" ><div class="num"><span>'+(i+1)+'</span></div>';
                 html+= '<div class="name requiredocs-name">';

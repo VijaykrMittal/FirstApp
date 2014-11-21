@@ -72,7 +72,7 @@
             	}
             },
             error: function (e) {
-                console.log(JSON.stringify(e));
+                alert(JSON.stringify(e));
            	  apps.hideLoading();
                  navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     function () { }, "Notification", 'OK');

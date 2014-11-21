@@ -56,8 +56,6 @@
             username = that.get("username").trim(),
             password = that.get("password").trim();
             that.showloder();
-            alert(username);
-            alert(password);
             var dataSource = new kendo.data.DataSource({
             transport: {
             read: {
@@ -72,13 +70,8 @@
             	{
                 	return [data];
             	}
-            },
-            error: function (e) {
-           	  apps.hideLoading();
-                 navigator.notification.alert("Server not responding properly.Please check your internet connection.",
-                    function () { }, "Notification", 'OK');
-            },
-
+            }
+        
             });
             dataSource.fetch(function(){
                 

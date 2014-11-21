@@ -1068,9 +1068,8 @@
             			if (device.platform === "Android") {
             				app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
             					filePath = folder.fullPath + "\/" + fileName;
-                                console.log('filePath'+filePath);
                                 relPath = folder.name + "\/" + fileName;
-                                console.log('relPath'+relPath);
+                                //relPath =fileName;
                                 fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
                                 
             				}, function() {
@@ -1098,7 +1097,6 @@
             }
             else
             {
-                console.log('open');
                 window.open(encodeURI(fileEntry.fullPath),"_system","location=yes,hidden=no");
             }
              
@@ -1106,17 +1104,14 @@
         fileDoesNotExist:function(fileError)
         {
             fileName = sessionStorage.getItem("currentFileName");
-            console.log('fileName'+fileName);
             downloadLink = sessionStorage.getItem("downloadLink");
-            console.log('downloadLink'+downloadLink);
             ext = app.documentsetting.viewModel.getFileExtension(fileName);
             uri=encodeURI(downloadLink); 
-            console.log('uri'+uri);
-          //  $("#tabstrip-download-file").data("kendoMobileModalView").open();
+            $("#tabstrip-download-file").data("kendoMobileModalView").open();
             app.documentsetting.viewModel.transferFile(uri,filePath);
             
-          //  $('.download-file-name').html('');
-        	//$('.download-file-name').append('<div class="unkown '+ext+'">'+fileName+'</div>');
+            $('.download-file-name').html('');
+        	$('.download-file-name').append('<div class="unkown '+ext+'">'+fileName+'</div>');
                                 
         },
         transferFile: function (uri, filePath) {

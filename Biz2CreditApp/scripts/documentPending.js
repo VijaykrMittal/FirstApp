@@ -140,13 +140,13 @@
         },
         downloadAttachFile:function(e)
         {
-            console.log(e);
-           // sessionStorage.currentFileId = e.touch.currentTarget.id;
-           //// sessionStorage.downloadLink = $.trim(e.touch.currentTarget.className);
-           // sessionStorage.currentFileName = e.touch.currentTarget.innerText;
-           // fileName = $.trim(e.touch.currentTarget.innerText);
-            //folderName = "biz2docs";
-            //app.documentsetting.viewModel.downloadFile(fileName,folderName);
+            var params = e.sender.element.context.dataset;
+            sessionStorage.currentFileId = params.fid;
+            sessionStorage.downloadLink = params.downurl;
+            sessionStorage.currentFileName = params.filename;
+            fileName = $.trim(params.filename);
+            folderName = "biz2docs";
+            app.documentsetting.viewModel.downloadFile(fileName,folderName);
         }
         
     });

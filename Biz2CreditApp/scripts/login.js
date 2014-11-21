@@ -56,6 +56,8 @@
             username = that.get("username").trim(),
             password = that.get("password").trim();
             that.showloder();
+            alert(username);
+            alert(password);
             var dataSource = new kendo.data.DataSource({
             transport: {
             read: {

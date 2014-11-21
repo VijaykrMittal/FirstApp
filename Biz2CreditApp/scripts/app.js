@@ -120,6 +120,7 @@
         
     }
     
+    
     /*Telerik Analytics*/
    
     
@@ -138,9 +139,9 @@
     localStorage.setItem("urlMobAppApiUser","https://www.biz2services.com/mobapp/api/user/");
     localStorage.setItem("urlMobAppApiLoan","https://www.biz2services.com/mobapp/api/loanapp/");*/
     
-    localStorage.setItem("urlMobAppApiFolder","https://sandbox.biz2services.com/mobapp/api/folder/");
-    localStorage.setItem("urlMobAppApiFile","https://sandbox.biz2services.com/mobapp/api/file/");
-    localStorage.setItem("urlMobAppApiUser","https://sandbox.biz2services.com/mobapp/api/user/");
-    localStorage.setItem("urlMobAppApiLoan","https://sandbox.biz2services.com/mobapp/api/loanapp/");
+    localStorage.setItem("urlMobAppApiFolder","http://sandbox.biz2services.com/mobapp/api/folder/");
+    localStorage.setItem("urlMobAppApiFile","http://sandbox.biz2services.com/mobapp/api/file/");
+    localStorage.setItem("urlMobAppApiUser","http://sandbox.biz2services.com/mobapp/api/user/");
+    localStorage.setItem("urlMobAppApiLoan","http://sandbox.biz2services.com/mobapp/api/loanapp/");
     
 })(window);

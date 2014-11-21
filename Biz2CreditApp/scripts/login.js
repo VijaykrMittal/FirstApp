@@ -70,8 +70,13 @@
             	{
                 	return [data];
             	}
-            }
-        
+            },
+            error: function (e) {
+           	  apps.hideLoading();
+                 navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                    function () { }, "Notification", 'OK');
+            },
+
             });
             dataSource.fetch(function(){
                 

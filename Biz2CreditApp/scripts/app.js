@@ -51,7 +51,7 @@
         document.addEventListener("resume", onResume, false);
         window.connectionInfo = new ConnectionApp();
 		window.connectionInfo.checkConnection();
-        
+       /* 
         if(navigator.geolocation)
         {
             navigator.geolocation.getCurrentPosition(oncallback);
@@ -59,7 +59,7 @@
         else
         {
             app.analyticsService.viewModel.setAnalyticMonitor();
-        }
+        }*/
         navigator.splashscreen.hide();
     };
     

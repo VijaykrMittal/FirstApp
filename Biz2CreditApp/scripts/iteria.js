@@ -17,7 +17,6 @@
             }
             var appid = e.view.params.appid;
             matchid = e.view.params.matchid;
-            console.log(e);
             app.loginService.viewModel.showloder();
             var dataSource = new kendo.data.DataSource({
                 transport:{

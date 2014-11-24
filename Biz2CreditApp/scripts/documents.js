@@ -1077,6 +1077,7 @@
             				});
             			}
             			else {
+                            console.log(fileName);
             				filePath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
                             fileSystem.root.getFile(filePath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
             				
@@ -1107,14 +1108,14 @@
             downloadLink = sessionStorage.getItem("downloadLink");
             ext = app.documentsetting.viewModel.getFileExtension(fileName);
             uri=encodeURI(downloadLink); 
-           // $("#tabstrip-download-file").data("kendoMobileModalView").open();
-            
+            $("#tabstrip-download-file").data("kendoMobileModalView").open();
+
             alert(uri);
-             alert(filePath);
+            alert(filePath);
             app.documentsetting.viewModel.transferFile(uri,filePath);
-            
-           // $('.download-file-name').html('');
-        	//$('.download-file-name').append('<div class="unkown '+ext+'">'+fileName+'</div>');
+
+            $('.download-file-name').html('');
+            $('.download-file-name').append('<div class="unkown '+ext+'">'+fileName+'</div>');
                                 
         },
         transferFile: function (uri, filePath) {

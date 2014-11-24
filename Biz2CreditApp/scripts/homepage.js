@@ -544,6 +544,9 @@
             {
                 var appid = e.data['appid'];
                 var matchid = e.data['matchid'];
+                sessionStorage.setItem("matchesPageFid",appid);
+                sessionStorage.setItem("IteriaMatchid",matchid);
+                
                 apps.navigate("views/iteria.html?appid="+appid+"&matchid="+matchid);
             }  
         },
@@ -553,7 +556,10 @@
             {
                 var appid = e.data['appid'];
                 var matchid = e.data['matchid'];
-                apps.navigate("views/documentPending.html?appid="+appid+"&matchid="+matchid);
+                sessionStorage.setItem("matchesPageFid",appid);
+                sessionStorage.setItem("IteriaMatchid",matchid);
+                
+                apps.navigate("views/documentPending.html");
             }  
         }
 

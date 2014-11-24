@@ -1107,11 +1107,11 @@
             downloadLink = sessionStorage.getItem("downloadLink");
             ext = app.documentsetting.viewModel.getFileExtension(fileName);
             uri=encodeURI(downloadLink); 
-            $("#tabstrip-download-file").data("kendoMobileModalView").open();
+           // $("#tabstrip-download-file").data("kendoMobileModalView").open();
             app.documentsetting.viewModel.transferFile(uri,filePath);
             
-            $('.download-file-name').html('');
-        	$('.download-file-name').append('<div class="unkown '+ext+'">'+fileName+'</div>');
+           // $('.download-file-name').html('');
+        	//$('.download-file-name').append('<div class="unkown '+ext+'">'+fileName+'</div>');
                                 
         },
         transferFile: function (uri, filePath) {
@@ -1135,7 +1135,7 @@
                 uri,
                 filePath,
                 function(fileEntry) { 
-                    $("#tabstrip-download-file").data("kendoMobileModalView").close();
+                   // $("#tabstrip-download-file").data("kendoMobileModalView").close();
                     if(device.platform.toLowerCase() === "ios" )
             		{
                 		window.open(encodeURI(fileEntry.fullPath),"_blank","location=yes,hidden=no");

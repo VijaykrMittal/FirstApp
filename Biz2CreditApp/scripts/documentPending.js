@@ -3,6 +3,7 @@
         app = global.app = global.app || {};
     
     DocumentPendingModel = kendo.data.ObservableObject.extend({
+        sendEsignDocsStatus:true,
         show:function(e)
         { 
             var appid = sessionStorage.getItem("matchesPageFid");
@@ -112,7 +113,7 @@
                     html+= '<a id="dispalyFiles">'+data[i].docName+'</a><span>('+data[i].DocFileDetails.length+')</span>';
                 }           
                 if(data[i].b2cdocid === "148" || data[i].b2cdocid === 148) {
-                    html+=        '<div class="text1"><span class="text2"><a href="javascript:void(0);" id="esignAnchor" onclick="sendEmailToUsr()">Resend esign document</a></span></div><div><span class="docuploaded"><a data-downurl="'+data[i].wetsignpdf+'" data-bind="click:downloadWetSignatureFile" data-role="button">Download document for wet signature</a></span></div>';
+                    html+=        '<div class="text1"><span class="text2"><a class="esignAnchor" data-bind="click:sendEsignDocs,visible:sendEsignDocsStatus">Send esign document</a><a  class="esignAnchor" data-bind="click:resSendEsignDocs,invisible:sendEsignDocsStatus">Resend esign document</a></span></div><div><span class="docuploaded"><a data-downurl="'+data[i].wetsignpdf+'" data-bind="click:downloadWetSignatureFile" data-role="button">Download document for wet signature</a></span></div>';
                 }
                 html+= '</div>';
                 html+= '<div class="upload"><a data-bind="click:UploadExisting" class="active appDocFile">Upload New/Select Existing</a></div>';
@@ -129,13 +130,23 @@
                    
                 }
                 html+='</div>';
+                
             }
             $("#requireDocsList").html(html);
             kendo.bind($("#requireDocsList"), app.documentService.viewModel);
+            if(data[0].b2cdocid === "148" || data[0].b2cdocid === 148) {
+                 console.log('cal');
+                app.documentService.viewModel.setSendEsignDocsStatus(data);//default esign set status
+                
+            }
+
+            
+            
             
              $(".requiredocs-name").on("click.myPlugin", function() {
                  $(this).parent().next().slideToggle();	
             });
+            
             
         },
         downloadAttachFile:function(e)
@@ -207,7 +218,35 @@
             fileName = $.trim(sessionStorage.currentFileName);
             folderName = "biz2docs";
             app.documentsetting.viewModel.downloadFile(fileName,folderName);
-        }
+        },
+        sendEsignDocs:function()
+        {
+            alert('send Esign');
+            
+        },
+        resSendEsignDocs:function()
+        {
+            alert('resend Esign');
+        },
+        setSendEsignDocsStatus:function(data)
+        {
+            var that = this;
+            
+            if(typeof data[0].b2sRes !=='undefined')
+            {
+                console.log('cal1');
+                if(data[0].b2sRes[0].status === 'sent')
+                {
+                    console.log('cal2');
+                    that.set("sendEsignDocsStatus",false);
+                    console.log(app.documentService.viewModel);
+                    
+                }
+            }
+            
+            
+            
+        },
         
     });
     app.documentService ={

@@ -11,7 +11,7 @@
 
             /*Upload Buutton*/
             
-            $("#uploadify").kendoUpload({
+         /*   $("#uploadify").kendoUpload({
             async: {
             saveUrl: "/Simulator/saveHandler.php",
             removeUrl: "remove"
@@ -19,11 +19,11 @@
             localization:{
             select:"Browse123..."
             }
-            });
+            });*/
             
             docsBackAttachHistory=[0];
             app.documentAttach.viewModel.getDoumentsList();
-            app.documentAttach.viewModel.uploadDocumentClick();
+           /* app.documentAttach.viewModel.uploadDocumentClick();*/
         },
         getDoumentsList:function()
         {
@@ -56,8 +56,6 @@
             {   var docsArray = [];
                 if(data['results']['faultcode']===1)
                 {
-                    var sharedFiles ="";
-                    var sharedFolders ="";
                     $.each( data['results']['DocLists'], function( i, val ) {
 
                         if(data['results']['DocLists'][i]['name']==='Shared Files'){
@@ -70,10 +68,10 @@
                             docsArray.push(val);
                         } 
             		});
-                    if(sharedFiles !== '' && sharedFolders !=='')
-                    {
-                    	docsArray.unshift(sharedFiles,sharedFolders);
-                    }
+                   // if(sharedFiles !== '' && sharedFolders !=='')
+                   // {
+                    //	docsArray.unshift(sharedFiles,sharedFolders);
+                    //}
                 }
             	return [docsArray];
             }
@@ -88,7 +86,7 @@
                 var that = this;
                 var data = that.data();
                 app.documentAttach.viewModel.existingDocumentList(data);
-                app.documentAttach.viewModel.uploadDocumentList(data);
+                //app.documentAttach.viewModel.uploadDocumentList(data);
             });
         },
         existingDocumentList:function(docsData)
@@ -98,7 +96,6 @@
             var data = docsData;
             var result = template(data); //Execute the template
             if(data[0].length===0){
-                result='<tr data-bind="visible:innerdocsAttachPage"><td><a data-bind="click:goBackLastPage,visible:innerdocsAttachPage">Back</a></td></tr>';
                 result +='<tr><td>No file & folder exists!</td></tr>';
                 
                 $("#documentList").html(result); //Append the result
@@ -115,7 +112,7 @@
             app.loginService.viewModel.hideloder();
        
         },
-        uploadDocumentList:function(docsData)
+       /* uploadDocumentList:function(docsData)
         {
            // console.log(docsData);
             var template = kendo.template($("#dropdownList-template").html());
@@ -125,14 +122,14 @@
 
             var result = template(data); //Execute the template
             $("#dropdownList").html(result); //Append the result
-        },
+        },*/
         getFileExtension:function(filename)
         {
            // console.log(filename);
             var ext = /^.+\.([^.]+)$/.exec(filename);
             return ext === null ? "" : ext[1];
         },
-        uploadDocumentClick:function()
+       /* uploadDocumentClick:function()
         {
             var that=this;
             $('#tabstrip ul li').removeClass('k-state-active');
@@ -147,7 +144,7 @@
             $('#tabstrip ul li.end_icon').addClass('k-state-active');
             that.set('uploadDocumentTab',false);
             that.set('existingDocumentTab',true);
-        },
+        },*/
         uploadDocumentData:function()
         {
             alert("upload");

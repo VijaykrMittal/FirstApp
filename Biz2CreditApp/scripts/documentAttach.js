@@ -3,27 +3,16 @@
         app = global.app = global.app || {};
     
     documentAttachModel = kendo.data.ObservableObject.extend({
-        uploadDocumentTab:true,
-        existingDocumentTab:false,
         innerdocsAttachPage:false,
         show:function()
         {
-
-            /*Upload Buutton*/
-            
-         /*   $("#uploadify").kendoUpload({
-            async: {
-            saveUrl: "/Simulator/saveHandler.php",
-            removeUrl: "remove"
-            },
-            localization:{
-            select:"Browse123..."
+            if(!$('#popover-people ul li:eq(3)').hasClass('fileUpload'))
+            {
+                $('#popover-people ul li:eq(2)').after('<li data-bind="click: fileUploadEvent" class="fileUpload">Upload File Here</li>');
+                kendo.bind($("#popover-people ul li:eq(3)"), app.documentAttach.viewModel);
             }
-            });*/
-            
             docsBackAttachHistory=[0];
             app.documentAttach.viewModel.getDoumentsList();
-           /* app.documentAttach.viewModel.uploadDocumentClick();*/
         },
         getDoumentsList:function()
         {
@@ -68,10 +57,6 @@
                             docsArray.push(val);
                         } 
             		});
-                   // if(sharedFiles !== '' && sharedFolders !=='')
-                   // {
-                    //	docsArray.unshift(sharedFiles,sharedFolders);
-                    //}
                 }
             	return [docsArray];
             }
@@ -86,8 +71,11 @@
                 var that = this;
                 var data = that.data();
                 app.documentAttach.viewModel.existingDocumentList(data);
-                //app.documentAttach.viewModel.uploadDocumentList(data);
             });
+        },
+        refreshView:function()
+        {
+            app.documentAttach.viewModel.getDoumentsList();
         },
         existingDocumentList:function(docsData)
         {
@@ -112,39 +100,12 @@
             app.loginService.viewModel.hideloder();
        
         },
-       /* uploadDocumentList:function(docsData)
-        {
-           // console.log(docsData);
-            var template = kendo.template($("#dropdownList-template").html());
-
-            //Create some dummy data
-            var data = docsData;
-
-            var result = template(data); //Execute the template
-            $("#dropdownList").html(result); //Append the result
-        },*/
         getFileExtension:function(filename)
         {
            // console.log(filename);
             var ext = /^.+\.([^.]+)$/.exec(filename);
             return ext === null ? "" : ext[1];
         },
-       /* uploadDocumentClick:function()
-        {
-            var that=this;
-            $('#tabstrip ul li').removeClass('k-state-active');
-            $('#tabstrip ul li.postd_icn').addClass('k-state-active');
-            that.set('uploadDocumentTab',true);
-            that.set('existingDocumentTab',false);
-        },
-        existingDocumentClick:function()
-        {
-            var that=this;
-            $('#tabstrip ul li').removeClass('k-state-active');
-            $('#tabstrip ul li.end_icon').addClass('k-state-active');
-            that.set('uploadDocumentTab',false);
-            that.set('existingDocumentTab',true);
-        },*/
         uploadDocumentData:function()
         {
             alert("upload");
@@ -164,6 +125,10 @@
         {
             docsBackAttachHistory.pop();
             app.documentAttach.viewModel.getDoumentsList();
+        },
+        fileUploadEvent:function()
+        {
+           $("#inboxActions").data("kendoMobileActionSheet").open();
         }
         
     });

@@ -129,7 +129,48 @@
         fileUploadEvent:function()
         {
            $("#inboxActions").data("kendoMobileActionSheet").open();
+        },
+        getImage:function() {
+            console.log('call123');
+            navigator.camera.getPicture(app.documentAttach.viewModel.uploadPhoto, function(message) {
+                    alert('get picture failed');
+                    },{
+                    quality: 50, 
+                    destinationType: navigator.camera.DestinationType.FILE_URI,
+                    sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+                }
+            );
+            
+ 
+        },
+        uploadPhoto:function(imageURI) {
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, "http://yourdomain.com/upload.php", app.documentAttach.viewModel.winUpload, app.documentAttach.viewModel.failUpload, options);
+        },
+ 
+        winUpload:function(r) {
+            console.log("Code = " + r.responseCode);
+            console.log("Response = " + r.response);
+            console.log("Sent = " + r.bytesSent);
+            alert(r.response);
+        },
+ 
+        failUpload:function(error) {
+            alert("An error has occurred: Code = "+error.code);
         }
+        
         
     });
     app.documentAttach = {

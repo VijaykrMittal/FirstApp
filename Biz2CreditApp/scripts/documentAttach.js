@@ -131,7 +131,8 @@
            $("#inboxActions").data("kendoMobileActionSheet").open();
         },
         getImage:function() {
-            console.log('call123');
+            console.log(navigator);
+             console.log(navigator.camera);
             navigator.camera.getPicture(app.documentAttach.viewModel.uploadPhoto, function(message) {
                     alert('get picture failed');
                     },{

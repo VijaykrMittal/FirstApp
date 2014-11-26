@@ -131,8 +131,7 @@
            $("#inboxActions").data("kendoMobileActionSheet").open();
         },
         getImage:function() {
-            console.log(navigator);
-             console.log(navigator.camera);
+            
             navigator.camera.getPicture(app.documentAttach.viewModel.uploadPhoto, function(message) {
                     alert('get picture failed');
                     },{
@@ -145,6 +144,7 @@
  
         },
         uploadPhoto:function(imageURI) {
+            alert('uploadPhoto');
             var options = new FileUploadOptions();
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);

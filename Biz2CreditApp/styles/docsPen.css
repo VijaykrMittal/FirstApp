@@ -134,7 +134,7 @@ line-height: 0;margin-left: 10px;  text-align: left; text-indent: -99999px; widt
 
 
 #iteriaModalView .km-header{background: #f4f4f4;}
-#iteriaModalView .km-header .km-widget.km-button{background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:5px 5px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0;}
+
 #iteriaModalView .view-content .km-widget.km-button {background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:5px 5px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0;}
 
 

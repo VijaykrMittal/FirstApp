@@ -24,6 +24,7 @@
             );		
         },
         listDir:function(directoryEntry){
+            
             if(app.fileexportsetting.viewModel.historyPath[app.fileexportsetting.viewModel.historyPath.length-1] !== directoryEntry.name){
             	app.fileexportsetting.viewModel.historyPath.push(directoryEntry.name);
             }
@@ -33,6 +34,7 @@
             }
             app.loginService.viewModel.showloder(); // show loading message
             currentDir = directoryEntry; // set current directory
+            console.log('cal');
             directoryEntry.getParent(function(par){ // success get parent
             parentDir = par; // set parent directory
             	if( currentDir.name === root.name) app.fileexportsetting.viewModel.setExportRootPage();
@@ -49,7 +51,9 @@
             	var entry = entries[i];
             	if( entry.isDirectory && entry.name[0] !== '.' ) dirArr.push(entry);
             }
+                console.log(dirArr);
             app.fileexportsetting.viewModel.setExportDocs(dirArr);
+                
             app.loginService.viewModel.hideloder(); // hide loading message
             }, function(error){
             	console.log('listDir readEntries error: '+error.code);
@@ -104,7 +108,9 @@
                 	},
                 
             });
+            console.log('cal2');
             $("#tabstrip-file-export").find(".km-scroll-container").css("-webkit-transform", "");
+            
         },
         backDocslistPage:function(e)
         {

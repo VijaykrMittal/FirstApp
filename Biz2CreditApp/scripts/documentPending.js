@@ -112,24 +112,26 @@
                 }else{
                     html+= '<a id="dispalyFiles">'+data[i].docName+'</a><span>('+data[i].DocFileDetails.length+')</span>';
                 }           
-                if(data[i].b2cdocid === "148" || data[i].b2cdocid === 148) {
-                    html+=        '<div class="text1"><span class="text2"><a class="esignAnchor" data-bind="click:sendEsignDocs,visible:sendEsignDocsStatus">Send esign document</a><a  class="esignAnchor" data-bind="click:resSendEsignDocs,invisible:sendEsignDocsStatus">Resend esign document</a></span></div><div><span class="docuploaded"><a data-downurl="'+data[i].wetsignpdf+'" data-bind="click:downloadWetSignatureFile" data-role="button">Download document for wet signature</a></span></div>';
-                }
+               
                 html+= '</div>';
-                html+= '<div class="upload"><a data-bind="click:UploadExisting" class="active appDocFile">Upload New/Select Existing</a></div>';
+                 
                 html+='</div>';
+                if(data[i].b2cdocid === "148" || data[i].b2cdocid === 148) {
+                    html+=        '<div class="text1"><span class="text2"><a class="esignAnchor" data-bind="click:sendEsignDocs,visible:sendEsignDocsStatus">Send esign document</a><a  class="esignAnchor" data-bind="click:resSendEsignDocs,invisible:sendEsignDocsStatus">Resend esign document</a></span></div><div class="text1"><span class="docuploaded"><a data-downurl="'+data[i].wetsignpdf+'" data-bind="click:downloadWetSignatureFile" data-role="button">Download document for wet signature</a></span></div>';
+                }
                 html+= '<div class="filesBlock">';
                 if(data[i].DocFileDetails !==false) { 
                     fileData =data[i].DocFileDetails;
                     
                     for (var j = 0; j < fileData.length; j++) {
                         html+='<div class="sub-row clearfix">'; 
-                        html+='<div class="file-iconjpg"></div><div class="file-name">'+fileData[j].name+'</div><div class="buttonSet"><a data-fid="'+fileData[j].file_id+'" data-downurl="'+DnldUrl+fileData[j].encyptedID+'" data-filename="'+fileData[j].name+'" data-bind="click:downloadAttachFile" class="downloadBtn" data-role="button"></a>&nbsp;&nbsp;<a title="Delete" data-bind="click:deleteDownloadAttachFileConfirm" data-id="'+fileData[j].id+'" data-docsid="'+fileData[j].file_id+'" data-role="button" class="DeleteIC"></a></div>';
+                        html+='<div class="file-iconjpg"></div><div class="file-name">'+fileData[j].name+'</div><div class="buttonSet"><a data-fid="'+fileData[j].file_id+'" data-downurl="'+DnldUrl+fileData[j].encyptedID+'" data-filename="'+fileData[j].name+'" data-bind="click:downloadAttachFile" class="downloadBtn" data-role="button">Download</a>&nbsp;&nbsp;<a title="Delete" data-bind="click:deleteDownloadAttachFileConfirm" data-id="'+fileData[j].id+'" data-docsid="'+fileData[j].file_id+'" data-role="button" class="DeleteIC">&nbsp;</a></div>';
                         html+='</div>';
                     }
                    
                 }
                 html+='</div>';
+                html+= '<div class="upload"><a data-bind="click:UploadExisting" class="active appDocFile">Upload New/Select Existing</a></div>';
                 
             }
             $("#requireDocsList").html(html);
@@ -144,7 +146,7 @@
             
             
              $(".requiredocs-name").on("click.myPlugin", function() {
-                 $(this).parent().next().slideToggle();	
+                 $(this).parent().next().next().next().slideToggle();	
             });
             
             

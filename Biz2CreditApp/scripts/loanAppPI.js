@@ -464,7 +464,7 @@
                     if(dataParam['personal_act'] === "Next")
                     {
                         $msg= "Personal Information submitted successfully";
-                        app.loginService.viewModel.mobileNotification($msg,'info');
+                       // app.loginService.viewModel.mobileNotification($msg,'info');
                         
                         app.loanAppPI.viewModel.ManageOwnerHideenField(dataParam);
                         apps.navigate('views/loanAppFP.html');
@@ -472,7 +472,7 @@
                     else
                     {
                     	$msg= "Personal Information submitted successfully";
-                        app.loginService.viewModel.mobileNotification($msg,'info');
+                       // app.loginService.viewModel.mobileNotification($msg,'info');
                         app.loansetting.viewModel.resetLoanAppBIForm();
                         app.loanAppCI.viewModel.resetLoanAppCIForm();
                         app.loanAppPI.viewModel.resetLoanAppPIForm(); 
@@ -483,18 +483,18 @@
                 else if(data[0]['results']['faultcode'] === 0 || data[0]['results']['faultcode'] === "0")
                 {
                     $msg= "Personal Information not submitted successfully.";
-                    app.loginService.viewModel.mobileNotification($msg,'info'); 
+                   // app.loginService.viewModel.mobileNotification($msg,'info'); 
                     return;
                 }
                 else if(data[0]['results']['faultcode'] === 3 || data[0]['results']['faultcode'] === "3")
                 {
                     $msg= "Please enter all fields.";
-                    app.loginService.viewModel.mobileNotification($msg,'info');
+                   // app.loginService.viewModel.mobileNotification($msg,'info');
                     return;
                 }
                 else{
                     $msg= "Server not responding properly,Please try again";
-                    app.loginService.viewModel.mobileNotification($msg,'info');
+                    //app.loginService.viewModel.mobileNotification($msg,'info');
                     return;
                 }            
 

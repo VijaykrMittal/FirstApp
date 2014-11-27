@@ -52,7 +52,8 @@
             	if( entry.isDirectory && entry.name[0] !== '.' ) dirArr.push(entry);
             }
                 console.log(dirArr);
-            app.fileexportsetting.viewModel.setExportDocs(dirArr);
+                console.log(dirArr[0]);
+            app.fileexportsetting.viewModel.setExportDocs(dirArr[0]);
                 
             app.loginService.viewModel.hideloder(); // hide loading message
             }, function(error){
@@ -94,10 +95,11 @@
         },
         setExportDocs:function(data)
         {
-            var that = this;
-            that.set("expDocs", data);
+          //  var that = this;
+            //that.set("expDocs", data);
+            console.log(data);
             $("#dirContent").kendoMobileListView({
-                dataSource: app.fileexportsetting.viewModel.expDocs,
+                dataSource: data,
                 template: $("#docs-export-template").html(),
                 }).kendoTouch({ 
                 	filter: ">li",

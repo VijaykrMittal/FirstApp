@@ -1544,7 +1544,7 @@
                     if(dataParam['business_act'] === "Next")
                     {
                         $msg= "Business Information submitted successfully";
-                        app.loginService.viewModel.mobileNotification($msg,'info');
+                       // app.loginService.viewModel.mobileNotification($msg,'info');
                         localStorage.setItem("fid",data[0]['results']['fid']);
                         if(sessionStorage.getItem("setprefilStatus")==='false')
                         {
@@ -1561,7 +1561,7 @@
                     else
                     {
                         $msg= "Business Information submitted successfully";
-                        localStorage.setItem("fid",data[0]['results']['fid']);
+                        //localStorage.setItem("fid",data[0]['results']['fid']);
                         app.loginService.viewModel.mobileNotification($msg,'info');
                     	app.loansetting.viewModel.resetLoanAppBIForm();
                         apps.navigate('#tabstrip-home');

@@ -6,11 +6,7 @@
         innerdocsAttachPage:false,
         show:function()
         {
-            if(!$('#popover-people ul li:eq(3)').hasClass('fileUpload'))
-            {
-                $('#popover-people ul li:eq(2)').after('<li data-bind="click: fileUploadEvent" class="fileUpload">Upload File Here</li>');
-                kendo.bind($("#popover-people ul li:eq(3)"), app.documentAttach.viewModel);
-            }
+           
             docsBackAttachHistory=[0];
             app.documentAttach.viewModel.getDoumentsList();
         },
@@ -125,10 +121,6 @@
         {
             docsBackAttachHistory.pop();
             app.documentAttach.viewModel.getDoumentsList();
-        },
-        fileUploadEvent:function()
-        {
-           $("#inboxActions").data("kendoMobileActionSheet").open();
         },
         getImage:function() {
             

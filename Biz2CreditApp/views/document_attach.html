@@ -15,16 +15,18 @@
         <a class="inner-docs-back"   data-bind="click:goBackLastPage,visible:innerdocsAttachPage"><span>Documents</span></a>
         <div class="km-listview-wrapper"><ul id="documentList" data-role="listview"></ul></div> 
     </div>
-    <ul data-role="actionsheet" id="inboxActions" data-open="onOpen" data-popup='{"direction": "left"}'>
+    <ul data-role="actionsheet" id="inboxActions" data-open="onOpen" >
         <li class="km-actionsheet-title">Monday Meeting:</li>
         <li><a href="#" data-action="app.documentAttach.viewModel.getImage">Photos</a></li>
         <li><a href="#" data-action="replyAll">Other files</a></li>
         <li><a href="#" data-action="archive">Archive</a></li>
     </ul>
      <div data-role="footer">
+        
                 <div class="movebuttonArea clearfix">
             		 <input name="Attach" type="submit" data-role="button" value="Attach" data-name="Attach" data-bind="click:attachDocumentData" class="BTgren">
                      <input name="button" type="submit" data-role="backbutton" value="Cancel" class="shareButton-gray">
+                     <a data-role="button" data-rel="actionsheet" href="#inboxActions">Upload New Files</a>
                 </div>
      </div>
 </div>

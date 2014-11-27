@@ -194,7 +194,7 @@ z-index: 999; }
 .matches-view li .row1 img { width:90%;}
 .matches-view li .row2 { width:48%; float:left;}
 .matches-view li .row2 p a { display:block; text-align:center; background:#8b8b8b; font-size:0.9em; border:0; color:#f0f0f0; padding: 0.6em 0.5em;}
-.matches-view li .row3 {box-shadow:-2px 0px 3px 5px #f4f4f4; background-color: #f4f4f4; padding:35px 0 0 0; text-align:center; width:25%; float:right; position:relative;}
+.matches-view li .row3 {box-shadow:-2px 0px 3px 5px #fff; background-color: #fff; padding:35px 0 0 0; text-align:center; width:25%; float:right; position:relative;}
 .matches-view li .row3 a {background-color:#fff; font-size:0.75em; border:1px solid #ccc; text-align:center;box-shadow:-2px 0px 2px 3px #f4f4f4; padding:1.7em 0em 0.5em; display:block; color:#666;}
 .matches-view li .row3 a.pending {background-image: url(images/icon_pending.png); background-repeat:no-repeat; background-size:23%; background-position:center 7px;}
 .matches-view li .row3 a.approval {background-image: url(images/icon_approved_7.png); background-repeat:no-repeat; background-size:23%; background-position:center 7px;}
@@ -451,8 +451,8 @@ background-position:5px 15px !important;height: 50px;position: relative;backgrou
 
 /********26-11-14***********/
 #applypopup .titad { color: #999999; font-family: "Open Sans",Arial,Helvetica,sans-serif; font-size: 17px; font-weight: 600;padding-bottom: 15px;}
-#applypopup .own_name { font-size:12px; color:#333; margin-bottom:5px;}
+#applypopup .own_name { font-size:13px; color:#333; margin-bottom:5px;}
 #applypopup .field .IN3 { width:87%;}
 #applypopup .field .que_hint { margin-right:10px;}
-#applypopup p {color: #333333; margin:0 0 10px; font-family: "Open Sans",Arial,Helvetica,sans-serif;  font-size: 12px; font-weight: normal;}
-#iteriaModalView .km-header .km-widget.km-button{background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:0px 5px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#FFF; text-shadow:0;}
+#applypopup p {color: #333333; margin:0 0 10px; font-family: "Open Sans",Arial,Helvetica,sans-serif; line-height:21px;  font-size: 13px; font-weight: normal;}
+#iteriaModalView .km-header .km-widget.km-button{border:0; background-color:transparent;}

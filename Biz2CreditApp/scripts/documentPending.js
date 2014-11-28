@@ -142,9 +142,6 @@
                 
             }
 
-            
-            
-            
              $(".requiredocs-name").on("click.myPlugin", function() {
                  $(this).parent().next().next().next().slideToggle();	
             });

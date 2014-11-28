@@ -1067,7 +1067,7 @@
             			
             			if (device.platform === "Android") {
             				app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
-                                alert(folder.fullPath);
+                                alert(relPath);
             					filePath = folder.fullPath + fileName;
                                 relPath = folder.name + fileName;
                                 //relPath =fileName;

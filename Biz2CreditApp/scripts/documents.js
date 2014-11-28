@@ -1108,6 +1108,7 @@
             downloadLink = sessionStorage.getItem("downloadLink");
             ext = app.documentsetting.viewModel.getFileExtension(fileName);
             uri=encodeURI(downloadLink); 
+            alert(uri);
             $("#tabstrip-download-file").data("kendoMobileModalView").open();
             app.documentsetting.viewModel.transferFile(uri,filePath);
             $('.download-file-name').html('');

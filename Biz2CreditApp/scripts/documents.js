@@ -1109,11 +1109,7 @@
             ext = app.documentsetting.viewModel.getFileExtension(fileName);
             uri=encodeURI(downloadLink); 
             $("#tabstrip-download-file").data("kendoMobileModalView").open();
-
-            alert(uri);
-            alert(relPath);
-            app.documentsetting.viewModel.transferFile(uri,relPath);
-
+            app.documentsetting.viewModel.transferFile(uri,filePath);
             $('.download-file-name').html('');
             $('.download-file-name').append('<div class="unkown '+ext+'">'+fileName+'</div>');
                                 

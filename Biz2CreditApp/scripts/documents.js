@@ -1147,7 +1147,7 @@
             		}	
                 },
                 function(error) {
-                    console.log(error.code);
+                    alert(error.code);
                     app.documentsetting.viewModel.getFilesystem(
                 		function(fileSystem) {
                 			fileSystem.root.getFile(filePath, {create: false,exclusive:true},  app.documentsetting.viewModel.gotRemoveFileEntry,  navigator.notification.alert("Download process aborted",function () { }, "Notification", 'OK'));

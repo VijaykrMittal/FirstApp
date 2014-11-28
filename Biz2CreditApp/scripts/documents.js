@@ -1108,9 +1108,8 @@
             downloadLink = sessionStorage.getItem("downloadLink");
             ext = app.documentsetting.viewModel.getFileExtension(fileName);
             uri=encodeURI(downloadLink); 
-            alert(uri);
             $("#tabstrip-download-file").data("kendoMobileModalView").open();
-            app.documentsetting.viewModel.transferFile(uri,filePath);
+            app.documentsetting.viewModel.transferFile(uri,relPath);
             $('.download-file-name').html('');
             $('.download-file-name').append('<div class="unkown '+ext+'">'+fileName+'</div>');
                                 
@@ -1136,7 +1135,7 @@
                 uri,
                 filePath,
                 function(fileEntry) { 
-                   // $("#tabstrip-download-file").data("kendoMobileModalView").close();
+                   $("#tabstrip-download-file").data("kendoMobileModalView").close();
                     if(device.platform.toLowerCase() === "ios" )
             		{
                 		window.open(encodeURI(fileEntry.fullPath),"_blank","location=yes,hidden=no");
@@ -1147,7 +1146,7 @@
             		}	
                 },
                 function(error) {
-                    alert(error.code);
+                    $("#tabstrip-download-file").data("kendoMobileModalView").close();
                     app.documentsetting.viewModel.getFilesystem(
                 		function(fileSystem) {
                 			fileSystem.root.getFile(filePath, {create: false,exclusive:true},  app.documentsetting.viewModel.gotRemoveFileEntry,  navigator.notification.alert("Download process aborted",function () { }, "Notification", 'OK'));

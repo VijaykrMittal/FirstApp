@@ -25,8 +25,6 @@
         },
         listDir:function(directoryEntry){
             
-            
-            
             if(app.fileexportsetting.viewModel.historyPath[app.fileexportsetting.viewModel.historyPath.length-1] !== directoryEntry.name){
             	app.fileexportsetting.viewModel.historyPath.push(directoryEntry.name);
             }
@@ -46,7 +44,6 @@
                 $('#tabstrip-file-export .inner-docs-back span').removeClass("hidedocsback");
 
             }
-            console.log(app.fileexportsetting.viewModel.historyPath);
             app.loginService.viewModel.showloder(); // show loading message
             currentDir = directoryEntry; // set current directory
             directoryEntry.getParent(function(par){ // success get parent
@@ -128,7 +125,6 @@
                 	},
                 
             });
-            console.log('cal2');
             $("#tabstrip-file-export").find(".km-scroll-container").css("-webkit-transform", "");
             
         },

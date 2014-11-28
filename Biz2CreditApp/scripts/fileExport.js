@@ -48,12 +48,18 @@
             dirContent.empty();
             var dirArr = new Array();
             for(var i=0; i<entries.length; ++i){ // sort entries
+                var newdirArr = new Array();
             	var entry = entries[i];
-            	if( entry.isDirectory && entry.name[0] !== '.' ) dirArr.push(entry);
+                newdirArr.fullPath= entries[i].fullPath;
+                newdirArr.isFile= entries[i].isFile;
+                newdirArr.name= entries[i].name;
+                newdirArr.nativeURL= entries[i].nativeURL;
+                newdirArr.isDirectory= entries[i].isDirectory;
+                
+            	if( newdirArr.isDirectory && newdirArr.name[0] !== '.' ) dirArr.push(newdirArr);
             }
-                console.log(dirArr);
-                console.log(dirArr[0]);
-            app.fileexportsetting.viewModel.setExportDocs(dirArr[0]);
+console.log(dirArr);
+            app.fileexportsetting.viewModel.setExportDocs(dirArr);
                 
             app.loginService.viewModel.hideloder(); // hide loading message
             }, function(error){
@@ -95,11 +101,10 @@
         },
         setExportDocs:function(data)
         {
-          //  var that = this;
-            //that.set("expDocs", data);
-            console.log(data);
+            var that = this;
+            that.set("expDocs", data);
             $("#dirContent").kendoMobileListView({
-                dataSource: data,
+                dataSource: app.fileexportsetting.viewModel.expDocs,
                 template: $("#docs-export-template").html(),
                 }).kendoTouch({ 
                 	filter: ">li",

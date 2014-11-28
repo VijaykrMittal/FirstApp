@@ -1067,7 +1067,8 @@
             			
             			if (device.platform === "Android") {
             				app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
-            					filePath = folder.fullPath + "/" + fileName;
+                                console.log(folder);
+            					filePath = folder.fullPath + fileName;
                                 relPath = folder.name + fileName;
                                 //relPath =fileName;
                                 fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
@@ -1139,7 +1140,7 @@
                 uri,
                 filePath,
                 function(fileEntry) { 
-                   // $("#tabstrip-download-file").data("kendoMobileModalView").close();
+                    $("#tabstrip-download-file").data("kendoMobileModalView").close();
                     if(device.platform.toLowerCase() === "ios" )
             		{
                 		window.open(encodeURI(fileEntry.fullPath),"_blank","location=yes,hidden=no");

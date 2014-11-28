@@ -1067,11 +1067,9 @@
             			
             			if (device.platform === "Android") {
             				app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
-                               
-            					filePath = folder.fullPath + fileName;
-                                relPath = folder.name + fileName;
+            					filePath = folder.fullPath + "\/" + fileName;
+                                relPath = folder.name + "\/" + fileName;
                                 //relPath =fileName;
-                                alert(relPath);
                                 fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
                                 
             				}, function() {
@@ -1080,7 +1078,7 @@
             			}
             			else {
                             console.log(fileName);
-            				filePath = fileSystem.root.fullPath + "/" +"biz2docs/" +fileName;
+            				filePath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
                             fileSystem.root.getFile(filePath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
             				
             			}
@@ -1113,8 +1111,8 @@
             $("#tabstrip-download-file").data("kendoMobileModalView").open();
 
             alert(uri);
-            alert(filePath);
-            app.documentsetting.viewModel.transferFile(uri,filePath);
+            alert(relPath);
+            app.documentsetting.viewModel.transferFile(uri,relPath);
 
             $('.download-file-name').html('');
             $('.download-file-name').append('<div class="unkown '+ext+'">'+fileName+'</div>');
@@ -1141,7 +1139,7 @@
                 uri,
                 filePath,
                 function(fileEntry) { 
-                    $("#tabstrip-download-file").data("kendoMobileModalView").close();
+                   // $("#tabstrip-download-file").data("kendoMobileModalView").close();
                     if(device.platform.toLowerCase() === "ios" )
             		{
                 		window.open(encodeURI(fileEntry.fullPath),"_blank","location=yes,hidden=no");

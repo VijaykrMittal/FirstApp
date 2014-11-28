@@ -25,6 +25,8 @@
         },
         listDir:function(directoryEntry){
             
+            
+            
             if(app.fileexportsetting.viewModel.historyPath[app.fileexportsetting.viewModel.historyPath.length-1] !== directoryEntry.name){
             	app.fileexportsetting.viewModel.historyPath.push(directoryEntry.name);
             }
@@ -32,9 +34,21 @@
             {
             	$("#dirContent").data("kendoMobileListView").destroy();
             }
+            if(app.fileexportsetting.viewModel.historyPath.length === 1)
+            {
+                $('#tabstrip-file-export .inner-docs-back').addClass("hidedocsback");
+                $('#tabstrip-file-export .inner-docs-back span').addClass("hidedocsback");
+
+            }
+            else
+            {
+                $('#tabstrip-file-export .inner-docs-back').removeClass("hidedocsback");
+                $('#tabstrip-file-export .inner-docs-back span').removeClass("hidedocsback");
+
+            }
+            console.log(app.fileexportsetting.viewModel.historyPath);
             app.loginService.viewModel.showloder(); // show loading message
             currentDir = directoryEntry; // set current directory
-            console.log('cal');
             directoryEntry.getParent(function(par){ // success get parent
             parentDir = par; // set parent directory
             	if( currentDir.name === root.name) app.fileexportsetting.viewModel.setExportRootPage();
@@ -49,7 +63,6 @@
             var dirArr = new Array();
             for(var i=0; i<entries.length; ++i){ // sort entries
                 var newdirArr = new Array();
-            	var entry = entries[i];
                 newdirArr.fullPath= entries[i].fullPath;
                 newdirArr.isFile= entries[i].isFile;
                 newdirArr.name= entries[i].name;
@@ -58,7 +71,7 @@
                 
             	if( newdirArr.isDirectory && newdirArr.name[0] !== '.' ) dirArr.push(newdirArr);
             }
-console.log(dirArr);
+                
             app.fileexportsetting.viewModel.setExportDocs(dirArr);
                 
             app.loginService.viewModel.hideloder(); // hide loading message

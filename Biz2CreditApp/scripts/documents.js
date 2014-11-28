@@ -1067,8 +1067,8 @@
             			
             			if (device.platform === "Android") {
             				app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
-            					filePath = folder.fullPath + "\/" + fileName;
-                                relPath = folder.name + "\/" + fileName;
+            					filePath = folder.fullPath + "/" + fileName;
+                                relPath = folder.name + "/" + fileName;
                                 //relPath =fileName;
                                 fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
                                 
@@ -1078,7 +1078,7 @@
             			}
             			else {
                             console.log(fileName);
-            				filePath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
+            				filePath = fileSystem.root.fullPath + "/" +"biz2docs/" +fileName;
                             fileSystem.root.getFile(filePath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
             				
             			}

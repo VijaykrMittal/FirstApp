@@ -14,8 +14,8 @@
             $(".documentList .wrap-content .row .name a").unbind(".myPlugin");
             
             $(".documentList .wrap-content h2").on("click.myPlugin", function() {                                    
-                $(this).next(".rows").slideToggle();
-                $(this).toggleClass("off");
+                //$(this).next(".rows").slideToggle();
+                //$(this).toggleClass("off");
             });
 
             $(".documentList .wrap-content .row .name a").on("click.myPlugin", function() {

@@ -11,16 +11,7 @@
 
             /*Upload Document Toggle*/
             $(".documentList .wrap-content h2").unbind('.myPlugin');
-            $(".documentList .wrap-content .row .name a").unbind(".myPlugin");
-            
-            $(".documentList .wrap-content h2").on("click.myPlugin", function() {                                    
-                //$(this).next(".rows").slideToggle();
-                //$(this).toggleClass("off");
-            });
-
-            $(".documentList .wrap-content .row .name a").on("click.myPlugin", function() {
-                $(this).parents('.row').next(".filesBlock").slideToggle();	
-            });
+            $(".requiredocs-name").unbind(".myPlugin");
             
             
             var dataSource = new kendo.data.DataSource({
@@ -30,7 +21,8 @@
                             url: localStorage.getItem("urlMobAppApiLoan"),
                             type:"POST",
                             dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                            data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
+                           data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
+                           //data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
                         }
                         
                     },
@@ -110,7 +102,7 @@
                 if(data[i].DocFileDetails===false) { 
                     html+=  data[i].docName;
                 }else{
-                    html+= '<a id="dispalyFiles">'+data[i].docName+'</a><span>('+data[i].DocFileDetails.length+')</span>';
+                    html+= '<a id="dispalyFiles" class="'+data[i].id+'">'+data[i].docName+'</a><span>('+data[i].DocFileDetails.length+')</span>';
                 }           
                
                 html+= '</div>';
@@ -119,7 +111,7 @@
                 if(data[i].b2cdocid === "148" || data[i].b2cdocid === 148) {
                     html+=        '<div class="text1"><span class="text2"><a class="esignAnchor" data-bind="click:sendEsignDocs,visible:sendEsignDocsStatus">Send esign document</a><a  class="esignAnchor" data-bind="click:resSendEsignDocs,invisible:sendEsignDocsStatus">Resend esign document</a></span></div><div class="text1"><span class="docuploaded"><a data-downurl="'+data[i].wetsignpdf+'" data-bind="click:downloadWetSignatureFile" data-role="button">Download document for wet signature</a></span></div>';
                 }
-                html+= '<div class="filesBlock">';
+                html+= '<div class="filesBlock" id="'+data[i].id+'">';
                 if(data[i].DocFileDetails !==false) { 
                     fileData =data[i].DocFileDetails;
                     
@@ -130,20 +122,22 @@
                     }
                    
                 }
+                                html+= '<div class="upload"><a data-bind="click:UploadExisting" class="active appDocFile">Upload New/Select Existing</a></div>';
                 html+='</div>';
-                html+= '<div class="upload"><a data-bind="click:UploadExisting" class="active appDocFile">Upload New/Select Existing</a></div>';
+
                 
             }
             $("#requireDocsList").html(html);
             kendo.bind($("#requireDocsList"), app.documentService.viewModel);
             if(data[0].b2cdocid === "148" || data[0].b2cdocid === 148) {
-                 console.log('cal');
+                
                 app.documentService.viewModel.setSendEsignDocsStatus(data);//default esign set status
                 
             }
 
-             $(".requiredocs-name").on("click.myPlugin", function() {
-                 $(this).parent().next().next().next().slideToggle();	
+             $(".requiredocs-name a").on("click.myPlugin", function() {
+                var id=  $(this).attr('class');
+                 $('#'+id).slideToggle();
             });
             
             

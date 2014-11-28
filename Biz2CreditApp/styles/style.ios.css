@@ -237,6 +237,8 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 #tabstrip-Setting .popup {width: 60px;}
 #tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li {padding: 3% 0 3% 12%;background-size: 6%;}
 #aplicn_frm .rws p.fotPrst {width:40.6%;}
+#matchDocList .filesBlock .buttonSet .DeleteIC {padding: 3% 12%;}
+.documentList .wrap-content .rows.off, .documentList .wrap-content .rows { background-size:4.5%; background-position:right 12px;}
 }
 @media (min-width:0px) and (max-width:670px) {
 #aplicn_tp ul.app_nav li {background-position: 8px center;}
@@ -252,6 +254,10 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 #aplicn_frm .rws .rw_lin p.sixtPrst input[type="text"], #aplicn_frm .rws .rw_lin p.sixtPrst select{ width:245px;}
 #aplicn_frm .IN1 {width: 270px;}
 #aplicn_frm select.IN1b.ipsm1 {width: 179px;}
+#matchDocList .filesBlock .file-iconjpg {background-size:90%;height: 37px;}
+#matchDocList .filesBlock .file-name {padding: 8px 0 0 8px; font-size:17px;}
+#matchDocList .filesBlock .buttonSet .DeleteIC {padding:2% 11%;background-size: 100%;}
+#matchDocList .filesBlock .buttonSet .downloadBtn { background-size:83%;}
 }
 @media (min-width:0px) and (max-width:640px) { 
 .logo { margin:3% auto;}
@@ -292,6 +298,13 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 #tabstrip-manage-app #tabstrip ul li.postd_icn, #tabstrip-manage-app #tabstrip ul li.k-state-active.postd_icn{ background-size:17%;}
 #tabstrip-manage-app #tabstrip ul li.end_icon, #tabstrip-manage-app #tabstrip ul li.k-state-active.end_icon, #tabstrip-manage-app #tabstrip ul li.lon_icon, #tabstrip-manage-app #tabstrip ul li.k-state-active.lon_icon { background-size:15%;}
 #aplicn_frm .IN3.smOn {width: 100%;}
+#matchDocList .filesBlock .file-iconjpg {background-size:100%;height: 37px;width: 7%;}
+.documentList .wrap-content .row .num span {line-height: 25px;width: 26px;height: 26px;font-size: 15px;}
+#matchDocList .filesBlock .buttonSet .DeleteIC {padding: 4% 12%;}
+#matchDocList .filesBlock .buttonSet .downloadBtn {background-size: 95%;margin: 5px 0 0;height: 25px;}
+#matchDocList .filesBlock .file-name {font-size: 15px;}
+.sub-row {padding: 9px 18px 6px 18px;}
+.documentList .buttonSet {width:70px; margin:0;}
 }
 @media (min-width:0px) and (max-width:600px) { 
 #tabstrip-files-events.modal-mess-Popup {height:50%;}
@@ -452,6 +465,10 @@ html body #tabstrip-manage-app .backButton {background-size: 29% !important;heig
 #tabstrip-manage-app .refreshloan {background-size: 40%;background-position: 15px 17px;height: 55px;}
 #aplicn_frm .que_hint{margin-right: 7px;}
 #aplicn_frm .rws p.sixtPrst .IN5, #aplicn_frm .rws p.sixtPrst .IN6 {width: 100%;}
+.documentList .wrap-content .row .num {width: 24px;}
+.documentList .wrap-content .row .num span {line-height: 23px;width: 23px;height: 23px;font-size: 14px;margin: 5px 0 0;}
+.documentList .wrap-content .rows.off, .documentList .wrap-content .rows {background-position: right 18px;}
+#matchDocList .upload a {font-size:12px; padding: 7px 15px;}
 }
 
 @media (min-width:0px) and (max-width:420px) { 
@@ -481,6 +498,22 @@ html body #tabstrip-manage-app .backButton {background-size: 39% !important;}
 #tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li {padding: 4% 0 4% 13%;background-size: 7.5%;background-position: 15px 10px;}
 #aplicn_frm .IN1.zipcod {width: 100% !important;}
 #aplicn_frm .rws .rw_lin p.sixtPrst input[type="text"], #aplicn_frm .rws .rw_lin p.sixtPrst select{width: 100%;}
+#matchDocList .filesBlock .file-iconjpg {width: 9%;}
+.documentList .buttonSet {padding-top:0;}
+.documentList .wrap-content .row .name {width: 81%;}
+.documentList .wrap-content .row .num {width:23px;}
+.documentList .wrap-content .row .name a { font-size:13px;}
+#matchDocList .text1 a {line-height: 21px;font-size: 13px;}
+#matchDocList .filesBlock .file-name {width: 63%;}
+.documentList .buttonSet {width: 55px; }
+.sub-row {padding: 9px 10px 4px 10px;}
+#matchDocList .filesBlock .file-iconjpg {width: 8%;}
+#matchDocList .filesBlock .file-iconjpg {height: 32px;}
+#matchDocList .upload a { font-size:13px;}
+.documentList .wrap-content h2 {font-size: 18px;}
+.documentList h3 {font-size: 17px;}
+.documentList .wrap-content .rows.off, .documentList .wrap-content .rows {background-size: 6%;}
+#matchDocList .upload { text-align:center;}
 }
 
 
@@ -575,6 +608,9 @@ html body #tabstrip-manage-app .backButton {background-size:45% !important;width
 #tabstrip-manage-app .refresh-loading {background-size: 95%;}
 #tabstrip-manage-app .refreshloan {background-size: 60%;background-position: 5px 16px;height: 55px;}
 .tabOne.withMatch .head span:nth-child(2) { font-size:12px;}
+.documentList .wrap-content .rows.off, .documentList .wrap-content .rows {background-size: 7%;}
+.documentList .wrap-content h2 {font-size: 16px;}
+#matchDocList .filesBlock .file-iconjpg {width: 9%;}
     
 }
 @media (min-width:0px) and (max-width:320px) { 

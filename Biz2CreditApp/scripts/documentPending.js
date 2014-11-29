@@ -14,7 +14,7 @@
             $(".documentList .wrap-content h2").unbind('.myPlugin');
             $(".requiredocs-name").unbind(".myPlugin");
             
-            
+            app.loginService.viewModel.showloder();
             var dataSource = new kendo.data.DataSource({
                     transport: {
                         

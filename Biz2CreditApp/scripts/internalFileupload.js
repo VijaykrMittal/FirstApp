@@ -34,14 +34,14 @@
             }
             if(app.fileuploadsetting.viewModel.historyPath.length === 1)
             {
-                $('#tabstrip-file-export .inner-docs-back').addClass("hidedocsback");
-                $('#tabstrip-file-export .inner-docs-back span').addClass("hidedocsback");
+                $('#tabstrip-file-upload .inner-docs-back').addClass("hidedocsback");
+                $('#tabstrip-file-upload .inner-docs-back span').addClass("hidedocsback");
 
             }
             else
             {
-                $('#tabstrip-file-export .inner-docs-back').removeClass("hidedocsback");
-                $('#tabstrip-file-export .inner-docs-back span').removeClass("hidedocsback");
+                $('#tabstrip-file-upload .inner-docs-back').removeClass("hidedocsback");
+                $('#tabstrip-file-upload .inner-docs-back span').removeClass("hidedocsback");
 
             }
             app.loginService.viewModel.showloder(); // show loading message
@@ -66,7 +66,7 @@
                 newdirArr.nativeURL= entries[i].nativeURL;
                 newdirArr.isDirectory= entries[i].isDirectory;
                 
-            	if( newdirArr.isDirectory && newdirArr.name[0] !== '.' ) dirArr.push(newdirArr);
+            	if(newdirArr.name[0] !== '.' ) dirArr.push(newdirArr);
             }
                 
             app.fileuploadsetting.viewModel.setExportDocs(dirArr);
@@ -138,19 +138,10 @@
              app.fileuploadsetting.viewModel.listDir(parentDir);
         },
         
-        thisFileExport:function(e)
+        thisFileUpload:function(e)
         {
            
-            app.fileuploadsetting.viewModel.historyPath.shift();
-            fileName =  $.trim(sessionStorage.getItem("currentFileName"));
-            filePath = currentDir.fullPath + "\/" + fileName;
-            ext = app.documentsetting.viewModel.getFileExtension(fileName);
-            $("#tabstrip-download-file").data("kendoMobileModalView").open();
-            downloadLink = sessionStorage.getItem("downloadLink");
-            $('.download-file-name').html('');
-        	$('.download-file-name').append('<div class="'+ext+'">'+fileName+'</div>');
-            uri=encodeURI(downloadLink); 
-            app.fileuploadsetting.viewModel.exportFile(uri,filePath); 
+            console.log('upload call');
 
         },
         setExportInnerPage:function()
@@ -163,48 +154,7 @@
             var that = this;
             that.set("exportInnerPage", false);  
         },
-        exportFile: function (uri, filePath) {
-            transfer = new FileTransfer();
-            transfer.onprogress = function(progressEvent) {
-                if (progressEvent.lengthComputable) {
-                   
-                	var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
-                	$('#status').innerHTML = perc + "% loaded...";
-                } else {
-                	if($('#status').innerHTML === "") {
-                       
-                		$('#status').innerHTML = "Loading";
-                	} else {
-                        
-                		$('#status').innerHTML += ".";
-                	}
-                }
-            };
-            transfer.download(
-                uri,
-                filePath,
-                function(fileEntry) { 
-                    $("#tabstrip-download-file").data("kendoMobileModalView").close();
-                    navigator.notification.confirm('File exported successfully.', function (confirmed) {
-                    if (confirmed === true || confirmed === 1) {
-                    	apps.navigate('views/documents.html?parent='+app.documentsetting.viewModel.parentId);
-                    }
-                    }, 'Notification','OK');
-                },
-                function(error) {
-                    app.documentsetting.viewModel.getFilesystem(
-                		function(fileSystem) {
-                			fileSystem.root.getFile(filePath, {create: false,exclusive:true},  app.documentsetting.viewModel.gotRemoveFileEntry,  navigator.notification.alert("Download process aborted",function () { }, "Notification", 'OK'));
-                		},
-                		function() {
-                			console.log("failed to get filesystem");
-                		}
-            		);
-                    
-                }
-            );
-            
-        },
+        
         
     });
     app.fileuploadsetting = {

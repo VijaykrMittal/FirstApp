@@ -22,8 +22,8 @@
                             url: localStorage.getItem("urlMobAppApiLoan"),
                             type:"POST",
                             dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                           //data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
-                           data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
+                           data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
+                           //data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
                         }
                         
                     },
@@ -230,12 +230,9 @@
             
             if(typeof data[0].b2sRes !=='undefined')
             {
-                console.log('cal1');
                 if(data[0].b2sRes[0].status === 'sent')
                 {
-                    console.log('cal2');
                     that.set("sendEsignDocsStatus",false);
-                    console.log(app.documentService.viewModel);
                     
                 }
             }

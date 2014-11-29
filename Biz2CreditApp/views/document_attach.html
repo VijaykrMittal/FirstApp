@@ -3,7 +3,7 @@
         <div data-role="navbar">
             <span data-role="view-title">
                 <div class="matches-logo">
-                   <a class="docs-back" data-role="backbutton">Back</a>
+                   <a class="docs-back" data-bind="click: goToDocpending" data-role="button">Back</a>
                     <a data-align="right" data-bind="click: refreshView,invisible: showrefreshLoading" class="refresh-com docs-refresh">refresh</a>
                     <a data-align="right" data-bind="click: refreshView,visible: showrefreshLoading" class="refresh-loading docs-refresh">refresh</a>
                     <a data-align="right" data-rel="popover" href="#popover-people" data-role="button" class="docs-popup"></a>
@@ -16,14 +16,14 @@
         <div class="km-listview-wrapper"><ul id="documentList" data-role="listview"></ul></div> 
     </div>
     <ul data-role="actionsheet" id="inboxActions" data-open="onOpen" >
-        <li><a href="#" data-action="app.documentAttach.viewModel.getImage">Photos</a></li>
-        <li><a href="#" data-action="replyAll">Other files</a></li>
+        <li><a href="#" data-bind="click:getImage">Photos</a></li>
+        <li><a href="#" data-bind="click:getOtherFiles">Other files</a></li>
     </ul>
      <div data-role="footer">
         
                 <div class="movebuttonArea clearfix">
             		 <input name="Attach" type="submit" data-role="button" value="Attach" data-name="Attach" data-bind="click:attachDocumentData" class="BTgren">
-                     <input name="button" type="submit" data-role="backbutton" value="Cancel" class="shareButton-gray">
+                     <input name="button" type="submit" data-bind="click: goToDocpending" data-role="button" value="Cancel" class="shareButton-gray">
                      <a data-role="button"  data-rel="actionsheet" href="#inboxActions">Upload New Files</a>
                 </div>
      </div>

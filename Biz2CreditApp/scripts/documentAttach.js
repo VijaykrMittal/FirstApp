@@ -4,10 +4,14 @@
     
     documentAttachModel = kendo.data.ObservableObject.extend({
         innerdocsAttachPage:false,
+        showrefreshLoading:false,
         show:function()
         {
+            if(typeof docsBackAttachHistory === 'undefined')
+            {
+                docsBackAttachHistory=[0];
+            }
            
-            docsBackAttachHistory=[0];
             app.documentAttach.viewModel.getDoumentsList();
         },
         getDoumentsList:function()
@@ -71,11 +75,14 @@
         },
         refreshView:function()
         {
+            var that = this;
+            that.set("showrefreshLoading", true);
             app.documentAttach.viewModel.getDoumentsList();
         },
         existingDocumentList:function(docsData)
         {
-
+            var that = this;
+            that.set("showrefreshLoading", false);
             var template = kendo.template($("#documentList-template").html());
             var data = docsData;
             var result = template(data); //Execute the template
@@ -91,7 +98,6 @@
                 kendo.bind($("#documentList"), app.documentAttach.viewModel);
                 
             }
-            
             
             app.loginService.viewModel.hideloder();
        
@@ -135,6 +141,11 @@
             
  
         },
+        getOtherFiles:function()
+        {
+            console.log('call');
+            apps.navigate('views/internalFileUpload.html');
+        },
         uploadPhoto:function(imageURI) {
             alert(imageURI);
             var options = new FileUploadOptions();
@@ -162,6 +173,10 @@
  
         failUpload:function(error) {
             alert("An error has occurred: Code = "+error.code);
+        },
+        goToDocpending:function()
+        {
+            apps.navigate('views/documentPending.html'); 
         }
         
         

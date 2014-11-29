@@ -125,7 +125,7 @@
                 	},
                 
             });
-            $("#tabstrip-file-export").find(".km-scroll-container").css("-webkit-transform", "");
+            $("#tabstrip-file-upload").find(".km-scroll-container").css("-webkit-transform", "");
             
         },
         backDocslistPage:function(e)

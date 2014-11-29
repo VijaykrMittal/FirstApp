@@ -475,7 +475,10 @@ background-position:5px 15px !important;height: 50px;position: relative;backgrou
 #document-attach .matches-logo .docs-back {background-color:transparent; border:0;}
 #document-attach .km-rightitem {height: 100%;right: 0; width:13%;}
 #document-attach .km-rightitem a.docs-popup {background-image: url(../styles/images/ic_action_overflow.png);text-indent: -9000px;width:55px;background-position: center center;height:65px;background-repeat: no-repeat;margin: 0;padding: 5px;border: 0;background-color: transparent;border-radius: 0;}
-#document-attach .km-rightitem a.refresh-com {background-image: url(images/action_refresh.png);background-repeat: no-repeat;background-size:68%;background-position: center 17px;text-indent: -9000px;width:44%;height: 70px;border: 0;background-color: transparent;float: left;}
-#document-attach .km-rightitem a.refresh-loading {background-image: url(images/loding.gif);background-repeat: no-repeat;background-size:68%;background-position: center 17px;text-indent: -9000px;width:44%;height: 70px;border: 0;background-color: transparent;float: left;}
+#document-attach .km-rightitem a.refresh-com {background-image: url(images/action_refresh.png);background-repeat: no-repeat;background-size:76%;background-position: center 13px;text-indent: -9000px;width:44%;height: 70px;border: 0;background-color: transparent;float: left;}
+#document-attach .km-rightitem a.refresh-loading {background-image: url(images/loding.gif);background-repeat: no-repeat;background-size:56%;background-position: center 18px;text-indent: -9000px;width:44%;height: 70px;border: 0;background-color: transparent;float: left;}
 #document-attach .movebuttonArea .BTgren {background-color: #99cc00;padding: 6px 8px;-webkit-border-radius: 3px;border-radius: 3px;color: #000 !important;font-weight: normal;font-size: 1.2em;font-family: arial;text-decoration: none;}
 #document-attach .movebuttonArea .shareButton-gray {background-color: #cdcdcd;padding: 6px 8px;-webkit-border-radius: 3px;border-radius: 3px;color: #000 !important;font-weight: normal;font-size: 1.2em;font-family: arial;text-decoration: none;}
+#document-attach .matches-logo {background-color:#fff;}
+#document-attach .movebuttonArea a.attechUpload {float:right;background-image: url(images/upload.png);background-repeat: no-repeat;background-size:50%;background-position: center center; background-color:transparent; border:0; padding:1%; margin:0; text-indent:-9999px;}
+#document-attach .movebuttonArea a.km-state-active{background-image: url(images/upload-act.png);}

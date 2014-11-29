@@ -4,6 +4,7 @@
     
     DocumentPendingModel = kendo.data.ObservableObject.extend({
         sendEsignDocsStatus:true,
+        userName:(localStorage.getItem("userFName") !== '') ?  localStorage.getItem("userFName") : '',
         show:function(e)
         { 
             var appid = sessionStorage.getItem("matchesPageFid");
@@ -21,8 +22,8 @@
                             url: localStorage.getItem("urlMobAppApiLoan"),
                             type:"POST",
                             dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                           data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
-                           //data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
+                           //data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
+                           data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
                         }
                         
                     },
@@ -138,6 +139,8 @@
              $(".requiredocs-name a").on("click.myPlugin", function() {
                 var id=  $(this).attr('class');
                  $('#'+id).slideToggle();
+                  $(this).parents('.row').toggleClass("off");
+                 
             });
             
             

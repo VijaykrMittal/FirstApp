@@ -115,7 +115,7 @@
         {
             var that = this;
             that.set("expDocs", data);
-            $("#dirContent").kendoMobileListView({
+            $("#dirContentUpload").kendoMobileListView({
                 dataSource: app.fileuploadsetting.viewModel.expDocs,
                 template: $("#docs-upload-template").html(),
                 }).kendoTouch({ 

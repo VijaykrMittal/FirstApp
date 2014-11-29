@@ -103,7 +103,7 @@
                 if(data[i].DocFileDetails===false) { 
                     html+=  data[i].docName;
                 }else{
-                    html+= '<a id="dispalyFiles" class="'+data[i].id+'">'+data[i].docName+'</a><span>('+data[i].DocFileDetails.length+')</span>';
+                    html+= '<a id="dispalyFiles" class="'+data[i].id+'">'+data[i].docName+'<span>('+data[i].DocFileDetails.length+')</span></a>';
                 }           
                
                 html+= '</div>';
@@ -130,6 +130,7 @@
             }
             $("#requireDocsList").html(html);
             kendo.bind($("#requireDocsList"), app.documentService.viewModel);
+            app.loginService.viewModel.hideloder();
             if(data[0].b2cdocid === "148" || data[0].b2cdocid === 148) {
                 
                 app.documentService.viewModel.setSendEsignDocsStatus(data);//default esign set status

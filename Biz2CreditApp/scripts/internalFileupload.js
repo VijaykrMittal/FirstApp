@@ -28,9 +28,9 @@
             if(app.fileuploadsetting.viewModel.historyPath[app.fileuploadsetting.viewModel.historyPath.length-1] !== directoryEntry.name){
             	app.fileuploadsetting.viewModel.historyPath.push(directoryEntry.name);
             }
-            if(typeof $("#dirContent").data("kendoMobileListView") !=='undefined')
+            if(typeof $("#dirContentUpload").data("kendoMobileListView") !=='undefined')
             {
-            	$("#dirContent").data("kendoMobileListView").destroy();
+            	$("#dirContentUpload").data("kendoMobileListView").destroy();
             }
             if(app.fileuploadsetting.viewModel.historyPath.length === 1)
             {
@@ -54,10 +54,12 @@
             	});
 
             var directoryReader = directoryEntry.createReader();
+            console.log(directoryReader)
             directoryReader.readEntries(function(entries){
-            var dirContent = $('#dirContent');
+            var dirContent = $('#dirContentUpload');
             dirContent.empty();
             var dirArr = new Array();
+                console.log(entries)
             for(var i=0; i<entries.length; ++i){ // sort entries
                 var newdirArr = new Array();
                 newdirArr.fullPath= entries[i].fullPath;
@@ -115,7 +117,7 @@
             that.set("expDocs", data);
             $("#dirContent").kendoMobileListView({
                 dataSource: app.fileuploadsetting.viewModel.expDocs,
-                template: $("#docs-export-template").html(),
+                template: $("#docs-upload-template").html(),
                 }).kendoTouch({ 
                 	filter: ">li",
                   	tap: function (e) { 

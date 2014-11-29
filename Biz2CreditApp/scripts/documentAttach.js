@@ -149,19 +149,22 @@
         uploadPhoto:function(imageURI) {
             alert(imageURI);
             var options = new FileUploadOptions();
+            console.log(options);
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
- 
+ console.log(options);
             var params = new Object();
             params.value1 = "test";
             params.value2 = "param";
  
             options.params = params;
             options.chunkedMode = false;
- 
+ console.log(options);
             var ft = new FileTransfer();
-            ft.upload(imageURI, "http://yourdomain.com/upload.php", app.documentAttach.viewModel.winUpload, app.documentAttach.viewModel.failUpload, options);
+            console.log(options);
+           ft.upload(imageURI, encodeURI("http://sandbox.biz2services.com/mobapp/api/folder"), app.documentAttach.viewModel.winUpload, app.documentAttach.viewModel.failUpload, options);
+            console.log('sssss');
         },
  
         winUpload:function(r) {

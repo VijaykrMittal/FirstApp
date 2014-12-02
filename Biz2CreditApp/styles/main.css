@@ -482,4 +482,4 @@ background-position:5px 15px !important;height: 50px;position: relative;backgrou
 #document-attach .matches-logo {background-color:#fff;}
 #document-attach .movebuttonArea a.attechUpload {float:right;background-image: url(images/upload.png);background-repeat: no-repeat;background-size:50%;background-position: right center; background-color:transparent; border:0; padding:1%; margin:0; text-indent:-9999px;}
 #document-attach .movebuttonArea a.km-state-active{background-image: url(images/upload-act.png);}
-
+ul#documentList td:nth-child(1) {font-size:1.2em; color:#333; text-indent:20px;}

@@ -262,26 +262,25 @@
         },
         uploadPhoto:function(imageURI) {
             alert(imageURI);
-            var uri = encodeURI("http://sandbox.biz2services.com/mobapp/api/loanapp?apiaction=uploaddocuments");
-
+            imageURI = 'C:/Users/Gaurav/Desktop/R_work/keyy.jpg';
             var options = new FileUploadOptions();
+            console.log(options);
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-            options.mimeType="text/plain";
-
-            var headers={'headerParam':'headerValue'};
-
-            options.headers = headers;
-
+            options.mimeType="image/jpeg";
+            console.log(options);
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+            console.log(options);
             var ft = new FileTransfer();
-            ft.onprogress = function(progressEvent) {
-                if (progressEvent.lengthComputable) {
-                    loadingStatus.setPercentage(progressEvent.loaded / progressEvent.total);
-                } else {
-                    loadingStatus.increment();
-                }
-            };
-            ft.upload(imageURI, uri, app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options);
+            console.log(options);
+             ft.upload(imageURI, 'http://54.85.208.215/webservice/notification/sendNotification', app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options , true);
+          // ft.upload(imageURI, encodeURI("http://sandbox.biz2services.com/mobapp/api/folder"), app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options,true);
+            console.log('sssss');
         },
  
         winUpload:function(r) {

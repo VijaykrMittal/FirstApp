@@ -22,8 +22,8 @@
                             url: localStorage.getItem("urlMobAppApiLoan"),
                             type:"POST",
                             dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                           data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
-                           //data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
+                          // data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
+                           data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
                         }
                         
                     },
@@ -110,7 +110,8 @@
                  
                 html+='</div>';
                 if(data[i].b2cdocid === "148" || data[i].b2cdocid === 148) {
-                    html+=        '<div class="text1"><span class="text2"><a class="esignAnchor" data-bind="click:sendEsignDocs,visible:sendEsignDocsStatus">Send esign document</a><a  class="esignAnchor" data-bind="click:resSendEsignDocs,invisible:sendEsignDocsStatus">Resend esign document</a></span></div><div class="text1"><span class="docuploaded"><a data-downurl="'+data[i].wetsignpdf+'" data-bind="click:downloadWetSignatureFile" data-role="button">Download document for wet signature</a></span></div>';
+                   // html+= '<div class="text1"><span class="text2"><a class="esignAnchor" data-bind="click:sendEsignDocs,visible:sendEsignDocsStatus">Send esign document</a><a  class="esignAnchor" data-bind="click:resSendEsignDocs,invisible:sendEsignDocsStatus">Resend esign document</a></span></div>';
+                    html+= '<div class="text1"><span class="docuploaded"><a data-downurl="'+data[i].wetsignpdf+'" data-bind="click:downloadWetSignatureFile" data-role="button">Download document for wet signature</a></span></div>';
                 }
                 html+= '<div class="filesBlock" id="'+data[i].id+'">';
                 if(data[i].DocFileDetails !==false) { 
@@ -123,7 +124,7 @@
                     }
                    
                 }
-                                html+= '<div class="upload"><a data-bind="click:UploadExisting" class="active appDocFile">Upload New/Select Existing</a></div>';
+                                html+= '<div class="upload"> <a data-role="button"  class="active appDocFile" data-rel="actionsheet" href="#inboxActions">Upload New Documents</a></div>';
                 html+='</div>';
 
                 
@@ -240,6 +241,59 @@
             
             
             
+        },
+        getImage:function() {
+            
+            navigator.camera.getPicture(app.documentService.viewModel.uploadPhoto, function(message) {
+                    alert('get picture failed');
+                    },{
+                    quality: 50, 
+                    destinationType: navigator.camera.DestinationType.FILE_URI,
+                    sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+                }
+            );
+            
+ 
+        },
+        getOtherFiles:function()
+        {
+            console.log('call');
+            apps.navigate('views/internalFileUpload.html');
+        },
+        uploadPhoto:function(imageURI) {
+            alert(imageURI);
+            var uri = encodeURI("http://sandbox.biz2services.com/mobapp/api/loanapp?apiaction=uploaddocuments");
+
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="text/plain";
+
+            var headers={'headerParam':'headerValue'};
+
+            options.headers = headers;
+
+            var ft = new FileTransfer();
+            ft.onprogress = function(progressEvent) {
+                if (progressEvent.lengthComputable) {
+                    loadingStatus.setPercentage(progressEvent.loaded / progressEvent.total);
+                } else {
+                    loadingStatus.increment();
+                }
+            };
+            ft.upload(imageURI, uri, app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options);
+        },
+ 
+        winUpload:function(r) {
+            console.log("Code = " + r.responseCode);
+            console.log("Response = " + r.response);
+            console.log("Sent = " + r.bytesSent);
+            alert(r.response);
+        },
+ 
+        failUpload:function(error) {
+            console.log(error);
+            alert("An error has occurred: Code = "+error.code);
         },
         
     });

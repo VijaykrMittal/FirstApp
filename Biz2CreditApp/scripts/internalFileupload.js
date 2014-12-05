@@ -132,7 +132,7 @@
         },
         backDocslistPage:function(e)
         {
-            apps.navigate('views/document_attach.html?parent='+app.documentsetting.viewModel.parentId); 
+            apps.navigate('views/documentPending.html'); 
         },
         gobackFileExportPage:function(e)
         {

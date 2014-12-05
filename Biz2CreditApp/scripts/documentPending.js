@@ -262,7 +262,7 @@
         },
         uploadPhoto:function(imageURI) {
             alert(imageURI);
-            imageURI = 'C:/Users/Gaurav/Desktop/R_work/keyy.jpg';
+            //imageURI = 'C:/Users/Gaurav/Desktop/R_work/keyy.jpg';
             var options = new FileUploadOptions();
             console.log(options);
             options.fileKey="file";

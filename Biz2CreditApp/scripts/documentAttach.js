@@ -135,7 +135,7 @@
                     },{
                     quality: 50, 
                     destinationType: navigator.camera.DestinationType.FILE_URI,
-                    sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+                    sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM
                 }
             );
             
@@ -159,11 +159,14 @@
             params.value2 = "param";
  
             options.params = params;
+            options.headers = {
+                           Connection: "close"
+                       }
             options.chunkedMode = false;
             console.log(options);
             var ft = new FileTransfer();
             console.log(options);
-           ft.upload(imageURI, encodeURI("http://sandbox.biz2services.com/mobapp/api/folder"), app.documentAttach.viewModel.winUpload, app.documentAttach.viewModel.failUpload, options);
+           ft.upload(imageURI, "http://sandbox.biz2services.com/mobapp/api/loanapp?apiaction=uploaddocuments", app.documentAttach.viewModel.winUpload, app.documentAttach.viewModel.failUpload, options,true);
             console.log('sssss');
         },
  

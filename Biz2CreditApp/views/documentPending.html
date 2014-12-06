@@ -9,6 +9,10 @@
         </div>
     </div>
     <div  data-role="content">
+        <div class="docsUpload" data-bind="visible:UploadProcessStatus">
+            <div id="profileCompleteness" style="width:300px;"></div>
+            <div id="uploadProcess" data-bind="click:transferFileAbort">Cancel</div>
+        </div>
         <div class="documentList">
             <div id="matchDocList" class="wrap-content ">
                 <h3>Hi <span data-bind="text: userName"></span></h3>

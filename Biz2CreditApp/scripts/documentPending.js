@@ -3,7 +3,7 @@
         app = global.app = global.app || {};
     
     DocumentPendingModel = kendo.data.ObservableObject.extend({
-        sendEsignDocsStatus:true,
+        UploadProcessStatus:false,
         userName:(localStorage.getItem("userFName") !== '') ?  localStorage.getItem("userFName") : '',
         show:function(e)
         { 
@@ -13,6 +13,13 @@
             /*Upload Document Toggle*/
             $(".documentList .wrap-content h2").unbind('.myPlugin');
             $(".requiredocs-name").unbind(".myPlugin");
+            pb = $("#profileCompleteness").kendoProgressBar({
+                type: "chunk",
+                chunkCount: 100,
+                min: 0,
+                max: 100,
+                value: 0
+            }).data("kendoProgressBar");
             
             app.loginService.viewModel.showloder();
             var dataSource = new kendo.data.DataSource({
@@ -22,8 +29,8 @@
                             url: localStorage.getItem("urlMobAppApiLoan"),
                             type:"POST",
                             dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                          // data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
-                           data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
+                            data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
+                           //data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
                         }
                         
                     },
@@ -51,10 +58,6 @@
                 });
            
             
-        },
-        UploadExisting:function()
-        {
-            apps.navigate("views/document_attach.html");
         },
         gobackMatchesPage:function()
         {
@@ -134,7 +137,7 @@
             app.loginService.viewModel.hideloder();
             if(data[0].b2cdocid === "148" || data[0].b2cdocid === 148) {
                 
-                app.documentService.viewModel.setSendEsignDocsStatus(data);//default esign set status
+                //app.documentService.viewModel.setSendEsignDocsStatus(data);//default esign set status
                 
             }
 
@@ -168,7 +171,7 @@
             			app.documentService.viewModel.deleteDownloadAttachFile(mapid,fileid);
             		}
 
-            	}, 'Notification', 'OK');
+            	}, 'Notification', 'Yes,No');
         },
         deleteDownloadAttachFile:function(mapid,fileid)
         {
@@ -217,16 +220,7 @@
             folderName = "biz2docs";
             app.documentsetting.viewModel.downloadFile(fileName,folderName);
         },
-        sendEsignDocs:function()
-        {
-            alert('send Esign');
-            
-        },
-        resSendEsignDocs:function()
-        {
-            alert('resend Esign');
-        },
-        setSendEsignDocsStatus:function(data)
+        /*setSendEsignDocsStatus:function(data)
         {
             var that = this;
             
@@ -241,7 +235,7 @@
             
             
             
-        },
+        },*/
         getImage:function() {
             
             navigator.camera.getPicture(app.documentService.viewModel.uploadPhoto, function(message) {
@@ -257,42 +251,62 @@
         },
         getOtherFiles:function()
         {
-            console.log('call');
             apps.navigate('views/internalFileUpload.html');
         },
         uploadPhoto:function(imageURI) {
             alert(imageURI);
-            //imageURI = 'C:/Users/Gaurav/Desktop/R_work/keyy.jpg';
+            app.documentService.viewModel.setUploadProcessStatus(true);
             var options = new FileUploadOptions();
-            console.log(options);
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
-            console.log(options);
             var params = new Object();
+            params.apiaction="uploaddocuments";
             params.value1 = "test";
             params.value2 = "param";
  
             options.params = params;
             options.chunkedMode = false;
-            console.log(options);
-            var ft = new FileTransfer();
-            console.log(options);
-             ft.upload(imageURI, 'http://54.85.208.215/webservice/notification/sendNotification', app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options , true);
-          // ft.upload(imageURI, encodeURI("http://sandbox.biz2services.com/mobapp/api/folder"), app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options,true);
-            console.log('sssss');
+            options.headers = {
+                Connection: "close"
+            };
+            pb.value('');
+            statusDom = document.querySelector('#status');
+            ftUpload = new FileTransfer();
+            ftUpload.onprogress = function(progressEvent) {
+            	if (progressEvent.lengthComputable) {
+            		var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+            		pb.value(perc);
+                    
+            	}else{
+            	    pb.value('');
+                    
+            	}
+            };
+           ftUpload.upload(imageURI, 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options , true);
         },
  
         winUpload:function(r) {
+            app.documentService.viewModel.setUploadProcessStatus(false);
             console.log("Code = " + r.responseCode);
             console.log("Response = " + r.response);
             console.log("Sent = " + r.bytesSent);
-            alert(r.response);
+           // alert(r.response);
         },
  
         failUpload:function(error) {
-            console.log(error);
-            alert("An error has occurred: Code = "+error.code);
+              app.documentService.viewModel.setUploadProcessStatus(false);
+              app.documentService.viewModel.transferFileAbort();
+              alert("An error has occurred: Code = "+error.code);
+        },
+        transferFileAbort:function()
+        {
+           ftUpload.abort(); 
+        },
+        setUploadProcessStatus:function(status)
+        {
+            var that =this;
+            that.set("UploadProcessStatus",status);
         },
         
     });

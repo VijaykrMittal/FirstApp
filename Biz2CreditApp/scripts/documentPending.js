@@ -18,7 +18,7 @@
                 chunkCount: 100,
                 min: 0,
                 max: 100,
-                value: 0
+                value: 80
             }).data("kendoProgressBar");
             
             app.loginService.viewModel.showloder();
@@ -127,7 +127,7 @@
                     }
                    
                 }
-                                html+= '<div class="upload"> <a data-role="button"  data-bind="click:setuploadParams" class="active appDocFile" data-rel="actionsheet" href="#inboxActions">Upload New Documents</a></div>';
+                                html+= '<div class="upload"> <a data-role="button"  data-docsid="'+data[i].b2cdocid+'" data-docstype="'+data[i].b2cdocflag+'" data-bind="click:setuploadParams" class="active appDocFile" data-rel="actionsheet" href="#inboxActions">Upload New Documents</a></div>';
                 html+='</div>';
 
                 
@@ -255,17 +255,25 @@
         },
         uploadPhoto:function(imageURI) {
             alert(imageURI);
-           
+
+            var docsid = sessionStorage.getItem("docsid");
+            var docstype = sessionStorage.getItem("docstype");
+            var appid = sessionStorage.getItem("matchesPageFid");
+            var matchid = sessionStorage.getItem("IteriaMatchid");
+            var custid = localStorage.getItem("userID");
             var options = new FileUploadOptions();
+
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             app.documentService.viewModel.setUploadFileName(options.fileName);
             options.mimeType="image/jpeg";
             var params = new Object();
             params.apiaction="uploaddocuments";
-            params.value1 = "test";
-            params.value2 = "param";
- 
+            params.docid = docsid;
+            params.doctype = docstype;
+            params.appid = appid;
+            params.matchid = matchid;
+            params.custid = custid;
             options.params = params;
             options.chunkedMode = false;
             options.headers = {
@@ -298,22 +306,27 @@
         },
  
         failUpload:function(error) {
-              app.documentService.viewModel.transferFileAbort();
+              //app.documentService.viewModel.transferFileAbort();
               alert("An error has occurred: Code = "+error.code);
         },
         transferFileAbort:function()
         {
-           ftUpload.abort(); 
-           //$("#tabstrip-upload-file").data("kendoMobileModalView").close();
+           //ftUpload.abort(); 
+           $("#tabstrip-upload-file").data("kendoMobileModalView").close();
         },
         setUploadFileName:function(uplpadFileName)
         {
             var that =this;
             that.set("uploadFileName",uplpadFileName);
         },
-        setuploadParams:function()
+        setuploadParams:function(e)
         {
             console.log('cal check');
+            console.log(e.sender.element.context.dataset);
+            var docsid = e.sender.element.context.dataset.docsid;
+            var docstype = e.sender.element.context.dataset.docstype;
+            sessionStorage.setItem("docsid",docsid);
+            sessionStorage.setItem("docstype",docstype);
         }
       
        

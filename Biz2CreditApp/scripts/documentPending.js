@@ -29,8 +29,8 @@
                             url: localStorage.getItem("urlMobAppApiLoan"),
                             type:"POST",
                             dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                            data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
-                           //data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
+                            //data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
+                           data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
                         }
                         
                     },
@@ -255,7 +255,8 @@
         },
         uploadPhoto:function(imageURI) {
             alert(imageURI);
-            app.documentService.viewModel.setUploadProcessStatus(true);
+            //app.documentService.viewModel.setUploadProcessStatus(true);
+            $("#tabstrip-upload-file").data("kendoMobileModalView").open();
             var options = new FileUploadOptions();
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -287,7 +288,8 @@
         },
  
         winUpload:function(r) {
-            app.documentService.viewModel.setUploadProcessStatus(false);
+           // app.documentService.viewModel.setUploadProcessStatus(false);
+           // $("#tabstrip-upload-file").data("kendoMobileModalView").close();
             console.log("Code = " + r.responseCode);
             console.log("Response = " + r.response);
             console.log("Sent = " + r.bytesSent);
@@ -295,7 +297,8 @@
         },
  
         failUpload:function(error) {
-              app.documentService.viewModel.setUploadProcessStatus(false);
+             // app.documentService.viewModel.setUploadProcessStatus(false);
+            //$("#tabstrip-upload-file").data("kendoMobileModalView").close();
               app.documentService.viewModel.transferFileAbort();
               alert("An error has occurred: Code = "+error.code);
         },

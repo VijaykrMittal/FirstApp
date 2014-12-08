@@ -116,7 +116,6 @@
         
         setOwnerData:function(data,matchid)
         {
-            console.log(matchid);
             dataParam={};
             var that = this;
             var totaldivs = Data[0]['results']["ownerList"]['length'];
@@ -250,7 +249,7 @@
             }
             else{
                 
-               /* apps.showLoading();
+                apps.showLoading();
                 var dataSource = new kendo.data.DataSource({
                 transport: {
                 read: {
@@ -288,7 +287,7 @@
                         app.loginService.viewModel.mobileNotification($msg,'info');
                         return false;
                     }
-                });   */ 
+                });  
             }
             
             

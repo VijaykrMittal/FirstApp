@@ -9,10 +9,6 @@
         </div>
     </div>
     <div  data-role="content">
-        <div class="docsUpload" data-bind="visible:UploadProcessStatus">
-            <div id="profileCompleteness" style="width:300px;"></div>
-            <div id="uploadProcess" data-bind="click:transferFileAbort">Cancel</div>
-        </div>
         <div class="documentList">
             <div id="matchDocList" class="wrap-content ">
                 <h3>Hi <span data-bind="text: userName"></span></h3>
@@ -27,8 +23,16 @@
             </div>
         </div>
     </div>
+    
     <ul data-role="actionsheet" id="inboxActions" data-open="onOpen" >
         <li><a href="#" data-action="app.documentService.viewModel.getImage">Photos</a></li>
         <li><a href="#" data-action="app.documentService.viewModel.getOtherFiles">Other files</a></li>
     </ul>
 </div>
+<!--upload File--> 
+        <div id="tabstrip-upload-file" class="fmodal-mess-Popup downloadClass" data-role="modalview"  data-width="100%" data-height="90%" data-model="app.documentService.viewModel">
+            <div class="docsUpload" data-bind="visible:UploadProcessStatus">
+                <div id="profileCompleteness" style="width:300px;"></div>
+                <div id="uploadProcess" data-bind="click:transferFileAbort">Cancel</div>
+            </div>
+        </div>

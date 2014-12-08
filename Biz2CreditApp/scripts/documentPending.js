@@ -4,6 +4,7 @@
     
     DocumentPendingModel = kendo.data.ObservableObject.extend({
         userName:(localStorage.getItem("userFName") !== '') ?  localStorage.getItem("userFName") : '',
+        uploadFileName:'',
         show:function(e)
         { 
             var appid = sessionStorage.getItem("matchesPageFid");
@@ -126,7 +127,7 @@
                     }
                    
                 }
-                                html+= '<div class="upload"> <a data-role="button"  class="active appDocFile" data-rel="actionsheet" href="#inboxActions">Upload New Documents</a></div>';
+                                html+= '<div class="upload"> <a data-role="button"  data-bind="click:setuploadParams" class="active appDocFile" data-rel="actionsheet" href="#inboxActions">Upload New Documents</a></div>';
                 html+='</div>';
 
                 
@@ -254,10 +255,11 @@
         },
         uploadPhoto:function(imageURI) {
             alert(imageURI);
-            $("#tabstrip-upload-file").data("kendoMobileModalView").open();
+           
             var options = new FileUploadOptions();
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            app.documentService.viewModel.setUploadFileName(options.fileName);
             options.mimeType="image/jpeg";
             var params = new Object();
             params.apiaction="uploaddocuments";
@@ -270,6 +272,7 @@
                 Connection: "close"
             };
             pb.value('');
+            $("#tabstrip-upload-file").data("kendoMobileModalView").open();
             statusDom = document.querySelector('#status');
             ftUpload = new FileTransfer();
             ftUpload.onprogress = function(progressEvent) {
@@ -295,14 +298,25 @@
         },
  
         failUpload:function(error) {
-              $("#tabstrip-upload-file").data("kendoMobileModalView").close();
               app.documentService.viewModel.transferFileAbort();
               alert("An error has occurred: Code = "+error.code);
         },
         transferFileAbort:function()
         {
            ftUpload.abort(); 
+           //$("#tabstrip-upload-file").data("kendoMobileModalView").close();
         },
+        setUploadFileName:function(uplpadFileName)
+        {
+            var that =this;
+            that.set("uploadFileName",uplpadFileName);
+        },
+        setuploadParams:function()
+        {
+            console.log('cal check');
+        }
+      
+       
 
         
     });

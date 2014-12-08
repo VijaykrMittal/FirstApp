@@ -280,7 +280,7 @@
             options.headers = {
                 Connection: "close"
             };
-            pb.value('');
+            pb.value(0);
             $("#tabstrip-upload-file").data("kendoMobileModalView").open();
             statusDom = document.querySelector('#status');
             ftUpload = new FileTransfer();

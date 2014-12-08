@@ -140,7 +140,7 @@ $(document).ready(function(){
         $('body').removeClass('horizontal');
         
     }
-
+   
      $('body').on("blur","input.number",function(e) {
 													
 			var $this = $(this);

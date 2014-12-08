@@ -10,6 +10,7 @@
         {
             app.fileuploadsetting.viewModel.historyPath=[];
             app.fileuploadsetting.viewModel.getFileSystem();
+            
         },
         getFileSystem:function()
         {
@@ -24,7 +25,7 @@
             );		
         },
         listDir:function(directoryEntry){
-            
+
             if(app.fileuploadsetting.viewModel.historyPath[app.fileuploadsetting.viewModel.historyPath.length-1] !== directoryEntry.name){
             	app.fileuploadsetting.viewModel.historyPath.push(directoryEntry.name);
             }
@@ -54,12 +55,12 @@
             	});
 
             var directoryReader = directoryEntry.createReader();
-            console.log(directoryReader)
+            //console.log(directoryReader)
             directoryReader.readEntries(function(entries){
             var dirContent = $('#dirContentUpload');
             dirContent.empty();
             var dirArr = new Array();
-                console.log(entries)
+                //console.log(entries)
             for(var i=0; i<entries.length; ++i){ // sort entries
                 var newdirArr = new Array();
                 newdirArr.fullPath= entries[i].fullPath;
@@ -147,12 +148,24 @@
         thisFileUpload:function(e)
         {
             
-            console.log('upload call');
-            var path = [];
-            $('#dirContentUpload input[type=checkbox]:checked').each(function(i){
-                path[i] = $(this).val();
-            });
-console.log(path);
+            if($('#dirContentUpload input[type=checkbox]').is(":checked") === true)
+            {
+                var path = [];
+                $('#dirContentUpload input[type=checkbox]:checked').each(function(i){
+                    path[i] = $(this).val();
+                });
+            }
+            else
+            {
+                navigator.notification.confirm('Please select files for uploading', function (confirmed) {
+                    if (confirmed === true || confirmed === 1) {
+                        $('#dirContentUpload input[type=checkbox').focus();
+                    }
+                }, 'Notification','OK');
+
+            }
+           
+            
         },
         setExportInnerPage:function()
         {

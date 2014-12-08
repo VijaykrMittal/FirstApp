@@ -312,7 +312,7 @@
         transferFileAbort:function()
         {
            ftUpload.abort(); 
-           //$("#tabstrip-upload-file").data("kendoMobileModalView").close();
+           $("#tabstrip-upload-file").data("kendoMobileModalView").close();
         },
         setUploadFileName:function(uplpadFileName)
         {
@@ -321,8 +321,6 @@
         },
         setuploadParams:function(e)
         {
-            console.log('cal check');
-            console.log(e.sender.element.context.dataset);
             var docsid = e.sender.element.context.dataset.docsid;
             var docstype = e.sender.element.context.dataset.docstype;
             sessionStorage.setItem("docsid",docsid);

@@ -33,7 +33,8 @@
         <div id="tabstrip-upload-file" class="modal-mess-Popup downloadClass" data-role="modalview"  data-width="100%" data-height="90%" data-model="app.documentService.viewModel">
             <div class="docsUpload">
                 <div class="flNmUpld" data-bind="text:uploadFileName">file name</div>
-                <div id="profileCompleteness" style="width:300px;"></div>
-                <div id="uploadProcess" data-bind="click:transferFileAbort">Cancel</div>
+                <div id="profileCompleteness" class="uploadBar" style="width:90%; height:17px;"></div>
+                <div class="clear"></div>
+                <div id="uploadProcess" class="cancelUpld" data-bind="click:transferFileAbort">Cancel</div>
             </div>
         </div>

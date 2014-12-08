@@ -5,6 +5,7 @@
     DocumentPendingModel = kendo.data.ObservableObject.extend({
         userName:(localStorage.getItem("userFName") !== '') ?  localStorage.getItem("userFName") : '',
         uploadFileName:'',
+        iosDeviceAction:true,
         show:function(e)
         { 
             var appid = sessionStorage.getItem("matchesPageFid");
@@ -148,7 +149,7 @@
                  
             });
             
-            
+            app.documentService.viewModel.setDeviceAction();
         },
         downloadAttachFile:function(e)
         {
@@ -326,6 +327,20 @@
             var docstype = e.sender.element.context.dataset.docstype;
             sessionStorage.setItem("docsid",docsid);
             sessionStorage.setItem("docstype",docstype);
+        },
+        setDeviceAction:function()
+        {
+            that =this;
+            console.log(device.platform);
+            if(device.platform=== 'iOS')
+            {
+               that.set("iosDeviceAction",false);
+            }
+            else
+            {
+                that.set("iosDeviceAction",true); 
+            }
+            kendo.bind($("#inboxActions"), app.documentService.viewModel);
         }
       
        

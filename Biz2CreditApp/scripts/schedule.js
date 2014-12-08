@@ -105,10 +105,21 @@
    
     });
     $(window).on('orientationchange', function () {
-       console.log(window);
-      $("#tabstrip-home").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
-      $("#tabstrip-sign-up").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
-      app.homesetting.viewModel.closeParentPopover();
+        
+        $("#tabstrip-home").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
+        $("#tabstrip-sign-up").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
+        app.homesetting.viewModel.closeParentPopover();
+        
+        if(window.innerWidth > window.innerHeight)
+        {
+            $('body').addClass('vertical');
+            $('body').removeClass('horizontal');
+        }
+        else
+        {
+            $('body').addClass('horizontal');
+            $('body').removeClass('vertical');
+        }
       
     });
     app.scheduleService = {
@@ -116,6 +127,19 @@
     };
 })(window);
 $(document).ready(function(){
+    
+    if(window.innerWidth > window.innerHeight)
+    {
+        $('body').addClass('horizontal');
+        $('body').removeClass('vertical');
+       
+    }
+    else
+    {
+        $('body').addClass('vertical');
+        $('body').removeClass('horizontal');
+        
+    }
 
      $('body').on("blur","input.number",function(e) {
 													

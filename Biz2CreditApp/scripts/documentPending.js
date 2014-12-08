@@ -3,7 +3,6 @@
         app = global.app = global.app || {};
     
     DocumentPendingModel = kendo.data.ObservableObject.extend({
-        UploadProcessStatus:false,
         userName:(localStorage.getItem("userFName") !== '') ?  localStorage.getItem("userFName") : '',
         show:function(e)
         { 
@@ -255,7 +254,6 @@
         },
         uploadPhoto:function(imageURI) {
             alert(imageURI);
-            //app.documentService.viewModel.setUploadProcessStatus(true);
             $("#tabstrip-upload-file").data("kendoMobileModalView").open();
             var options = new FileUploadOptions();
             options.fileKey="file";
@@ -288,8 +286,8 @@
         },
  
         winUpload:function(r) {
-           // app.documentService.viewModel.setUploadProcessStatus(false);
-           // $("#tabstrip-upload-file").data("kendoMobileModalView").close();
+            
+            $("#tabstrip-upload-file").data("kendoMobileModalView").close();
             console.log("Code = " + r.responseCode);
             console.log("Response = " + r.response);
             console.log("Sent = " + r.bytesSent);
@@ -297,8 +295,7 @@
         },
  
         failUpload:function(error) {
-             // app.documentService.viewModel.setUploadProcessStatus(false);
-            //$("#tabstrip-upload-file").data("kendoMobileModalView").close();
+              $("#tabstrip-upload-file").data("kendoMobileModalView").close();
               app.documentService.viewModel.transferFileAbort();
               alert("An error has occurred: Code = "+error.code);
         },
@@ -306,11 +303,7 @@
         {
            ftUpload.abort(); 
         },
-        setUploadProcessStatus:function(status)
-        {
-            var that =this;
-            that.set("UploadProcessStatus",status);
-        },
+
         
     });
     app.documentService ={

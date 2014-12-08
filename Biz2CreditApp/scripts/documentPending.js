@@ -18,7 +18,7 @@
                 chunkCount: 100,
                 min: 0,
                 max: 100,
-                value: 80
+                value: 0
             }).data("kendoProgressBar");
             
             app.loginService.viewModel.showloder();
@@ -306,13 +306,13 @@
         },
  
         failUpload:function(error) {
-              //app.documentService.viewModel.transferFileAbort();
+              app.documentService.viewModel.transferFileAbort();
               alert("An error has occurred: Code = "+error.code);
         },
         transferFileAbort:function()
         {
-           //ftUpload.abort(); 
-           $("#tabstrip-upload-file").data("kendoMobileModalView").close();
+           ftUpload.abort(); 
+           //$("#tabstrip-upload-file").data("kendoMobileModalView").close();
         },
         setUploadFileName:function(uplpadFileName)
         {

@@ -121,9 +121,13 @@
                 }).kendoTouch({ 
                 	filter: ">li",
                   	tap: function (e) { 
+                            if(e.touch.initialTouch.dataset.id==="folder")
+                            {
+                            app.fileuploadsetting.viewModel.setExportInnerPage();
+                            app.fileuploadsetting.viewModel.getActiveItem(e.touch.initialTouch.innerText);
 
-						app.fileuploadsetting.viewModel.setExportInnerPage();
-						app.fileuploadsetting.viewModel.getActiveItem(e.touch.initialTouch.innerText);
+                            }
+
                 	},
                 
             });
@@ -142,9 +146,13 @@
         
         thisFileUpload:function(e)
         {
-           
+            
             console.log('upload call');
-
+            var path = [];
+            $('#dirContentUpload input[type=checkbox]:checked').each(function(i){
+                path[i] = $(this).val();
+            });
+console.log(path);
         },
         setExportInnerPage:function()
         {

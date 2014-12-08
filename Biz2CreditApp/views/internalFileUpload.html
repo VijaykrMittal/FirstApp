@@ -29,14 +29,14 @@
                     <tr>
                         <td class="Folder" data-id="folder"></td>
                         <td data-id="folder"> #: name #</td>
-                        <td></td>
+                        <td data-id="folder"></td>
                     </tr>
                 #}else{#
                 # var ext = getFileExtension(name) #
                     <tr>
                         <td data-id="files" class="#= ext # default-icon"></td>
                         <td data-id="files"> #: name #</td>
-                        <td><input type="checkbox" name="checkbox[]" value="#: fullPath #"></td>
+                        <td data-id="files"><input type="checkbox" name="checkbox[]" value="#: fullPath #"></td>
                     </tr>
 
                 #}#

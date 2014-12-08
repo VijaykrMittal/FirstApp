@@ -331,7 +331,6 @@
         setDeviceAction:function()
         {
             that =this;
-            console.log(device.platform);
             if(device.platform=== 'iOS')
             {
                that.set("iosDeviceAction",false);

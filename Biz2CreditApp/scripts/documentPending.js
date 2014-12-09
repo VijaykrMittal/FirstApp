@@ -128,7 +128,7 @@
                     }
                    
                 }
-                                html+= '<div class="upload"> <a data-role="button"  data-docsid="'+data[i].b2cdocid+'" data-docstype="'+data[i].b2cdocflag+'" data-bind="click:setuploadParams" class="active appDocFile" data-rel="actionsheet" href="#inboxActions">Upload New Documents</a></div>';
+                                html+= '<div class="upload"> <a data-role="button"  data-docsid="'+data[i].b2cdocid+'" data-docstype="'+data[i].b2cdocflag+'" data-bind="click:setuploadParams" class="active appDocFile">Upload New Documents</a></div>';
                 html+='</div>';
 
                 
@@ -255,7 +255,7 @@
             apps.navigate('views/internalFileUpload.html');
         },
         uploadPhoto:function(imageURI) {
-            alert(imageURI);
+            //alert(imageURI);
 
             var docsid = sessionStorage.getItem("docsid");
             var docstype = sessionStorage.getItem("docstype");
@@ -327,6 +327,7 @@
             var docstype = e.sender.element.context.dataset.docstype;
             sessionStorage.setItem("docsid",docsid);
             sessionStorage.setItem("docstype",docstype);
+            $("#inboxActions").data("kendoMobileActionSheet").open();
         },
         setDeviceAction:function()
         {

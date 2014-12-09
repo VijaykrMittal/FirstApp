@@ -153,7 +153,9 @@
                 var path = [];
                 $('#dirContentUpload input[type=checkbox]:checked').each(function(i){
                     path[i] = $(this).val();
+                    
                 });
+                
             }
             else
             {
@@ -164,7 +166,7 @@
                 }, 'Notification','OK');
 
             }
-           
+           app.fileuploadsetting.viewModel.uploadMultiFiles(path);
             
         },
         setExportInnerPage:function()
@@ -177,7 +179,146 @@
             var that = this;
             that.set("exportInnerPage", false);  
         },
-        
+        uploadMultiFiles:function(path) {
+            myUploadFiles =path;
+            myUploadFilesCount=path.length;
+            var docsid = sessionStorage.getItem("docsid");
+            var docstype = sessionStorage.getItem("docstype");
+            var appid = sessionStorage.getItem("matchesPageFid");
+            var matchid = sessionStorage.getItem("IteriaMatchid");
+            var custid = localStorage.getItem("userID");
+            
+            $("#tabstrip-multiupload-file").data("kendoMobileModalView").open();
+            $(".docsUploadMulti").html("");
+            pbMulti =[];
+            optionsMulti=[];
+            paramsMulti=[];
+            ftUploadMulti=[];
+            for (var j = 0; j < path.length; j++) {
+                
+                html = '';
+                html+='<div class="flNmUpldwrapAll-'+j+'">';
+                html+='<div class="flNmUpldwrap">';
+                html+='<div class="flNmUpldMulti">file name</div>';
+                html+='<div id="profileCompleteness-'+j+'" class="uploadBarMulti" style="width:90%; height:17px;"></div>';
+                html+='</div>';
+                html+='<div id="uploadProcess" class="cancelUpld" data-process="'+j+'" data-bind="click:transferFileAbort">Cancel</div>';
+                html+='</div>';
+                $(".docsUploadMulti").append(html);
+                
+                pbMulti[j] = $("#profileCompleteness-"+j).kendoProgressBar({
+                                                                    type: "chunk",
+                                                                    chunkCount: 100,
+                                                                    min: 0,
+                                                                    max: 100,
+                                                                    value: 0
+                                                                }).data("kendoProgressBar");
+
+                optionsMulti[j] = new FileUploadOptions();
+
+                optionsMulti[j].fileKey="file";
+                optionsMulti[j].fileName=path[j].substr(path[j].lastIndexOf('/')+1);
+                app.fileuploadsetting.viewModel.getMimeType(path[j],j);
+                paramsMulti[j] = new Object();
+                paramsMulti[j].apiaction="uploaddocuments";
+                paramsMulti[j].docid = docsid;
+                paramsMulti[j].doctype = docstype;
+                paramsMulti[j].appid = appid;
+                paramsMulti[j].matchid = matchid;
+                paramsMulti[j].custid = custid;
+                paramsMulti[j].filekey = j;
+                optionsMulti[j].params = paramsMulti[j];
+                optionsMulti[j].chunkedMode = false;
+                optionsMulti[j].headers = {
+                    Connection: "close"
+                };
+                pbMulti[j].value(0);
+                ftUploadMulti[j] = new FileTransfer();
+                ftUploadMulti[j].onprogress = function(progressEvent) {
+                	if (progressEvent.lengthComputable) {
+                		var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+                		pbMulti[j].value(perc);
+                        
+                	}else{
+                	    pbMulti[j].value('');
+                        
+                	}
+                };
+                ftUploadMulti[j].upload(path[j], 'http://google.com', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[j] , true);
+            }
+            console.log(path);
+            console.log(encodeURI(path[j]));
+            if(path.length > 1)
+            {
+                html = '<div id="uploadProcess" class="cancelUpld" data-bind="click:transferFileAbortAll">All Cancel</div>';
+                $(".docsUpload").append(html);  
+            }
+            kendo.bind($(".docsUpload"), app.fileuploadsetting.viewModel);
+        },
+        winUpload:function(r) {
+            
+            console.log(r);
+            filekey =0;//give by response
+            myUploadFilesCount--;
+            $(".flNmUpldwrapAll-"+filekey).remove();
+            if(myUploadFilesCount === 0)
+            {
+                $("#tabstrip-multiupload-file").data("kendoMobileModalView").close();
+
+            }
+        },
+
+        failUpload:function(error) {
+            
+            errorFileName = error.source.substr(error.source.lastIndexOf('/')+1);
+            navigator.notification.confirm('Some error occured with uploading', function (confirmed) {
+            if (confirmed === true || confirmed === 1) {
+                myUploadFilesCount--;
+                var key = $.inArray( error.source, myUploadFiles);
+                console.log(error);
+                console.log('failUpload'+key);
+                ftUploadMulti[key].abort();
+                $(".flNmUpldwrapAll-"+key).remove();
+                if(myUploadFilesCount===0)
+                {
+                    $("#tabstrip-multiupload-file").data("kendoMobileModalView").close(); 
+                }
+            }
+
+            }, errorFileName, 'Yes,No');
+            
+            
+           
+        },
+        transferFileAbort:function(e)
+        {
+            var currentProcess = e.currentTarget.dataset.process;
+            ftUploadMulti[currentProcess].abort();
+            $(".flNmUpldwrapAll-"+currentProcess).remove();
+            myUploadFilesCount--;
+            if(myUploadFilesCount===0)
+            {
+                $("#tabstrip-multiupload-file").data("kendoMobileModalView").close(); 
+            }
+            
+        },
+        getMimeType:function(file_URI,j)
+        {
+            mimeType ='';
+            window.resolveLocalFileSystemURL(file_URI, function(fileEntry) {
+                fileEntry.file(function(filee) {
+                        optionsMulti[j].mimeType = filee.type; //THIS IS MIME TYPE
+                    }, function() {
+                        alert('error getting MIME type');
+                });
+            }, app.fileuploadsetting.viewModel.getMimeTypeOnError);
+            return;
+        },
+        getMimeTypeOnError:function()
+        {
+            console.log('Fail to getMIME type');
+        }
+    
         
     });
     app.fileuploadsetting = {

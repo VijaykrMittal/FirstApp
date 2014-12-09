@@ -247,6 +247,9 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 .docsUpload .flNmUpld {padding:15px 0;font-size: 1.2em;}
 #matchDocList .upload a { font-size:13px; padding:5px 15px;}
 .docsUpload .uploadBar {margin: 5% 5% 4%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {
+height: 56%;
+}
 }
 @media (min-width:0px) and (max-width:670px) {
 #aplicn_tp ul.app_nav li {background-position: 8px center;}
@@ -499,7 +502,7 @@ html body #tabstrip-manage-app .backButton {background-size: 29% !important;heig
  .matches-logo {background-size: 28%;}
 #newuser ul.km-listinset li select, #newuser ul.km-listinset li input[type=text] {font-size: 1em;background-size: 9%;padding: 1.2em !important;}
 #newuser .buttonArea input[type=submit] { padding:0.8em !important; font-size:1.2em;}
-html body #tabstrip-manage-app .backButton {background-size: 39% !important;}
+html body #tabstrip-manage-app .backButton {background-size: 39% !important;width: 75%;}
 #tabstrip-manage-app .refresh-loading {background-size: 74%;}
 #tabstrip-manage-app .refreshloan {background-size: 45%;background-position: 12px 17px;}
 #tabstrip-manage-app #tabstrip ul li a {height: 68px;padding: 35px 0 0;}
@@ -542,6 +545,7 @@ html body #tabstrip-manage-app .backButton {background-size: 39% !important;}
 .docsUpload .cancelUpld {width:auto; padding:0.55em 1em; display:inline-block; }
 #matchDocList .upload a {padding: 4px 15px;}
 .docsUpload .uploadBar {margin:7% 5% 6%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { height:31%;}
 }
 
 

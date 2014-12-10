@@ -47,13 +47,12 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 3%;}
 .docs-header .km-widget .docs-popup { width:60px;}
 .folder-events .scheduleSection .buttonArea .km-button{padding: 1em 0;}
 #dynamicCl.km-popup-wrapper {width:330px !important; height:290px!important;}
-#tabstrip-download-file.modal-mess-Popup {padding: 0;width: 98%;margin: 0 0 0 1.3%;}
 #tabstrip-Setting .docs-back {height: 85px;background-size:75%;background-position: 10px 10px;width: 10%;margin-top: 0rem!important;margin-bottom: 0rem !important;}
 #tabstrip-Setting .docs-docu {padding: 2% 0 0;font-size: 1.2em;}
 #tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li {padding: 3% 0 2% 10%;background-size: 5%;background-position:27px 12px;}
 #stps ul li article {width:300px;}
 #stps ul li article span { font-size:12px; padding-bottom:8px;}
-#tabstrip-download-file.modal-mess-Popup {padding: 0;width: 98%;margin: 0 0 0 1.3%;height: 48%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {padding: 0;width: 98%;margin: 0 0 0 1.3%;height: 48%;}
 #tabstrip-forgot-pass .view-content { margin-top:7em;}
 .forgtpass { font-size:1.1em; padding-top:25px;}
 #newuser {margin:2em 0;}
@@ -110,7 +109,7 @@ html body .backButton{ height:88px;background-size: 19% !important;background-po
 #tabstrip-download-file {padding:2%; height:47%; background-color:#fff;}
 #tabstrip-download-file .downloadWrpr { padding:2%; color:#333; background-color:#fff;}
 #tabstrip-download-file .km-scroll-wrapper { background-color:#fff;}
-#tabstrip-download-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:48%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:48%;}
 #tabstrip-download-file .download-file-name { text-align:center; padding:0 0 20px;}
 #tabstrip-download-file .status {text-indent:-9000px;background-image: url(images/download-loader.gif); background-repeat:no-repeat; background-position:center 0px;}
 #tabstrip-download-file .downloadWrpr a {background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:5px 5px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0;}
@@ -247,7 +246,7 @@ background-position:center 10px ; text-align:center; width:22.5%; margin-right:2
 #dynamicCl.km-popup-wrapper {width:260px !important; height:290px !important;}
 /*******Android css************/
 .folder-events .scheduleSection .buttonArea .km-button{padding:0.8em 0;}
-#tabstrip-download-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:22%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:22%;}
 #tabstrip-Setting .docs-back {height: 80px;background-size: 88%;}
 .matches-logo {background-size: 20%;height: 65px;}
 #tabstrip-forgot-pass .view-content { margin-top:18em;}
@@ -312,7 +311,8 @@ html body .backButton {height: 62px;background-size:27% !important;width:84%;}
 #tabstrip-Setting .docs-back{height: 62px;width: 10%;background-position: center 0px;}
 #tabstrip-Setting .docs-docu {padding-left: 2%;}
 #tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li{padding: 4% 0 4% 12%;background-size: 7%;background-position: 22px 10px;}
-#tabstrip-download-file.modal-mess-Popup {height: 23%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height: 23%;}
+body.horizontal #tabstrip-download-file.modal-mess-Popup, body.horizontal #tabstrip-upload-file.modal-mess-Popup {height:55%;}
 .matches-logo {background-size:20%;height: 60px;background-position: 5px 12px;}
 #repypm.repaydetail ul li { width:33%;}
 #repypm ul li span.tx {height:30px;}
@@ -388,6 +388,7 @@ html body .backButton { width:86%; background-size:24% !important;background-pos
 #matchDocList .filesBlock .buttonSet .DeleteIC {padding: 1.5% 10%;}
 #document-attach .km-rightitem {width: 16%;}
 #tabstrip-manage-app #tabstrip ul li a span {height: 40px;width: 40px;line-height: 34px;}
+ul#dirContentUpload input[type="checkbox"] {width:20px; height:20px;margin-top: -0.7em;}
 }
 @media (min-width:0px) and (max-width:640px) {
 .logo { margin:3% auto;}
@@ -411,13 +412,14 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 .modal-mess-Popup {padding:0; width:98%; margin:0 0 0 1.3%;}
 .modal-mess-one {padding:0; width:98%; margin:0 0 0 1.3%; }
 .logLogo {margin: 45% auto 7%;height: 60px;background-size:70%;}
-#tabstrip-download-file.modal-mess-Popup {}
 #tabstrip-Setting .docs-docu {font-size:0.9em;padding: 1.2% 0 0;}
 #tabstrip-Setting .docs-back {width: 12%;background-position: 5px 7px;background-size:87%;}
 .schedulePopup h3 {font-size:15px;}
 .schedulePopup .scheduleSection .scall-text {font-size:11px;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li .k-picker-wrap .k-input {border-radius: 0;height: auto;}
-#tabstrip-download-file.modal-mess-Popup {height:59%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height:59%;}
+body.vertical #tabstrip-download-file.modal-mess-Popup, body.vertical #tabstrip-upload-file.modal-mess-Popup {height:24%;}
+    
 #tabstrip-forgot-pass .view-content { margin-top:19em;}
 #stps ul li article {width:260px;}
 #stps ul li article span { font-size:10px; padding-bottom:8px;}
@@ -528,13 +530,12 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 .home .km-rightitem {width: 12%;}
 .modal-mess-Popup {padding:0; width:98%; margin:0 0 0 1.3%;}
 .modal-mess-one {padding:0; width:98%; margin:0 0 0 1.3%; }
-#tabstrip-download-file.modal-mess-Popup {}
 #tabstrip-Setting .docs-docu {font-size:0.9em;padding: 1.2% 0 0;}
 #tabstrip-Setting .docs-back {width: 12%;background-position: 5px 7px;background-size:87%;}
 .schedulePopup h3 {font-size:15px;}
 .schedulePopup .scheduleSection .scall-text {font-size:11px;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li .k-picker-wrap .k-input {border-radius: 0;height: auto;}
-#tabstrip-download-file.modal-mess-Popup {height:59%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height:59%;}
 #tabstrip-forgot-pass .view-content { margin-top:1.2em;}
 #stps ul li article {width:260px;}
 #stps ul li article span { font-size:10px; padding-bottom:8px;}
@@ -639,7 +640,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 .loginSection ul li label input[type=text]:not(.k-input), .loginSection ul li label input[type=password] {padding: 1em !important;font-size: 1em !important;}
 .loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) input[type=submit] {padding: 0.8em !important;font-size: 1.2em !important;}
 #tabstrip-download-file .download-file-name {text-align: center;height: 110px;padding: 0 0 20px;}
-#tabstrip-download-file.modal-mess-Popup {height: 20%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height: 20%;}
 #tabstrip-forgot-pass .view-content { margin-top:17em;}
 #tabstrip-forgot-pass .view-content p{font-size:0.85em;}
 #dashview .tooltip span {font-size:10px; padding-bottom:6px;}
@@ -711,7 +712,7 @@ html body .backButton{background-position: 5px 15px !important;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {padding: 11px 0%;}
 .documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-position:7px 7px;padding: 11px 14%;}
 .logLogo {margin:4% auto;height:85px;background-size:60%;}
-#tabstrip-download-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:56%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:56%;}
 #tabstrip-forgot-pass .view-content {margin-top:3em;}
 #newuser ul.km-listinset li select {background-size:6%;}
 #aplicn_frm .rw_lin.hlp p {width: 89%;}
@@ -754,7 +755,7 @@ html body .backButton {width: 84%;}
 .reqWindow + .doc-content ol {font-size:1em;}
 #blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:10%;display: block;padding:3% 13% 5%;color: #fff;font-size: 1.2em;}
 .folder-events .km-scroll-container .closeBt span {font-size: 17px;}
-#tabstrip-download-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:56%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:56%;}
 .forgtpass {font-size: 0.95em;padding-top: 10px;padding-bottom: 0px;}
 #newuser ul.km-listinset li input[type=text], #newuser ul.km-listinset li select{ padding:1.1em !important;}
 #newuser {margin: 1.5em 0;}
@@ -787,7 +788,7 @@ html body .backButton {width: 84%;}
 .modal-mess-Popup {padding:0; width:98%; margin:0 0 0 1.3%;}
 .modal-mess-one {padding:0; width:98%; margin:0 0 0 1.3%; }
 .km-flat .km-header .km-navbar { padding:0%;}
-#tabstrip-download-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;}
 .logo { margin:3% auto;}
 .logLogo { margin:1% auto;height: 60px;background-size:50%;}
 html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
@@ -820,7 +821,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 .matches-view li .row3 a.appy, .matches-view li .row3 a {background-size: 20%;padding:2.5em 0em 0.5em;font-size: 0.8em;}
 .folder-events .km-scroll-container ul li {padding: 2px;}
 .folder-events .km-scroll-container .closeBt span {font-size: 18px;}
-#tabstrip-download-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:59%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:59%;}
 #tabstrip-forgot-pass .view-content { margin-top:2em;}
 #aplicn_frm .rw_lin.hlp p {width: 89%;}
 #aplicn_frm ul.low_creditop li { width:50%; padding:0px 0% 10px 0px;}
@@ -884,7 +885,7 @@ html body .backButton {width:78%;background-size:38% !important;}
 .docs-header .km-widget .docs-docu { padding:3px 0 0; width:46%;}
 .docs-header .km-widget .docs-search {width: 12%;background-position: center 7px;margin: 0;}
 .matches-logo {background-size: 35%;height: 50px;background-position: 10px 12px;}
-#tabstrip-download-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:33%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:33%;}
 #tabstrip-forgot-pass .view-content { margin-top:8em;}
 #newuser ul.km-listinset li { margin-bottom:4%;}
 #newuser ul.km-listinset li input[type=text], #newuser ul.km-listinset li select{ padding:0.9em !important;}
@@ -971,7 +972,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:5%;}
 .reqWindow + .doc-content ol {font-size:1em;}
 .km-flat .km-header .km-navbar { padding:0%;}
 #tabstrip-download-file .download-file-name .docx, #tabstrip-download-file .download-file-name .jpg, #tabstrip-download-file .download-file-name .doc, #tabstrip-download-file .download-file-name .txt, #tabstrip-download-file .download-file-name .xls, #tabstrip-download-file .download-file-name .pdf, #tabstrip-download-file .download-file-name .png {padding:35% 0 0;background-size:18%;}
-#tabstrip-download-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height: 33%;}
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height: 33%;}
 #tabstrip-download-file .download-file-name .unkown {padding: 25% 0 0;}
 #tabstrip-download-file .download-file-name .unkown, #tabstrip-download-file .download-file-name .jpeg, #tabstrip-download-file .download-file-name .gif, #tabstrip-download-file .download-file-name .ppt, #tabstrip-download-file .download-file-name .png, #tabstrip-download-file .download-file-name .txt, #tabstrip-download-file .download-file-name .docx, #tabstrip-download-file .download-file-name .xls, #tabstrip-download-file .download-file-name .xlsx, #tabstrip-download-file .download-file-name .rtf, #tabstrip-download-file .download-file-name .png, #tabstrip-download-file .download-file-name .pptx {}
 .documentClick .km-view-title a{padding:4px 0px 0px;width: 56%;}

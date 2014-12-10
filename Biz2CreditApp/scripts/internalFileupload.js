@@ -244,10 +244,9 @@
                         
                 	}
                 };
-                var source = encodeURI(path[j]);
-                newsource = source.replace(/%/g,"%25");
-                console.log(newsource);
-                ftUploadMulti[j].upload(newsource, 'http://google.com', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[j] , true);
+
+                console.log(path[j]);
+                ftUploadMulti[j].upload(path[j], 'http://google.com', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[j] , true,j);
             }
 
             if(path.length > 1)

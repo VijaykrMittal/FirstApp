@@ -233,6 +233,7 @@
                     Connection: "close"
                 };
                 pbMulti[j].value(0);
+                console.log(window);
                 ftUploadMulti[j] = new FileTransfer();
                 ftUploadMulti[j].onprogress = function(progressEvent) {
                 	if (progressEvent.lengthComputable) {

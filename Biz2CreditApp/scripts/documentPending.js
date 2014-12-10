@@ -275,6 +275,7 @@
             params.appid = appid;
             params.matchid = matchid;
             params.custid = custid;
+            params.filekey = 0;
             options.params = params;
             options.chunkedMode = false;
             options.headers = {

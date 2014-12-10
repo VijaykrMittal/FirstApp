@@ -893,6 +893,10 @@ html body .backButton {width:78%;background-size:38% !important;}
 .inner-docs-back span {font-size: 1em;padding: 0 0 0 38px;background-size: 23%;}
 .docs-header .km-widget .docs-back {width: 15%;background-size: 74%;}
 .documentContent .km-listview-wrapper ul li table td {width:10%;background-size: 85%;background-position: 10px 10px;}
+#tabstrip-manage-app #tabstrip ul li.postd_icn {background-size: 18%;}
+#tabstrip-manage-app #tabstrip ul li.end_icon {background-size: 15%;}
+#tabstrip-manage-app #tabstrip ul li.sevd_icon {background-size: 12%;}
+#tabstrip-manage-app #tabstrip div:nth-child(2) .tabOne .actArw {margin: 0 0 0 14%;}
 }
 @media (min-width:0px) and (max-width:410px) {
 .logLogo {margin: 17% auto;}

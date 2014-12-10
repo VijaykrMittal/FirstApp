@@ -369,8 +369,8 @@ ul.mobile li a:hover{ display:block; font-size:14px; background-color:#000; colo
 #aplicn_frm ul.low_creditop li {width:48%;}
 #tabstrip-manage-app .refresh-loading { height:62px;background-size:86%;background-position: center 12px;}
 html body .backButton { width:86%; background-size:24% !important;background-position: 5px 11px !important;}
-#tabstrip-manage-app #tabstrip div:nth-child(2) .tabOne .actArw {margin: 0 0 0 14%;}
-#tabstrip-manage-app #tabstrip .tabOne {margin: 6% 0 0;}
+#tabstrip-manage-app #tabstrip div:nth-child(2) .tabOne .actArw {margin: 0 0 0 15%;}
+#tabstrip-manage-app #tabstrip .tabOne {margin:4% 0 0;}
 .rwfil.aut.clearfix p + p .IN1.ipsm1{ width:100% !important;}
 #priority1.IN1.fund, .IN4.number { width:100%!important;}
 #tabstrip-manage-app .refreshloan {width:6%;height: 62px;background-size:63%;background-position:center 17px;}

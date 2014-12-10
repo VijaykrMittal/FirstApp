@@ -875,6 +875,8 @@ html body .backButton {width:78%;background-size:38% !important;}
 .matches-logo {background-size: 30%;background-position: 5px 12px;}
 .documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-size:79%;background-position: 5px 10px;}
 .documentContent .km-listview-wrapper ul li table td:nth-child(2) {width: 70%;}
+.docsUploadMulti .cancelUpld {background-size: 70%; width:8%;}
+.docsUploadMulti .flNmUpldwrap {width: 90%;}
 }
 @media (min-width:0px) and (max-width:410px) {
 .logLogo {margin: 17% auto;}

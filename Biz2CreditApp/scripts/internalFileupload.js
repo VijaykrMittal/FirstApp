@@ -211,7 +211,7 @@
                                                                     chunkCount: 100,
                                                                     min: 0,
                                                                     max: 100,
-                                                                    value: 0
+                                                                    value: 50
                                                                 }).data("kendoProgressBar");
 
                 optionsMulti[j] = new FileUploadOptions();
@@ -233,6 +233,7 @@
                     Connection: "close"
                 };
                 pbMulti[j].value(0);
+                console.log(window);
                 ftUploadMulti[j] = new FileTransfer();
                 ftUploadMulti[j].onprogress = function(progressEvent) {
                 	if (progressEvent.lengthComputable) {

@@ -392,6 +392,9 @@ ul#dirContentUpload input[type="checkbox"] {width:20px; height:20px;margin-top: 
 .documentList .wrap-content .row .num span {line-height: 35px;font-size: 20px;width: 33px;height: 33px;}
 .documentContent .km-listview-wrapper ul li table td {width: 6.7%;background-size: 52%;background-position: 18px 7px;}
 .documentContent .km-listview-wrapper ul li table td:nth-child(2) {height: 50px;}
+.documentList .wrap-content .row, .documentList .wrap-content .row.off {background-size:4%;background-position: right center;}
+.documentList .wrap-content .row .name {margin-top: 8px;}
+.docs-header .km-widget .docs-back {background-position: 10px 58%;background-size: 72%;width: 11%;}
 }
 @media (min-width:0px) and (max-width:640px) {
 .logo { margin:3% auto;}

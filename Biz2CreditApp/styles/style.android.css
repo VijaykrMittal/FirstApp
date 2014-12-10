@@ -389,6 +389,7 @@ html body .backButton { width:86%; background-size:24% !important;background-pos
 #document-attach .km-rightitem {width: 16%;}
 #tabstrip-manage-app #tabstrip ul li a span {height: 40px;width: 40px;line-height: 34px;}
 ul#dirContentUpload input[type="checkbox"] {width:20px; height:20px;margin-top: -0.7em;}
+.documentList .wrap-content .row .num span {line-height: 35px;font-size: 20px;width: 33px;height: 33px;}
 }
 @media (min-width:0px) and (max-width:640px) {
 .logo { margin:3% auto;}
@@ -864,10 +865,10 @@ html body .backButton {width:78%;background-size:38% !important;}
 .logLogo {margin: 50% auto 8%;height: 60px;background-size: 61%;}
 .documentList .wrap-content h2 { font-size:20px;}
 .documentList .wrap-content .row .num {width: 30px;}
-.documentList .wrap-content .row .name {width: 89%;margin-top: 6px;}
+.documentList .wrap-content .row .name {width: 89%;margin-top:11px;}
 .documentList .wrap-content .row .num span {line-height: 30px;font-size: 18px;width: 30px;height: 30px;}
 .documentList .wrap-content .row .name a{font-size:0.85em;}
-.documentList .wrap-content .row, .documentList .wrap-content .row.off {background-size: 7%;background-position: right 12px;}
+.documentList .wrap-content .row, .documentList .wrap-content .row.off {background-size: 7%;background-position: right 18px;}
 #matchDocList .text1 a {font-size: 0.8em;}
 #matchDocList .filesBlock .file-iconjpg {height: 37px;background-size: 100%;width: 8%;}
 #matchDocList .filesBlock .file-name {font-size: 16px;padding: 11px 0 0 10px;}
@@ -877,6 +878,7 @@ html body .backButton {width:78%;background-size:38% !important;}
 .documentContent .km-listview-wrapper ul li table td:nth-child(2) {width: 70%;}
 .docsUploadMulti .cancelUpld {background-size: 70%; width:8%;}
 .docsUploadMulti .flNmUpldwrap {width: 90%;}
+.sub-row {padding: 9px 4px 7px 18px;}
 }
 @media (min-width:0px) and (max-width:410px) {
 .logLogo {margin: 17% auto;}

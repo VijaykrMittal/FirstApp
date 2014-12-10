@@ -227,6 +227,7 @@
                 paramsMulti[j].matchid = matchid;
                 paramsMulti[j].custid = custid;
                 paramsMulti[j].filekey = j;
+                paramsMulti[j].format = "json";
                 optionsMulti[j].params = paramsMulti[j];
                 optionsMulti[j].chunkedMode = false;
                 optionsMulti[j].headers = {

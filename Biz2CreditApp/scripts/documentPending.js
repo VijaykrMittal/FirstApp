@@ -327,7 +327,7 @@
             var docstype = e.sender.element.context.dataset.docstype;
             sessionStorage.setItem("docsid",docsid);
             sessionStorage.setItem("docstype",docstype);
-            $("#inboxActions").data("kendoMobileActionSheet").open();
+            $("#inboxActions").data("kendoMobileActionSheet").open(e.event.currentTarget);
         },
         setDeviceAction:function()
         {

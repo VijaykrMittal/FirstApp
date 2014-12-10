@@ -197,10 +197,10 @@
             for (var j = 0; j < path.length; j++) {
                 
                 html = '';
-                html+='<div class="flNmUpldwrapAll-'+j+'">';
+                html+='<div class="flNmUpldwrapAll flNmUpldwrapAll-'+j+'">';
                 html+='<div class="flNmUpldwrap">';
                 html+='<div class="flNmUpldMulti">file name</div>';
-                html+='<div id="profileCompleteness-'+j+'" class="uploadBarMulti" style="width:90%; height:17px;"></div>';
+                html+='<div id="profileCompleteness-'+j+'" class="uploadBarMulti" style="width:90%; height:5px;"></div>';
                 html+='</div>';
                 html+='<div id="uploadProcess" class="cancelUpld" data-process="'+j+'" data-bind="click:transferFileAbort">Cancel</div>';
                 html+='</div>';
@@ -244,10 +244,12 @@
                         
                 	}
                 };
-                ftUploadMulti[j].upload(path[j], 'http://google.com', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[j] , true);
+                var source = encodeURI(path[j]);
+                newsource = source.replace(/%/g,"%25");
+                console.log(newsource);
+                ftUploadMulti[j].upload(newsource, 'http://google.com', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[j] , true);
             }
-            console.log(path);
-            console.log(encodeURI(path[j]));
+
             if(path.length > 1)
             {
                 html = '<div id="uploadProcess" class="cancelUpld" data-bind="click:transferFileAbortAll">All Cancel</div>';
@@ -269,13 +271,13 @@
         },
 
         failUpload:function(error) {
-            
+            console.log(error);
             errorFileName = error.source.substr(error.source.lastIndexOf('/')+1);
             navigator.notification.confirm('Some error occured with uploading', function (confirmed) {
             if (confirmed === true || confirmed === 1) {
                 myUploadFilesCount--;
-                var key = $.inArray( error.source, myUploadFiles);
-                console.log(error);
+                var key = $.inArray( error.source.replace("%20", " "), myUploadFiles);
+                console.log(error.source.replace("%20", " "));
                 console.log('failUpload'+key);
                 ftUploadMulti[key].abort();
                 $(".flNmUpldwrapAll-"+key).remove();

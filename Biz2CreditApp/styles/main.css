@@ -494,7 +494,7 @@ ul#dirContentUpload input[type="checkbox"] {width:30px; height:30px;margin-top: 
 
 /*******************10-12-14*******************/
 .docsUploadMulti { width:100%;}
-.docsUploadMulti .cancelUpld { float:right; width:4%; text-indent:-9999px;background-image: url(../styles/images/fil-cncl-bg.png); background-position:right center; background-repeat:no-repeat; height:35px;margin: 8px 0 0 1%; cursor:pointer; background-size:88%;}
+.docsUploadMulti .cancelUpld { float:right; width:4%; text-indent:-9999px;background-image: url(../styles/images/fil-cncl-bg.png); background-position:right center; background-repeat:no-repeat; height:35px;margin: 8px 0 0 1%; cursor:pointer; background-size:72%;}
 .docsUploadMulti .flNmUpldwrap { float:left;width:95%;}
 .docsUploadMulti .flNmUpldwrapAll { width:100%; padding:10px; border-top:1px solid #e5e5e5; }
 .docsUploadMulti .flNmUpldwrapAll:last-child { border-bottom:1px solid #e5e5e5; }

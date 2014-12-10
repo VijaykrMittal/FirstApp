@@ -508,6 +508,7 @@ html body .backButton { width:84%; background-size: 28% !important;background-po
 #tabstrip-manage-app .refresh-loading {background-size: 95%;background-position: center 13px;}
 #document-attach .km-rightitem a.refresh-com {background-position: center 13px;}
 #document-attach .km-rightitem a.refresh-loading {background-position: center 18px;background-size: 52%;}
+.docsUploadMulti .cancelUpld {background-size: 85%;}
 }
 @media (min-width:0px) and (max-width:630px) {
 .logo { margin:3% auto;}

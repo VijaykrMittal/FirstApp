@@ -276,6 +276,8 @@
             params.matchid = matchid;
             params.custid = custid;
             params.filekey = 0;
+            params.format = "json";
+            
             options.params = params;
             options.chunkedMode = false;
             options.headers = {

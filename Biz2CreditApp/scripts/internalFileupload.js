@@ -60,7 +60,7 @@
             var dirContent = $('#dirContentUpload');
             dirContent.empty();
             var dirArr = new Array();
-                //console.log(entries)
+                console.log(entries)
             for(var i=0; i<entries.length; ++i){ // sort entries
                 var newdirArr = new Array();
                 newdirArr.fullPath= entries[i].fullPath;
@@ -251,13 +251,15 @@
             }
             if(path.length > 1)
             {
-                html = '<div id="uploadProcess" class="cancelUpld" data-bind="click:transferFileAbortAll">All Cancel</div>';
-                $(".docsUpload").append(html);  
+                html = '<div id="uploadProcess" class="cancelUpldAll" data-bind="click:transferFileAbortAll">All Cancel</div>';
+                $(".docsUploadMulti").append(html);  
             }
             kendo.bind($(".docsUpload"), app.fileuploadsetting.viewModel);
         },
         winUpload:function(r) {
-            alert('success');
+            JSON.stringify(r) 
+            alert(JSON.stringify(r));
+            alert(r['results']['filekey']);
             filekey =0;//give by response
             myUploadFilesCount--;
             $(".flNmUpldwrapAll-"+filekey).remove();

@@ -34,9 +34,9 @@
                 #}else{#
                 # var ext = getFileExtension(name) #
                     <tr>
-                        <td data-id="files" class="#= ext # default-icon"></td>
-                        <td data-id="files"> #: name #</td>
-                        <td data-id="files"><input type="checkbox" name="checkbox[]" value="#: nativeURL #"></td>
+                        <td data-id="files" data-url="#: nativeURL #" data-bind="click:uploadFileToServer" class="#= ext # default-icon"></td>
+                        <td data-id="files" data-url="#: nativeURL #" data-bind="click:uploadFileToServer"> #: name #</td>
+                        <td data-id="files" data-url="#: nativeURL #" data-bind="click:uploadFileToServer"></td>
                     </tr>
 
                 #}#

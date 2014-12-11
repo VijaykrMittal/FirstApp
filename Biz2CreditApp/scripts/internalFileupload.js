@@ -60,7 +60,6 @@
             var dirContent = $('#dirContentUpload');
             dirContent.empty();
             var dirArr = new Array();
-                console.log(entries)
             for(var i=0; i<entries.length; ++i){ // sort entries
                 var newdirArr = new Array();
                 newdirArr.fullPath= entries[i].fullPath;
@@ -128,6 +127,11 @@
                             app.fileuploadsetting.viewModel.getActiveItem(e.touch.initialTouch.innerText);
 
                             }
+                          else
+                          {
+                              console.log(e);
+                          }
+                          
 
                 	},
                 
@@ -211,7 +215,7 @@
                                                                     chunkCount: 100,
                                                                     min: 0,
                                                                     max: 100,
-                                                                    value: 0
+                                                                    value: 1
                                                                 }).data("kendoProgressBar");
 
                 optionsMulti[j] = new FileUploadOptions();
@@ -233,13 +237,86 @@
                 optionsMulti[j].headers = {
                     Connection: "close"
                 };
-                alert(path[j]);
-                pbMulti[j].value(0);
-                console.log(window);
-                ftUploadMulti[j] = new FileTransfer();
+                switch(j) {
+                case 0:
+                    ftUploadMulti[0] = new FileTransfer();
+                    ftUploadMulti[0].onprogress = function(progressEvent) {
+                        if (progressEvent.lengthComputable) {
+                            var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+                            pbMulti[0].value(perc);
+
+                        }else{
+                            pbMulti[0].value('');
+
+                        }
+                    };
+                    ftUploadMulti[0].upload(path[0], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[0] , true);
+     
+
+                break;
+                case 1:
+                    
+                ftUploadMulti[1] = new FileTransfer();
+                ftUploadMulti[1].onprogress = function(progressEvent) {
+                    if (progressEvent.lengthComputable) {
+                        var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+                        pbMulti[1].value(perc);
+
+                    }else{
+                        pbMulti[1].value('');
+
+                    }
+                };
+                ftUploadMulti[1].upload(path[1], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[1] , true);
+     
+                break;
+                case 2:
+                    ftUploadMulti[2] = new FileTransfer();
+                    ftUploadMulti[2].onprogress = function(progressEvent) {
+                    if (progressEvent.lengthComputable) {
+                        var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+                        pbMulti[2].value(perc);
+
+                    }else{
+                        pbMulti[2].value('');
+
+                    }
+                    };
+                    ftUploadMulti[2].upload(path[j], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[2] , true);
+                case 3:
+                    ftUploadMulti[3] = new FileTransfer();
+                    ftUploadMulti[3].onprogress = function(progressEvent) {
+                    if (progressEvent.lengthComputable) {
+                    var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+                    pbMulti[3].value(perc);
+
+                    }else{
+                    pbMulti[3].value('');
+
+                    }
+                    };
+                    ftUploadMulti[3].upload(path[3], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[3] , true);
+     
+                case 4:
+                    ftUploadMulti[4] = new FileTransfer();
+                    ftUploadMulti[4].onprogress = function(progressEvent) {
+                    if (progressEvent.lengthComputable) {
+                        var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+                        pbMulti[4].value(perc);
+
+                    }else{
+                        pbMulti[4].value('');
+
+                    }
+                    };
+                    ftUploadMulti[4].upload(path[4], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[4] , true);
+     
+                }
+               /* ftUploadMulti[j] = new FileTransfer();
                 ftUploadMulti[j].onprogress = function(progressEvent) {
                 	if (progressEvent.lengthComputable) {
                 		var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+                       alert(perc+'key'+j);
                 		pbMulti[j].value(perc);
                         
                 	}else{
@@ -247,25 +324,41 @@
                         
                 	}
                 };
-                ftUploadMulti[j].upload(path[j], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[j] , true);
-            }
+                ftUploadMulti[j].upload(path[j], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[j] , true);*/
+
+                }
             if(path.length > 1)
             {
                 html = '<div id="uploadProcess" class="cancelUpldAll" data-bind="click:transferFileAbortAll">All Cancel</div>';
                 $(".docsUploadMulti").append(html);  
             }
-            kendo.bind($(".docsUpload"), app.fileuploadsetting.viewModel);
+            kendo.bind($(".docsUploadMulti"), app.fileuploadsetting.viewModel);
         },
         winUpload:function(r) {
-            JSON.stringify(r) 
-            alert(JSON.stringify(r));
-            alert(r['results']['filekey']);
-            filekey =0;//give by response
-            myUploadFilesCount--;
-            $(".flNmUpldwrapAll-"+filekey).remove();
+            res =jQuery.parseJSON(r['response']);
+            filekey =res['results']['filekey'];
+            if(res['results']['faultcode'] === '1' ||res['results']['faultcode']=== 1)
+            {
+                myUploadFilesCount--;
+                $(".flNmUpldwrapAll-"+filekey).html("File successfully uploaded.");
+                $(".flNmUpldwrapAll-"+filekey).remove();
+            }
+            else
+            {
+                navigator.notification.confirm('Some error occured with uploading', function (confirmed) {
+                    if (confirmed === true || confirmed === 1) {
+                        myUploadFilesCount--;
+                        ftUploadMulti[filekey].abort();
+                        $(".flNmUpldwrapAll-"+filekey).remove();
+                    }
+
+                }, optionsMulti[filekey].fileName, 'ok');
+                
+            }       
             if(myUploadFilesCount === 0)
             {
                 $("#tabstrip-multiupload-file").data("kendoMobileModalView").close();
+                apps.navigate("views/documentPending.html");
 
             }
         },
@@ -320,6 +413,13 @@
         getMimeTypeOnError:function()
         {
             console.log('Fail to getMIME type');
+        },
+        uploadFileToServer:function(e)
+        {
+            console.log(e);
+            var path = e.sender.element.context.dataset.url;
+            console.log(path);
+            
         }
     
         

@@ -273,6 +273,7 @@
         failUpload:function(error) {
             
             errorFileName = error.source.substr(error.source.lastIndexOf('/')+1);
+            alert(error.source);
             navigator.notification.confirm('Some error occured with uploading', function (confirmed) {
             if (confirmed === true || confirmed === 1) {
                 myUploadFilesCount--;

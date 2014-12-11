@@ -257,6 +257,14 @@
         uploadPhoto:function(imageURI) {
             //alert(imageURI);
 
+            if (imageURI.substring(0, 21)==="content://com.android") {
+                photo_split = imageURI.split("%3A");
+                imageURI = "content://media/external/images/media/" + photo_split[1];
+            }
+            
+            
+            
+            
             var docsid = sessionStorage.getItem("docsid");
             var docstype = sessionStorage.getItem("docstype");
             var appid = sessionStorage.getItem("matchesPageFid");
@@ -311,6 +319,7 @@
         },
  
         failUpload:function(error) {
+             alert(error.source);
               app.documentService.viewModel.transferFileAbort();
               alert("An error has occurred: Code = "+error.code);
         },

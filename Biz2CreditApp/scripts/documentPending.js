@@ -255,16 +255,13 @@
             apps.navigate('views/internalFileUpload.html');
         },
         uploadPhoto:function(imageURI) {
-            //alert(imageURI);
+            alert(imageURI);
 
             if (imageURI.substring(0, 21)==="content://com.android") {
                 photo_split = imageURI.split("%3A");
                 imageURI = "content://media/external/images/media/" + photo_split[1];
             }
-            
-            
-            
-            
+
             var docsid = sessionStorage.getItem("docsid");
             var docstype = sessionStorage.getItem("docstype");
             var appid = sessionStorage.getItem("matchesPageFid");
@@ -273,7 +270,12 @@
             var options = new FileUploadOptions();
 
             options.fileKey="file";
-            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            var fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            if(fileName.indexOf('.') === -1)
+            {
+              fileName =fileName+'.jpg';
+            }
+            options.fileName =fileName;
             app.documentService.viewModel.setUploadFileName(options.fileName);
             options.mimeType="image/jpeg";
             var params = new Object();

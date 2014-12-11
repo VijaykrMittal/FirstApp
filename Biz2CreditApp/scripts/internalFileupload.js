@@ -233,6 +233,7 @@
                 optionsMulti[j].headers = {
                     Connection: "close"
                 };
+                alert(path[j]);
                 pbMulti[j].value(0);
                 console.log(window);
                 ftUploadMulti[j] = new FileTransfer();
@@ -246,10 +247,8 @@
                         
                 	}
                 };
-                ftUploadMulti[j].upload(path[j], 'http://google.com', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[j] , true);
+                ftUploadMulti[j].upload(path[j], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[j] , true);
             }
-            console.log(path);
-            console.log(encodeURI(path[j]));
             if(path.length > 1)
             {
                 html = '<div id="uploadProcess" class="cancelUpld" data-bind="click:transferFileAbortAll">All Cancel</div>';
@@ -258,20 +257,19 @@
             kendo.bind($(".docsUpload"), app.fileuploadsetting.viewModel);
         },
         winUpload:function(r) {
-            
-            console.log(r);
+            alert('success');
             filekey =0;//give by response
             myUploadFilesCount--;
             $(".flNmUpldwrapAll-"+filekey).remove();
             if(myUploadFilesCount === 0)
             {
-                //$("#tabstrip-multiupload-file").data("kendoMobileModalView").close();
+                $("#tabstrip-multiupload-file").data("kendoMobileModalView").close();
 
             }
         },
 
         failUpload:function(error) {
-            
+            alert('fail');
             errorFileName = error.source.substr(error.source.lastIndexOf('/')+1);
             alert(error.source);
             navigator.notification.confirm('Some error occured with uploading', function (confirmed) {
@@ -284,7 +282,7 @@
                 $(".flNmUpldwrapAll-"+key).remove();
                 if(myUploadFilesCount===0)
                 {
-                    //$("#tabstrip-multiupload-file").data("kendoMobileModalView").close(); 
+                    $("#tabstrip-multiupload-file").data("kendoMobileModalView").close(); 
                 }
             }
 

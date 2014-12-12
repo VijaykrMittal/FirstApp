@@ -12,6 +12,7 @@
             matchid = sessionStorage.getItem("IteriaMatchid");
 
             /*Upload Document Toggle*/
+            $(".km-scroll-container").css("-webkit-transform", "");
             $(".documentList .wrap-content h2").unbind('.myPlugin');
             $(".requiredocs-name").unbind(".myPlugin");
             pb = $("#profileCompleteness").kendoProgressBar({
@@ -105,7 +106,8 @@
                 html+= '<div class="row clearfix" ><div class="num"><span>'+(i+1)+'</span></div>';
                 html+= '<div class="name requiredocs-name">';
                 if(data[i].DocFileDetails===false) { 
-                    html+=  data[i].docName;
+                  //  html+=  data[i].docName;
+                    html+= '<a id="dispalyFiles" class="'+data[i].id+'">'+data[i].docName+'</a>';
                 }else{
                     html+= '<a id="dispalyFiles" class="'+data[i].id+'">'+data[i].docName+'<span>('+data[i].DocFileDetails.length+')</span></a>';
                 }           
@@ -144,8 +146,8 @@
 
              $(".requiredocs-name a").on("click.myPlugin", function() {
                 var id=  $(this).attr('class');
-                 $('#'+id).slideToggle();
-                  $(this).parents('.row').toggleClass("off");
+                $('#'+id).slideToggle();
+                $(this).parents('.row').toggleClass("off");
                  
             });
             
@@ -210,6 +212,11 @@
                         app.documentService.viewModel.show();
                          
                     }
+                    else
+                    {
+                        $msg= "File was not deleted successfully.";
+                        app.loginService.viewModel.mobileNotification($msg,'info'); 
+                    }
                 });
         },
         downloadWetSignatureFile:function(e)
@@ -221,22 +228,6 @@
             folderName = "biz2docs";
             app.documentsetting.viewModel.downloadFile(fileName,folderName);
         },
-        /*setSendEsignDocsStatus:function(data)
-        {
-            var that = this;
-            
-            if(typeof data[0].b2sRes !=='undefined')
-            {
-                if(data[0].b2sRes[0].status === 'sent')
-                {
-                    that.set("sendEsignDocsStatus",false);
-                    
-                }
-            }
-            
-            
-            
-        },*/
         getImage:function() {
             
             navigator.camera.getPicture(app.documentService.viewModel.uploadPhoto, function(message) {
@@ -255,7 +246,7 @@
             apps.navigate('views/internalFileUpload.html');
         },
         uploadPhoto:function(imageURI) {
-            alert(imageURI);
+            pb.value(0);
 
             if (imageURI.substring(0, 21)==="content://com.android") {
                 photo_split = imageURI.split("%3A");
@@ -293,7 +284,7 @@
             options.headers = {
                 Connection: "close"
             };
-            pb.value(0);
+            
             $("#tabstrip-upload-file").data("kendoMobileModalView").open();
             statusDom = document.querySelector('#status');
             ftUpload = new FileTransfer();
@@ -313,22 +304,23 @@
         winUpload:function(r) {
             
             $("#tabstrip-upload-file").data("kendoMobileModalView").close();
+            pb.value(0);
             console.log("Code = " + r.responseCode);
             console.log("Response = " + r.response);
             console.log("Sent = " + r.bytesSent);
-            app.documentService.viewModel.show();
+            apps.navigate("views/documentPending.html");
            // alert(r.response);
         },
  
         failUpload:function(error) {
-             alert(error.source);
-              app.documentService.viewModel.transferFileAbort();
-              alert("An error has occurred: Code = "+error.code);
+            app.documentService.viewModel.transferFileAbort();
+            alert("An error has occurred: Code = "+error.code);
         },
         transferFileAbort:function()
         {
            ftUpload.abort(); 
            $("#tabstrip-upload-file").data("kendoMobileModalView").close();
+           pb.value(0);
         },
         setUploadFileName:function(uplpadFileName)
         {

@@ -115,7 +115,11 @@
         {
             var that = this;
             that.set("expDocs", data);
-            $("#dirContentUpload").kendoMobileListView({
+            if(typeof $(".dirContentUpload").data("kendoMobileListView") !=='undefined' )
+            {
+                $(".dirContentUpload").data("kendoMobileListView").destroy();
+            }
+            $(".dirContentUpload").kendoMobileListView({
                 dataSource: app.fileuploadsetting.viewModel.expDocs,
                 template: $("#docs-upload-template").html(),
                 }).kendoTouch({ 
@@ -123,14 +127,16 @@
                   	tap: function (e) { 
                             if(e.touch.initialTouch.dataset.id==="folder")
                             {
-                            app.fileuploadsetting.viewModel.setExportInnerPage();
-                            app.fileuploadsetting.viewModel.getActiveItem(e.touch.initialTouch.innerText);
+                                app.fileuploadsetting.viewModel.setExportInnerPage();
+                                app.fileuploadsetting.viewModel.getActiveItem(e.touch.initialTouch.innerText);
 
                             }
-                          else
-                          {
-                              console.log(e);
-                          }
+                            if(e.touch.initialTouch.dataset.id==="files")
+                            {
+                                var fileNativeUrl = e.touch.initialTouch.dataset.url;
+                                console.log(fileNativeUrl);
+                                app.fileuploadsetting.viewModel.uploadFileToServer(fileNativeUrl);
+                            }
                           
 
                 	},
@@ -183,227 +189,12 @@
             var that = this;
             that.set("exportInnerPage", false);  
         },
-        uploadMultiFiles:function(path) {
-            myUploadFiles =path;
-            myUploadFilesCount=path.length;
-            var docsid = sessionStorage.getItem("docsid");
-            var docstype = sessionStorage.getItem("docstype");
-            var appid = sessionStorage.getItem("matchesPageFid");
-            var matchid = sessionStorage.getItem("IteriaMatchid");
-            var custid = localStorage.getItem("userID");
-            
-            $("#tabstrip-multiupload-file").data("kendoMobileModalView").open();
-            $(".docsUploadMulti").html("");
-            pbMulti =[];
-            optionsMulti=[];
-            paramsMulti=[];
-            ftUploadMulti=[];
-            for (var j = 0; j < path.length; j++) {
-                
-                html = '';
-                html+='<div class="flNmUpldwrapAll flNmUpldwrapAll-'+j+' clearfix">';
-                html+='<div class="flNmUpldwrap">';
-                html+='<div class="flNmUpldMulti">file name</div>';
-                html+='<div id="profileCompleteness-'+j+'" class="uploadBarMulti" style="width:100%; height:5px;"></div>';
-                html+='</div>';
-                html+='<div id="uploadProcess" class="cancelUpld" data-process="'+j+'" data-bind="click:transferFileAbort">Cancel</div>';
-                html+='</div>';
-                $(".docsUploadMulti").append(html);
-                
-                pbMulti[j] = $("#profileCompleteness-"+j).kendoProgressBar({
-                                                                    type: "chunk",
-                                                                    chunkCount: 100,
-                                                                    min: 0,
-                                                                    max: 100,
-                                                                    value: 1
-                                                                }).data("kendoProgressBar");
-
-                optionsMulti[j] = new FileUploadOptions();
-
-                optionsMulti[j].fileKey="file";
-                optionsMulti[j].fileName=path[j].substr(path[j].lastIndexOf('/')+1);
-                app.fileuploadsetting.viewModel.getMimeType(path[j],j);
-                paramsMulti[j] = new Object();
-                paramsMulti[j].apiaction="uploaddocuments";
-                paramsMulti[j].docid = docsid;
-                paramsMulti[j].doctype = docstype;
-                paramsMulti[j].appid = appid;
-                paramsMulti[j].matchid = matchid;
-                paramsMulti[j].custid = custid;
-                paramsMulti[j].filekey = j;
-                paramsMulti[j].format = "json";
-                optionsMulti[j].params = paramsMulti[j];
-                optionsMulti[j].chunkedMode = false;
-                optionsMulti[j].headers = {
-                    Connection: "close"
-                };
-                switch(j) {
-                case 0:
-                    ftUploadMulti[0] = new FileTransfer();
-                    ftUploadMulti[0].onprogress = function(progressEvent) {
-                        if (progressEvent.lengthComputable) {
-                            var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
-                            pbMulti[0].value(perc);
-
-                        }else{
-                            pbMulti[0].value('');
-
-                        }
-                    };
-                    ftUploadMulti[0].upload(path[0], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[0] , true);
-     
-
-                break;
-                case 1:
-                    
-                ftUploadMulti[1] = new FileTransfer();
-                ftUploadMulti[1].onprogress = function(progressEvent) {
-                    if (progressEvent.lengthComputable) {
-                        var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
-                        pbMulti[1].value(perc);
-
-                    }else{
-                        pbMulti[1].value('');
-
-                    }
-                };
-                ftUploadMulti[1].upload(path[1], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[1] , true);
-     
-                break;
-                case 2:
-                    ftUploadMulti[2] = new FileTransfer();
-                    ftUploadMulti[2].onprogress = function(progressEvent) {
-                    if (progressEvent.lengthComputable) {
-                        var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
-                        pbMulti[2].value(perc);
-
-                    }else{
-                        pbMulti[2].value('');
-
-                    }
-                    };
-                    ftUploadMulti[2].upload(path[j], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[2] , true);
-                case 3:
-                    ftUploadMulti[3] = new FileTransfer();
-                    ftUploadMulti[3].onprogress = function(progressEvent) {
-                    if (progressEvent.lengthComputable) {
-                    var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
-                    pbMulti[3].value(perc);
-
-                    }else{
-                    pbMulti[3].value('');
-
-                    }
-                    };
-                    ftUploadMulti[3].upload(path[3], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[3] , true);
-     
-                case 4:
-                    ftUploadMulti[4] = new FileTransfer();
-                    ftUploadMulti[4].onprogress = function(progressEvent) {
-                    if (progressEvent.lengthComputable) {
-                        var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
-                        pbMulti[4].value(perc);
-
-                    }else{
-                        pbMulti[4].value('');
-
-                    }
-                    };
-                    ftUploadMulti[4].upload(path[4], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[4] , true);
-     
-                }
-               /* ftUploadMulti[j] = new FileTransfer();
-                ftUploadMulti[j].onprogress = function(progressEvent) {
-                	if (progressEvent.lengthComputable) {
-                		var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
-                       alert(perc+'key'+j);
-                		pbMulti[j].value(perc);
-                        
-                	}else{
-                	    pbMulti[j].value('');
-                        
-                	}
-                };
-                ftUploadMulti[j].upload(path[j], 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.fileuploadsetting.viewModel.winUpload, app.fileuploadsetting.viewModel.failUpload, optionsMulti[j] , true);*/
-
-                }
-            if(path.length > 1)
-            {
-                html = '<div id="uploadProcess" class="cancelUpldAll" data-bind="click:transferFileAbortAll">All Cancel</div>';
-                $(".docsUploadMulti").append(html);  
-            }
-            kendo.bind($(".docsUploadMulti"), app.fileuploadsetting.viewModel);
-        },
-        winUpload:function(r) {
-            res =jQuery.parseJSON(r['response']);
-            filekey =res['results']['filekey'];
-            if(res['results']['faultcode'] === '1' ||res['results']['faultcode']=== 1)
-            {
-                myUploadFilesCount--;
-                $(".flNmUpldwrapAll-"+filekey).html("File successfully uploaded.");
-                $(".flNmUpldwrapAll-"+filekey).remove();
-            }
-            else
-            {
-                navigator.notification.confirm('Some error occured with uploading', function (confirmed) {
-                    if (confirmed === true || confirmed === 1) {
-                        myUploadFilesCount--;
-                        ftUploadMulti[filekey].abort();
-                        $(".flNmUpldwrapAll-"+filekey).remove();
-                    }
-
-                }, optionsMulti[filekey].fileName, 'ok');
-                
-            }       
-            if(myUploadFilesCount === 0)
-            {
-                $("#tabstrip-multiupload-file").data("kendoMobileModalView").close();
-                apps.navigate("views/documentPending.html");
-
-            }
-        },
-
-        failUpload:function(error) {
-            alert('fail');
-            errorFileName = error.source.substr(error.source.lastIndexOf('/')+1);
-            alert(error.source);
-            navigator.notification.confirm('Some error occured with uploading', function (confirmed) {
-            if (confirmed === true || confirmed === 1) {
-                myUploadFilesCount--;
-                var key = $.inArray( error.source, myUploadFiles);
-                console.log(error);
-                console.log('failUpload'+key);
-                ftUploadMulti[key].abort();
-                $(".flNmUpldwrapAll-"+key).remove();
-                if(myUploadFilesCount===0)
-                {
-                    $("#tabstrip-multiupload-file").data("kendoMobileModalView").close(); 
-                }
-            }
-
-            }, errorFileName, 'Yes,No');
-            
-            
-           
-        },
-        transferFileAbort:function(e)
-        {
-            var currentProcess = e.currentTarget.dataset.process;
-            ftUploadMulti[currentProcess].abort();
-            $(".flNmUpldwrapAll-"+currentProcess).remove();
-            myUploadFilesCount--;
-            if(myUploadFilesCount===0)
-            {
-                $("#tabstrip-multiupload-file").data("kendoMobileModalView").close(); 
-            }
-            
-        },
-        getMimeType:function(file_URI,j)
+        getMimeType:function(file_URI)
         {
             mimeType ='';
             window.resolveLocalFileSystemURL(file_URI, function(fileEntry) {
                 fileEntry.file(function(filee) {
-                        optionsMulti[j].mimeType = filee.type; //THIS IS MIME TYPE
+                        options.mimeType= filee.type; //THIS IS MIME TYPE
                     }, function() {
                         alert('error getting MIME type');
                 });
@@ -414,13 +205,54 @@
         {
             console.log('Fail to getMIME type');
         },
-        uploadFileToServer:function(e)
-        {
-            console.log(e);
-            var path = e.sender.element.context.dataset.url;
-            console.log(path);
+        uploadFileToServer:function(imageURI) {
+            //alert(imageURI);
+            pb.value(0);
+            var docsid = sessionStorage.getItem("docsid");
+            var docstype = sessionStorage.getItem("docstype");
+            var appid = sessionStorage.getItem("matchesPageFid");
+            var matchid = sessionStorage.getItem("IteriaMatchid");
+            var custid = localStorage.getItem("userID");
+            options = new FileUploadOptions();
+
+            options.fileKey="file";
+            var fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             
-        }
+            options.fileName =fileName;
+            app.documentService.viewModel.setUploadFileName(options.fileName);
+            app.fileuploadsetting.viewModel.getMimeType(imageURI);
+            
+            var params = new Object();
+            params.apiaction="uploaddocuments";
+            params.docid = docsid;
+            params.doctype = docstype;
+            params.appid = appid;
+            params.matchid = matchid;
+            params.custid = custid;
+            params.filekey = 0;
+            params.format = "json";
+            
+            options.params = params;
+            options.chunkedMode = false;
+            options.headers = {
+                Connection: "close"
+            };
+           
+            $("#tabstrip-upload-file").data("kendoMobileModalView").open();
+            statusDom = document.querySelector('#status');
+            ftUpload = new FileTransfer();
+            ftUpload.onprogress = function(progressEvent) {
+            	if (progressEvent.lengthComputable) {
+            		var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+            		pb.value(perc);
+                    
+            	}else{
+            	    pb.value('');
+                    
+            	}
+            };
+           ftUpload.upload(imageURI, 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options , true);
+        },
     
         
     });

@@ -63,7 +63,8 @@
         },
         gobackMatchesPage:function()
         {
-                var fid = sessionStorage.getItem("matchesPageFid");
+            alert("back to mach page"); 
+            var fid = sessionStorage.getItem("matchesPageFid");
                 app.loginService.viewModel.showloder();  
                 var dataSource = new kendo.data.DataSource({
                     transport: {
@@ -304,7 +305,7 @@
         winUpload:function(r) {
             
             $("#tabstrip-upload-file").data("kendoMobileModalView").close();
-            pb.value(0);
+            //pb.value(0);
             console.log("Code = " + r.responseCode);
             console.log("Response = " + r.response);
             console.log("Sent = " + r.bytesSent);
@@ -320,7 +321,7 @@
         {
            ftUpload.abort(); 
            $("#tabstrip-upload-file").data("kendoMobileModalView").close();
-           pb.value(0);
+          // pb.value(0);
         },
         setUploadFileName:function(uplpadFileName)
         {

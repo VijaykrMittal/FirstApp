@@ -3,7 +3,7 @@
             <div data-role="header" class="docs-header">
                 <div data-role="navbar">
                     <span data-role="view-title">
-                    	<a class="docs-back" data-role="button" data-bind="click: backDocslistPage">Back</a>
+                    	<a class="docs-back" href="views/documentPending.html" data-role="button" >Back</a>
                     	<p class="docs-docu">Biz2Credit</p>
                     </span>
                 </div>
@@ -26,9 +26,9 @@
             <table cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" align="left">
                 #if(isDirectory === true){#
                     <tr>
-                        <td class="Folder" data-id="folder"></td>
-                        <td data-id="folder"> #: name #</td>
-                        <td data-id="folder"></td>
+                        <td class="Folder" data-id="folder" data-name="#: name #"></td>
+                        <td data-id="folder" data-name="#: name #"> #: name #</td>
+                        <td data-id="folder" data-name="#: name #"></td>
                     </tr>
                 #}else{#
                 # var ext = getFileExtension(name) #

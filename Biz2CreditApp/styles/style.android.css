@@ -241,7 +241,7 @@ background-position:center 10px ; text-align:center; width:22.5%; margin-right:2
 .docs-header .km-widget #docs-filter .km-filter-wrap input { font-size:0.8em;}
 .home .km-rightitem {width:11%;}
 .matches-view li .row3 a.appy, .matches-view li .row3 a.pending {background-size: 20%;padding: 2.5em 0em 0.5em;font-size: 1em;}
-.inner-docs-back {padding: .6em .7em;}
+.inner-docs-back {margin: .6em .7em 0.7em; padding:0;}
 .matches-view li .row2 p a { font-size:1em;}
 #dynamicCl.km-popup-wrapper {width:260px !important; height:290px !important;}
 /*******Android css************/
@@ -813,8 +813,8 @@ html body .backButton {width: 84%;}
 .documentClick .km-view-title a img {padding:0px 5px 0 0; width:33%; display:block;}
 #blackBlk .desbrdIcon .span span {padding:2% 0 0;}
 .stpsumry p { font-size:13px;}
-.docs-header .km-widget .docs-back { width:11%; height:50px;}
-.docs-header .km-widget .docs-docu { padding:5px 0 0; width:64%; font-size:0.9em;}
+.docs-header .km-widget .docs-back { width:11%; height:50px;background-position: 4px 56%;background-size: 82%;}
+.docs-header .km-widget .docs-docu { padding:5px 0 0; width:65%; font-size:0.9em;}
 .docs-header .km-widget .docs-search { width:7%; margin:0;background-position: center 7px;}
 .docs-header .km-widget .refresh-com { width:9%;background-position: center 7px; background-size:70%;}
 .docs-header .km-widget .refresh-loading { width:9%;}
@@ -885,7 +885,7 @@ html body .backButton {width: 82%;}
 .documentList .wrap-content .row .name {width: 90%;}
 .documentList .wrap-content .row .num span {line-height: 31px;font-size: 17px;width: 30px;height: 30px;margin-top: 7px;}
 .documentList .buttonSet {padding-top: 5px;}
-#matchDocList .upload a {padding: 5px 7px;font-size: 14px;}
+#matchDocList .upload a {padding:3px 7px;font-size: 14px;}
 #matchDocList .filesBlock .file-iconjpg {background-size: 88%;}
 #document-attach .km-rightitem {width: 21%;}
 #document-attach .movebuttonArea a.attechUpload {padding: 2%;margin: 5px 0 0 0;}
@@ -894,8 +894,12 @@ html body .backButton {width: 82%;}
 #tabstrip-manage-app #tabstrip ul li.end_icon {background-size: 13%;}
 #tabstrip-manage-app #tabstrip ul li.sevd_icon {background-size: 11%;}
 li#undefined table td:nth-child(1) {width: 13%;}
-body.horizontal li#undefined table td:nth-child(1) {width: 13%;}
+body.horizontal li#undefined table td:nth-child(1) {width: 13%;background-size: 60%;}
+.matches-view li .row3 a.pending {font-size:0.8em;}
+body.horizontal #tabstrip-download-file.modal-mess-Popup, body.horizontal #tabstrip-upload-file.modal-mess-Popup {height: 62%;}
+.docsUpload .flNmUpld {padding: 20px 10px 20px;font-size: 1em;}
 }
+
 @media (min-width:0px) and (max-width:440px) {
 #tabstrip-manage-app .refresh-loading, #tabstrip-manage-app .refreshloan {width:8%;}
 #tabstrip-manage-app .refresh-loading { background-size:100%;}
@@ -925,6 +929,12 @@ html body .backButton {width:78%;background-size:38% !important;}
 #tabstrip-manage-app #tabstrip ul li.end_icon {background-size: 15%;}
 #tabstrip-manage-app #tabstrip ul li.sevd_icon {background-size: 12%;}
 #tabstrip-manage-app #tabstrip div:nth-child(2) .tabOne .actArw {margin: 0 0 0 14%;}
+.docs-header .km-widget .docs-docu {width: 53%;}
+.docs-header .km-widget .docs-search {width: 9%;}
+.docs-header .km-widget .refresh-com {width: 12%;}
+.docs-header .km-widget .refresh-loading {width: 12%;}
+.rw_lin.cngopt > p {width: 89% !important;}
+#aplicn_frm .rws .rwfil label {font-size: 1em;}
 }
 @media (min-width:0px) and (max-width:410px) {
 .logLogo {margin: 17% auto;}
@@ -994,6 +1004,10 @@ html body .backButton {background-size: 50% !important;width: 73%;background-pos
 .documentList .buttonSet {width: 55px;padding-top: 3px;}
 #matchDocList .filesBlock .buttonSet .DeleteIC {padding: 0% 12%;}
 #matchDocList .filesBlock .buttonSet .downloadBtn {padding:21% 15%;background-size: 100%;background-position: 0 4px;margin-left: 12px;}
+.docsUpload .flNmUpld {padding: 20px 10px;font-size: 1em;}
+.docsUpload .cancelUpld {padding:0.38em 1em;}
+body.vertical #tabstrip-upload-file.modal-mess-Popup{ height:33%;}
+li#undefined table td:nth-child(1) {width: 9%;}
 }
 @media (min-width:0px) and (max-width:370px) {
 .logo { margin:6% auto;}
@@ -1001,12 +1015,12 @@ html body .backButton {background-size: 50% !important;width: 73%;background-pos
 html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:5%;}
 .documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {padding: 5px 0;background-position: 5px 7px;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position:16px 5px;padding: 5px 0%;}
-.docs-header .km-widget .docs-back { width:18%;}
+.docs-header .km-widget .docs-back { width:18%;background-position: 4px 60%;background-size: 83%;}
 .docs-header .km-widget .docs-docu { padding:3px 0 0; width:44%;}
-.docs-header .km-widget .docs-search { width:12%;background-position: center 7px; margin:0;}
+.docs-header .km-widget .docs-search { width:12%;background-position: center 9px; margin:0;background-size: 88%;}
 
-.docs-header .km-widget .refresh-com { width:14%;background-position: center 9px; background-size:77%;}
-.docs-header .km-widget .refresh-loading { width:15%;}
+.docs-header .km-widget .refresh-com { width:14%;background-position: center 10px; background-size:71%;}
+.docs-header .km-widget .refresh-loading { width:15%;background-position: center 13px;}
 #blackBlk .desbrdIcon {padding:3%;display: block;}
 #blackBlk .desbrdIcon .dasimg { width:13%; padding:0 2% 0 0 !important; }
 #blackBlk .desbrdIcon .dasimg img {max-width:100%; width:100%; height:auto; display:block;}
@@ -1059,7 +1073,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:5%;}
 #top_rh .myacc a { background-position: -366px -174px; padding-left: 25px; }
 /* 6 mar */
 #aplicn_tp ul.app_nav li{ font-size:11px; margin-right:1%;}
-.rw_lin.cngopt > p { width:65% !important; float:left!important;}
+.rw_lin.cngopt > p { width:86% !important; float:left!important;}
 /* 6 mar */
 #aplicn_frm .IN1 { width:270px; margin-right:0px;}
 #aplicn_frm .IN1b { width:295px; margin-right:0px;}
@@ -1096,9 +1110,10 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:5%;}
 #document-attach .km-rightitem a.refresh-com {background-position: center 10px;background-size: 83%;}
 #document-attach .km-rightitem a.refresh-loading {background-position: center 15px;background-size: 62%;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position: 10px 4px;padding: 5px 0;}
-.documentList .wrap-content .row .name {margin-top: 9px;}
+.documentList .wrap-content .row .name {margin-top: 9px;font-size: 12px;}
 .documentList .wrap-content .row, .documentList .wrap-content .row.off {background-position: right 19px;}
 .sub-row {padding: 9px 10px 7px 10px;}
+body.vertical #tabstrip-download-file.modal-mess-Popup, body.vertical #tabstrip-upload-file.modal-mess-Popup {height: 33%;}
 }
 @media (min-width:0px) and (max-width:320px) {
 #blackBlk .desbrdIcon .dasimg {width:19%;}

@@ -247,7 +247,7 @@ z-index: 999; }
 .inner-docs-back {text-decoration:none; padding:.5em .7em;display:block; background-color:#fff; border:0; }
 .inner-docs-back span {font-size: 1.3em; padding: 0 0 0 55px;background-image: url(images/up_to_docvault_icon.png); background-size:22%; background-repeat:no-repeat;background-position:5px 0px; height:34px; color:#333; display:table-cell; vertical-align:middle;}
 .documentContent .km-listview-wrapper ul { list-style:none;}
-.documentContent .km-listview-wrapper ul li {padding:0 5px 0 0; border-bottom:1px solid #fff; background-color:#f5f5f5; color:#333;}
+.documentContent .km-listview-wrapper ul li {padding:0 5px 0 0; border-bottom:1px solid #fff; background-color:#f5f5f5; color:#333; z-index:100;}
 .documentContent .km-listview-wrapper ul li table tbody { width:100%;}
 .documentContent .km-listview-wrapper ul li table tr {padding:0; width:100%;}
 .documentContent .km-listview-wrapper ul li table td {padding:0; width:10%;}
@@ -346,7 +346,7 @@ z-index: 999; }
 .refreshPop { width:45% !important; height:25%!important;}
 .unkown {}
 /*********29-05-14***********/
-.hidedocsback{visibility:hidden;display:none;height:0px !important;text-indent:-9999px;font-size:0px !important;;padding:0px !important;;margin:0 !important;}
+.hidedocsback{visibility:hidden;display:none;height:0px !important;text-indent:-9999px;font-size:0px !important;padding:0px !important;margin:0 !important; clear:both; }
 /*********16-06-14***********/
 .forgtpass { font-size:14px; color:#90bf02 !important; padding:15px 0 10px; display:block; text-align:center;text-decoration:none}
 #tabstrip-forgot-pass .view-content { margin-top:4em;}
@@ -486,7 +486,7 @@ ul#documentList td:nth-child(1) {font-size:1.2em; color:#333; text-indent:20px;}
 
 /*********08-12-14**************/
 .docsUpload {position:absolute; width:100%; height:100%; background: rgba(0,0,0,0.4); text-align:center;}
-.docsUpload .flNmUpld { font-size:1.4em; font-weight:bold; color:#333; padding:30px 0 20px; border-bottom:1px solid #ccc;text-transform:capitalize;} 
+.docsUpload .flNmUpld {word-break: break-all; font-size:1.4em; font-weight:bold; color:#333; padding:30px 10px 20px; border-bottom:1px solid #ccc;text-transform:capitalize;} 
 .docsUpload .uploadBar {margin:3% 5% 4%; text-align:left;}
 .docsUpload .cancelUpld {/* Safari 4-5, Chrome 1-9 */ background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cbcbcb), to(#e7e7e7)); /* Safari 5.1, Chrome 10+ */ background: -webkit-linear-gradient(top, #e7e7e7, #cbcbcb); /* Firefox 3.6+ */ background: -moz-linear-gradient(top, #e7e7e7, #cbcbcb); /* IE 10 */ background: -ms-linear-gradient(top, #e7e7e7, #cbcbcb); /* Opera 11.10+ */ background: -o-linear-gradient(top, #e7e7e7, #cbcbcb); border:1px solid #808080;color:#000; font-size:1em; -moz-box-shadow: inset 0px 0px 1px #7a9e0e;-webkit-box-shadow: inset 0px -1px 1px #7a9e0e;box-shadow: inset 0px 0px 1px #7a9e0e; border-radius:3px; padding:0.72em 2em; border:1px solid #808080; z-index:1000; margin:0; display:inline-block;}
 .km-on-android.km-4 input[type="checkbox"] {width:20px; height:18px;margin-top: -1em;}
@@ -502,3 +502,4 @@ ul#dirContentUpload input[type="checkbox"] {width:30px; height:30px;margin-top: 
 .docsUploadMulti .flNmUpldwrapAll .flNmUpldMulti { font-size:1em; text-align:left; color:#000;}
 #tabstrip-multiupload-file ul.k-reset { top:-8px;}
 #tabstrip-multiupload-file .cancelUpldAll {width:96%; text-align:center; /* Safari 4-5, Chrome 1-9 */ background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cbcbcb), to(#e7e7e7)); /* Safari 5.1, Chrome 10+ */ background: -webkit-linear-gradient(top, #e7e7e7, #cbcbcb); /* Firefox 3.6+ */ background: -moz-linear-gradient(top, #e7e7e7, #cbcbcb); /* IE 10 */ background: -ms-linear-gradient(top, #e7e7e7, #cbcbcb); /* Opera 11.10+ */ background: -o-linear-gradient(top, #e7e7e7, #cbcbcb); border-radius:3px; border:1px solid #808080;color:#000; font-size:1.125em; -moz-box-shadow: inset 0px 0px 1px #7a9e0e;-webkit-box-shadow: inset 0px -1px 1px #7a9e0e;box-shadow: inset 0px 0px 1px #7a9e0e; border-radius:1px; padding:0.6em 0; border:1px solid #808080; z-index:1000; margin:0 auto; }
+.inner-docs-back.hidedocsback {padding:0!important;}

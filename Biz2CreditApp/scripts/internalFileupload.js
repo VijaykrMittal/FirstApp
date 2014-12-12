@@ -35,17 +35,13 @@
             }
             if(app.fileuploadsetting.viewModel.historyPath.length === 1)
             {
-                $('#tabstrip-file-upload .inner-docs-back').remove();
+                $('#tabstrip-file-upload .inner-docs-back').addClass("hidedocsback");
+                $('#tabstrip-file-upload .inner-docs-back span').addClass("hidedocsback");
             }
             else
             {
-               if($('#movePageback').length === 0)
-                {
-                    $('#tabstrip-file-upload .km-listview-wrapper').prepend('<a id="movePageback" class="inner-docs-back"   data-bind="click:gobackFileExportPage,visible: exportInnerPage"><span>Documents</span></a>');
-                    // $('#tabstrip-file-upload .inner-docs-back span').removeClass("hidedocsback");
-                    kendo.bind($("#tabstrip-file-upload"), app.fileuploadsetting.viewModel);
-                }
-               
+                $('#tabstrip-file-upload .inner-docs-back').removeClass("hidedocsback");
+                $('#tabstrip-file-upload .inner-docs-back span').removeClass("hidedocsback");
             }
             app.loginService.viewModel.showloder(); // show loading message
             currentDir = directoryEntry; // set current directory
@@ -139,13 +135,11 @@
             $(".dirContentUpload").kendoMobileListView({
                 dataSource: app.fileuploadsetting.viewModel.expDocs,
                 template: $("#docs-upload-template").html(),
-                
                 }).kendoTouch({ 
                 	filter: ">li",
                   	tap: function (e) { 
                             if(e.touch.initialTouch.dataset.id==="folder")
                             {
-                                alert(e.touch.initialTouch.dataset.name);
                                 app.fileuploadsetting.viewModel.setExportInnerPage();
                                 app.fileuploadsetting.viewModel.getActiveItem(e.touch.initialTouch.dataset.name);
 
@@ -153,7 +147,6 @@
                             if(e.touch.initialTouch.dataset.id==="files")
                             {
                                 var fileNativeUrl = e.touch.initialTouch.dataset.url;
-                                console.log(fileNativeUrl);
                                 app.fileuploadsetting.viewModel.uploadFileToServer(fileNativeUrl);
                             }
                           

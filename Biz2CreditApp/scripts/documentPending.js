@@ -57,13 +57,18 @@
                          app.documentService.viewModel.loadRequirementDocs(data['0']['results']['ReqDocs'],data['0']['results']['DnldUrl']);
                          
                     }
+                    else
+                    {
+                        $msg= "Something is wrong.Please try again.";
+                        app.loginService.viewModel.mobileNotification($msg,'info');
+                        apps.navigate("#:back");
+                    }
                 });
            
             
         },
         gobackMatchesPage:function()
         {
-            alert("back to mach page"); 
             var fid = sessionStorage.getItem("matchesPageFid");
                 app.loginService.viewModel.showloder();  
                 var dataSource = new kendo.data.DataSource({
@@ -138,7 +143,6 @@
             }
             $("#requireDocsList").html(html);
             kendo.bind($("#requireDocsList"), app.documentService.viewModel);
-            app.loginService.viewModel.hideloder();
             if(data[0].b2cdocid === "148" || data[0].b2cdocid === 148) {
                 
                 //app.documentService.viewModel.setSendEsignDocsStatus(data);//default esign set status

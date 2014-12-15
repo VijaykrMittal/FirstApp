@@ -15,8 +15,8 @@
             {
                 viewIModel = kendo.observable();
             }
-            var appid = e.view.params.appid;
-            matchid = e.view.params.matchid;
+            var appid = sessionStorage.getItem("matchesPageFid");
+            matchid = sessionStorage.getItem("IteriaMatchid");
             app.loginService.viewModel.showloder();
             var dataSource = new kendo.data.DataSource({
                 transport:{
@@ -278,7 +278,7 @@
                     apps.hideLoading();
                 	if(data[0]['results']['faultcode'] === 1)
                     {
-                         console.log(data);
+                         //console.log(data);
                     	 app.iteriaService.viewModel.appToNavigate();
                     }
                     else
@@ -290,8 +290,7 @@
                 });  
             }
             
-            
-            app.iteriaService.viewModel.appToNavigate();
+            //app.iteriaService.viewModel.appToNavigate();
         },
         appToNavigate:function()
         {

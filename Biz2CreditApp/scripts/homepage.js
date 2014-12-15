@@ -538,27 +538,46 @@
         {
             app.loginService.viewModel.application(e);  
         },
+        
         applyIteriaLoan:function(e)
         {
-            if(e.button.context.id === 'applyIteria')
+             if(!window.connectionInfo.checkConnection()){
+               
+                navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
+            	if (confirmed === true || confirmed === 1) {
+                   
+            		app.homesetting.viewModel.applyIteriaLoan(e);
+            	}
+
+            	}, 'Connection Error?', 'Retry,Cancel');
+            }
+            else if(e.button.context.id === 'applyIteria')
             {
                 var appid = e.data['appid'];
                 var matchid = e.data['matchid'];
                 sessionStorage.setItem("matchesPageFid",appid);
                 sessionStorage.setItem("IteriaMatchid",matchid);
-                
-                apps.navigate("views/iteria.html?appid="+appid+"&matchid="+matchid);
+                apps.navigate("views/iteria.html");
             }  
         },
         docPendingIteriaLoan:function(e)
         {
-            if(e.button.context.id === 'docpending')
+             if(!window.connectionInfo.checkConnection()){
+               
+                navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
+            	if (confirmed === true || confirmed === 1) {
+                   
+            		app.homesetting.viewModel.docPendingIteriaLoan(e);
+            	}
+
+            	}, 'Connection Error?', 'Retry,Cancel');
+            }
+            else if(e.button.context.id === 'docpending')
             {
                 var appid = e.data['appid'];
                 var matchid = e.data['matchid'];
                 sessionStorage.setItem("matchesPageFid",appid);
                 sessionStorage.setItem("IteriaMatchid",matchid);
-                
                 apps.navigate("views/documentPending.html");
             }  
         }

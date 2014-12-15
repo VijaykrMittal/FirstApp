@@ -459,7 +459,7 @@ background-position:5px 15px !important;height: 50px;position: relative;backgrou
 
 
 #matchDocList .filesBlock .buttonSet .DeleteIC {  background-color:transparent; border:0; padding:0;text-indent:-9999;background-image: url("images/delete-icon-bg.png"); background-repeat:no-repeat; padding:0.5% 10%;}
-#matchDocList .filesBlock .file-name {float: left;margin-right: 10px;width:65%;color: #333;font-size: 20px;padding: 8px 0 0 0;}
+#matchDocList .filesBlock .file-name {float: left;margin-right: 10px;width:65%;color: #333;font-size: 20px;padding: 8px 0 0 0;word-break: break-all;}
 #matchDocList .filesBlock .buttonSet .downloadBtn {  background-color:transparent; border:0; padding:0;text-indent:-9999;background-image: url("images/download-icon-bg.png"); background-repeat:no-repeat; padding:15%;}
 #matchDocList .filesBlock .file-iconjpg {background-image: url(images/jpg.png);background-repeat: no-repeat;background-size: 58%;width: 6%;background-position: 0px 0px;height: 38px;float: left;}
 #matchDocList .filesBlock .default-icon {background-image: url(images/unknown.png);background-repeat: no-repeat;background-size: 43%;background-position: 13px 7px;}

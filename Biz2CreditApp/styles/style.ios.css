@@ -56,7 +56,7 @@ input.IN1.ac_input.error + label.error + .IN1.ipsm3{width: 239px!important;}
 #aplicn_frm .rws .rwfil.lft { float:left;}
 #dbaname.IN1.ipsm3 {width: 241px;}
 .rwfil.aut > p > select.IN1b.ipsm3 { width:200px!important;}
-#tabstrip-manage-app .docs-popup, .docs-header .km-widget .docs-popup, #tabstrip-loanapp-bi .popup{width:75px; height:75px;}
+#tabstrip-manage-app .docs-popup, .docs-header .km-widget .docs-popup, #tabstrip-loanapp-bi .popup{width:75px; height:75px;background-size: 90%;}
 html body .backButton {background-size: 20% !important;height: 75px;}
 #tabstrip-manage-app #tabstrip .tabOne {margin: 5% 0 0;}
 .tabOne .head span:last-child{ width:9%;}
@@ -213,9 +213,10 @@ html body #tabstrip-manage-app .backButton {background-size: 26% !important;back
 #tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li{padding: 4% 0 4% 12%;background-size: 7%;background-position: 22px 10px;}
 #tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height: 23%;}
 .matches-logo {background-size: 20%;}
-.docs-header .km-widget .docs-popup {width: 46px;height: 55px;}
+.docs-header .km-widget .docs-popup {width:58px;height: 55px;}
 #newuser {margin: 2em 0;}
 #document-attach .km-rightitem a.refresh-com {width: 37%;background-size: 95%;background-position: center 18px;}
+.docs-header .km-widget .docs-docu {width: 64%;}
 }
 @media (min-width:0px) and (max-width:740px) {
 .logLogo {margin:0% auto 0%; background-size:65%;}
@@ -257,7 +258,7 @@ height: 56%;
 #aplicn_tp ul.app_nav li span {padding: 35px 0px 39px 33px;margin-left: 0px;font-size: 0.83em;}
 #aplicn_frm .IN1.zipcod {width: 100px!important;}
 .IN1.smphone {width: 135px!important;}
-.docs-header .km-widget .refresh-com, .docs-header .km-widget .refresh-loading {height:44px;margin-top: 2.5%;}
+.docs-header .km-widget .refresh-com, .docs-header .km-widget .refresh-loading {height:44px;margin-top: 2.2%;background-size: 72%;}
 .docs-header .km-widget .docs-search {width: 6%;margin: 1.8% 0% 0 2%;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position: 17px 5px;}
 #aplicn_frm .IN1.ipsm13, #aplicn_frm .IN1.ipsm3 {width: 185px;}
@@ -271,6 +272,8 @@ height: 56%;
 #matchDocList .filesBlock .buttonSet .downloadBtn { background-size:83%;}
 #document-attach .km-rightitem a.refresh-loading {width:37%;background-size: 70%;background-position: center 22px;}
 .documentList .wrap-content .row .name {width: 91%;}
+.docs-header .km-widget .docs-docu {width: 65%;}
+.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-position: 10px 11px;}
 }
 @media (min-width:0px) and (max-width:640px) { 
 .logo { margin:3% auto;}
@@ -330,7 +333,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 .docs-header .km-widget .docs-docu { width:63%; font-size:1em; padding:2% 0 0;}
 
 .docs-header .km-widget .docs-search { width:8%; margin:0;}
-.docs-header .km-widget .refresh-com, .docs-header .km-widget .refresh-loading { width:11%; margin:0; background-position:center 12px;}
+.docs-header .km-widget .refresh-com, .docs-header .km-widget .refresh-loading { width:11%; margin:0; background-position:center 11px;height: 50px;background-size: 60%;}
 .docs-header .km-widget .refresh-loading { background-position: center 17px;}
 .docs-header .km-widget .docs-back { height:57px;}
 .documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-size: 12%;background-position:7px 7px;}
@@ -394,7 +397,7 @@ html body #tabstrip-manage-app .backButton {background-size: 24% !important;heig
 #blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:10%;display: block;padding:3% 13% 5%;color: #fff;font-size: 1.2em;}        
 #tabstrip-Setting .docs-back {height:57px;}
 
-.docs-header .km-widget .docs-popup {width:47px;height: 50px;}
+.docs-header .km-widget .docs-popup {width:55px;height: 50px;}
 #newuser {margin: 2em 0;}
 .forgtpass   {padding:10px 0 5px;}
 #tabstrip-forgot-pass .view-content {margin-top: 1.3em;}
@@ -415,6 +418,8 @@ html body #tabstrip-manage-app .backButton {background-size: 24% !important;heig
 .rw_lin.addons_det.clearfix.debt_crecrd p.imp40:nth-child(2) input{ width:100% !important;}
 #newuser ul.km-listinset li select {background-size: 7%;}
 #matchDocList .filesBlock .file-iconjpg {background-size: 92%;height: 39px;}
+.docs-header .km-widget .docs-docu {width: 61%;}
+.docs-header .km-widget .refresh-loading {background-size: 42%;}
 }
 @media (min-width:0px) and (max-width:533px) { 
 #blackBlk .desbrdIcon {padding: 2%;display: block;}
@@ -479,7 +484,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 #newuser .buttonArea input[type=submit] {padding:0.6em 0 !important;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position: 10px 5px;padding:8px 0%;background-size: 53%;}
 #tabstrip-Setting .docs-back {height: 50px;}
-#tabstrip-Setting .docs-docu {font-size: 0.9em;padding: 5px 0 0;}
+#tabstrip-Setting .docs-docu {font-size: 0.9em;padding: 5px 0 0 7px;}
 html body #tabstrip-manage-app .backButton {background-size: 29% !important;height: 55px;width: 80%;}
 #tabstrip-manage-app .refresh-loading {background-size: 65%;}
 #tabstrip-manage-app .refreshloan {background-size: 40%;background-position: 15px 17px;height: 55px;}
@@ -508,15 +513,15 @@ html body #tabstrip-manage-app .backButton {background-size: 39% !important;widt
 #tabstrip-manage-app #tabstrip ul li a {height: 68px;padding: 35px 0 0;}
 #tabstrip-manage-app #tabstrip div .tabOne .actArw {height: 13px;overflow: hidden;}
 #tabstrip-manage-app .recent-activity {padding: 12px 20px;}
-.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-size: 73%;width: 14%;}
+.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-size:80%;width: 14%;}
 .documentContent .km-listview-wrapper ul li table td:nth-child(3) {width: 8%;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position: 10px 5px;background-size: 56%;width: 14%;}
-.docs-header .km-widget .refresh-com {background-size: 85%;width: 10%;}
+.docs-header .km-widget .refresh-com {background-size: 85%;width: 11%;}
 .docs-header .km-widget .refresh-loading {background-size:69%;background-position: 10px 17px;}
 .docs-header .km-widget .docs-search{width: 9%;}
 .docs-header .km-widget .docs-docu{width: 58%;}
 .docs-header .km-widget .docs-back {width: 13%;height: 53px;}
-#tabstrip-Setting .docs-back {width: 15%;background-position: 5px 8px;}
+#tabstrip-Setting .docs-back {width: 15%;background-position: 5px 8px;background-size: 92%;}
 #tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li {padding: 4% 0 4% 13%;background-size: 7.5%;background-position: 15px 10px;}
 #aplicn_frm .IN1.zipcod {width: 100% !important;}
 #aplicn_frm .rws .rw_lin p.sixtPrst input[type="text"], #aplicn_frm .rws .rw_lin p.sixtPrst select{width: 100%;}
@@ -546,6 +551,11 @@ html body #tabstrip-manage-app .backButton {background-size: 39% !important;widt
 #matchDocList .upload a {padding: 4px 15px;}
 .docsUpload .uploadBar {margin:7% 5% 6%;}
 #tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { height:31%;}
+.docs-header .km-widget .docs-docu {width: 54%;}
+.docs-header .km-widget .docs-popup {width: 45px;}
+.docs-header .km-widget #docs-filter {width: 74%;}
+.docs-header .km-widget #docs-filter .km-filter-wrap {background-position: center 40px;}
+#tabstrip-Setting .popup {width: 45px;}
 }
 
 

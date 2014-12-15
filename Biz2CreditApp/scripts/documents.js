@@ -1067,7 +1067,7 @@
             			
             			if (device.platform === "Android") {
             				app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
-            					filePath = folder.fullPath + "\/" + fileName;
+            					filePath = folder.nativeURL + "\/" + fileName;
                                 relPath = folder.name + "\/" + fileName;
                                 //relPath =fileName;
                                 fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
@@ -1092,13 +1092,14 @@
         
         fileExists:function(fileEntry)
         {
+            console.log(fileEntry);
             if(device.platform.toLowerCase() === "ios" )
             {
                 window.open(encodeURI(fileEntry.fullPath),"_blank","location=yes,hidden=no");
             }
             else
             {
-                window.open(encodeURI(fileEntry.fullPath),"_system","location=yes,hidden=no");
+                window.open(fileEntry.nativeURL,"_system","location=yes,hidden=no");
             }
              
         },
@@ -1116,7 +1117,7 @@
         },
         transferFile: function (uri, filePath) {
             transfer = new FileTransfer();
-            transfer.onprogress = function(progressEvent) {
+            /*transfer.onprogress = function(progressEvent) {
                 if (progressEvent.lengthComputable) {
                    
                 	var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
@@ -1130,7 +1131,7 @@
                 		$('#status').innerHTML += ".";
                 	}
                 }
-            };
+            };*/
             transfer.download(
                 uri,
                 filePath,
@@ -1142,7 +1143,7 @@
             		}
             		else
             		{
-                		window.open(encodeURI(fileEntry.fullPath),"_system","location=yes,hidden=no");
+                		window.open(fileEntry.nativeURL,"_system","location=yes,hidden=no");
             		}	
                 },
                 function(error) {

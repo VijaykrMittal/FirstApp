@@ -31,8 +31,8 @@
                             url: localStorage.getItem("urlMobAppApiLoan"),
                             type:"POST",
                             dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                            data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
-                           //data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
+                           // data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
+                           data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
                         }
                         
                     },
@@ -70,7 +70,7 @@
         },
         gobackMatchesPage:function()
         {
-            var fid = sessionStorage.getItem("matchesPageFid");
+                var fid = sessionStorage.getItem("matchesPageFid");
                 app.loginService.viewModel.showloder();  
                 var dataSource = new kendo.data.DataSource({
                     transport: {
@@ -368,6 +368,52 @@
                 that.set("iosDeviceAction",true); 
             }
             kendo.bind($("#inboxActions"), app.documentService.viewModel);
+        },
+        submitDocspendingPage:function()
+        {
+            app.loginService.viewModel.showloder();  
+           
+            var dataSource = new kendo.data.DataSource({
+                    transport: {
+                        
+                        read: {
+                            url: localStorage.getItem("urlMobAppApiLoan"),
+                            type:"POST",
+                            dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                           data: { apiaction:'senddocument',cust_id:localStorage.getItem("userID"),matchid:sessionStorage.getItem("IteriaMatchid")}
+                        }
+                        
+                    },
+                    schema: {
+                        data: function(data)
+                        {
+                        	return [data];
+                        }
+                    },
+                    error: function (e) {
+                    	apps.hideLoading();
+                    	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                    	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in senddocument api.');
+                    },
+                
+                });
+                dataSource.fetch(function(){
+                    var that = this;
+                    var data = that.view(); 
+                    apps.hideLoading();
+                    if(data[0]['results']['faultcode']===1 && $.trim(data[0]['results']['faultmsg'])==='success')
+                    {
+                        app.documentService.viewModel.gobackMatchesPage();
+                         
+                    }
+                    else
+                    {
+                        $msg= "Documents was not submitted successfully.";
+                        app.loginService.viewModel.mobileNotification($msg,'info'); 
+                    }
+                }); 
+            
         }
       
        

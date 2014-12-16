@@ -321,7 +321,7 @@
                 catch(e)
                 {
                     console.log("Error in Dashboard rendering=:="+e);
-                    app.analyticsService.viewModel.trackException(e,'Dashboard.Error in Dashboard rendering');
+                    app.analyticsService.viewModel.trackException(e,'Dashboard.Error in dashboard rendering');
                 }
                 
             });

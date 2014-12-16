@@ -285,8 +285,8 @@
                     }
                     else
                     {
-                        $msg= "Something is wrong.Please try again.";
-                        app.loginService.viewModel.mobileNotification($msg,'info');
+                        //$msg= "Something is wrong.Please try again.";
+                        //app.loginService.viewModel.mobileNotification($msg,'info');
                         return false;
                     }
                 });  

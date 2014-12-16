@@ -18,7 +18,8 @@
                        
                     </div>
                 </div>
-                <button class="lastSubmit" id="btnChoice1" data-bind="click:submitDocspendingPage" >Submit</button>  
+                <button class="lastSubmit BTgry" id="btnChoice1" data-bind="invisible:submitDocspendingStatus" >Submit</button>
+                <button class="lastSubmit" id="btnChoice1" data-bind="visible:submitDocspendingStatus,click:submitDocspendingPage" >Submit</button>
                 <div style="font-size:11px;margin:5px;"><i>The Submit button will be activated after uploading the required documents.</i></div>
             </div>
         </div>

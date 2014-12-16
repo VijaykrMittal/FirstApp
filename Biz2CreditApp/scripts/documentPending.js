@@ -6,6 +6,7 @@
         userName:(localStorage.getItem("userFName") !== '') ?  localStorage.getItem("userFName") : '',
         uploadFileName:'',
         iosDeviceAction:true,
+        submitDocspendingStatus:true,
         show:function(e)
         { 
             var appid = sessionStorage.getItem("matchesPageFid");
@@ -31,8 +32,8 @@
                             url: localStorage.getItem("urlMobAppApiLoan"),
                             type:"POST",
                             dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                           // data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
-                           data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
+                            data: { apiaction:'reqdocuments',matchid:matchid,cust_id:localStorage.getItem("userID"),appid:appid}
+                           //data: { apiaction:'reqdocuments',matchid:82795,cust_id:localStorage.getItem("userID"),appid:70386}
                         }
                         
                     },
@@ -56,6 +57,7 @@
                     if(data[0]['results']['faultcode']===1 && data[0]['results']['faultmsg']==='success')
                     {
                          app.documentService.viewModel.loadRequirementDocs(data['0']['results']['ReqDocs'],data['0']['results']['DnldUrl']);
+                         app.documentService.viewModel.setSubmitDocspendingStatus(data['0']['results']['ReqDocs']);
                          
                     }
                     else
@@ -414,6 +416,20 @@
                     }
                 }); 
             
+        },
+        setSubmitDocspendingStatus:function(data)
+        {
+            console.log(data);
+            console.log(data.length);
+            var that = this;
+            for(i=0;i<=data.length;i++)
+            {
+                if(data['DocFileDetails']==='False' || data['DocFileDetails']===false)
+                {
+                    that.set("submitDocspendingStatus",false);
+                }
+                
+            }
         }
       
        

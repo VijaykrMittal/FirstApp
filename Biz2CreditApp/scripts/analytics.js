@@ -130,6 +130,12 @@
             //console.log(installationId);
             monitor.SetInstallationInfo(installationId);
         },
+        trackException:function(e,msg)
+        {
+            var monitor = window.plugins.EqatecAnalytics.Monitor;
+            
+            monitor.TrackExceptionMessage(e, msg);
+        },
         
        /* monitorStatusChange:function(op){
             

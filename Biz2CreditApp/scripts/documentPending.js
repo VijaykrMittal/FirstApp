@@ -251,59 +251,71 @@
             apps.navigate('views/internalFileUpload.html');
         },
         uploadPhoto:function(imageURI) {
-            pb.value(0);
-
-            if (imageURI.substring(0, 21)==="content://com.android") {
-                photo_split = imageURI.split("%3A");
-                imageURI = "content://media/external/images/media/" + photo_split[1];
-            }
-
-            var docsid = sessionStorage.getItem("docsid");
-            var docstype = sessionStorage.getItem("docstype");
-            var appid = sessionStorage.getItem("matchesPageFid");
-            var matchid = sessionStorage.getItem("IteriaMatchid");
-            var custid = localStorage.getItem("userID");
-            var options = new FileUploadOptions();
-
-            options.fileKey="file";
-            var fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-            if(fileName.indexOf('.') === -1)
-            {
-              fileName =fileName+'.jpg';
-            }
-            options.fileName =fileName;
-            app.documentService.viewModel.setUploadFileName(options.fileName);
-            options.mimeType="image/jpeg";
-            var params = new Object();
-            params.apiaction="uploaddocuments";
-            params.docid = docsid;
-            params.doctype = docstype;
-            params.appid = appid;
-            params.matchid = matchid;
-            params.custid = custid;
-            params.filekey = 0;
-            params.format = "json";
             
-            options.params = params;
-            options.chunkedMode = false;
-            options.headers = {
-                Connection: "close"
-            };
+            try {
+  
+                    pb.value(0);
+
+                    if (imageURI.substring(0, 21)==="content://com.android") {
+                        photo_split = imageURI.split("%3A");
+                        imageURI = "content://media/external/images/media/" + photo_split[1];
+                    }
+
+                    var docsid = sessionStorage.getItem("docsid");
+                    var docstype = sessionStorage.getItem("docstype");
+                    var appid = sessionStorage.getItem("matchesPageFid");
+                    var matchid = sessionStorage.getItem("IteriaMatchid");
+                    var custid = localStorage.getItem("userID");
+                    var options = new FileUploadOptions();
+
+                    options.fileKey="file";
+                    var fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+                    if(fileName.indexOf('.') === -1)
+                    {
+                      fileName =fileName+'.jpg';
+                    }
+                    options.fileName =fileName;
+                    app.documentService.viewModel.setUploadFileName(options.fileName);
+                    options.mimeType="image/jpeg";
+                    var params = new Object();
+                    params.apiaction="uploaddocuments";
+                    params.docid = docsid;
+                    params.doctype = docstype;
+                    params.appid = appid;
+                    params.matchid = matchid;
+                    params.custid = custid;
+                    params.filekey = 0;
+                    params.format = "json";
+                    
+                    options.params = params;
+                    options.chunkedMode = false;
+                    options.headers = {
+                        Connection: "close"
+                    };
+                    
+                    $("#tabstrip-upload-file").data("kendoMobileModalView").open();
+                    statusDom = document.querySelector('#status');
+                    ftUpload = new FileTransfer();
+                    ftUpload.onprogress = function(progressEvent) {
+                    	if (progressEvent.lengthComputable) {
+                    		var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+                    		pb.value(perc);
+                            
+                    	}else{
+                    	    pb.value('');
+                            
+                    	}
+                    };
+                   ftUpload.upload(imageURI, 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options , true);
+            } catch (e) {
+                
+                    console.log("Error in File uploadding:="+e);
+                    app.analyticsService.viewModel.trackException(e,'FileUpload.Error in file uploadding');
+            }
             
-            $("#tabstrip-upload-file").data("kendoMobileModalView").open();
-            statusDom = document.querySelector('#status');
-            ftUpload = new FileTransfer();
-            ftUpload.onprogress = function(progressEvent) {
-            	if (progressEvent.lengthComputable) {
-            		var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
-            		pb.value(perc);
-                    
-            	}else{
-            	    pb.value('');
-                    
-            	}
-            };
-           ftUpload.upload(imageURI, 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options , true);
+            
+            
+            
         },
  
         winUpload:function(r) {

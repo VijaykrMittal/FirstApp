@@ -1060,8 +1060,8 @@
         },
         downloadFile:function(fileName,folderName)
         {
-		    filePath = "";
-
+		    
+                filePath = "";
             	app.documentsetting.viewModel.getFilesystem(
             		function(fileSystem) {
             			
@@ -1077,9 +1077,9 @@
             				});
             			}
             			else {
-                            console.log(fileName);
-            				filePath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
-                            fileSystem.root.getFile(filePath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
+            				filePath = fileSystem.root.nativeURL + "\/" +"biz2docs\/" +fileName;
+                            relPath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
+                            fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
             				
             			}
             		},
@@ -1095,11 +1095,11 @@
             console.log(fileEntry);
             if(device.platform.toLowerCase() === "ios" )
             {
-                window.open(encodeURI(fileEntry.fullPath),"_blank","location=yes,hidden=no");
+                window.open(encodeURI(fileEntry.nativeURL),"_blank","location=yes,hidden=no");
             }
             else
             {
-                window.open(fileEntry.nativeURL,"_system","location=yes,hidden=no");
+                window.open(encodeURI(fileEntry.nativeURL),"_system","location=yes,hidden=no");
             }
              
         },
@@ -1116,35 +1116,22 @@
                                 
         },
         transferFile: function (uri, filePath) {
-            transfer = new FileTransfer();
-            /*transfer.onprogress = function(progressEvent) {
-                if (progressEvent.lengthComputable) {
-                   
-                	var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
-                	$('#status').innerHTML = perc + "% loaded...";
-                } else {
-                	if($('#status').innerHTML === "") {
-                       
-                		$('#status').innerHTML = "Loading";
-                	} else {
-                        
-                		$('#status').innerHTML += ".";
-                	}
-                }
-            };*/
-            transfer.download(
+            try
+            {
+                transfer = new FileTransfer();
+                transfer.download(
                 uri,
                 filePath,
                 function(fileEntry) { 
                    $("#tabstrip-download-file").data("kendoMobileModalView").close();
                     if(device.platform.toLowerCase() === "ios" )
-            		{
-                		window.open(encodeURI(fileEntry.fullPath),"_blank","location=yes,hidden=no");
-            		}
-            		else
-            		{
-                		window.open(fileEntry.nativeURL,"_system","location=yes,hidden=no");
-            		}	
+                	{
+                		window.open(encodeURI(fileEntry.nativeURL),"_blank","location=yes,hidden=no");
+                	}
+                	else
+                	{
+                		window.open(encodeURI(fileEntry.nativeURL),"_system","location=yes,hidden=no");
+                	}	
                 },
                 function(error) {
                     $("#tabstrip-download-file").data("kendoMobileModalView").close();
@@ -1155,11 +1142,20 @@
                 		function() {
                 			console.log("failed to get filesystem");
                 		}
-            		);
+                	);
                     
                 }
-            );
-            
+                );
+         
+                
+            }
+            catch(e)
+            {
+                
+                console.log("Error in File downloading:="+e);
+                app.analyticsService.viewModel.trackException(e,'FileDownload.Error in file downloading');
+            }
+               
         },
         gotRemoveFileEntry:function(fileEntry)
         {

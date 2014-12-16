@@ -178,6 +178,7 @@
                 apps.hideLoading();
                 navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                 function () { }, "Notification", 'OK');
+                app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in loanappstep4 api.');
             },
 
             });
@@ -189,7 +190,7 @@
                 {
                     $msg= "Finacial Preference submitted successfully";
                     app.analyticsService.viewModel.trackFeature("Application.Loan application submitted successfully");
-                   // app.loginService.viewModel.mobileNotification($msg,'info');
+                    app.loginService.viewModel.mobileNotification($msg,'info');
                     
                     app.loanAppPI.viewModel.ManageOwnerHideenField(dataParam);
                     app.homesetting.viewModel.homeShow(); 
@@ -198,18 +199,18 @@
                 else if(data[0]['results']['faultcode'] === 0 || data[0]['results']['faultcode'] === "0")
                 {
                     $msg= "Finacial Preference not submitted successfully.";
-                    //app.loginService.viewModel.mobileNotification($msg,'info'); 
+                    app.loginService.viewModel.mobileNotification($msg,'info'); 
                     return;
                 }
                 else if(data[0]['results']['faultcode'] === 3 || data[0]['results']['faultcode'] === "3")
                 {
                     $msg= "Please enter all fields.";
-                   // app.loginService.viewModel.mobileNotification($msg,'info');
+                    app.loginService.viewModel.mobileNotification($msg,'info');
                     return;
                 }
                 else{
                     $msg= "Server not responding properly,Please try again";
-                    //app.loginService.viewModel.mobileNotification($msg,'info');
+                    app.loginService.viewModel.mobileNotification($msg,'info');
                     return;
                 }            
 

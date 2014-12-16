@@ -114,25 +114,26 @@
         }
 		app.loginService.viewModel.showloder();
         var dataSource = new kendo.data.DataSource({
-        transport: {
-        read: {
-                url: localStorage.getItem("urlMobAppApiUser"),
-                type:"POST",
-                dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                data: { apiaction:"usersignup",FirstName:FirstName,LastName:LastName,Phone:yourPhone,Email:yourEmail,Track:'mobile',Source:'mobile',Revenue:yourAnnualRevenue,LoanAmount:loanAmount,AgeOfBusiness:yearInBussiness,CreditScore:yourCreditScore,partner:'mobile'}
-        }
-        },
-        schema: {
-            data: function(data)
-        	{
-            	return [data];
-        	}
-        },
-        error: function (e) {
-        	 apps.hideLoading();
-             navigator.notification.alert("Server not responding properly.Please check your internet connection.",
-                function () { }, "Notification", 'OK');
-        },
+            transport: {
+                read: {
+                        url: localStorage.getItem("urlMobAppApiUser"),
+                        type:"POST",
+                        dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        data: { apiaction:"usersignup",FirstName:FirstName,LastName:LastName,Phone:yourPhone,Email:yourEmail,Track:'mobile',Source:'mobile',Revenue:yourAnnualRevenue,LoanAmount:loanAmount,AgeOfBusiness:yearInBussiness,CreditScore:yourCreditScore,partner:'mobile'}
+                }
+            },
+            schema: {
+                data: function(data)
+            	{
+                	return [data];
+            	}
+            },
+            error: function (e) {
+            	 apps.hideLoading();
+                 navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                    function () { }, "Notification", 'OK');
+                 app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in usersignup api.');
+            },
 
         });
         dataSource.fetch(function(){

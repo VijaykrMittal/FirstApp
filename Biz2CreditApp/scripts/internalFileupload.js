@@ -269,8 +269,8 @@
             }
             catch(e)
             {
-                console.log("Error in File uploadding:="+e);
-                app.analyticsService.viewModel.trackException(e,'FileUpload.Error in file uploadding');
+                console.log("Error in File uploading:="+e);
+                app.analyticsService.viewModel.trackException(e,'FileUpload.Error in file uploading');
             }
         },
     

@@ -65,6 +65,7 @@
             	apps.hideLoading();
             	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
             	function () { }, "Notification", 'OK');
+                app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in getlistfilesfolders api.');
             },
             });
             dataSource.fetch(function(){
@@ -166,7 +167,7 @@
             console.log(options);
             var ft = new FileTransfer();
             console.log(options);
-           ft.upload(imageURI, "http://sandbox.biz2services.com/mobapp/api/loanapp?apiaction=uploaddocuments", app.documentAttach.viewModel.winUpload, app.documentAttach.viewModel.failUpload, options,true);
+            ft.upload(imageURI, "http://sandbox.biz2services.com/mobapp/api/loanapp?apiaction=uploaddocuments", app.documentAttach.viewModel.winUpload, app.documentAttach.viewModel.failUpload, options,true);
             console.log('sssss');
         },
  

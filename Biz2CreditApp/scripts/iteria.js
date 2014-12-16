@@ -37,6 +37,7 @@
                 	apps.hideLoading();
                 	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                 	function () {apps.navigate("#:back");}, "Notification", 'OK');
+                    app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in getownersbyappid api.');
                 },
             });
             dataSource.fetch(function(){
@@ -268,7 +269,8 @@
                 error: function (e) {
                	  apps.hideLoading();
                      navigator.notification.alert("Server not responding properly.Please check your internet connection.",
-                        function () { }, "Notification", 'OK');
+                     function () { }, "Notification", 'OK');
+                     app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in saveadditionalinfo api.');
                 },
 
                 });

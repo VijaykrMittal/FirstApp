@@ -125,6 +125,7 @@
                     	apps.hideLoading();
                     	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in getlistfilesfolders api.');
                     },
                     });
 
@@ -171,6 +172,7 @@
                     	apps.hideLoading();
                     	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in getlistfilesfolders api.');
                     },
                     });
 
@@ -567,6 +569,12 @@
                     	return [data];
                     }
                     },
+                    error: function (e) {
+                    	apps.hideLoading();
+                    	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                    	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in deletefolder api.');
+                    },    
 
                     });  
                 }
@@ -582,11 +590,18 @@
                     }
                     },    
                     schema: {
-                    data: function(data)
-                    {   
-                    	return [data];
-                    }
+                        data: function(data)
+                        {   
+                        	return [data];
+                        }
                     },
+                    error: function (e) {
+                    	apps.hideLoading();
+                    	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                    	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in deletefolder api.');
+                    },      
+                        
 
                     });   
                 }
@@ -655,11 +670,17 @@
                     }
                     },    
                     schema: {
-                    data: function(data)
-                    {   
-                    	return [data];
-                    }
+                        data: function(data)
+                        {   
+                        	return [data];
+                        }
                     },
+                    error: function (e) {
+                    	apps.hideLoading();
+                    	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                    	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in deletefile api.');
+                    },      
 
                     }); 
                 }
@@ -667,19 +688,25 @@
                 {
                     var dataSource = new kendo.data.DataSource({
                     transport: {
-                    read: {
-                        url: localStorage.getItem("urlMobAppApiFile"),
-                        type:"POST",
-                        dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                        data: {apiaction:"deletefile",userID:localStorage.getItem("userID"),fileID:sessionStorage.getItem("currentFileId")}  // search for tweets that contain "html5"
-                    }
-                    },    
-                    schema: {
-                    data: function(data)
-                    {   
-                    	return [data];
-                    }
-                    },
+                        read: {
+                            url: localStorage.getItem("urlMobAppApiFile"),
+                            type:"POST",
+                            dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                            data: {apiaction:"deletefile",userID:localStorage.getItem("userID"),fileID:sessionStorage.getItem("currentFileId")}  // search for tweets that contain "html5"
+                        }
+                        },    
+                        schema: {
+                            data: function(data)
+                            {   
+                            	return [data];
+                            }
+                        },
+                        error: function (e) {
+                        	apps.hideLoading();
+                        	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                        	function () { }, "Notification", 'OK');
+                            app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in deletefile api.');
+                        },     
 
                     });  
                 }
@@ -765,13 +792,19 @@
                         dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
                         data: {apiaction:"renamefolder",userID:localStorage.getItem("userID"),folderID:sessionStorage.getItem("currentFId"),folderName:renameFolder,parentID:parentId}  // search for tweets that contain "html5"
                     }
-                },    
-                schema: {
+                    },    
+                    schema: {
                     data: function(data)
                     {   
                     	return [data];
                     }
-                },
+                    },
+                    error: function (e) {
+                        	apps.hideLoading();
+                        	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                        	function () { }, "Notification", 'OK');
+                            app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in renamefolder api.');
+                    },     
          
                 });
                  
@@ -866,13 +899,19 @@
                         dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
                         data: {apiaction:"renamefile",userID:localStorage.getItem("userID"),fileID:sessionStorage.getItem("currentFileId"),fileName:renameFile+renameFileExt,parentID:parentId}  // search for tweets that contain "html5"
                     }
-                },    
-                schema: {
+                    },    
+                    schema: {
                     data: function(data)
                     {   
                     	return [data];
                     }
-                },
+                    },
+                    error: function (e) {
+                        	apps.hideLoading();
+                        	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                        	function () { }, "Notification", 'OK');
+                            app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in renamefile api.');
+                    },     
          
                 });
                  
@@ -980,20 +1019,26 @@
                     return;
                 }
                 var dataSource = new kendo.data.DataSource({
-                transport: {
-                    read: {
-                        url: localStorage.getItem("urlMobAppApiFolder"),
-                        type:"POST",
-                        dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                        data: {apiaction:"addfolder",userID:localStorage.getItem("userID"),parentID:parentId,folderName:newFolderName}  // search for tweets that contain "html5"
-                    }
-                },    
-                schema: {
-                     data: function(data)
-                    {   
-                    	return [data];
-                    }
-                },
+                    transport: {
+                        read: {
+                            url: localStorage.getItem("urlMobAppApiFolder"),
+                            type:"POST",
+                            dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                            data: {apiaction:"addfolder",userID:localStorage.getItem("userID"),parentID:parentId,folderName:newFolderName}  // search for tweets that contain "html5"
+                        }
+                    },    
+                    schema: {
+                        data: function(data)
+                        {   
+                            return [data];
+                        }
+                    },
+                    error: function (e) {
+                        apps.hideLoading();
+                        navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                        function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in addfolder api.');
+                    },    
          
                 });
                      

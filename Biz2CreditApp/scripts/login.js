@@ -75,6 +75,8 @@
            	  apps.hideLoading();
                  navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     function () { }, "Notification", 'OK');
+                
+                    app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in login api.');
             },
 
             });
@@ -273,6 +275,7 @@
            	  apps.hideLoading();
                  navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     function () { }, "Notification", 'OK');
+                app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in forgot password api.');
             },
 
             });

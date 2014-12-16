@@ -978,6 +978,7 @@
                 apps.hideLoading();
                 navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                 function () { }, "Notification", 'OK');
+                app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in loanappstep1 api.');
             },
 
             });
@@ -990,7 +991,7 @@
                     if(dataParam['contact_act'] === "Next")
                     {
                         $msg= "Contact Information submitted successfully";
-                       // app.loginService.viewModel.mobileNotification($msg,'info');
+                        app.loginService.viewModel.mobileNotification($msg,'info');
                         
                         sessionStorage.setItem("setprefilStatus",'false2');
                         app.loanAppCI.viewModel.manageHiddenField(data[0]['results']['onwerids']);
@@ -999,7 +1000,7 @@
                     else
                     {
                         $msg= "Contact Information submitted successfully";
-                       // app.loginService.viewModel.mobileNotification($msg,'info');
+                        app.loginService.viewModel.mobileNotification($msg,'info');
                     	app.loansetting.viewModel.resetLoanAppBIForm();
                         app.loanAppCI.viewModel.resetLoanAppCIForm();
                         apps.navigate('#tabstrip-home');

@@ -48,6 +48,7 @@
                     	apps.hideLoading();
                     	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in manageapp api.');
                     },
                 });
                 dataSource.fetch(function(){
@@ -160,6 +161,7 @@
                     	apps.hideLoading();
                     	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in manageapp api.');
                     },
                 });
                 dataSource.fetch(function(){
@@ -224,6 +226,7 @@
                     	apps.hideLoading();
                     	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in getmatchlists api.');
                     },
                 });
                 dataSource.fetch(function(){

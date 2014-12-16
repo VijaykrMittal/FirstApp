@@ -65,27 +65,33 @@
         {
             
             var dataSource = new kendo.data.DataSource({
-            transport: {
+                transport: {
                     read: {
-                            url: localStorage.getItem("urlMobAppApiUser"),
-                            type:"POST",
-                            dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                            data: { apiaction:"callschedule",userid:localStorage.getItem("userID"),name:localStorage.getItem("userFName"),email:localStorage.getItem("userEmail"),appid:"",phone:phonenumber ,calldate:sDate,calltime:sTime}
+                        url: localStorage.getItem("urlMobAppApiUser"),
+                        type:"POST",
+                        dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        data: { apiaction:"callschedule",userid:localStorage.getItem("userID"),name:localStorage.getItem("userFName"),email:localStorage.getItem("userEmail"),appid:"",phone:phonenumber ,calldate:sDate,calltime:sTime}
                     },
                 },
-                    schema: {
-                        data: function(data)
-                    	{
-                        	return [data];
-                    	}
+                schema: {
+                    data: function(data)
+                    {
+                        return [data];
                     }
+                },
+                error: function (e) {
+                	apps.hideLoading();
+                	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                	function () { }, "Notification", 'OK');
+                    app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in callschedule api.');
+                }, 
                
             });
             dataSource.fetch(function(){
-            var that = this;
-            var data = that.data();
-            app.loginService.viewModel.hideloder();  
-        	navigator.notification.alert(data[0]['results']['faultmsg']);  
+                var that = this;
+                var data = that.data();
+                app.loginService.viewModel.hideloder();  
+            	navigator.notification.alert(data[0]['results']['faultmsg']);  
            });
         },
         ScheduleCloseModalView:function()

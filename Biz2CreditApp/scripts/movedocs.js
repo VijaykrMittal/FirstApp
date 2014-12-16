@@ -89,6 +89,7 @@
                 	apps.hideLoading();
                 	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                 	function () { }, "Notification", 'OK');
+                    app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in getlistfilesfolders(for movedocs) api.');
                 },
             	});
             	dataSource.fetch(function(){
@@ -156,6 +157,7 @@
                 	apps.hideLoading();
                 	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                 	function () { }, "Notification", 'OK');
+                    app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in getlistfilesfolders(for movedocs) api.');
                 },
                 });
                 dataSource.fetch(function(){
@@ -270,19 +272,25 @@
                 }
                 var dataSource = new kendo.data.DataSource({
                     transport: {
-                    		read: {
-                    		url: localStorage.getItem("urlMobAppApiFolder"),
-                    		type:"POST",
-                    		dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                    		data: {apiaction:"movefolder",userID:localStorage.getItem("userID"),folderID:sessionStorage.getItem("currentFId"),parentID:app.movedocumentsetting.viewModel.moveDocsId}  // search for tweets that contain "html5"
-                    }
-                },    
-                schema: {
-                    data: function(data)
-                    {   
-                    		return [data];
-                    }
-                },
+                        read: {
+                            url: localStorage.getItem("urlMobAppApiFolder"),
+                            type:"POST",
+                            dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                            data: {apiaction:"movefolder",userID:localStorage.getItem("userID"),folderID:sessionStorage.getItem("currentFId"),parentID:app.movedocumentsetting.viewModel.moveDocsId}  // search for tweets that contain "html5"
+                        }
+                    },    
+                    schema: {
+                        data: function(data)
+                        {   
+                            return [data];
+                        }
+                    },
+                    error: function (e) {
+                    	apps.hideLoading();
+                    	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                    	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in movefolder api.');
+                    },
 
                 });  
             }
@@ -312,26 +320,38 @@
                     		return [data];
                     }
                     },
+                    error: function (e) {
+                    	apps.hideLoading();
+                    	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                    	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in movefile api.');
+                    },    
 
                     }); 
                 }
                 else
                 {
                     var dataSource = new kendo.data.DataSource({
-                    transport: {
-                    		read: {
-                    		url: localStorage.getItem("urlMobAppApiFile"),
-                    		type:"POST",
-                    		dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                    		data: {apiaction:"movefile",userID:localStorage.getItem("userID"),fileID:sessionStorage.getItem("currentFileId"),parentID:app.movedocumentsetting.viewModel.moveDocsId}  // search for tweets that contain "html5"
-                    }
-                    },    
-                    schema: {
-                    data: function(data)
-                    {   
-                    		return [data];
-                    }
-                    },
+                        transport: {
+                        		read: {
+                        		url: localStorage.getItem("urlMobAppApiFile"),
+                        		type:"POST",
+                        		dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        		data: {apiaction:"movefile",userID:localStorage.getItem("userID"),fileID:sessionStorage.getItem("currentFileId"),parentID:app.movedocumentsetting.viewModel.moveDocsId}  // search for tweets that contain "html5"
+                        }
+                        },    
+                        schema: {
+                        data: function(data)
+                        {   
+                        		return [data];
+                        }
+                        },
+                        error: function (e) {
+                        	apps.hideLoading();
+                        	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                        	function () { }, "Notification", 'OK');
+                            app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in movefile api.');
+                        },     
 
                     }); 
                 }

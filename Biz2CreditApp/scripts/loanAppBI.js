@@ -444,19 +444,25 @@
             app.loginService.viewModel.showloder();
             var dataS = new kendo.data.DataSource({
                 transport: {
-                read: {
-                    url: localStorage.getItem("urlMobAppApiLoan"),
-                    type:"POST",
-                    dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                    data: { apiaction:"getloanappinfo",cust_id:localStorage.getItem("userID"),fid:localStorage.getItem("fid")}
-            	}
-            },
+                    read: {
+                        url: localStorage.getItem("urlMobAppApiLoan"),
+                        type:"POST",
+                        dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        data: { apiaction:"getloanappinfo",cust_id:localStorage.getItem("userID"),fid:localStorage.getItem("fid")}
+                	}
+                },
                  schema: {
                     data: function(data)
                     {
                     	return [data];
                     }
                 },
+                error: function (e) {
+                    	apps.hideLoading();
+                    	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                    	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in getloanappinfo api.');
+                    },
             });
             dataS.fetch(function(){
 
@@ -1532,6 +1538,7 @@
                 apps.hideLoading();
                 navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                 function () { }, "Notification", 'OK');
+                app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in loanappstep2 api.');
             },
 
             });
@@ -1544,7 +1551,7 @@
                     if(dataParam['business_act'] === "Next")
                     {
                         $msg= "Business Information submitted successfully";
-                       // app.loginService.viewModel.mobileNotification($msg,'info');
+                        app.loginService.viewModel.mobileNotification($msg,'info');
                         localStorage.setItem("fid",data[0]['results']['fid']);
                         if(sessionStorage.getItem("setprefilStatus")==='false')
                         {

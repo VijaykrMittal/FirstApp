@@ -46,6 +46,7 @@
                     	apps.hideLoading();
                     	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in reqdocuments api.');
                     },
                 });
                 dataSource.fetch(function(){
@@ -91,6 +92,7 @@
                     	apps.hideLoading();
                     	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in getmatchlists(documentpending page) api.');
                     },
                 });
                 dataSource.fetch(function(){
@@ -206,7 +208,9 @@
                     	apps.hideLoading();
                     	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     	function () { }, "Notification", 'OK');
+                        app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in deletedocument api.');
                     },
+                
                 });
                 dataSource.fetch(function(){
                     var that = this;
@@ -309,8 +313,8 @@
                    ftUpload.upload(imageURI, 'http://sandbox.biz2services.com/mobapp/api/loanapp', app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options , true);
             } catch (e) {
                 
-                    console.log("Error in File uploadding:="+e);
-                    app.analyticsService.viewModel.trackException(e,'FileUpload.Error in file uploadding');
+                    console.log("Error in File uploading:="+e);
+                    app.analyticsService.viewModel.trackException(e,'FileUpload.Error in file uploading');
             }
             
             

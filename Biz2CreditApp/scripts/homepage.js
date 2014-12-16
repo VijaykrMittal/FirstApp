@@ -62,6 +62,7 @@
                 	apps.hideLoading();
                 	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                 	function () { }, "Notification", 'OK');
+                    app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in userdashboard api.');
                 },
             });
             dataSource.fetch(function(){
@@ -437,6 +438,7 @@
                 	apps.hideLoading();
                 	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                 	function () { }, "Notification", 'OK');
+                    app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in reqdoclist api.');
                 },
             });
             dataSource.fetch(function(){

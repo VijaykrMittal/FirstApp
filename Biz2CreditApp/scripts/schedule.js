@@ -116,7 +116,7 @@
         $("#tabstrip-home").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
         $("#tabstrip-sign-up").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
  
-        if(window.innerWidth > window.innerHeight)
+       /* if(window.innerWidth > window.innerHeight)
         {
             $('body').addClass('vertical');
             $('body').removeClass('horizontal');
@@ -125,7 +125,7 @@
         {
             $('body').addClass('horizontal');
             $('body').removeClass('vertical');
-        }
+        }*/
         app.homesetting.viewModel.closeParentPopover();
       
     });
@@ -135,7 +135,7 @@
 })(window);
 $(document).ready(function(){
     
-    if(window.innerWidth > window.innerHeight)
+   /* if(window.innerWidth > window.innerHeight)
     {
         $('body').addClass('horizontal');
         $('body').removeClass('vertical');
@@ -146,7 +146,7 @@ $(document).ready(function(){
         $('body').addClass('vertical');
         $('body').removeClass('horizontal');
         
-    }
+    }*/
    
      $('body').on("blur","input.number",function(e) {
 													

@@ -15,6 +15,7 @@
             {
                 viewIModel = kendo.observable();
             }
+            $("input[type=checkbox]" ).attr( "checked",false);
             var appid = sessionStorage.getItem("matchesPageFid");
             matchid = sessionStorage.getItem("IteriaMatchid");
             app.loginService.viewModel.showloder();

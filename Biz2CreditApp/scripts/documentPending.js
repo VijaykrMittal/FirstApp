@@ -419,17 +419,17 @@
         },
         setSubmitDocspendingStatus:function(data)
         {
-            console.log(data);
-            console.log(data.length);
             var that = this;
-            for(i=0;i<=data.length;i++)
+
+            if($.type(data[0]['DocFileDetails'])!=='object')
             {
-                if(data['DocFileDetails']==='False' || data['DocFileDetails']===false)
-                {
-                    that.set("submitDocspendingStatus",false);
-                }
-                
+                that.set("submitDocspendingStatus",false);
             }
+            else
+            {
+                that.set("submitDocspendingStatus",true);
+            }
+                
         }
       
        

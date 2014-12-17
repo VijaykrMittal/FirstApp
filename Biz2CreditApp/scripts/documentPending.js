@@ -327,16 +327,18 @@
         winUpload:function(r) {
             
             $("#tabstrip-upload-file").data("kendoMobileModalView").close();
-            //pb.value(0);
+            pb.value(0);
             console.log("Code = " + r.responseCode);
             console.log("Response = " + r.response);
             console.log("Sent = " + r.bytesSent);
             apps.navigate("views/documentPending.html");
+            app.documentService.viewModel.show();
            // alert(r.response);
         },
  
         failUpload:function(error) {
             app.documentService.viewModel.transferFileAbort();
+            pb.value(0);
             alert("An error has occurred: Code = "+error.code);
         },
         transferFileAbort:function()

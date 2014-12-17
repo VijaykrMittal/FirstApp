@@ -1137,7 +1137,7 @@
         
         fileExists:function(fileEntry)
         {
-            console.log(fileEntry);
+            //console.log(fileEntry);
             if(device.platform.toLowerCase() === "ios" )
             {
                 window.open(encodeURI(fileEntry.nativeURL),"_blank","location=yes,hidden=no");

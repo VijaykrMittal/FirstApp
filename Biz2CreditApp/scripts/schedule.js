@@ -112,10 +112,10 @@
     });
     $(window).on('orientationchange', function () {
         
+        
         $("#tabstrip-home").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
         $("#tabstrip-sign-up").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
-        app.homesetting.viewModel.closeParentPopover();
-        
+ 
         if(window.innerWidth > window.innerHeight)
         {
             $('body').addClass('vertical');
@@ -126,6 +126,7 @@
             $('body').addClass('horizontal');
             $('body').removeClass('vertical');
         }
+        app.homesetting.viewModel.closeParentPopover();
       
     });
     app.scheduleService = {

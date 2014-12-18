@@ -59,7 +59,7 @@
                         
                         app.iteriaService.viewModel.addDynamicBind(c);
                         html='<div class="field">'
-                        html+='<div class="own_name">Please enter Testing\'s social security number</div>';
+                        html+='<div class="own_name">Please enter <span class="caps">'+Data[0]['results']["ownerList"][c-1]['own_fname']+'<span>\'s social security number</div>';
                         html+='<input type="text" id="own_ssno'+c+'" name="own_ssno'+c+'"  class="IN3" data-bind="value:own_ssno'+c+'"  title="Enter your Social Security Number"  maxlength="9"/>';
                         html+='<input type="hidden" id="own_percent'+c+'" name="own_percent'+c+'" data-bind="value:own_percent'+c+'" value="" />';
                         html+='<input type="hidden" id="hown_ssno'+c+'" name="hown_ssno'+c+'" data-bind="value:hown_ssno'+c+'" value="" />';

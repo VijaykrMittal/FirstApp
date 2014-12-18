@@ -188,7 +188,7 @@
                 app.loginService.viewModel.hideloder();
                 if(data[0]['results']['faultcode'] === 1 || data[0]['results']['faultcode'] === "1")
                 {
-                    $msg= "Finacial Preference submitted successfully";
+                    $msg= "Financial Preference submitted successfully";
                     app.analyticsService.viewModel.trackFeature("Application.Loan application submitted successfully");
                     app.loginService.viewModel.mobileNotification($msg,'info');
                     
@@ -198,7 +198,7 @@
                 }
                 else if(data[0]['results']['faultcode'] === 0 || data[0]['results']['faultcode'] === "0")
                 {
-                    $msg= "Finacial Preference not submitted successfully.";
+                    $msg= "Financial Preference not submitted successfully.";
                     app.loginService.viewModel.mobileNotification($msg,'info'); 
                     return;
                 }

@@ -103,24 +103,32 @@
                     
                         #if(statusid === "1"){#
                             <a class="appy" id ="applyIteria"  data-matchid="#= matchid #" data-appid="#= appid #" data-bind="click:applyIteriaLoan" data-role='button'>Itria Apply</a>
+                            <span class="flagTag">Mobile/Web</span>
                         #}else if(statusid === "12" || statusid === 12){#
             
             
                             <a class="pending" id ="docpending"  data-matchid="#= matchid #" data-appid="#= appid #" data-bind="click:docPendingIteriaLoan" data-role="button">#: status_name #</a>
+                            <span class="flagTag">Mobile/Web</span>
                            
                         #}else{#
                              <a class="pending" href="\#tabstrip-mess-third" data-rel="modalview" data-role="button">#: status_name #</a>
+                            <span class="flagTag">Web Only</span>
+            
                         #}#
                         
                     #}else{#
                         #if(statusid === "1"){#
                             <a class="appy" data-bind="click: matchAppy" data-role='button'>Apply</a>
+                            <span class="flagTag">Web Only</span>
                         #}else if(statusid === "11"){#
                             <a class="funded" href="\#tabstrip-mess-third" data-rel="modalview" data-role="button">#: status_name #</a>
+                            <span class="flagTag">Web Only</span>
                         #}else if(statusid === "7"){#
                             <a class="approval" href="\#tabstrip-mess-third" data-rel="modalview" data-role="button">#: status_name #</a>
+                            <span>Web Only</span>
                         #}else{#
                             <a class="pending" href="\#tabstrip-mess-third" data-rel="modalview" data-role="button">#: status_name #</a>
+                            <span class="flagTag">Web Only</span>
                         #}#
                     #}#
 				</div>

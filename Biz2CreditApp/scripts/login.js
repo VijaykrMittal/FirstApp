@@ -207,7 +207,7 @@
         },
         mobileNotification:function(msg,status)
         {
-            app.analyticsService.viewModel.trackFeature(msg);
+            //app.analyticsService.viewModel.trackFeature(msg);
             var toast =window.plugins.toast;
             var message =msg;
             toast.showLongBottom(message,

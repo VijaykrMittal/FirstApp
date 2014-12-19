@@ -103,7 +103,7 @@
 line-height: 0;margin-left: 10px;  text-align: left; text-indent: -99999px; width: 72px; float:right; overflow:hidden;}
 .documentList .file-icon{float:left;height: 32px; margin-right:10px;width:27px;}
 .documentList .file-name{float:left; margin-right:10px;width:500px; color:#999; font-size:12px; padding:7px 0 0 0}
-.documentList .buttonSet{float:right;width:100px; padding-top:4px;}
+.documentList .buttonSet{float:right;width:130px; padding-top:4px;}
 .documentList .sub-row .folder {background: url(../images/doc-icon-folder.png) no-repeat  left center;}
 .documentList .sub-row .doc {background: url(../images/doc-icon-doc.png) no-repeat  left center;}
 .documentList .sub-row .html {background: url(../images/doc-icon-doc.png) no-repeat  left center;}

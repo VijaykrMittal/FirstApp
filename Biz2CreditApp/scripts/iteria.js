@@ -229,7 +229,7 @@
             dataParam={};
             var that = this;
             dataParam['apiaction'] = 'saveadditionalinfo';
-            dataParam['custid'] = that.get("custid");
+            dataParam['custid'] = localStorage.getItem("userID");
             dataParam['appid'] = that.get("appid");
             dataParam['matchID'] = that.get("matchID");
             dataParam['hnowners'] = that.get("hnowners");

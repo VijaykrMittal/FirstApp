@@ -179,7 +179,7 @@ z-index: 999; }
 #privacy_policy .km-header .km-widget.km-button{background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:5px 5px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0;}
 #terms_condition .km-header{background: #f4f4f4;}
 #terms_condition .km-header .km-widget.km-button{background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:10px 10px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0;}
-.modal-mess-one .closeBt a, #privacy_policy .view-content .km-widget.km-button, #terms_condition .view-content .km-widget.km-button, #bus_fin_serv_trm_a_cond .view-content .km-widget.km-button {background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:5px 5px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0;}
+.modal-mess-one .closeBt a, #privacy_policy .view-content .km-widget.km-button, #terms_condition .view-content .km-widget.km-button, #bus_fin_serv_trm_a_cond .view-content .km-widget.km-button {background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0; padding:0;}
 .modal-mess-one .closeBt a:focus { background-color:#bdbdbd;}
 .modal-mess-one .closeBt .k-button:focus:active:not(.k-state-disabled):not([disabled]) {-webkit-box-shadow:inset 0 0 3px 4px #bdbdbd;box-shadow:inset 0 0 3px 4px #bdbdbd}
 .modal-mess-one p {color:#333; line-height:1.8em; font-size:1.2em; text-align:center; margin:8px 15px;}
@@ -206,7 +206,7 @@ z-index: 999; }
 .matches-view li .row3 a.appy {background-image: url(images/icon_apply_1.png); background-repeat:no-repeat; background-size:23%; background-position:center 4px;}
 /*********29-04-14**************/
 /*********1-04-14****************/
-.matches-logo { background-image: url(images/back-logo.png); text-align:left; background-repeat:no-repeat; background-size:25%; background-position:10px 14px;height:50px; position:relative; background-color:#e9e9e9; padding:0.5em; width:100%;}
+.matches-logo { background-image: url(images/back-logo.png); text-align:left; background-repeat:no-repeat; background-size:25%; background-position:10px 14px;height:50px; position:relative; background-color:#e9e9e9; padding:0; width:100%;}
 .matches-logo a {background-color:transparent; border:0; height:auto; font-size:0; display:block; width:25%; font-size:0px; text-indent:-9000px;}
 .reqWindow { border-bottom:1px solid #99cc00;}
 .reqWindow h4 { color:#99cc00; font-size:1.3em; font-weight:normal; margin:15px 10px;}
@@ -455,12 +455,12 @@ background-position:5px 15px !important;height: 50px;position: relative;backgrou
 #applypopup .field .IN3 { width:87%;}
 #applypopup .field .que_hint { margin-right:10px;}
 #applypopup p {color: #333333; margin:0 0 10px; font-family: "Open Sans",Arial,Helvetica,sans-serif; line-height:21px;  font-size: 13px; font-weight: normal;}
-#iteriaModalView .km-header .km-widget.km-button{border:0; background-color:transparent;}
+#iteriaModalView .km-header .km-widget.km-button{border:0; background-color:transparent; margin:0;}
 
 
-#matchDocList .filesBlock .buttonSet .DeleteIC {  background-color:transparent; border:0; padding:0;text-indent:-9999;background-image: url("images/delete-icon-bg.png"); background-repeat:no-repeat; padding:0.5% 10%;}
+#matchDocList .filesBlock .buttonSet .DeleteIC {  background-color:transparent; border:0; padding:0;text-indent:-9999;background-image: url("images/delete-icon-bg.png"); background-repeat:no-repeat; width:40%;height: 37px; background-position:center;}
 #matchDocList .filesBlock .file-name {float: left;margin-right: 10px;width:65%;color: #333;font-size: 20px;padding: 8px 0 0 0;word-break: break-all;}
-#matchDocList .filesBlock .buttonSet .downloadBtn {  background-color:transparent; border:0; padding:0;text-indent:-9999;background-image: url("images/download-icon-bg.png"); background-repeat:no-repeat; padding:15%;}
+#matchDocList .filesBlock .buttonSet .downloadBtn {  background-color:transparent; border:0; padding:0;text-indent:-9999;background-image: url("images/download-icon-bg.png"); background-repeat:no-repeat; padding:0;width:40%;height: 37px; background-position:center;}
 #matchDocList .filesBlock .file-iconjpg {background-image: url(images/jpg.png);background-repeat: no-repeat;background-size: 58%;width: 6%;background-position: 0px 0px;height: 38px;float: left;}
 #matchDocList .filesBlock .default-icon {background-image: url(images/unknown.png);background-repeat: no-repeat;background-size: 43%;background-position: 13px 7px;}
 #matchDocList .filesBlock .txt {background-image: url(images/jpg.png);background-repeat: no-repeat;background-size: 58%;width: 6%;background-position: 0px 0px;height: 38px;float: left;}
@@ -508,3 +508,4 @@ ul#dirContentUpload input[type="checkbox"] {width:30px; height:30px;margin-top: 
 .fotrText p {padding:10px 0;margin:0; font-weight:bold;}
 .lastSubmit.BTgry{background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#ccc))!important; /* Safari 5.1, Chrome 10+ */ background: -webkit-linear-gradient(top, #ccc, #ccc)!important; /* Firefox 3.6+ */ background: -moz-linear-gradient(top, #ccc, #ccc)!important; /* IE 10 */ background: -ms-linear-gradient(top, #ccc, #ccc)!important; /* Opera 11.10+ */ background: -o-linear-gradient(top, #ccc, #ccc)  !important;}
 .flagTag{font-size:12px; color:#666;}
+.caps{text-transform: capitalize;}

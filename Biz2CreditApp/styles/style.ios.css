@@ -68,6 +68,7 @@ html body .backButton {background-size: 20% !important;height: 75px;}
 #tabstrip-manage-app .refresh-loading {background-size: 39%;background-position: center 17px;}
 #tabstrip-manage-app .refreshloan{background-size:23%;background-position:42px 24px;}
 .rw_lin.addons_det.clearfix.debt_crecrd p.imp40 input { width:260px !important;}
+ 
 }
 @media (min-width:0px) and (max-width:1024px) {
 #tabstrip-download-file {padding:2%; height:47%; background-color:#fff;}
@@ -244,14 +245,13 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 #tabstrip-Setting .popup {width: 60px;}
 #tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li {padding: 3% 0 3% 12%;background-size: 6%;}
 #aplicn_frm .rws p.fotPrst {width:40.6%;}
-#matchDocList .filesBlock .buttonSet .DeleteIC {padding: 3% 12%;}
+#matchDocList .filesBlock .buttonSet .DeleteIC, #matchDocList .filesBlock .buttonSet .downloadBtn {padding:0%;height: 30px;}
 .documentList .wrap-content .row.off, .documentList .wrap-content .row { background-size:4.5%; background-position:right 12px;}
 .docsUpload .flNmUpld {padding:15px 0;font-size: 1.2em;}
 #matchDocList .upload a { font-size:13px; padding:5px 15px;}
 .docsUpload .uploadBar {margin: 5% 5% 4%;}
-#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {
-height: 56%;
-}
+    
+#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height: 56%;}
 }
 @media (min-width:0px) and (max-width:670px) {
 #aplicn_tp ul.app_nav li {background-position: 8px center;}
@@ -269,8 +269,7 @@ height: 56%;
 #aplicn_frm select.IN1b.ipsm1 {width: 179px;}
 #matchDocList .filesBlock .file-iconjpg {background-size:90%;height: 37px;}
 #matchDocList .filesBlock .file-name {padding: 8px 0 0 8px; font-size:17px;}
-#matchDocList .filesBlock .buttonSet .DeleteIC {padding:2% 11%;background-size: 100%;}
-#matchDocList .filesBlock .buttonSet .downloadBtn { background-size:83%;}
+#matchDocList .filesBlock .buttonSet .DeleteIC {padding:0;}
 #document-attach .km-rightitem a.refresh-loading {width:37%;background-size: 70%;background-position: center 22px;}
 .documentList .wrap-content .row .name {width: 91%;}
 .docs-header .km-widget .docs-docu {width: 65%;}
@@ -315,13 +314,13 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 #tabstrip-manage-app #tabstrip ul li.postd_icn, #tabstrip-manage-app #tabstrip ul li.k-state-active.postd_icn{ background-size:17%;}
 #tabstrip-manage-app #tabstrip ul li.end_icon, #tabstrip-manage-app #tabstrip ul li.k-state-active.end_icon, #tabstrip-manage-app #tabstrip ul li.lon_icon, #tabstrip-manage-app #tabstrip ul li.k-state-active.lon_icon { background-size:15%;}
 #aplicn_frm .IN3.smOn {width: 100%;}
-#matchDocList .filesBlock .file-iconjpg {background-size:100%;height: 37px;width: 7%;}
+#matchDocList .filesBlock .file-iconjpg {background-size:100%;height: 37px;width:9%;}
 .documentList .wrap-content .row .num span {line-height: 25px;width: 26px;height: 26px;font-size: 15px;}
-#matchDocList .filesBlock .buttonSet .DeleteIC {padding: 4% 12%;}
-#matchDocList .filesBlock .buttonSet .downloadBtn {background-size: 95%;margin: 5px 0 0;height: 25px;}
+#matchDocList .filesBlock .buttonSet .DeleteIC {padding: 0;width: 32%;}
+#matchDocList .filesBlock .buttonSet .downloadBtn {margin:0;height:30px; padding:0; }
 #matchDocList .filesBlock .file-name {font-size: 15px;}
 .sub-row {padding: 9px 18px 6px 18px;}
-.documentList .buttonSet {width:70px; margin:0;}
+.documentList .buttonSet {width:110px; margin:0;}
 #document-attach .km-rightitem a.refresh-com, #document-attach .km-rightitem a.docs-popup, #document-attach .km-rightitem a.refresh-loading {height: 54px;}
 #document-attach .km-rightitem {width: 16%;}
 #document-attach .km-rightitem a.refresh-com{background-position: center 12px;}
@@ -370,7 +369,7 @@ html body #tabstrip-manage-app .backButton {background-size: 24% !important;heig
 #tabstrip-manage-app #tabstrip div:nth-child(4) .tabOne .actArw {margin: 0 0 0 80%;}
 #tabstrip-manage-app .refresh-loading{height: 55px;background-position: center 11px;background-size: 57%; }
 #tabstrip-manage-app .refreshloan {background-size: 33%;background-position: 20px 17px; height:55px;}
-    
+ 
 }
 @media (min-width:0px) and (max-width:580px) { 
 .logLogo {margin:1% auto;background-size: 50%; height:60px;}
@@ -476,6 +475,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 .forgtpass {padding: 12px 0 5px;}
 #newuser ul.km-listinset li select {background-size: 7%;}
 #aplicn_frm ul.low_creditop li {width:49%;}
+#matchDocList .filesBlock .file-name {width: 60%;}
 
 }
 @media (min-width:0px) and (max-width:480px) {
@@ -533,7 +533,7 @@ html body #tabstrip-manage-app .backButton {background-size: 39% !important;widt
 .documentList .wrap-content .row .name a { font-size:13px;}
 #matchDocList .text1 a {line-height: 21px;font-size: 13px;}
 #matchDocList .filesBlock .file-name {width: 63%;}
-.documentList .buttonSet {width: 55px; }
+.documentList .buttonSet {width: 95px; }
 .sub-row {padding: 9px 10px 4px 10px;}
 #matchDocList .filesBlock .file-iconjpg {width: 8%;}
 #matchDocList .filesBlock .file-iconjpg {height: 32px;}
@@ -557,9 +557,13 @@ html body #tabstrip-manage-app .backButton {background-size: 39% !important;widt
 .docs-header .km-widget #docs-filter {width: 74%;}
 .docs-header .km-widget #docs-filter .km-filter-wrap {background-position: center 40px;}
 #tabstrip-Setting .popup {width: 45px;}
+#matchDocList .filesBlock .buttonSet .DeleteIC {background-size: 70%;}
+#matchDocList .filesBlock .buttonSet .downloadBtn {background-size: 55%;}
 }
-
-
+@media (min-width:0px) and (max-width:390px) { 
+#matchDocList .filesBlock .file-name {width: 56%;}
+#matchDocList .filesBlock .file-iconjpg {width: 10%;height: 38px;}
+}
 @media (min-width:0px) and (max-width:370px) { 
 .logo { margin:6% auto;}
 .logLogo { margin:17% auto;height: 60px;background-size:50%;}
@@ -653,7 +657,7 @@ html body #tabstrip-manage-app .backButton {background-size:45% !important;width
 .tabOne.withMatch .head span:nth-child(2) { font-size:12px;}
 .documentList .wrap-content .row.off, .documentList .wrap-content .row {background-size: 7%;}
 .documentList .wrap-content h2 {font-size: 16px;}
-#matchDocList .filesBlock .file-iconjpg {width: 9%;}
+#matchDocList .filesBlock .file-iconjpg {width: 11%;}
 #document-attach .movebuttonArea a.attechUpload {padding: 2.3%;}
 #document-attach .km-rightitem {width: 27%;}
 #document-attach .km-rightitem a.refresh-com, #document-attach .km-rightitem a.docs-popup, #document-attach .km-rightitem a.refresh-loading {height: 50px;}
@@ -665,6 +669,9 @@ html body #tabstrip-manage-app .backButton {background-size:45% !important;width
 #newuser ul.km-listinset li select, #newuser ul.km-listinset li input[type=text] {padding: 0.7em !important;}
 #newuser .buttonArea input[type=submit] {font-size: 1em;}
 .docs-header .km-widget .refresh-loading {background-size: 47%;background-position: 10px 15px;}
+.documentList .buttonSet {width: 75px;}
+#matchDocList .filesBlock .buttonSet .DeleteIC {width: 34%;background-size: 80%;}
+#matchDocList .filesBlock .buttonSet .downloadBtn {background-size: 65%;}
 }
 @media (min-width:0px) and (max-width:320px) { 
 #blackBlk .desbrdIcon .dasimg {width:19%; }
@@ -681,6 +688,6 @@ html body #tabstrip-manage-app .backButton {background-size:45% !important;width
 .documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder{ width:10%;}
 .documentContent .km-listview-wrapper ul li table td:nth-child(3) {width: 5%;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png{ width:10%;background-position: 12px 6px;}
-
+#matchDocList .filesBlock .file-iconjpg {background-size: 98%;}
 }
 

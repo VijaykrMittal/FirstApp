@@ -358,7 +358,11 @@
             return status;
         },
         toTimestamp:function(strDate){
-       	 var datum = Date.parse(strDate);
+            
+            var s = strDate;
+            var a = s.split(/[^0-9]/);
+            var d=new Date (a[0],a[1]-1,a[2],a[3],a[4],a[5] );
+            var datum = Date.parse(d);
        	 return datum/1000;
         },
         getTotalMatches: function(creditscore)

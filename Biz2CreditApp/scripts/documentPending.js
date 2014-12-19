@@ -119,7 +119,7 @@
                   //  html+=  data[i].docName;
                     html+= '<a id="dispalyFiles" class="'+data[i].id+'">'+data[i].docName+'</a>';
                 }else{
-                    html+= '<a id="dispalyFiles" class="'+data[i].id+'">'+data[i].docName+'<span>('+data[i].DocFileDetails.length+')</span></a>';
+                    html+= '<a id="dispalyFiles" class="'+data[i].id+'">'+data[i].docName+' <span>('+data[i].DocFileDetails.length+')</span></a>';
                 }           
                
                 html+= '</div>';
@@ -129,7 +129,7 @@
                    // html+= '<div class="text1"><span class="text2"><a class="esignAnchor" data-bind="click:sendEsignDocs,visible:sendEsignDocsStatus">Send esign document</a><a  class="esignAnchor" data-bind="click:resSendEsignDocs,invisible:sendEsignDocsStatus">Resend esign document</a></span></div>';
                     html+= '<div class="text1"><span class="docuploaded"><a data-downurl="'+data[i].wetsignpdf+'" data-bind="click:downloadWetSignatureFile" data-role="button">Download document for wet signature</a></span></div>';
                 }
-                html+= '<div class="filesBlock" id="'+data[i].id+'">';
+                html+= '<div class="filesBlock" id="'+data[i].id+'" style="display: block;">';
                 if(data[i].DocFileDetails !==false) { 
                     fileData =data[i].DocFileDetails;
                     

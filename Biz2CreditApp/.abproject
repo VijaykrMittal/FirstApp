@@ -38,7 +38,7 @@
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
   ],
-  "BundleVersion": "1.5",
+  "BundleVersion": "1.6",
   "DisplayName": "Biz2Credit",
   "Author": "",
   "Description": "Biz2CreditApp",
@@ -47,7 +47,7 @@
     "2"
   ],
   "iOSBackgroundMode": [],
-  "AndroidVersionCode": "8",
+  "AndroidVersionCode": "9",
   "WP8Requirements": [],
   "WP8Capabilities": [],
   "WP8TileTitle": "",
@@ -55,9 +55,5 @@
   "WP8PublisherID": "{10e7cda5-5087-4017-a803-aca65e872f3a}",
   "WP8Publisher": "",
   "Framework": "Cordova",
-  "CordovaPluginVariables": {
-    "com.telerik.mobiletesting": {
-      "IOS_APP_URL": ""
-    }
-  }
+  "projectVersion": "1"
 }

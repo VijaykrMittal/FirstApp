@@ -3,7 +3,7 @@
         app = global.app = global.app || {};
     
     var productId = "f19ae305ccd24d2f92598ebd1b88ebf0",
-        version   = "1.5";
+        version   = "1.6";
     
     AnalyticsModel = kendo.data.ObservableObject.extend({
        

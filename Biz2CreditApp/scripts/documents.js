@@ -779,7 +779,7 @@
                     return;
                 }
                 if (renameFolder.length > 255) {
-                    navigator.notification.alert("Folder name should be less than 255 chracters",
+                    navigator.notification.alert("Folder name should be less than 255 characters",
                     function () { }, "Notification", 'OK');
 
                     return;

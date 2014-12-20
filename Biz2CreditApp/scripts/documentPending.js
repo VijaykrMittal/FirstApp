@@ -117,9 +117,9 @@
                 html+= '<div class="name requiredocs-name">';
                 if(data[i].DocFileDetails===false) { 
                   //  html+=  data[i].docName;
-                    html+= '<a id="dispalyFiles" class="'+data[i].id+'">'+data[i].docName+'</a>';
+                    html+= '<a id="dispalyFiles" class="'+data[i].id+'"><span class="docscon">'+data[i].docName+'<span></a>';
                 }else{
-                    html+= '<a id="dispalyFiles" class="'+data[i].id+'">'+data[i].docName+' <span>('+data[i].DocFileDetails.length+')</span></a>';
+                    html+= '<a id="dispalyFiles" class="'+data[i].id+'"><span class="docscon">'+data[i].docName+' <span><span>('+data[i].DocFileDetails.length+')</span></a>';
                 }           
                
                 html+= '</div>';
@@ -421,16 +421,20 @@
         },
         setSubmitDocspendingStatus:function(data)
         {
-            var that = this;
-
-            if($.type(data[0]['DocFileDetails'])!=='object')
+            that = this;
+            console.log(data.length);
+            for(i=0;i<=data.length;i++)
             {
-                that.set("submitDocspendingStatus",false);
+                if($.type(data[i]['DocFileDetails'])!=='object')
+                {
+                    that.set("submitDocspendingStatus",false);
+                }
+                else
+                {
+                    that.set("submitDocspendingStatus",true);
+                } 
             }
-            else
-            {
-                that.set("submitDocspendingStatus",true);
-            }
+            
                 
         }
       

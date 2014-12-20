@@ -242,7 +242,7 @@
         getImage:function() {
             
             navigator.camera.getPicture(app.documentService.viewModel.uploadPhoto, function(message) {
-                    alert('get picture failed');
+                    alert('Get picture failed');
                     },{
                     quality: 50, 
                     destinationType: navigator.camera.DestinationType.FILE_URI,
@@ -428,11 +428,11 @@
                 if($.type(data[i]['DocFileDetails'])!=='object')
                 {
                     that.set("submitDocspendingStatus",false);
+                    break;
                 }
                 else
                 {
                     that.set("submitDocspendingStatus",true);
-                    break;
                 } 
             }
             

@@ -185,7 +185,7 @@
                 }
                 else if(varown_ssno !== varown_ssnoedit &&  !$.isNumeric(varown_ssno) && c === 1) 
                 {	  
-                    navigator.notification.alert("Please enter numbers only in owner social security number.",
+                    navigator.notification.alert("Please enter only numbers in owner social security number field.",
                     function () { }, "Notification", 'OK');
                     document.getElementById("own_ssno"+c).focus();
                     vflag = 0;
@@ -210,7 +210,7 @@
                 }  
                 else if(varown_ssno !== varown_ssnoedit && (!$.isNumeric(varown_ssno) && c!==1 && varown_ssno.trim()!=="")) 
                 {	  
-                    navigator.notification.alert("Please enter numbers only in owner social security number.",
+                    navigator.notification.alert("Please enter only numbers in owner social security number field.",
                     function () { }, "Notification", 'OK');
                     document.getElementById("own_ssno"+c).focus();
                     vflag = 0;

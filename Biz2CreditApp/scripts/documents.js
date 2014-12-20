@@ -885,7 +885,7 @@
                     return;
                 }
                 if (renameFile.length > 255) {
-                    navigator.notification.alert("File name should be less than 255 chracters",
+                    navigator.notification.alert("File name should be less than 255 characters",
                     function () { }, "Notification", 'OK');
 
                     return;
@@ -982,7 +982,7 @@
             app.homesetting.viewModel.closeParentPopover(e);
             if(shareBackHistory[0]==='Shared Files' || shareBackHistory[0]==='Shared Folders')
             {
-                navigator.notification.alert("This action can not be complete in share files/folders section.",
+                navigator.notification.alert("This action is not allowed in this section.",
                     function () { }, "Notification", 'OK');
                 
             }
@@ -1013,7 +1013,7 @@
                     return;
                 }
                 if (newFolderName.length > 255) {
-                    navigator.notification.alert("Folder name should be less than 255 chracters",
+                    navigator.notification.alert("Folder name should be less than 255 characters",
                     function () { }, "Notification", 'OK');
 
                     return;

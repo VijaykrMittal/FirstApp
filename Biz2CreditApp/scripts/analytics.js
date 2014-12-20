@@ -30,7 +30,7 @@
             var factory = window.plugins.EqatecAnalytics.Factory;
             var settings = factory.CreateSettings(productId,version);
             
-            settings.TestMode = 'true';
+            //settings.TestMode = 'true';
             settings.LoggingInterface = {
                                             LogError:function(errorMsg)
                                             {

@@ -32,7 +32,7 @@
                 return;
         }
         if (yearInBussiness === "0" || yearInBussiness === "") {
-                navigator.notification.alert("Please select years in bussiness.",
+                navigator.notification.alert("Please select years in business.",
                     function () { }, "Notification", 'OK');
 
                 return;

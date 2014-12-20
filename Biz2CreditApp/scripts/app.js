@@ -17,7 +17,7 @@
         {
         	app.documentsetting.viewModel.set("showfilter", false);
         }
-        else if(apps.view()['element']['0']['id']==='tabstrip-loanapp-bi'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-ci'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-pi'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-fp'|| apps.view()['element']['0']['id']==='tabstrip-matches' || apps.view()['element']['0']['id']==='tabstrip-docs' || apps.view()['element']['0']['id']==='tabstrip-movedocs' || apps.view()['element']['0']['id']==='tabstrip-file-export')
+        else if(apps.view()['element']['0']['id']==='tabstrip-loanapp-bi'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-ci'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-pi'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-fp'|| apps.view()['element']['0']['id']==='tabstrip-matches' || apps.view()['element']['0']['id']==='tabstrip-docs' || apps.view()['element']['0']['id']==='tabstrip-movedocs' || apps.view()['element']['0']['id']==='tabstrip-file-export' || apps.view()['element']['0']['id']==='document-pending')
         {
         	e.preventDefault();
         }

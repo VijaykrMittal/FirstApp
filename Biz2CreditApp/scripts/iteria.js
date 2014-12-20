@@ -144,13 +144,15 @@
             }
             else if(!$("#authorization").is(':checked')) 
             {
-                alert('Please accept the agreement.');
+                navigator.notification.alert("Please accept the agreement.",
+                function () { }, "Notification", 'OK');
                 $('#authorization').focus();
                 return false;
             }
             else if(!$("#loanpro_auth").is(':checked')) 
             {
-                alert('Please accept the loan process agreement');
+                navigator.notification.alert("Please accept the loan process agreement.",
+                function () { }, "Notification", 'OK');
                 $('#loanpro_auth').focus();
                 return false;
             }	
@@ -167,42 +169,49 @@
                 var varown_percent = parseInt(document.getElementById("own_percent"+c).value);
                 if($.trim(varown_ssno)==="" && c===1 ) 
                 {
-                    alert( "Please enter owner social security number." );                   
+                    navigator.notification.alert("Please enter owner social security number.",
+                    function () { }, "Notification", 'OK');
                     document.getElementById("own_ssno"+c).focus();
                     vflag = 0;
                     break;
                 }           
                 else if((varown_ssno.length!==9 && c===1)) 
                 {
-                    alert( "Please enter 9-digit owner social security number" );
+                    navigator.notification.alert("Please enter 9-digit owner social security number.",
+                    function () { }, "Notification", 'OK');
                     document.getElementById("own_ssno"+c).focus();
                     vflag = 0;
                     break;
                 }
                 else if(varown_ssno !== varown_ssnoedit &&  !$.isNumeric(varown_ssno) && c === 1) 
                 {	  
-                    alert( "Please enter numbers only in owner social security number");	
+                    navigator.notification.alert("Please enter numbers only in owner social security number.",
+                    function () { }, "Notification", 'OK');
                     document.getElementById("own_ssno"+c).focus();
                     vflag = 0;
                     break;
                 }            
                 else if(c !== 1 &&  varown_ssno.trim()==="" && varown_percent > 20 ) 
                 {
-                    alert( "Please enter owner social security number." );	
+
+                    navigator.notification.alert("Please enter owner social security number.",
+                    function () { }, "Notification", 'OK');
                     document.getElementById("own_ssno"+c).focus();
                     vflag = 0;
                     break;
                 }  
                 else if(c!==1 && varown_ssno.length!==9 && varown_ssno.trim()!=="" ) 
                 {	  
-                    alert( "Please enter 9-digit owner social security number" );	
+                    navigator.notification.alert("Please enter 9-digit owner social security number.",
+                    function () { }, "Notification", 'OK');
                     document.getElementById("own_ssno"+c).focus();
                     vflag = 0;
                     break;
                 }  
                 else if(varown_ssno !== varown_ssnoedit && (!$.isNumeric(varown_ssno) && c!==1 && varown_ssno.trim()!=="")) 
                 {	  
-                    alert( "Please enter numbers only in owner social security number");	
+                    navigator.notification.alert("Please enter numbers only in owner social security number.",
+                    function () { }, "Notification", 'OK');
                     document.getElementById("own_ssno"+c).focus();
                     vflag = 0;
                     break;

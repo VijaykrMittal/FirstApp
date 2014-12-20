@@ -113,7 +113,7 @@
             html = '';
             $("#requireDocsList").html(html);
             for (var i = 0; i < data.length; i++) { 
-                html+= '<div class="row clearfix" ><div class="num"><span>'+(i+1)+'</span></div>';
+                html+= '<div class="row clearfix off" ><div class="num"><span>'+(i+1)+'</span></div>';
                 html+= '<div class="name requiredocs-name">';
                 if(data[i].DocFileDetails===false) { 
                   //  html+=  data[i].docName;

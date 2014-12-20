@@ -138,6 +138,7 @@
     localStorage.setItem("urlMobAppApiUser","https://www.biz2services.com/mobapp/api/user/");
     localStorage.setItem("urlMobAppApiLoan","https://www.biz2services.com/mobapp/api/loanapp/");
     //change iter id
+    //make analytic live
     */
     
     localStorage.setItem("urlMobAppApiFolder","http://sandbox.biz2services.com/mobapp/api/folder/");

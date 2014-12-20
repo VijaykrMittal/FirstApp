@@ -422,7 +422,7 @@
         setSubmitDocspendingStatus:function(data)
         {
             that = this;
-            console.log(data.length);
+            that.set("userName",localStorage.getItem("userFName"));
             for(i=0;i<=data.length;i++)
             {
                 if($.type(data[i]['DocFileDetails'])!=='object')
@@ -432,6 +432,7 @@
                 else
                 {
                     that.set("submitDocspendingStatus",true);
+                    break;
                 } 
             }
             

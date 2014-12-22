@@ -132,17 +132,19 @@
     {
     	apps = new kendo.mobile.Application(document.body, { layout: "tabstrip-layout",initial: "tabstrip-login",skin: "flat"});
     }
-    
+   /* 
     localStorage.setItem("urlMobAppApiFolder","https://www.biz2services.com/mobapp/api/folder/");
     localStorage.setItem("urlMobAppApiFile","https://www.biz2services.com/mobapp/api/file/");
     localStorage.setItem("urlMobAppApiUser","https://www.biz2services.com/mobapp/api/user/");
     localStorage.setItem("urlMobAppApiLoan","https://www.biz2services.com/mobapp/api/loanapp/");
-   
-    /*
+    // anatytic change in live mode
+    // change itia is 340
+   */
+    
     localStorage.setItem("urlMobAppApiFolder","http://sandbox.biz2services.com/mobapp/api/folder/");
     localStorage.setItem("urlMobAppApiFile","http://sandbox.biz2services.com/mobapp/api/file/");
     localStorage.setItem("urlMobAppApiUser","http://sandbox.biz2services.com/mobapp/api/user/");
     localStorage.setItem("urlMobAppApiLoan","http://sandbox.biz2services.com/mobapp/api/loanapp/");
-    */
+   
     
 })(window);

@@ -25,6 +25,7 @@
     "org.apache.cordova.splashscreen",
     "org.apache.cordova.statusbar",
     "com.telerik.plugin.eqatecanalytics",
+    "com.telerik.feedback",
     "org.apache.cordova.vibration"
   ],
   "DeviceOrientations": [

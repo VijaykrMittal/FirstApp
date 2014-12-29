@@ -195,7 +195,7 @@
         onSettingPage:function(e)
         {	
             app.analyticsService.viewModel.trackFeature("Settings.User navigate to settings");
-            apps.navigate('#tabstrip-Setting');
+            apps.navigate('#tabstrip-Setting','slide:right');
             app.homesetting.viewModel.closeParentPopover();
         },
         setSettingsPage:function()

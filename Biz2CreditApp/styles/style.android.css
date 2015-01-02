@@ -893,8 +893,8 @@ html body #aplicn_frm ul.low_creditop li.opt2 label.error {font-size:11px;}
 #tabstrip-manage-app #tabstrip ul li.k-state-active .actArw{ left:38%;}
 html body .backButton {width: 82%; height:50px;background-position: 5px 11px !important;}
 #aplicn_tp ul.app_nav li.dn span {background-position: center 75px;}
-#tabstrip-manage-app .refresh-loading {background-size: 100%;height: 50px;background-position: center 9px;}
-#tabstrip-manage-app .refreshloan {background-position:center 13px; height:50px;}
+#tabstrip-manage-app .refresh-loading {background-size: 100%;height: 50px;background-position: center 9px;width: 7%;}
+#tabstrip-manage-app .refreshloan {background-position:center 15px; height:50px;width: 7%;}
 .documentList .wrap-content .row .name {width: 90%;}
 .documentList .wrap-content .row .num span {line-height: 31px;font-size: 17px;width: 30px;height: 30px;margin-top: 7px;}
 .documentList .buttonSet {padding-top: 5px;}
@@ -1170,4 +1170,9 @@ li#undefined table td:nth-child(1).default-icon {background-size: 54%;}
 #tabstrip-forgot-pass .view-content {margin-top: 3em;}
 #newuser {margin: 2em 0;}
 .forgtpass {padding: 12px 0 0px;}
+}
+@media (min-width:0px) and (max-width:390px) { 
+html body .backButton {background-size: 50% !important;width: 76%;}
+#tabstrip-manage-app .refresh-loading, #tabstrip-manage-app .refreshloan {width: 9%;}
+#tabstrip-manage-app .docs-popup {height: 48px;}
 }

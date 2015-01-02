@@ -392,6 +392,11 @@
         {
             app.analyticsService.viewModel.trackFeature("ManageApplication.User navigate to manage application");
             apps.navigate("views/loanApp.html");
+        },
+        setUserfeedback:function()
+        {
+            app.homesetting.viewModel.closeParentPopover();
+            feedback.showFeedback();
         }
 
         

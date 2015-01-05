@@ -1,5 +1,3 @@
-body {
-}
 @media (min-width:0px) and (max-width:1280px) {
 .logo {margin: 2% auto 3%;}
 .home .popup, #tabstrip-Setting .popup, #tabstrip-loanapp-bi .popup, #tabstrip-loanapp-ci .popup, #tabstrip-loanapp-fp .popup, #tabstrip-loanapp-pi .popup {width: 70px;}

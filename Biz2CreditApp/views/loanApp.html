@@ -100,7 +100,7 @@
     #var fDate = updatetime #
     <li class="clearfix">
         <span>
-            <a data-bind="click: applyFreshLoan" data-mode="edit" data-fid="#: fid #">BIZ#: fid #</a>
+            <a id="#: fid #" data-bind="click: applyFreshLoan" data-mode="edit" data-fid="#: fid #">BIZ#: fid #</a>
         </span>
         <span>#= kendo.toString(kendo.parseDate(fDate), 'MM/dd/yyyy') #
 

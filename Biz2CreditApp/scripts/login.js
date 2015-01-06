@@ -347,20 +347,34 @@
             sessionStorage.setItem("LoanAppCIEditMode",'0');
             sessionStorage.setItem("LoanAppPIEditMode",'0');
             sessionStorage.setItem("LoanAppFPEditMode",'0');
+
+            app.analyticsService.viewModel.trackFeature("Application.User navigate to loan application");
+            apps.navigate("views/loanAppBI.html");  
+        },
+        applicationEditMode:function(e)
+        {
+            app.loansetting.viewModel.resetLoanAppBIForm();
+            app.loanAppCI.viewModel.resetLoanAppCIForm();
+            app.loanAppPI.viewModel.resetLoanAppPIForm();
+            app.loanFP.viewModel.resetLoanAppFPForm();
+			app.loginService.viewModel.formValidateReset();
             
-            if(e.target.dataset.mode ==='edit')
+            sessionStorage.setItem("LoanAppBIEditMode",'0');
+            sessionStorage.setItem("LoanAppCIEditMode",'0');
+            sessionStorage.setItem("LoanAppPIEditMode",'0');
+            sessionStorage.setItem("LoanAppFPEditMode",'0');
+            
+            if(device.platform=== 'iOS' || device.platform=== 'Android')
             {
                 localStorage.setItem("fid",e.target.dataset.fid);
-                sessionStorage.setItem("LoanAppBIEditMode",'1');
-                apps.navigate("views/loanAppBI.html?param=editMode");
-                
             }
             else
             {
-                app.analyticsService.viewModel.trackFeature("Application.User navigate to loan application");
-                apps.navigate("views/loanAppBI.html");
+                localStorage.setItem("fid",e.target.id);
             }
-                 
+            
+            sessionStorage.setItem("LoanAppBIEditMode",'1');
+            apps.navigate("views/loanAppBI.html?param=editMode");
         },
         mydocuments: function()
         {   

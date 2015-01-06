@@ -299,7 +299,6 @@
                 }
                 else
                 {
-
                     return;
                 }
             });    
@@ -412,7 +411,6 @@
             app.homesetting.viewModel.closeParentPopover();
             feedback.showFeedback();
         }
-
         
     });
     

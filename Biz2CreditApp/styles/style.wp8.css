@@ -32,7 +32,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 #homePage .testimonials .test-content {text-align:center;}    
 }
 @media (min-width:0px) and (max-width:384px) { 
-.logLogo {padding:30% 0 10%;background-size:52%; margin:0 auto;}
+.logLogo {padding:42% 0 10%;background-size:52%; margin:0 auto; background-position:center bottom}
 #newuser ul.km-listinset li {margin-bottom: 5%;}
 #newuser ul.km-listinset li select {background-size: 9%;}
 #tabstrip-forgot-pass .view-content {margin-top:8em;}
@@ -43,4 +43,5 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 .stpsumry h2 {margin-top:0;}
 .stpsumry p {font-size: 15px; margin-bottom:0;}
 #stpSumAc { padding-left:20px; padding-right:20px;}
+.loginSection {margin-top: 20px;}
 }

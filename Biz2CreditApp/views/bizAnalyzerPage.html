@@ -1,0 +1,422 @@
+<div id="tabstrip-bizAnalyzer" data-role="view" class="clearfix" data-show="app.bizAnalyzer.viewModel.show" data-model="app.bizAnalyzer.viewModel" >
+    <div data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title">
+                <a data-role="backbutton" class="backButton">Back</a>
+            </span>
+            <a data-bind="click: refreshViewLoan,invisible: showrefreshLoan" class="refreshloan docs-refresh">refresh</a>
+            
+            <a data-bind="click: refreshViewLoan,visible: showrefreshLoan" class="refresh-loading docs-refresh">refresh</a>
+            <a data-align="right" data-rel="popover" href="#popover-people" data-role="button" class="docs-popup"></a>
+        </div>
+    </div>
+    <div class="view-content">
+        <section>
+            <article class="clearfix" id="bz_an_mn_pg">
+              <div id="bz_an_mn_pg_inr">
+              <div class="bz_an_mn_pg_alert clearfix"> <span class="bz_an_mn_pg_alert_ttl">Message</span> - On the basis of your application form we have generated your BizAnalyzer score. <a href="javascript:void(0)" class="bz_an_mn_pg_alert_cls_btn"></a> </div>
+              <div class="bz_an_mn_pg_inr_lw clearfix">
+                <div class="bz_an_mn_pg_inr_lw_rw1">
+                  <div class="bz_an_mn_pg_inr_lw_rw1_ttl"> Congratulations on completing your application! Based on the information you provided us, 
+                    we believe your business is performing <span>Good</span>. <br>
+                    <br>
+                    Please use the adjustable sliders in Individual verticals and to see how your score can be improved. </div>
+                  <div class="bz_an_mn_pg_inr_lw_rw1_mn_cont">
+                    <div class="bz_an_mn_pg_inr_lw_rw1_mn_cont_l">
+                      <div class="bz_an_mn_pg_inr_chrt">
+                        <div class="bz_an_mn_pg_inr_chrt_vp">0</div>
+                        <div class="bz_an_mn_pg_inr_chrt_p">25</div>
+                        <div class="bz_an_mn_pg_inr_chrt_av">50</div>
+                        <div class="bz_an_mn_pg_inr_chrt_go">75</div>
+                        <div class="bz_an_mn_pg_inr_chrt_ex">100</div>
+                      </div>
+                      <div class="bz_an_mn_pg_inr_chrt_capts">
+                        <div class="bz_an_mn_pg_inr_chrt_cap">Low</div>
+                        <div class="bz_an_mn_pg_inr_chrt_cap">Below Average</div>
+                        <div class="bz_an_mn_pg_inr_chrt_cap">Average</div>
+                        <div class="bz_an_mn_pg_inr_chrt_cap">Good</div>
+                        <div class="bz_an_mn_pg_inr_chrt_cap">Excellent</div>
+                      </div>
+                       
+                    </div>
+                    <div class="bz_an_mn_pg_inr_lw_rw1_mn_cont_r">
+                      <div class="bz_an_mn_pg_inr_lw_rw1_mn_cont_r_vlus"> <span class="vlus_scr" id="netScoreBizanalyserTxt">65</span> <span class="vlus_scr_dvd">/</span>100 </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bz_an_mn_pg_inr_lw_rw2">
+                  <div class="bz_an_mn_pg_inr_lw_rw2_l"></div>
+                  <div class="bz_an_mn_pg_inr_lw_rw2_mn">
+                    <div class="bz_an_mn_pg_inr_lw_rw2_ttl"> Your performance in individual verticals </div>
+                    <div class="bz_an_mn_pg_inr_lw_tbs">
+                      <div class="bz_an_mn_pg_inr_lw_tbs_hd">
+                        <ul class="tabs-menu">
+                          <li class="">
+                              <a id="excpercre"><span class="ttl goo">Good</span>Personal Credit</a>
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span>
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span> 
+                              <input type="hidden" class="sliderTxt" id="personalCreditSliderTxt" value="600" disabled="disabled">
+                          </li>
+                          <li>
+                              <a id="gooddebttoinco"><span class="ttl bav">Low</span>Debt to Income</a>
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span>
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span>
+                              <input type="hidden" id="debitToIncomeSliderTxt" value="100" class="sliderTxt" disabled="disabled">
+                          </li>
+                          <li>
+                              <a id="timeinbusiness"><span class="ttl exc">Excellent</span>Time in Business</a> 
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span> 
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span>  
+                              <input type="hidden" id="timeInBussinessSliderTxt" value="172" class="sliderTxt" disabled="disabled">
+                          </li>
+                          <li class="actv"> 
+                              <a href="poor-indus-rsk" id="poorindusrsk"><span class="ttl bav">Low</span>Industry Risk</a> 
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span> 
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span> 
+                              <input type="hidden" id="industryRiskSliderTxt1" value="Medium Risk" class="sliderTxt" disabled="disabled">
+                              <input type="hidden" id="industryRiskSliderTxt" value="1" disabled="disabled">
+                              
+                          </li>
+                          <li class="">
+                              <a id="averagecorporisk"><span class="ttl goo">Good</span>Corporate Risk</a> 
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span> 
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span> 
+                              <input type="hidden" id="corporateRiskSliderTxt1" size="50" value="Low Risk" class="sliderTxt" disabled="disabled"> 
+                              <input type="hidden" id="corporateRiskSliderTxt" value="0" disabled="disabled"> </li>
+                          <li class=""> 
+                              <a id="belowavgcashflow"><span class="ttl bav">Low</span>Cash Flow</a> 
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span> 
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span> 
+                              <input type="hidden" id="cashFlowSliderTxt" value="46" class="sliderTxt" disabled="disabled"> 
+                              
+                          </li>
+                          <li class="">
+                              <a id="goodrevenue"><span class="ttl bav">Low</span>Revenue</a> 
+                              <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span> <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span> 
+                              <input type="hidden" id="anuRevSliderTxt" value="2900000" class="sliderTxt" disabled="disabled">
+                             <input type="hidden" id="anuRevSliderTxt1" value="Low Risk" class="sliderTxt" disabled="disabled">
+                              
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="bz_an_mn_pg_inr_lw_tbs_cont tab">
+                        <div id="exc-per-cre" class="tab-content" style="display: none;">
+                                        <div class="bz_an_mn_pg_inr_lw_tbs_cont_l">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_ttl">Risk Type :<span> Medium Risk</span> </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_cont">
+                              <div class="bz_an_lw_drg_chrt2">
+                                <div class="bz_an_scr"><span id="changedvalue">Personal credit: 600</span> </div>
+                                <div class="bz_an_lw_drg_chrt2_inr">
+                                  <div class="bz_an_lw_drg_chrt2_pc rd"><span class="chrt2_l">500</span><span class="chrt2_r">575</span></div>
+                                  <div class="bz_an_lw_drg_chrt2_pc org"><span class="chrt2_r">650</span></div>
+                                  <div class="bz_an_lw_drg_chrt2_pc gr"><span class="chrt2_r">850</span></div>
+                                 </div>
+                                <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="personalCreditSlider">
+                                  <ul role="presentation">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                  </ul>
+                                  <div></div>
+                                  <input class="answer" type="hidden">
+                                <div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 28.5714285714286%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 28.5714285714286%;"><div class="ui-slider-tooltip" aria-hidden="true"></div></a></div>
+                                <div class="dgr_chng_scr" style="display: none;">Drag this to change score</div>
+                              </div>
+                              <div id="bz_an_mn_tbs_cont1" class="bz_an_mn_pg_inr_lw_tbs_cont_bx2">
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_ttl"> Analysis </div>
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_cont"> A personal credit score represents the liklihood that a person will pay his or her debts, on time. It is typically based on the trade line (open revolving personal debt) information sourced by credit bureaus. 
+            You have medium credit score, which means that lending institutions  perceive you as risky borrower. This could be due to higher balances (&gt;50%) on your open credit cards as well as a missed mortgage or auto loan payment in last 2 years. Any open tax line can also bring your score down.</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="bz_an_mn_tbs_cont2" class="bz_an_mn_pg_inr_lw_tbs_cont_r">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_ttl"> Recommendations </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_cont"> A medium credit score means that it is important you work towards a high credit score. If you are maintaining high balances, bring them between 30-50%. It would also be beneficial to set up auto-payments and paperless billing. 
+            Itemize all the credit card limits and ensure that none of the cards have &gt;50% open balances. In case of any past late payments, get it removed from the personal credit information even if they are closed and settled. In case of any tax lien , get on payment plan to get your credit score up.
+             </div>
+                          </div>
+                          <script>$('#excpercre span').addClass('goo');$('#excpercre span').text('Good');</script>              <div id="bizbanner" class="bizbanner"><a href="http://www.equifax.com/home/en_us" target="_blank"><img src="/images/html5/biz-analyzer/equifax-banner.jpg" border="0"></a></div>
+                        </div>
+                        <div id="good-debt-to-inco" class="tab-content" style="display: none;">
+                                          <div class="bz_an_mn_pg_inr_lw_tbs_cont_l">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_ttl">Risk Type : <span>High Risk</span> </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_cont">
+                              <div class="bz_an_lw_drg_chrt2">
+                                <div class="bz_an_scr">(Debt to Income: 100%) </div>
+                                <div class="bz_an_lw_drg_chrt2_inr">
+                                  <div class="bz_an_lw_drg_chrt2_dti gr"><span class="chrt2_l">0%</span><span class="chrt2_r">40%</span></div>
+                                  <div class="bz_an_lw_drg_chrt2_dti org"><span class="chrt2_r">50%</span></div>
+                                  <div class="bz_an_lw_drg_chrt2_dti rd"><span class="chrt2_r">100%</span></div>
+                                </div>
+                                <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="debitToIncomeSlider">
+                                  <ul role="presentation">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                  </ul>
+                                  <div></div>
+                                  <input class="answer" type="hidden">
+                                <div class="ui-slider-range ui-widget-header ui-slider-range-max" style="width: 0%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%;"><div class="ui-slider-tooltip" aria-hidden="true"></div></a></div>
+                                <div class="dgr_chng_scr" style="display: none;">Drag this to change score</div>
+                              </div>
+                              <div id="bz_an_mn_tbs_cont1" class="bz_an_mn_pg_inr_lw_tbs_cont_bx2">
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_ttl"> Analysis </div>
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_cont"> The Debt to Income ratio is calculated by adding your personal and business debt, and dividing it by your total income. Lenders use this ratio to measure your ability to manage the payments you make every month to repay the money you have borrowed. 
+            Based on a review of your debt- to- income ratio, it seems that your personal debt payment as a proportion of your personal income is high. A high debt to income ratio means that either income compensation is low or personal expenses are too high. In this case personal debt payments are more than 50% of the gross monthly income. 
+            To keep your debt to credit ratio low, pay your credit card bills on time. Ensure that your Accounts Recievable and Account Payable are balanced. Don't keep outstanding balance on your sanctioned credit limit. </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="bz_an_mn_tbs_cont2" class="bz_an_mn_pg_inr_lw_tbs_cont_r">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_ttl"> Recommendations </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_cont">On person credit cards utilizations should not be more than 33%
+            Apply for a working capital line which will keep your DTI ratio low. Avoid borrowing high-cost , short term debt.  Have a business/financial plan for the next calendar year.
+            Itemize any personal debt that is being used for business operations and transfer it to business credit cards and/or business lines of credit. Also, reduce the open credit lines on personal credit cards to below 50%.  In case of business tax returns, one needs to ensure that line items like depreciation, amortization, loans to shareholders and officer compensation are correctly tabulated as these are 'add backs' used for calculating debt payments. Banks look at global cash flow while calculating debt income ratios which averages around 1.2 over a period of 2 years.                    
+                            </div>
+                          </div>
+                        </div>
+                        <script>$('#gooddebttoinco span').addClass('bav');$('#gooddebttoinco span').text('Low');</script>            <div id="time-in-business" class="tab-content" style="display: none;">
+                                         <div class="bz_an_mn_pg_inr_lw_tbs_cont_l">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_ttl">Risk Type : <span>Established</span> </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_cont">
+                              <div class="bz_an_lw_drg_chrt2">
+                                <div class="bz_an_scr">(Time in Business: 14 year(s), 4 month(s) ) </div>
+                                <div class="bz_an_lw_drg_chrt2_inr">
+                                  <div class="bz_an_lw_drg_chrt2_tib rd"><span class="chrt2_l">0</span><span class="chrt2_r">6</span></div>
+                                  <div class="bz_an_lw_drg_chrt2_tib org"><span class="chrt2_r">12</span></div>
+                                  <div class="bz_an_lw_drg_chrt2_tib gr"><span class="chrt2_r">+36</span></div>
+                                 </div>
+                                <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="timeInBussinessSlider">
+                                  <ul role="presentation">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                  </ul>
+                                  <div></div>
+                                  <input class="answer" type="hidden">
+                                <div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 100%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%;"><div class="ui-slider-tooltip" aria-hidden="true"></div></a></div>
+                                <div class="dgr_chng_scr" style="display: none;">Drag this to change score</div>
+                              </div>
+                              <div id="bz_an_mn_tbs_cont1" class="bz_an_mn_pg_inr_lw_tbs_cont_bx2">
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_ttl"> Analysis </div>
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_cont"> 
+            A longer time in business increases your chances of getting a loan as banks see that you have been operating for a long time and have overcome the challenging first few years of setting up a business. Lenders look at the kind of operating margins you have over time and understand the seasonality and cyclical nature of the business. If a business lasts the first 1000 days it has increased chances of surviving. 
+            Banks usually lend unsecured working capital lines and term loans to businesses which are over 2 years old and have well documented accounts receivables. In case of term loans, banks look for inventory, equipment, real estate, goodwill and any other hard assets to put a line against. </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="bz_an_mn_tbs_cont2" class="bz_an_mn_pg_inr_lw_tbs_cont_r">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_ttl"> Recommendations </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_cont">The longer you are in business, the better chances of you getting funding. Most lenders will be looking for your business to operate with a profit for atleast 2 years in order to be eligable for a bank loan. It is important that you manage your finances well.
+            Two years of tax returns should show growth or at least similar revenue numbers as banks want to determine the ability of the company to service debt based on 2 years of EBIDTA. Accounts receivables should be managed so that they should not exceed 90 days as that would make them ineligible for lines of credit against accounts receivables. Also the compensation of officers on the business tax returns should tally with the income on the personal tax returns.                    
+                            </div>
+                          </div>
+                        </div>
+                         <script>$('#timeinbusiness span').addClass('exc');$('#timeinbusiness span').text('Excellent');</script>            <div id="poor-indus-rsk" class="tab-content">
+                                           <div class="bz_an_mn_pg_inr_lw_tbs_cont_l">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_ttl">Risk Type : <span>High Risk</span> </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_cont">
+                              <div class="bz_an_lw_drg_chrt2">
+                                <div class="bz_an_scr">(Industry Risk: Real Estate and Rental Leasing) </div>
+                                <div class="bz_an_lw_drg_chrt2_inr">
+                                  <div class="bz_an_lw_drg_chrt2_ind rd"><span class="chrt2_l" style="width:auto;">High Risk</span> </div>
+                                  <div class="bz_an_lw_drg_chrt2_ind org"><span class="chrt2_r">Medium Risk</span></div>
+                                  <div class="bz_an_lw_drg_chrt2_ind gr"><span class="chrt2_r">Low RIsk</span></div>
+                                </div>
+                                <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="industryRiskSlider">
+                                  <ul role="presentation">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                  </ul>
+                                  <div></div>
+                                  <input class="answer" type="hidden">
+                                <div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 66.6666666666667%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 66.6666666666667%;"><div class="ui-slider-tooltip" aria-hidden="true"></div></a></div>
+                                <div class="dgr_chng_scr" style="display: none;">Drag this to change score</div>
+                              </div>
+                              <div id="bz_an_mn_tbs_cont1" class="bz_an_mn_pg_inr_lw_tbs_cont_bx2">
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_ttl"> Analysis </div>
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_cont"> Industry risk is usually not under your control unless you seek out a low risk industry before setting up your business. The risk is rated based on the SIC code of the IRS and the negative list of the lenders. Apart from this, the SBA also rates the franchisees in category A to F based on the default rates on the loans as well as the operating ratios.
+            If you are in a high risk industry, try to balance the other factors you can control like corporate risk, Debt to Income ratio, personal credit and cash flow. </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="bz_an_mn_tbs_cont2" class="bz_an_mn_pg_inr_lw_tbs_cont_r">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_ttl"> Recommendations </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_cont">In case the business owner is in high risk category, they should build a strong business credit with D&amp;B , and financial statements should be properly aligned and reported. Besides this having a web site which clearly explains the business helps the banks to get a better understanding of the business as well as helps the business owners build a stronger case to the banks.
+            It is important that you file taxes on time, maintain a good website and keep a check on your business credit score.                     
+                            </div>
+                          </div>
+                        </div>
+                          <script>$('#poorindusrsk span').addClass('bav');$('#poorindusrsk span').text('Low');</script>            <div id="average-corpo-risk" class="tab-content" style="display: none;">
+                                  <div class="bz_an_mn_pg_inr_lw_tbs_cont_l">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_ttl">Risk Type : <span>Low Risk</span> </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_cont">
+                              <div class="bz_an_lw_drg_chrt2">
+                                <div class="bz_an_scr">(Corporate Risk: Non Profit Corp) </div>
+                                <div class="bz_an_lw_drg_chrt2_inr">
+                                  <div class="bz_an_lw_drg_chrt2_acr gr"><span class="chrt2_l" style="width:auto;">Low Risk</span> </div>
+                                  <div class="bz_an_lw_drg_chrt2_acr org"><span class="chrt2_r">Medium Risk</span></div>
+                                  <div class="bz_an_lw_drg_chrt2_acr rd"><span class="chrt2_r">High RIsk</span></div>
+                                </div>
+                                <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="corporateRiskSlider">
+                                  <ul role="presentation">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                  </ul>
+                                  <div></div>
+                                  <input class="answer" type="hidden">
+                                <div class="ui-slider-range ui-widget-header ui-slider-range-max" style="width: 100%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"><div class="ui-slider-tooltip" aria-hidden="true"></div></a></div>
+                                <div class="dgr_chng_scr" style="display: none;">Drag this to change score</div>
+                              </div>
+                              <div id="bz_an_mn_tbs_cont1" class="bz_an_mn_pg_inr_lw_tbs_cont_bx2">
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_ttl"> Analysis </div>
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_cont"> Corporate Risk refers to the ability to conduct business in any state of the US, by being compliant with the Secrectary of State.  
+            Based on a review of your business, the company has low corporate risk. Having low corporate risk indicates high compliance standards, lower risk of any legal action from the state and higher chances of getting low cost funding, especially in states where you have a physical location. 
+             </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="bz_an_mn_tbs_cont2" class="bz_an_mn_pg_inr_lw_tbs_cont_r">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_ttl"> Recommendations </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_cont">Your company is doing a good job at keeping a high compliance standard. To remain in a low corporate risk zone, ensure you pay your annual dues to the Secrectary of State on time. It is important to file taxes on time as well as not get any tax leins. If possible, take a trade mark on the brand/company name. 
+            In case the business is planning to access debt capital, it is highly recommended to incorporate the company as C corp or LLC. This separates the company from the personal assets and liabilities as well as helps set up the business credit. This also helps business to apply for business credit cards and smaller business credit lines to start with as deeper trade lines will help get more debt capital.
+                                
+                            </div>
+                          </div>
+                        </div>
+                         <script>$('#averagecorporisk span').addClass('goo');$('#averagecorporisk span').text('Good');</script>            <div id="below-avg-cash-flow" class="tab-content" style="display: none;">
+                                           <div class="bz_an_mn_pg_inr_lw_tbs_cont_l">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_ttl">Risk Type : <span>High risk</span> </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_cont">
+                              <div class="bz_an_lw_drg_chrt2">
+                                <div class="bz_an_scr">(Cash Flow: 0.00%)</div>
+                                <div class="bz_an_lw_drg_chrt2_inr">
+                                  <div class="bz_an_lw_drg_chrt2_cashfl rd"><span class="chrt2_l" style="width:auto">0</span><span class="chrt2_l" style="width:auto">10</span></div>
+                                  <div class="bz_an_lw_drg_chrt2_cashfl org"><span class="chrt2_r">15</span></div>
+                                  <div class="bz_an_lw_drg_chrt2_cashfl gr"><span class="chrt2_r">100%</span></div>
+                                </div>
+                                <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="cashFlowSlider">
+                                  <ul role="presentation">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                  </ul>
+                                  <div></div>
+                                  <input class="answer" type="hidden" value="46">
+                                <div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 46%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 46%;"><div class="ui-slider-tooltip" aria-hidden="false">46</div></a></div>
+                                <div class="dgr_chng_scr" style="display: none;">Drag this to change score</div>
+                              </div>
+                              <div id="bz_an_mn_tbs_cont1" class="bz_an_mn_pg_inr_lw_tbs_cont_bx2">
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_ttl"> Analysis </div>
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_cont"> Cash Flow is the movement of money that goes in or out of a business checking account. It represents the beginning and the ending cash balance.  
+            Based on a review of your business cash flow, the company has a below average net operating cash margin compared to its industry. The lower the operating cash margin, the poorer is the financial strength of the business which can hamper long term survival and growth. It indicates that the company is not being able to balance its accounts receivable and accounts payable, neither is it being able to collect cash on time.  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="bz_an_mn_tbs_cont2" class="bz_an_mn_pg_inr_lw_tbs_cont_r">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_ttl"> Recommendations </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_cont">It is recommended that the business work on early collection of receivables and negotiate better terms from its vendors for accounts payable. The business should also put in place a better process of invoicing their customers on time and actively follow-up on collecting accounts receivable. It is also recommended that you constantly monitor the business credit of your customers and keep an eye on their creditworthiness on a regular basis. Using a business charge card can help in extending trade terms and increasing purchasing power. It might also be beneficial to use an electronic lockbox arrangement to facilitate easier and faster collections from customers.                    
+                            </div>
+                          </div>
+                        </div>
+                          <script>$('#belowavgcashflow span').addClass('bav');$('#belowavgcashflow span').text('Low');</script>            <div id="good-revenue" class="tab-content" style="display: none;">
+                                          <div class="bz_an_mn_pg_inr_lw_tbs_cont_l">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_ttl">Risk Type : <span>High Risk</span> </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_l_cont">
+                              <div class="bz_an_lw_drg_chrt2">
+                                <div class="bz_an_scr">(Annual Revenue : $100,000) </div>
+                                <div class="bz_an_lw_drg_chrt2_inr">
+                                  <div class="bz_an_lw_drg_chrt2_revenu rd"><span class="chrt2_l" style="width:auto">0</span> </div>
+                                  <div class="bz_an_lw_drg_chrt2_revenu org">&nbsp; </div>
+                                  <div class="bz_an_lw_drg_chrt2_revenu gr"><span class="chrt2_r">+5M</span></div>
+                                </div>
+                                <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="anurevSlider">
+                                  <ul role="presentation">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                  </ul>
+                                  <div></div>
+                                  <input class="answer" type="hidden" value="2900000">
+                                <div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 57.9999884000023%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 57.9999884000023%;"><div class="ui-slider-tooltip" aria-hidden="true">2.9</div></a></div>
+                                <div class="dgr_chng_scr" style="display: none;">Drag this to change score</div>
+                              </div>
+                              <div id="bz_an_mn_tbs_cont1" class="bz_an_mn_pg_inr_lw_tbs_cont_bx2">
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_ttl"> Analysis </div>
+                                <div class="bz_an_mn_pg_inr_lw_tbs_cont_bx2_cont"> Annual revenue is the total amount of gross income earned during a full annual operating cycle (fiscal year) on an accrual not cash basis. Your business has lower than average annual revenue which means lending institutions perceive your business as higher risk. Banks and other financial institutions use annual revenue as a proxy for the size of the business and its stage of maturity. </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="bz_an_mn_tbs_cont2" class="bz_an_mn_pg_inr_lw_tbs_cont_r">
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_ttl"> Recommendations </div>
+                            <div class="bz_an_mn_pg_inr_lw_tbs_cont_r_cont">Sales growth should be a high priority for your business. If the company is still early stage, you should look at all opportunities to market your business for low or minimal cost (social media, trade shows, etc). It is important to show potential lenders that the business is consistently earning and growing revenue on tax returns. Even if the company is just starting it is important that you establish a strong track record of invoicing and accruing revenue streams in order to qualify for loans in the future.                     
+                            </div>
+                          </div>
+                        </div>
+                         <script>$('#goodrevenue span').addClass('bav');$('#goodrevenue span').text('Low');</script>          </div>
+                    </div>
+                  </div>
+                  <div class="bz_an_mn_pg_inr_lw_rw2_r"></div>
+                </div>
+              </div>
+            </div> 
+                </article>
+                </section>
+            
+    </div>
+</div>
+
+
+
+

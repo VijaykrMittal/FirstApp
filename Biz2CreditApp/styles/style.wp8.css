@@ -1,5 +1,3 @@
-body {
-}
 @media (min-width:0px) and (max-width:1280px) {
 .logo {margin: 2% auto 3%;}
 .home .popup, #tabstrip-Setting .popup, #tabstrip-loanapp-bi .popup, #tabstrip-loanapp-ci .popup, #tabstrip-loanapp-fp .popup, #tabstrip-loanapp-pi .popup {width: 70px;}
@@ -11,10 +9,22 @@ body {
 .schedulePopup .scheduleSection .km-listview-wrapper ul li + li .k-select {background-position: 96% 8px;background-size: 9%;}
 #newuser ul.km-listinset li {margin-bottom: 1.5%;}
 .matches-logo {background-position: 10px 11px;height: 60px;}
+.loginSection .km-listview-wrapper, .loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) {margin: 0;}
+.loginSection {margin: 25px 10%;}
+label { margin:0; padding:0;}
+.forgtpass {font-size:1em; }
+.km-flat .km-list input[type=password], .km-flat .km-list input[type=search], .km-flat .km-list input[type=number], .km-flat .km-list input[type=tel], .km-flat .km-list input[type=url], .km-flat .km-list input[type=email], .km-flat .km-list input[type=month], .km-flat .km-list input[type=color], .km-flat .km-list input[type=week], .km-flat .km-list input[type=date], .km-flat .km-list input[type=time], .km-flat .km-list input[type=datetime], .km-flat .km-list input[type=datetime-local], .km-flat .km-list input[type=text]:not(.k-input), .km-flat .km-list select:not([multiple]), .km-flat .km-list .k-dropdown-wrap, .km-flat .km-list textarea {padding:0; width:100%; display:block;}
+.loginSection ul {padding:0 !important;}
+#dynamicCl.km-popup-wrapper {width: 240px !important;}
+.documentContent .km-listview-wrapper ul li table td { vertical-align:middle; padding:0;}
+.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder, .documentContent .km-listview-wrapper ul li .default-icon {background-position: center;}
+.documentContent .km-listview-wrapper ul li table td:nth-child(2) {width: 75%;}
+.documentContent .km-listview-wrapper ul li table td:nth-child(3) {width: 10%;}
+#popoverId .km-popup-arrow {margin:0; width:40px;}
 }
 
 @media (min-width:0px) and (max-width:640px) {
-.logLogo {margin: 2% auto 3%;}
+.logLogo {height:170px;background-size:52%; margin:0 auto; background-position:center bottom}
 html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 #tabstrip-manage-app .refresh-loading {height: 55px;background-size: 53%;background-position: center 10px;}
 #tabstrip-manage-app .refreshloan {height: 55px;}
@@ -22,17 +32,24 @@ html body .backButton {width: 81%;background-size: 30% !important;background-pos
 #tabstrip-manage-app .docs-popup {width: 60px;}
 }
 @media (min-width:0px) and (max-width:533px) {
-.logLogo {margin: 1% auto 2%;background-size: 45%;}
+
 html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 .forgtpass {padding: 0px 0 15px;}
 .loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) input[type=submit] { margin-bottom:15px;}
-.loginSection ul li label input[type=text]:not(.k-input), .loginSection ul li label input[type=password] {padding: 0.8em!important;}
 #homePage .testimonials .test-content .test-l { float:none; display:inline-block; width: 30%;}
 #homePage .testimonials .test-content .test-r { float:none; width:100%;}
 #homePage .testimonials .test-content {text-align:center;}    
 }
-@media (min-width:0px) and (max-width:384px) { 
-.logLogo {padding:42% 0 10%;background-size:52%; margin:0 auto; background-position:center bottom}
+@media (min-width:0px) and (max-width:480px) /**480/854 **/{ 
+.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder, .documentContent .km-listview-wrapper ul li .default-icon {background-size: 70%;width: 15%;}
+.documentContent .km-listview-wrapper ul li .default-icon {background-size:60%;}
+.documentContent .km-listview-wrapper ul li table td:nth-child(2), .documentContent .km-listview-wrapper ul li table td {width: 75%;}
+.documentContent .km-listview-wrapper ul li table td:nth-child(3), .documentContent .km-listview-wrapper ul li table td {width: 10%;}
+.logLogo {height:210px;background-size:75%; margin:0 auto; background-position:center bottom}
+.documentContent .km-listview-wrapper ul li { height:75px;}
+.documentContent .km-listview-wrapper ul li table td:nth-child(3) a.docs-popup {padding:0; height:50px; width:50px;}
+.documentContent .km-listview-wrapper ul li table tr {height:75px;}
+.loginSection ul li label input[type=text]:not(.k-input), .loginSection ul li label input[type=password] {padding:0.8em!important;}
 #newuser ul.km-listinset li {margin-bottom: 5%;}
 #newuser ul.km-listinset li select {background-size: 9%;}
 #tabstrip-forgot-pass .view-content {margin-top:8em;}
@@ -43,5 +60,5 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 .stpsumry h2 {margin-top:0;}
 .stpsumry p {font-size: 15px; margin-bottom:0;}
 #stpSumAc { padding-left:20px; padding-right:20px;}
-.loginSection {margin-top: 20px;}
+#tabstrip-folder-events-popup ul li a span, #tabstrip-files-events-popup ul li a span {padding:50px 0 0 0;}
 }

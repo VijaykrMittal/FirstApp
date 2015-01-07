@@ -312,7 +312,7 @@
                             
                     	}
                     };
-                   ftUpload.upload(imageURI, 'https://www.biz2services.com/mobapp/api/loanapp', app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options , true);
+                   ftUpload.upload(imageURI, 'https://sandbox.biz2services.com/mobapp/api/loanapp', app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options , true);
             } catch (e) {
                 
                     console.log("Error in File uploading:="+e);

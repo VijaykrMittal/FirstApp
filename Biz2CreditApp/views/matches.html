@@ -17,87 +17,87 @@
 <!-- Matches page template -->
         <script type="text/x-kendo-template" id="matches-template">
                 <li class="clearfix">
-            	<div class="row1">
-                		<p>#if(typeof pro_display_name  !== "undefined"){#
-                				#if(pro_display_name){#
-                					<img src="https://www.biz2credit.com/images/#: pro_display_name #">
+                <div class="rowwrap">
+                	<div class="row1">
+                    		<p>#if(typeof pro_display_name  !== "undefined"){# 
+                    				#if(pro_display_name){#
+                    					<img src="https://www.biz2credit.com/images/#: pro_display_name #">
+                    				#}#
                 				#}#
-            				#}#
-                		</p>
-                		<p> #: product_name #</p>
-            			#if(typeof mca_action  !== "undefined"){#
-                        	#if(mca_action){#
-                        		<span>         
+                    		</p>
+                    		<p> #: product_name #</p>
+                			#if(typeof mca_action  !== "undefined"){#
+                            	#if(mca_action){#
+                            		<span>         
+                                          <img src="styles/images/instant-approval-cupon.png">  
+                            		</span>
+                            	#}#
+               			 #}#
+                    </div>
+                    <div class="row2">
+                        #if(typeof minloc_amt !== "undefined"){#
+                        	<p>Funding Amount: $#: minloc_amt# - $#:maxloc_amt#</p>
+                        #}else{#
+                        	<p>Funding Amount: $#: minaloc_amt# - $#:maxaloc_amt#</p>
+                        #}#
+                		<p>
 
-                        			#:'Instant Approval'#
+                        #if(prodtype==="ACH" || prodtype==="Cashadvance"){#
+                        	#if(typeof maxfactor !== "undefined"){#
 
-                        		</span>
+                        		#:"Factor Rate:" # #: minfactor#-#:maxfactor #
+
+                        	#}else{#
+
+                        		#:"Factor Rate:" # #: min_interestrate#-#:max_interestrate #
+
                         	#}#
-           			 #}#
+                        #}else{#
+
+                        	#if(typeof maxfactor !== "undefined"){#
+
+                        		#:"Factor Rate:" # #: minfactor#-#:maxfactor #
+
+                        	#}else{#
+
+                        		#:"Interest Rate:" # #: min_interestrate ##: "%"#-#: max_interestrate ##: "% APR"#
+
+                        	#}#
+                        #}#
+                        </p>
+                		<p>Term: 
+                
+                        #if(prodtype==="ACH" || prodtype==="Cashadvance"){#
+                       	 # var termNum = termrange ;#
+                        #}else{#
+                        	# var termNum = loan_term #
+                        #}#
+                          
+                        #if(prodtype==="ACH" || prodtype==="WCL" || prodtype==="Cashadvance"){#
+                        	# term = termNum + " months"#
+                       	 #= term #
+                        #}else if (prodtype === "termloan"){#
+                        	#if(prodid === "386"){#
+                       		 #term = "Up to "+termNum+" years" #
+                        		#= term #
+                        	#}else{#
+                        		#term = termNum + " years" #
+                        		#= term #
+                        	#}#
+                        #}else {#
+                        	#if(termNum==="0" && termNum !== ""){#
+                        		#term = "revolving"#
+                        		#= term #
+                        	#}else{#
+                        		#term= termNum+" years"#
+                        		#= term #
+                        	#}#
+                        #}#
+                		</p>
+    					<p>Average Processing Time: #: expected_time+ " week(s)"#</p>
+    					<p><a data-prodid="#= prodid #" data-prodtype="#= prodtype #" data-bind="click: reqDocuments" data-rel='modalview' data-role='button'>Documents Required: #= totaldoc #</a></p>
+    				</div>
                 </div>
-                <div class="row2">
-                    #if(typeof minloc_amt !== "undefined"){#
-                    	<p>Funding Amount: $#: minloc_amt# - $#:maxloc_amt#</p>
-                    #}else{#
-                    	<p>Funding Amount: $#: minaloc_amt# - $#:maxaloc_amt#</p>
-                    #}#
-            		<p>
-
-                    #if(prodtype==="ACH" || prodtype==="Cashadvance"){#
-                    	#if(typeof maxfactor !== "undefined"){#
-
-                    		#:"Factor Rate:" # #: minfactor#-#:maxfactor #
-
-                    	#}else{#
-
-                    		#:"Factor Rate:" # #: min_interestrate#-#:max_interestrate #
-
-                    	#}#
-                    #}else{#
-
-                    	#if(typeof maxfactor !== "undefined"){#
-
-                    		#:"Factor Rate:" # #: minfactor#-#:maxfactor #
-
-                    	#}else{#
-
-                    		#:"Interest Rate:" # #: min_interestrate ##: "%"#-#: max_interestrate ##: "% APR"#
-
-                    	#}#
-                    #}#
-                    </p>
-            		<p>Term: 
-            
-                    #if(prodtype==="ACH" || prodtype==="Cashadvance"){#
-                   	 # var termNum = termrange ;#
-                    #}else{#
-                    	# var termNum = loan_term #
-                    #}#
-                      
-                    #if(prodtype==="ACH" || prodtype==="WCL" || prodtype==="Cashadvance"){#
-                    	# term = termNum + " months"#
-                   	 #= term #
-                    #}else if (prodtype === "termloan"){#
-                    	#if(prodid === "386"){#
-                   		 #term = "Up to "+termNum+" years" #
-                    		#= term #
-                    	#}else{#
-                    		#term = termNum + " years" #
-                    		#= term #
-                    	#}#
-                    #}else {#
-                    	#if(termNum==="0" && termNum !== ""){#
-                    		#term = "revolving"#
-                    		#= term #
-                    	#}else{#
-                    		#term= termNum+" years"#
-                    		#= term #
-                    	#}#
-                    #}#
-            		</p>
-					<p>Average Processing Time: #: expected_time+ " week(s)"#</p>
-					<p><a data-prodid="#= prodid #" data-prodtype="#= prodtype #" data-bind="click: reqDocuments" data-rel='modalview' data-role='button'>Documents Required: #= totaldoc #</a></p>
-				</div>
 				<div class="row3">
                     #if(lenderorg_id ==="334" || lenderorg_id ===334){#
                     

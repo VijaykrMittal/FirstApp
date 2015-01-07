@@ -410,6 +410,10 @@
         {
             app.homesetting.viewModel.closeParentPopover();
             feedback.showFeedback();
+        },
+        bizAnalyzerPage:function()
+        {
+           apps.navigate("views/bizAnalyzerPage.html");
         }
         
     });

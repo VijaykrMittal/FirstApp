@@ -414,6 +414,10 @@
         bizAnalyzerPage:function()
         {
            apps.navigate("views/bizAnalyzerPage.html");
+        },
+        gsbizAnalyzerPage:function()
+        {
+           apps.navigate("views/getStartBizAnalyzer.html");
         }
         
     });

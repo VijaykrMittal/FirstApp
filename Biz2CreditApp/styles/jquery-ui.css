@@ -73,8 +73,9 @@
   max-width:386px;
 }
 #bz_an_mn_pg .ui-slider .ui-slider-handle {
-background-image:url(../styles/sldr_chrt2_btm.png) !important;
+background-image:url(../styles/images/sldr_chrt2_btm.png) !important;
   display: block;
+    background-color:transparent;
   position: absolute;
   z-index: 10;
   margin: 0;

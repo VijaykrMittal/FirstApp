@@ -314,13 +314,12 @@
             
         },
         checknumber:function(field,fieldvalue){
-            var form = document.mosForm;	
             var x=fieldvalue;
             var anum=/(^\d+$)|(^\d+\.\d+$)/
             if (anum.test(x))
                 testresult=true
             else{
-                alert("Please enter only numbers. ");
+                navigator.notification.alert("Please enter only numbers. ");
                 field.focus();
                 field.value='';
                 testresult=false

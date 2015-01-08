@@ -305,7 +305,8 @@ html body .backButton {height: 62px;background-size:27% !important;width:84%;}
 #document-attach .km-rightitem a.refresh-loading {background-position: center 17px;background-size: 52%;}
 .docs-header .km-widget .docs-popup {width: 60px;height: 40px;}
 .logLogo {margin: 40% auto 5%;}
-
+#biz_analyzernewd_form .frm_outr_cont .frm_cont3 .three-inline .rel-label input {width: 68%;}
+#biz_analyzernewd_form .frm_outr_cont .frm_cont3 {padding: 30px 15px;}
 }
 @media (min-width:0px) and (max-width:768px) {
 .logLogo {margin:1% auto 2%;background-size: 63%;height: 85px;}

@@ -103,7 +103,7 @@
             $("#timepicker").val("");
         },
         RemoveRougeChar:function(convertString){
-        if(convertString.substring(0,1) == ","){
+        if(convertString.substring(0,1) === ","){
             return convertString.substring(1, convertString.length)                  
         }
         return convertString; 
@@ -115,17 +115,7 @@
         
         $("#tabstrip-home").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
         $("#tabstrip-sign-up").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
- 
-       /* if(window.innerWidth > window.innerHeight)
-        {
-            $('body').addClass('vertical');
-            $('body').removeClass('horizontal');
-        }
-        else
-        {
-            $('body').addClass('horizontal');
-            $('body').removeClass('vertical');
-        }*/
+        
         app.homesetting.viewModel.closeParentPopover();
       
     });
@@ -134,19 +124,6 @@
     };
 })(window);
 $(document).ready(function(){
-    
-   /* if(window.innerWidth > window.innerHeight)
-    {
-        $('body').addClass('horizontal');
-        $('body').removeClass('vertical');
-       
-    }
-    else
-    {
-        $('body').addClass('vertical');
-        $('body').removeClass('horizontal');
-        
-    }*/
    
      $('body').on("blur","input.number",function(e) {
 													
@@ -170,6 +147,16 @@ $(document).ready(function(){
         value: pastDate,
         min: pastDate,
         format: "MM-dd-yyyy",
+        animation: {
+            close: {
+                effects: "fadeOut zoom:out",
+                duration: 300
+            },
+            open: {
+                effects: "fadeIn zoom:in",
+                duration: 300
+            }
+        },
         open: function(e) {
             if ( dp.min() === pastDate)  {
             	dp.value(todaysDate);
@@ -180,20 +167,15 @@ $(document).ready(function(){
             	$(this).removeClass("k-state-hover");
             	$(this).addClass("k-state-disabled");
             });
-        } 
+        }
     }).data("kendoDatePicker");
     $('#datepicker').attr('disabled','disabled');
     $('td.k-weekend a').attr('disabled','disabled');
-    $("#timepicker").kendoTimePicker();
-    $('#timepicker').attr('disabled','disabled');
-    var listOfTimes = $("#timepicker_timeview");
-    listOfTimes.empty();
-    listOfTimes.append('<li tabindex="-1" role="option" class="k-item" selectable="on">08AM - 10AM</li>');
-    listOfTimes.append('<li tabindex="-1" role="option" class="k-item" selectable="on">10AM - 12PM</li>');
-    listOfTimes.append('<li tabindex="-1" role="option" class="k-item" selectable="on">12PM - 02PM</li>');
-    listOfTimes.append('<li tabindex="-1" role="option" class="k-item" selectable="on">02PM - 04PM</li>');
-    listOfTimes.append('<li tabindex="-1" role="option" class="k-item" selectable="on">04PM - 06PM</li>');
-    listOfTimes.append('<li tabindex="-1" role="option" class="k-item" selectable="on">06PM - 08PM</li>');
+    //$("#timepicker").kendoTimePicker();
+    //$('#timepicker').attr('disabled','disabled');
+   // var listOfTimes = $("#timepicker_timeview");
+    //listOfTimes.empty();
+    
     Array.prototype.contains = function(v) {
         for(var i = 0; i < this.length; i++) {
             if(this[i] === v) return true;

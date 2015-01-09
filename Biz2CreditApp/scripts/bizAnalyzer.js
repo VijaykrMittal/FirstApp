@@ -6,13 +6,13 @@
         showrefreshBiz:true,
         showAfter:function()
         {
-            var pcsVal =	600;
+            var pcsVal =	512;
             var dtiVal =	100;
-            var tibVal =	30;
-            var cfVal  =	48;
+            var tibVal =	55;
+            var cfVal  =	-30;
             var irVal  =	1;
-            var crVal  =	0;
-            var arVal  =	2900000;
+            var crVal  =	1;
+            var arVal  =	'';
             console.log('call');
            jQuery("#personalCreditSliderTxt").val(pcsVal);
         	jQuery("#debitToIncomeSliderTxt").val(dtiVal);
@@ -45,13 +45,13 @@
             
             
 
-            var pcsVal =	600;
+            var pcsVal =	512;
             var dtiVal =	100;
-            var tibVal =	30;
-            var cfVal  =	48;
+            var tibVal =	55;
+            var cfVal  =	-30;
             var irVal  =	1;
-            var crVal  =	0;
-            var arVal  =	2900000;
+            var crVal  =	1;
+            var arVal  =	'';
 
           /*   var pcsVal =	parseInt(document.getElementById('personalCreditSliderTxt').value);
             var dtiVal =	Math.round(parseInt(document.getElementById('debitToIncomeSliderTxt').value));

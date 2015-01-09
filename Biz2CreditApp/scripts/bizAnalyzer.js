@@ -14,7 +14,7 @@
             var crVal  =	0;
             var arVal  =	2900000;
             console.log('call');
-           jQuery("#personalCreditSliderTxt").val(pcsVal);
+            jQuery("#personalCreditSliderTxt").val(pcsVal);
         	jQuery("#debitToIncomeSliderTxt").val(dtiVal);
         	jQuery("#timeInBussinessSliderTxt").val(tibVal);
         	jQuery("#industryRiskSliderTxt1").val(irVal);

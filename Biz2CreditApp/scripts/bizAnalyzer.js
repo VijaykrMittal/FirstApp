@@ -3,7 +3,26 @@
         app = global.app = global.app || {};
 
     bizAnalyzerViewModal = kendo.data.ObservableObject.extend({
-        
+        showrefreshBiz:true,
+        showAfter:function()
+        {
+            var pcsVal =	600;
+            var dtiVal =	100;
+            var tibVal =	30;
+            var cfVal  =	48;
+            var irVal  =	1;
+            var crVal  =	0;
+            var arVal  =	2900000;
+            console.log('call');
+           jQuery("#personalCreditSliderTxt").val(pcsVal);
+        	jQuery("#debitToIncomeSliderTxt").val(dtiVal);
+        	jQuery("#timeInBussinessSliderTxt").val(tibVal);
+        	jQuery("#industryRiskSliderTxt1").val(irVal);
+        	jQuery("#corporateRiskSliderTxt1").val(crVal);
+        	jQuery("#cashFlowSliderTxt").val(cfVal);
+        	jQuery("#anuRevSliderTxt").val(arVal); 
+            app.bizAnalyzer.viewModel.getTotal();
+        },
         show:function()
         {
             jQuery.browser = {};
@@ -23,15 +42,25 @@
                 $(".tab-content").not(tab).css("display", "none");
                 $(tab).show();
             });
-      
-            var pcsVal =	parseInt(document.getElementById('personalCreditSliderTxt').value);
+            
+            
+
+            var pcsVal =	600;
+            var dtiVal =	100;
+            var tibVal =	30;
+            var cfVal  =	48;
+            var irVal  =	1;
+            var crVal  =	0;
+            var arVal  =	2900000;
+
+          /*   var pcsVal =	parseInt(document.getElementById('personalCreditSliderTxt').value);
             var dtiVal =	Math.round(parseInt(document.getElementById('debitToIncomeSliderTxt').value));
             var tibVal =	parseInt(document.getElementById('timeInBussinessSliderTxt').value);
             var cfVal  =	Math.round(document.getElementById('cashFlowSliderTxt').value);
             var irVal  =	parseInt(document.getElementById('industryRiskSliderTxt').value);
             var crVal  =	parseInt(document.getElementById('corporateRiskSliderTxt').value);
-            var arVal  =	parseInt(document.getElementById('anuRevSliderTxt').value);
-
+            var arVal  =	parseInt(document.getElementById('anuRevSliderTxt').value);*/
+            
             $(".dgr_chng_scr").delay(5000).fadeOut();		
 
             $('.bz_an_mn_pg_alert_cls_btn').click(function(){
@@ -51,7 +80,7 @@
 
             $('#personalCreditSlider').slider({
                range: "min",     
-            	value: pcsVal,
+                value: pcsVal,
             	min: 500,
             	max: 850,
             	step: 1,
@@ -65,7 +94,7 @@
                 input.val( ui.value );
             	var tooltipvalue=ui.value;
                 $('#personalCreditSlider .ui-slider-tooltip').text( ui.value );
-                 $('#personalCreditSlider .ui-slider-tooltip').attr('aria-hidden', 'false');
+                $('#personalCreditSlider .ui-slider-tooltip').attr('aria-hidden', 'false');
             	$( "#personalCreditSliderTxt" ).val(ui.value);
             	app.bizAnalyzer.viewModel.getTotal();
 
@@ -73,14 +102,14 @@
               },
               slide: function ( event, ui ) {
              		$( "#personalCreditSliderTxt" ).val(ui.value);
-            		app.bizAnalyzer.viewModel.getTotal();
-            		  $('.ui-slider-tooltip').attr('aria-hidden', 'true');
+            		 app.bizAnalyzer.viewModel.getTotal();
+            		 $('.ui-slider-tooltip').attr('aria-hidden', 'true');
             	
               }
             });
 
             $('#debitToIncomeSlider').slider({
-             	 range: "max",
+                range: "max",
             	value: dtiVal,
             	min: 0,
             	max: 100,
@@ -104,19 +133,19 @@
               },
               slide: function ( event, ui ) {
              		$( "#debitToIncomeSliderTxt" ).val(ui.value);
-            		app.bizAnalyzer.viewModel.getTotal();
-            		  $('.ui-slider-tooltip').attr('aria-hidden', 'true');
+            		 app.bizAnalyzer.viewModel.getTotal();
+            		 $('.ui-slider-tooltip').attr('aria-hidden', 'true');
             	
               }
             });
 
             //////////////////
             $('#timeInBussinessSlider').slider({
-             	 range: "min",
+                range: "min",
             	value: tibVal,
             	min: 0,
             	max: 36,
-             	step: 1,
+                step: 1,
               create: function ( event ) {
                 $( event.target ).find('.ui-slider-handle').append( tooltipElement );
                 tooltip = $('.ui-slider-tooltip');
@@ -127,7 +156,7 @@
                 input.val( ui.value );
             	var tooltipvalue=ui.value;
                 $('#timeInBussinessSlider .ui-slider-tooltip').text( ui.value );
-                 $('#timeInBussinessSlider .ui-slider-tooltip').attr('aria-hidden', 'false');
+                $('#timeInBussinessSlider .ui-slider-tooltip').attr('aria-hidden', 'false');
             	$( "#timeInBussinessSliderTxt" ).val(ui.value);
             	app.bizAnalyzer.viewModel.getTotal();
 
@@ -136,15 +165,15 @@
               slide: function ( event, ui ) {
             	  
              		$( "#timeInBussinessSliderTxt" ).val(ui.value);
-            		app.bizAnalyzer.viewModel.getTotal();
-            		  $('.ui-slider-tooltip').attr('aria-hidden', 'true');
+            		 app.bizAnalyzer.viewModel.getTotal();
+            		 $('.ui-slider-tooltip').attr('aria-hidden', 'true');
             	
               }
             });
 
             //////////////////
             $('#industryRiskSlider').slider({
-             	 range: "min",
+                range: "min",
             	value: irVal,
             	min: 0,
             	max: 3,
@@ -284,11 +313,11 @@
             	
               }
             });
-                
+            app.bizAnalyzer.viewModel.setShowrefreshBizTrue(); 
         },
         getTotal:function(){
             
-        		var url = ("https:" == document.location.protocol ? "https://" : "http://") + "www.biz2beta.com";
+        		var url = ("https:" === document.location.protocol ? "https://" : "http://") + "www.biz2beta.com";
         		var calcScore = jQuery("#personalCreditSliderTxt").val()
         		var calcDebt = Math.round(jQuery("#debitToIncomeSliderTxt").val())
         		var calcTimeBusin = jQuery("#timeInBussinessSliderTxt").val()
@@ -301,7 +330,8 @@
         		$.post(newurl,{creditScore:calcScore,dtiRatio:calcDebt,ageOfBiss:calcTimeBusin,industxt:calcIndusRisk,corpTxt:calcCorpRisk,cashMargin:calcCashFlow,anuRevenue:calanurevFlow},app.bizAnalyzer.viewModel.getSuccessData1,"json");	
         },
 	
-    	getSuccessData1:function(data){ 	
+    	getSuccessData1:function(data){ 
+            console.log(data);
     		jQuery('#netScoreBizanalyserTxt').text(data.total);
     	},
         refres:function(myvalue)
@@ -348,6 +378,30 @@
             	}
             });
         },
+        setShowrefreshBizFalse:function()
+        {
+            var that = this;
+            that.set("showrefreshBiz",false);
+        },
+        setShowrefreshBizTrue:function()
+        {
+            var that = this;
+            that.set("showrefreshBiz",true);
+        },
+        refreshViewBiz:function()
+        {
+            console.log('debug');
+            app.bizAnalyzer.viewModel.setShowrefreshBizFalse();
+            $('#poorindusrsk').parent().addClass("actv");
+            $('#poorindusrsk').parent().siblings().removeClass("actv");
+            var tab = $('#poorindusrsk').attr("class");
+            $(".tab-content").not(tab).css("display", "none");
+            $(tab).show();
+            app.bizAnalyzer.viewModel.showAfter();
+            app.bizAnalyzer.viewModel.show();
+            
+        }
+       
 
     });
    

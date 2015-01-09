@@ -183,6 +183,9 @@ html body .backButton{ height:77px; width:85%;}
 #tabstrip-manage-app .docs-popup {width: 85px;height: 77px;background-size: 70%;}  
 .docs-header .km-widget .docs-popup {background-size:80%;width: 73px;}
 .logLogo {margin:5% auto;}
+#bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_rw2 .bz_an_mn_pg_inr_lw_rw2_l, #bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_rw2 .bz_an_mn_pg_inr_lw_rw2_r {display:none;}
+#bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_tbs .bz_an_mn_pg_inr_lw_tbs_hd li {max-width: 130px;}
+#bz_an_mn_pg .bz_an_mn_pg_inr_lw_tbs_cont_r {max-width: 475px;}
 }
 @media screen and (max-width: 960px){
 .tp-menu{ display:none}

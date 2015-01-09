@@ -127,6 +127,9 @@ html body .backButton {background-size: 20% !important;height: 75px;}
 #tabstrip-Setting .docs-docu {padding: 2% 0 0 8px;font-size: 1.2em;}
 #aplicn_frm select.IN1b.ipsm3 {width: 156px;}
 .rwfil.aut > p > select.IN1b.ipsm3 { width:200px!important;}
+#bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_rw2 .bz_an_mn_pg_inr_lw_rw2_l, #bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_rw2 .bz_an_mn_pg_inr_lw_rw2_r {display:none;}
+#bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_tbs .bz_an_mn_pg_inr_lw_tbs_hd li {max-width: 130px;}
+#bz_an_mn_pg .bz_an_mn_pg_inr_lw_tbs_cont_r {float: right;max-width: 480px;}
 }
 
 @media (min-width:0px) and (max-width:800px) {
@@ -201,6 +204,7 @@ html body #tabstrip-manage-app .backButton {background-size: 29% !important;back
 #document-attach .km-rightitem a.refresh-com {width:42%;background-size: 90%;}
 #document-attach .km-rightitem a.refresh-loading {background-size: 67%;background-position: center 19px; width:42%;}
 .documentList .wrap-content .row .name {width:93%;}
+#bz_an_mn_pg .bz_an_mn_pg_inr_lw_tbs_cont_r {float:none;}
 }
 @media (min-width:0px) and (max-width:768px) {
 .logLogo {margin: 34% auto 10%;}
@@ -568,7 +572,7 @@ html body #tabstrip-manage-app .backButton {background-size: 39% !important;widt
 #matchDocList .filesBlock .buttonSet .DeleteIC {background-size: 70%;}
 #matchDocList .filesBlock .buttonSet .downloadBtn {background-size: 55%;}
 .documentList .wrap-content .row .name a span.docscon {line-height:15px;}
-
+#bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_tbs .bz_an_mn_pg_inr_lw_tbs_cont .bz_an_lw_drg_chrt2 .bz_an_lw_drg_chrt2_pc {font-size: 12px;}
 }
 @media (min-width:0px) and (max-width:390px) { 
 #matchDocList .filesBlock .file-name {width: 56%;font-size: 12px;}

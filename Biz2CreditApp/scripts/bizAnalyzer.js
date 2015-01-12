@@ -6,14 +6,14 @@
         showrefreshBiz:true,
         showAfter:function()
         {
-            var pcsVal =	600;
+            var pcsVal =	512;
             var dtiVal =	100;
-            var tibVal =	30;
-            var cfVal  =	48;
-            var irVal  =	1;
-            var crVal  =	0;
-            var arVal  =	2900000;
-            console.log('call');
+            var tibVal =	55;
+            var cfVal  =	-30;
+            var irVal  =	"High Risk";
+            var crVal  =	"Medium Risk";
+            var arVal  =	25000;
+            
             jQuery("#personalCreditSliderTxt").val(pcsVal);
         	jQuery("#debitToIncomeSliderTxt").val(dtiVal);
         	jQuery("#timeInBussinessSliderTxt").val(tibVal);
@@ -21,6 +21,25 @@
         	jQuery("#corporateRiskSliderTxt1").val(crVal);
         	jQuery("#cashFlowSliderTxt").val(cfVal);
         	jQuery("#anuRevSliderTxt").val(arVal); 
+            
+            /*         
+            var calcScore = jQuery("#personalCreditSliderTxt").val();
+            var calcDebt = Math.round(jQuery("#debitToIncomeSliderTxt").val());
+            var calcTimeBusin = jQuery("#timeInBussinessSliderTxt").val();
+            var calcIndusRisk = jQuery("#industryRiskSliderTxt1").val();
+            var calcCorpRisk = jQuery("#corporateRiskSliderTxt1").val();
+            var calcCashFlow = Math.round(jQuery("#cashFlowSliderTxt").val());
+            var calanurevFlow = Math.round(jQuery("#anuRevSliderTxt").val());
+
+            console.log('calcScore'+calcScore);
+            console.log('calcDebt'+calcDebt);
+            console.log('calcTimeBusin'+calcTimeBusin);
+            console.log('calcIndusRisk'+calcIndusRisk);
+            console.log('calcCorpRisk'+calcCorpRisk);
+            console.log('calcCashFlow'+calcCashFlow);
+            console.log('calanurevFlow'+calanurevFlow);
+             */
+
             app.bizAnalyzer.viewModel.getTotal();
         },
         show:function()
@@ -34,6 +53,7 @@
                     jQuery.browser.version = RegExp.$1;
                 }
             })();
+            
             $(".tabs-menu a").click(function(event) {
                 event.preventDefault();
                 $(this).parent().addClass("actv");
@@ -45,15 +65,15 @@
             
             
 
-            var pcsVal =	600;
+            var pcsVal =	512;
             var dtiVal =	100;
-            var tibVal =	30;
-            var cfVal  =	48;
-            var irVal  =	1;
-            var crVal  =	0;
-            var arVal  =	2900000;
+            var tibVal =	55;
+            var cfVal  =	-30;
+            var irVal  =	1
+            var crVal  =	1;
+            var arVal  =	25000;
 
-          /*   var pcsVal =	parseInt(document.getElementById('personalCreditSliderTxt').value);
+          /*var pcsVal =	parseInt(document.getElementById('personalCreditSliderTxt').value);
             var dtiVal =	Math.round(parseInt(document.getElementById('debitToIncomeSliderTxt').value));
             var tibVal =	parseInt(document.getElementById('timeInBussinessSliderTxt').value);
             var cfVal  =	Math.round(document.getElementById('cashFlowSliderTxt').value);
@@ -203,7 +223,7 @@
             });
             //////////////////
             $('#corporateRiskSlider').slider({
-             	 range: "max",
+                range: "max",
             	value: crVal,
             	min: 0,
             	max: 3,
@@ -265,7 +285,7 @@
             	value: arVal,
             	min: 0,
             	max: 5000001,
-            	step: 50000,
+                step: 50000,
               create: function ( event ) {
                 $( event.target ).find('.ui-slider-handle').append( tooltipElement );
                 tooltip = $('.ui-slider-tooltip');
@@ -334,7 +354,7 @@
             console.log(data);
     		jQuery('#netScoreBizanalyserTxt').text(data.total);
     	},
-        refres:function(myvalue)
+        /*refres:function(myvalue)
         {
         	var url = ("https:" === document.location.protocol ? "https://" : "http://") + "www.biz2beta.com";
         	var slider  = $('.slider > div').slider({
@@ -377,7 +397,7 @@
                 window.tooltip.attr('aria-hidden', 'true');
             	}
             });
-        },
+        },*/
         setShowrefreshBizFalse:function()
         {
             var that = this;

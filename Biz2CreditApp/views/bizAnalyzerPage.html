@@ -1,12 +1,12 @@
-<div id="tabstrip-bizAnalyzer" data-role="view" class="clearfix" data-reload="true" data-show="app.bizAnalyzer.viewModel.show" data-after-show="app.bizAnalyzer.viewModel.showAfter" data-model="app.bizAnalyzer.viewModel" >
+<div id="tabstrip-bizAnalyzer" data-role="view" class="clearfix" data-show="app.bizAnalyzer.viewModel.show" data-model="app.bizAnalyzer.viewModel" >
     <div data-role="header">
         <div data-role="navbar">
             <span data-role="view-title">
                 <a data-role="backbutton" class="backButton">Back</a>
             </span>
-            <a data-bind="click: refreshViewBiz,invisible: showrefreshBiz" class="refreshloan docs-refresh">refresh</a>
+            <a data-bind="click: refreshViewLoan,invisible: showrefreshLoan" class="refreshloan docs-refresh">refresh</a>
             
-            <a data-bind="click: refreshViewBiz,visible: showrefreshBiz" class="refresh-loading docs-refresh">refresh</a>
+            <a data-bind="click: refreshViewLoan,visible: showrefreshLoan" class="refresh-loading docs-refresh">refresh</a>
             <a data-align="right" data-rel="popover" href="#popover-people" data-role="button" class="docs-popup"></a>
         </div>
     </div>
@@ -39,7 +39,7 @@
                        
                     </div>
                     <div class="bz_an_mn_pg_inr_lw_rw1_mn_cont_r">
-                      <div class="bz_an_mn_pg_inr_lw_rw1_mn_cont_r_vlus"> <span class="vlus_scr" id="netScoreBizanalyserTxt"></span> <span class="vlus_scr_dvd">/</span>100 </div>
+                      <div class="bz_an_mn_pg_inr_lw_rw1_mn_cont_r_vlus"> <span class="vlus_scr" id="netScoreBizanalyserTxt">65</span> <span class="vlus_scr_dvd">/</span>100 </div>
                     </div>
                   </div>
                 </div>
@@ -54,26 +54,26 @@
                               <a id="excpercre" class="#exc-per-cre"><span class="ttl goo">Good</span>Personal Credit</a>
                               <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span>
                               <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span> 
-                              <input type="hidden" class="sliderTxt" id="personalCreditSliderTxt" value="500" disabled="disabled">
+                              <input type="hidden" class="sliderTxt" id="personalCreditSliderTxt" value="600" disabled="disabled">
                           </li>
                           <li>
                               <a id="gooddebttoinco" class="#good-debt-to-inco"><span class="ttl bav">Low</span>Debt to Income</a>
                               <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span>
                               <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span>
-                              <input type="hidden" id="debitToIncomeSliderTxt" value="0" class="sliderTxt" disabled="disabled">
+                              <input type="hidden" id="debitToIncomeSliderTxt" value="100" class="sliderTxt" disabled="disabled">
                           </li>
                           <li>
                               <a id="timeinbusiness" class="#time-in-business"><span class="ttl exc">Excellent</span>Time in Business</a> 
                               <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span> 
                               <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span>  
-                              <input type="hidden" id="timeInBussinessSliderTxt" value="0" class="sliderTxt" disabled="disabled">
+                              <input type="hidden" id="timeInBussinessSliderTxt" value="172" class="sliderTxt" disabled="disabled">
                           </li>
                           <li class="actv"> 
                               <a id="poorindusrsk" class="#poor-indus-rsk"><span class="ttl bav">Low</span>Industry Risk</a> 
                               <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span> 
                               <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span> 
                               <input type="hidden" id="industryRiskSliderTxt1" value="Medium Risk" class="sliderTxt" disabled="disabled">
-                              <input type="hidden" id="industryRiskSliderTxt" value="0" disabled="disabled">
+                              <input type="hidden" id="industryRiskSliderTxt" value="1" disabled="disabled">
                               
                           </li>
                           <li class="">
@@ -86,13 +86,13 @@
                               <a id="belowavgcashflow" class="#below-avg-cash-flow"><span class="ttl bav">Low</span>Cash Flow</a> 
                               <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span> 
                               <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span> 
-                              <input type="hidden" id="cashFlowSliderTxt" value="0" class="sliderTxt" disabled="disabled"> 
+                              <input type="hidden" id="cashFlowSliderTxt" value="46" class="sliderTxt" disabled="disabled"> 
                               
                           </li>
                           <li class="">
                               <a id="goodrevenue" class="#good-revenue"><span class="ttl bav">Low</span>Revenue</a> 
                               <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr"></span> <span class="bz_an_mn_pg_inr_lw_tbs_btm_cnr2"></span> 
-                              <input type="hidden" id="anuRevSliderTxt" value="0" class="sliderTxt" disabled="disabled">
+                              <input type="hidden" id="anuRevSliderTxt" value="2900000" class="sliderTxt" disabled="disabled">
                              <input type="hidden" id="anuRevSliderTxt1" value="Low Risk" class="sliderTxt" disabled="disabled">
                               
                           </li>
@@ -141,7 +141,7 @@
             Itemize all the credit card limits and ensure that none of the cards have &gt;50% open balances. In case of any past late payments, get it removed from the personal credit information even if they are closed and settled. In case of any tax lien , get on payment plan to get your credit score up.
              </div>
                           </div>
-                          <script>$('#excpercre span').addClass('goo');$('#excpercre span').text('Good');</script>              <div id="bizbanner" class="bizbanner"><a href="http://www.equifax.com/home/en_us" target="_blank"><img src="/images/html5/biz-analyzer/equifax-banner.jpg" border="0"></a></div>
+                          <script>$('#excpercre span').addClass('goo');$('#excpercre span').text('Good');</script>              <div id="bizbanner" class="bizbanner"><a href="http://www.equifax.com/home/en_us" target="_blank"><img src="styles/images/equifax-banner.jpg" border="0"></a></div>
                         </div>
                         <div id="good-debt-to-inco" class="tab-content" style="display: none;">
                                           <div class="bz_an_mn_pg_inr_lw_tbs_cont_l">

@@ -265,7 +265,7 @@
                             
                     	}
                     };
-                   ftUpload.upload(imageURI, 'https://sandbox.biz2services.com/mobapp/api/loanapp', app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options , true);
+                   ftUpload.upload(imageURI, localStorage.getItem("urlMobAppApiLoan"), app.documentService.viewModel.winUpload, app.documentService.viewModel.failUpload, options , true);
             }
             catch(e)
             {

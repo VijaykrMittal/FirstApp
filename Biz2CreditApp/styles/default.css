@@ -341,6 +341,7 @@ section.bizanalyzerform { padding-top:46px;}
 form.secure .form-field {font-size:0.85em; color:#333;}
 @media screen and (max-width:1024px){  
 #bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_rw2 .bz_an_mn_pg_inr_lw_rw2_mn {width:96%; margin:0 2%;}
+#bz_an_mn_pg .slider {margin: -68px auto 0;}
 }
 @media screen and (max-width: 960px){ 
 

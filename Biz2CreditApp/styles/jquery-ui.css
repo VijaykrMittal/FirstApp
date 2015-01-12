@@ -87,7 +87,7 @@ background-image:url(../styles/images/sldr_chrt2_btm.png) !important;
 
 #bz_an_mn_pg .ui-slider .ui-slider-range {
   display: inherit !important;
-  background:url(/images/html5/biz-analyzer/btm_ovrly.png) repeat;
+  background:url(../styles/images/btm_ovrly.png) repeat;
   position: absolute;
   z-index: 9;
 

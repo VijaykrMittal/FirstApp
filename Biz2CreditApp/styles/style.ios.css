@@ -67,7 +67,9 @@ html body .backButton {background-size: 20% !important;height: 75px;}
 #tabstrip-manage-app .refresh-loading {background-size: 39%;background-position: center 17px;}
 #tabstrip-manage-app .refreshloan{background-size:23%;background-position:42px 24px;}
 .rw_lin.addons_det.clearfix.debt_crecrd p.imp40 input { width:260px !important;}
- 
+ #tabstrip-bizAnalyzer .backButton {width: 82%;}
+#tabstrip-bizAnalyzer .refresh-loading {background-size: 33%;background-position: center 17px;}
+#tabstrip-bizAnalyzer .refreshloan{background-size: 24%;background-position: center 24px;}
 }
 @media (min-width:0px) and (max-width:1024px) {
 #tabstrip-download-file {padding:2%; height:47%; background-color:#fff;}
@@ -205,6 +207,9 @@ html body #tabstrip-manage-app .backButton {background-size: 29% !important;back
 #document-attach .km-rightitem a.refresh-loading {background-size: 67%;background-position: center 19px; width:42%;}
 .documentList .wrap-content .row .name {width:93%;}
 #bz_an_mn_pg .bz_an_mn_pg_inr_lw_tbs_cont_r {float:none;}
+#tabstrip-bizAnalyzer .backButton {width: 79%;height: 65px;background-size: 24% !important;background-position: 5px 15px !important;}
+#tabstrip-bizAnalyzer .refresh-loading {height: 65px;background-size: 39%;background-position: center 14px;}
+#tabstrip-bizAnalyzer .refreshloan {background-size: 28%;background-position: center 21px;height: 65px;}
 }
 @media (min-width:0px) and (max-width:768px) {
 .logLogo {margin: 34% auto 10%;}

@@ -152,7 +152,7 @@ z-index: 999; }
 .schedulePopup .scheduleSection .km-listview-wrapper { padding:10px 0 0;}
 .schedulePopup .scheduleSection .scall-text { font-size:0.75em; padding:0; margin:10px 0 15px; text-align:center;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul { margin:0; border:0;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li { border:0; padding:0; float:right; width:49%;}
+.schedulePopup .scheduleSection .km-listview-wrapper ul li { border:0; padding:0; float:right; width:48.5%;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li label {border:1px solid #d7d7d7; display:block;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li:first-child { float:left;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li .k-picker-wrap {border-radius:0; border:0; padding:0;}
@@ -510,4 +510,4 @@ ul#documentList td:nth-child(1) {font-size:1.2em; color:#333; text-indent:20px;}
 
 /**************13-01-15***********/
 #tabstrip-bizAnalyzer .km-rightitem .docs-popup{background-image: url(../styles/images/ic_action_overflow.png); text-indent:-9000px; width:80px; background-position:center center; height:40px; background-repeat:no-repeat; margin:0; padding:5px; border:0; background-color:transparent; border-radius:0;}
-.km-flat .km-listinset>li:last-child select {color:#a9a9a9; font-size:18px;position:static; width:100%; height:46px; margin:0; background-image: url(../styles/images/time-schedule-icon.png); background-position:right center; background-repeat:no-repeat; }
+#scheduleForm li select {color:#a9a9a9; font-size:18px;position:static; width:100%; height:46px; margin:0; background-image: url(../styles/images/time-schedule-icon.png); background-position:right center; background-repeat:no-repeat; }

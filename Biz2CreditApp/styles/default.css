@@ -346,7 +346,7 @@ form.secure .form-field {font-size:0.85em; color:#333;}
 @media screen and (max-width: 960px){ 
 
 nav-menu.menu{ display:none}
-section{ width:92%; margin:0px auto; }
+/*section{ width:92%; margin:0px auto; }*/
 #dasbdnav{ padding-left:4%;}
 #fullheds.dashboard .fixdlogo{ margin-left:4%;}
 .footlinks{ display:none}

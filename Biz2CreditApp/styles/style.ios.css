@@ -435,7 +435,7 @@ html body #tabstrip-manage-app .backButton {background-size: 24% !important;heig
 #tabstrip-bizAnalyzer .backButton {width: 75%;height: 55px;background-size: 29% !important;background-position: 5px 12px !important;}
 #tabstrip-bizAnalyzer .refresh-loading {height: 55px;background-size: 50%;background-position: center 9px;}
 #tabstrip-bizAnalyzer .refreshloan {height: 55px;background-size: 36%;background-position: center 15px;}
-.km-flat .km-listinset>li:last-child select{font-size: 15px;height: 40px;background-size: 15%;}
+#scheduleForm li select{font-size: 15px;height: 40px;background-size: 15%;}
 }
 @media (min-width:0px) and (max-width:533px) { 
 #blackBlk .desbrdIcon {padding: 2%;display: block;}
@@ -591,7 +591,7 @@ html body #tabstrip-manage-app .backButton {background-size: 39% !important;widt
 #tabstrip-bizAnalyzer .refresh-loading {height: 56px;background-size: 67%;background-position: center 10px;}
 #tabstrip-bizAnalyzer .refreshloan{height: 56px;background-size: 52%;background-position: center 16px;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li .k-select{background-size: 12%;background-position: 95% 7px;}
-.km-flat .km-listinset>li:last-child select {height: 40px;font-size: 14px;background-size: 21%;}
+#scheduleForm li select {height: 40px;font-size: 14px;background-size: 21%;}
 }
 @media (min-width:0px) and (max-width:390px) { 
 #matchDocList .filesBlock .file-name {width: 56%;font-size: 12px;}

@@ -240,7 +240,8 @@
                          dHeader= 'You have '+matches+' loan matches';
                          dDescription='No worries! We are here to help you. Use BizAnalyzer to find ways to improve your business\'s finances and funding opportunities.';
                          dButtonText = "Check your BizAnalyzer Score";
-                         dButtonLink ="#tabstrip-mess-third";
+                         //dButtonLink ="#tabstrip-mess-third";
+                         dButtonLink ="views/bizAnalyzerPage.html";
                         }
                     if(matchstatus === 1 && app.homesetting.checkMatchesStatus(matchrows)){
                          dHeader= userName+', you have '+matches+' pre-qualified loan matches.';
@@ -297,6 +298,10 @@
                    //dButtonText = "Start an Application";
                     //dButtonLink ="views/matches.html";
                     if(dButtonLink === "views/matches.html")
+                    {
+                        var html = '<a class="btngr" href="'+dButtonLink+'" data-role="button">'+dButtonText+'</a>';
+                    }
+                    else if(dButtonLink === "views/bizAnalyzerPage.html")
                     {
                         var html = '<a class="btngr" href="'+dButtonLink+'" data-role="button">'+dButtonText+'</a>';
                     }

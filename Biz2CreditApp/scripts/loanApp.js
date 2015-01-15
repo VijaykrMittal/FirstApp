@@ -66,10 +66,15 @@
             }
             
        },
-        applyFreshLoan:function(e)
+        applyEditLoan:function(e)
         {
             app.analyticsService.viewModel.trackFeature("ManageApplication.User click on Application by Edit Mode");
             app.loginService.viewModel.applicationEditMode(e);  
+        },
+        applyFreshLoan:function(e)
+        {
+            app.analyticsService.viewModel.trackFeature("ManageApplication.User click on Application by Fresh Mode");
+            app.loginService.viewModel.application(e);  
         },
         setManageStatus:function(data)
         {

@@ -433,6 +433,8 @@ li#undefined table td:nth-child(1).default-icon {background-size:50%;}
 .matches-view li .row1 p {padding: 0 0 3px 50px;}
 #tabstrip-bizAnalyzer .refresh-loading {height: 62px;background-position: center 13px;}
 #tabstrip-bizAnalyzer .refreshloan {background-position: center 19px;height: 62px;}
+.schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 48.4%;}
+#dynamicCl.km-popup-wrapper {height: 263px !important;}
 }
 @media (min-width:0px) and (max-width:640px) {
 .logo { margin:3% auto;}
@@ -748,7 +750,7 @@ html body .backButton{background-position: 5px 15px !important;}
 .matches-logo {background-size: 23.5%;}
 li#undefined table td:nth-child(1) {width:10%;background-size: 66%;background-position: 13px 7px;}
 #scheduleForm li select {height: 42px;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li {width:48.4%;}
+.schedulePopup .scheduleSection .km-listview-wrapper ul li {width:48.2%;}
 }
 @media (min-width:0px) and (max-width:599px) {
 .docs-header .km-widget .docs-search { width:8%; margin:0;}
@@ -941,6 +943,8 @@ body.horizontal li#undefined table td:nth-child(1).default-icon {background-size
 #tabstrip-bizAnalyzer .refreshloan {height: 50px;background-size:42%; background-position: center 12px;}
 #tabstrip-bizAnalyzer .backButton {width: 78%;}
 #scheduleForm li select {font-size: 16px;height: 40px;}
+.schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 48.1%;}
+#bz_an_mn_pg .ui-slider .ui-slider-tooltip {padding: 2px 2px 0px; font-size:15px;}
 }
 
 @media (min-width:0px) and (max-width:440px) {

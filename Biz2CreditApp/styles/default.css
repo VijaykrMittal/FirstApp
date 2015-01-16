@@ -479,4 +479,5 @@ ul.mobile li a:hover{ display:block; font-size:14px; color:#ccc }
 #biz_analyzernewd_form .frm_outr_cont .frm_cont3 .three-inline select {max-width: 85px;}
 #biz_analyzernewd_form .frm_outr_cont .frm_cont3 .three-inline input {max-width: 64px;}
 #biz_analyzernewd_form .frm_outr_cont .frm_cont3 .three-inline .rel-label input { width: 58%;}
+#bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_tbs .bz_an_mn_pg_inr_lw_tbs_cont .bz_an_lw_drg_chrt2 .bz_an_lw_drg_chrt2_cashfl {font-size: 10px !important;}
 }

@@ -158,13 +158,6 @@
                     
                 </div>
             </div>
-           <!-- <div data-role="footer">
-                <div data-role="navbar" class="documentClick">
-                    <a href="views/documents.html" data-role="button">
-                        <img src="styles/images/ic_launcher.png"><span>Documents</span>
-                    </a>
-                </div>
-            </div>-->
             
             <div data-role="popover" class="popupBox refreshPop" id="popover-people">
                 <div data-role="view" data-model="app.loginService.viewModel">
@@ -387,11 +380,7 @@
                                     <option value="02PM - 04PM">02PM - 04PM</option>
                                     <option value="04PM - 06PM">04PM - 06PM</option>
                                     <option value="06PM - 08PM">06PM - 08PM</option>
-                                </select>
-                                
-                                
-                                
-                                
+                                </select> 
                             </label>
                         </li>
                     </ul>
@@ -406,28 +395,7 @@
             </div>
 
         </div>
-         <!--home message 1-->
-        <div id="tabstrip-mess-one" class="modal-mess-one" data-role="modalview"  data-modal="false"  style="width:100%">
-
-            <div class="closeBt clearfix">
-                <a data-role="button"  data-click="closeModalView">Close</a>
-             </div>
-                <p>To start  your application, please log on to the web version of Biz2Credit.com</p>
-                
-            
-
-        </div>
-        <!--home message 2-->
-        <div id="tabstrip-mess-two" class="modal-mess-one" data-role="modalview" data-modal="false"  style="width:100%">
-
-           <div class="closeBt clearfix">
-                <a data-role="button"  data-click="closeModalView">Close</a>
-               </div>
-                <p>To complete your application, please log on to the web version of Biz2Credit.com</p>
-                
-            
-
-        </div>
+         
         <!--home message 3-->
         <div id="tabstrip-mess-third" class="modal-mess-one" data-role="modalview"  data-modal="false"  style="width:100%">
 
@@ -458,7 +426,6 @@
                 <a data-role="button"  data-click="closeModalView">Close</a>
                 </div>
                 <p></p>
-                
         </div>
         <!--Layout-->
         <div data-role="layout" data-id="tabstrip-layout">
@@ -479,14 +446,8 @@
                 <div id="status" class="status">status</div>
             </div>
         </div>
-       
         <script>
-           
             function closeModalView(e) {
-              ////  $('#tabstrip-mess-fourth').parent().parent().css("height",$('#tabstrip-mess-fourth'));
-               // console.log($('#tabstrip-mess-fourth').parent().parent());
-                 console.log('debug');
-                
             	var modalView = e.sender.element.closest("[data-role=modalview]").data("kendoMobileModalView");
             	modalView.close();
                 $('#tabstrip-mess-fourth').parent().css("height","auto");

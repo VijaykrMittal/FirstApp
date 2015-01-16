@@ -228,7 +228,7 @@
                         	dHeader= userName+', your loan application is incomplete.';
                             dDescription='In order to see what loan offers you qualify for, you must finish the application. Please click to resume or schedule a call to receive help from a loan expert.';
                             dButtonText = "Complete Application";
-                            dButtonLink ="#tabstrip-mess-two";
+                            dButtonLink ="applyEditLoan";
                         }
                     if(matchstatus===0 && matches>=1) {
                          dHeader= userName+', you have '+matches+' pre-qualified loan matches.';
@@ -309,7 +309,7 @@
                     {
                         var html = '<a class="btngr" href="'+dButtonLink+'" data-role="button">'+dButtonText+'</a>';
                     }
-                    else if(dButtonLink === "#tabstrip-mess-two")
+                    else if(dButtonLink === "applyEditLoan")
                     {
                         var html = '<a id="'+appId+'" class="btngr" data-bind="click: applyEditLoan" data-mode="edit"  data-fid="'+appId+'">'+dButtonText+'</a>';
                     }

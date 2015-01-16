@@ -115,6 +115,7 @@
         
         $("#tabstrip-home").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
         $("#tabstrip-sign-up").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
+        $("#popover-people").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
         
         app.homesetting.viewModel.closeParentPopover();
       

@@ -311,7 +311,7 @@
                     }
                     else if(dButtonLink === "#tabstrip-mess-two")
                     {
-                        var html = '<a class="btngr" data-bind="click: applyFreshLoan" data-mode="edit"  data-fid="'+appId+'">'+dButtonText+'</a>';
+                        var html = '<a id="'+appId+'" class="btngr" data-bind="click: applyEditLoan" data-mode="edit"  data-fid="'+appId+'">'+dButtonText+'</a>';
                     }
                     else{
                         var html = '<a class="btngr" href="'+dButtonLink+'" data-rel="modalview" data-role="button">'+dButtonText+'</a>';
@@ -554,9 +554,9 @@
              var that = this;
              that.set("repaymentStatus", false);
         },
-        applyFreshLoan:function(e)
+        applyEditLoan:function(e)
         {
-            app.loginService.viewModel.application(e);  
+            app.loanApp.viewModel.applyEditLoan(e);  
         },
         
         applyIteriaLoan:function(e)

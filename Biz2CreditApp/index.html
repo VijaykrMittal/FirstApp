@@ -440,14 +440,15 @@
         <!--home message 3-->
         <div id="tabstrip-mess-fourth" class="reqWindow modal-mess-four" data-role="modalview"  style="width:100%">
 
-            <div class="reqWindow">
+            <div data-role="header" class="reqWindow">
                 <h4>Required Documents<div class="closeBt clearfix">
                 <a data-role="button"  data-click="closeModalView">Close</a>
-                </div></h4> 
-                
-                </div>
+            </div></h4> 
+
+            </div>
+            <div class="view-content reqWindow">
                 <p class="doc-content"></p>
-                
+            </div> 
         </div>
       
        <!--home message 3-->
@@ -482,8 +483,14 @@
         <script>
            
             function closeModalView(e) {
+              ////  $('#tabstrip-mess-fourth').parent().parent().css("height",$('#tabstrip-mess-fourth'));
+               // console.log($('#tabstrip-mess-fourth').parent().parent());
+                 console.log('debug');
+                
             	var modalView = e.sender.element.closest("[data-role=modalview]").data("kendoMobileModalView");
             	modalView.close();
+                $('#tabstrip-mess-fourth').parent().css("height","auto");
+                $('#tabstrip-mess-fourth').parent().unwrap();
           }
             
         </script>

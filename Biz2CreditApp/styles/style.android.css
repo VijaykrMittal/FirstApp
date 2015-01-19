@@ -749,8 +749,9 @@ html body .backButton{background-position: 5px 15px !important;}
 .docs-header .km-widget .docs-popup {background-size:75%;}
 .matches-logo {background-size: 23.5%;}
 li#undefined table td:nth-child(1) {width:10%;background-size: 66%;background-position: 13px 7px;}
-#scheduleForm li select {height: 42px;}
+#scheduleForm li select {height: 42px; font-size:17px;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li {width:48.2%;}
+.schedulePopup h3 {font-size: 18px;}
 }
 @media (min-width:0px) and (max-width:599px) {
 .docs-header .km-widget .docs-search { width:8%; margin:0;}

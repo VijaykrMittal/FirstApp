@@ -138,7 +138,7 @@ app.bizAnalyzer = (function () {
                     $( "#personalCreditSliderTxt" ).val(ui.value);
                     getTotal();
                 },
-                drag: function ( event, ui ) {
+                slide: function ( event, ui ) {
                     
                     $( "#personalCreditSliderTxt" ).val(ui.value);
                     getTotal();

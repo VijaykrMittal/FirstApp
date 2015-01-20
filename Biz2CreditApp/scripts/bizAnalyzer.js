@@ -10,7 +10,6 @@ app.bizAnalyzer = (function () {
                 
             setShowrefreshBizFalse:function()
             { 
-                console.log(kendo);
                 var that = this;
                 that.set("showrefreshBizVal",false);
 
@@ -358,7 +357,8 @@ app.bizAnalyzer = (function () {
 
                 }
             });
-            showrefreshBiz.setShowrefreshBizTrue(); 
+            showrefreshBiz.setShowrefreshBizTrue();
+            
         };
         var getTotal=function(){
             

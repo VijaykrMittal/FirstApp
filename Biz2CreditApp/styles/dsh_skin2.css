@@ -285,23 +285,23 @@ footer a{ color:#FFF}
 /* application form   6 March */
 #aplicn_frm{ padding:30px 2%;}
 #aplicn_frm .rws{ padding-bottom:10px; display:block; clear:left;}
-#aplicn_frm .rws .lftit{ width:190px; line-height:15px; font-size:13px; color:#333; padding-top:6px; float:left}
+#aplicn_frm .rws .lftit{ width:260px; line-height:15px; font-size:13px; color:#333; padding-top:6px; float:left}
 #aplicn_frm .rws .lftitb{ width:30%; line-height:15px; font-size:13px; color:#666; padding-top:6px; float:left; color:#333}
 #aplicn_frm .rws .lftitb em{ font-size:12px;}
-#aplicn_frm  .IN1{ width:345px; margin-right:8px; margin-bottom:10px;}
+#aplicn_frm  .IN1{ width:390px; margin-right:8px; margin-bottom:10px;}
 #aplicn_frm  .IN3{ width:290px; margin-right:8px; margin-bottom:10px;}
-#aplicn_frm  .IN5{ width:260px; margin-right:8px; margin-bottom:10px;}
+#aplicn_frm  .IN5{ width:288px; margin-right:8px; margin-bottom:10px;}
 #aplicn_frm  .IN1b { width:370px; margin-right:8px; margin-bottom:10px;}
 #aplicn_frm  .IN2b { width:190px; margin-right:8px; margin-bottom:10px;}
 #aplicn_frm  .IN4{ width:180px; margin-right:8px; margin-bottom:10px;}
-#aplicn_frm  .IN6 {width:234px; margin-right:8px; margin-bottom:10px;}
+#aplicn_frm  .IN6 {width:289px; margin-right:8px; margin-bottom:10px;}
 #aplicn_frm  .IN4b { width:200px; margin-right:8px; margin-bottom:10px;}
-#aplicn_frm .rws .rwfil.aut{ float:left; width:auto; }
+#aplicn_frm .rws .rwfil.aut{ float:left; width:75%; }
 #aplicn_frm .rws .rwfil{ float:right; width:70%; }
 #aplicn_frm .rws .rwfil.lft { float:left;}
 #aplicn_frm .ipsm1{ width:100px}
-#aplicn_frm .ipsm2{ width:150px}
-#aplicn_frm .ipsm3{ width:209px}
+#aplicn_frm .ipsm2{ width:200px}
+#aplicn_frm .ipsm3{ width:407px}
 #aplicn_frm .ipsm13{ width:130px}
 #aplicn_frm select.IN1b.ipsm1{ width:116px}
 #aplicn_frm select.IN1b.ipsm3{ width:180px}

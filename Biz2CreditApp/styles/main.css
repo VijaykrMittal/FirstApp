@@ -514,3 +514,11 @@ ul#documentList td:nth-child(1) {font-size:1.2em; color:#333; text-indent:20px;}
 
 .matches-view li .row1 p img { max-width:100%;}
 .k-animation-container {max-height:90%;}
+/**************20-01-15***********/
+#aplicn_frm #credit_show .IN3 {width: 256px;}
+#aplicn_frm #credit_show .ipsm3 {width: 386px;}
+#aplicn_frm #outsta_debt .IN5 {width: 340px;}
+#aplicn_frm #outsta_debt .IN4.number {width: 340px!important;}
+#aplicn_frm #outsta_debt .IN4 {width: 167px;}
+#aplicn_frm.formTw select.IN1b.ipsm3, #aplicn_frm.formTw .zipcod, #aplicn_frm.formTw .IN1b.ipsm1{ width:258px!important;}
+#aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner8 .ipsm1, #aplicn_frm #adddowner8 .ipsm1 {width: 258px !important}

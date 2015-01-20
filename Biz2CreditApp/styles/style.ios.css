@@ -210,6 +210,7 @@ html body #tabstrip-manage-app .backButton {background-size: 29% !important;back
 #tabstrip-bizAnalyzer .backButton {width: 79%;height: 65px;background-size: 24% !important;background-position: 5px 15px !important;}
 #tabstrip-bizAnalyzer .refresh-loading {height: 65px;background-size:43%;background-position: center 12px;}
 #tabstrip-bizAnalyzer .refreshloan {background-size:32%;background-position: center 19px;height: 65px;}
+.schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 48.4%;}
 }
 @media (min-width:0px) and (max-width:768px) {
 .logLogo {margin: 34% auto 10%;}
@@ -263,6 +264,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 .docsUpload .uploadBar {margin: 5% 5% 4%;}
 .documentList .wrap-content .row .name a span.docscon {line-height:15px;}
 #tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height: 56%;}
+.schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 48.5%;}
 }
 @media (min-width:0px) and (max-width:670px) {
 #aplicn_tp ul.app_nav li {background-position: 8px center;}
@@ -286,6 +288,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 .documentList .wrap-content .row .name {width: 91%;}
 .docs-header .km-widget .docs-docu {width: 66%;}
 .documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-position: 10px 11px;}
+.schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 48.4%;}
 }
 @media (min-width:0px) and (max-width:640px) { 
 .logo { margin:3% auto;}

@@ -121,6 +121,7 @@ app.bizAnalyzer = (function () {
                 min: 500,
                 max: 850,
                 step: 1,
+                animate: false,
                 create: function ( event ) {
                     
                     $( event.target ).find('.ui-slider-handle').append( tooltipElement );
@@ -137,7 +138,7 @@ app.bizAnalyzer = (function () {
                     $( "#personalCreditSliderTxt" ).val(ui.value);
                     getTotal();
                 },
-                slide: function ( event, ui ) {
+                drag: function ( event, ui ) {
                     
                     $( "#personalCreditSliderTxt" ).val(ui.value);
                     getTotal();

@@ -1,12 +1,12 @@
-<div id="tabstrip-bizAnalyzer" data-role="view" class="clearfix" data-reload="true" data-show="app.bizAnalyzer.viewModel.show" data-after-show="app.bizAnalyzer.viewModel.showAfter" data-model="app.bizAnalyzer.viewModel" >
+<div id="tabstrip-bizAnalyzer" data-role="view" class="clearfix" data-reload="true" data-show="app.bizAnalyzer.show" data-after-show="app.bizAnalyzer.showAfter" data-model="app.bizAnalyzer" >
     <div data-role="header">
         <div data-role="navbar">
             <span data-role="view-title">
                 <a data-role="backbutton" class="backButton">Back</a>
             </span>
-            <a data-bind="click: refreshViewBiz,invisible: showrefreshBiz" class="refreshloan docs-refresh">refresh</a>
+            <a data-bind="click: refreshViewBiz,invisible: showrefreshBiz.showrefreshBizVal" class="refreshloan docs-refresh">refresh</a>
             
-            <a data-bind="click: refreshViewBiz,visible: showrefreshBiz" class="refresh-loading docs-refresh">refresh</a>
+            <a data-bind="click: refreshViewBiz,visible: showrefreshBiz.showrefreshBizVal" class="refresh-loading docs-refresh">refresh</a>
             <a data-align="right" data-rel="popover" href="#popover-people" data-role="button" class="docs-popup"></a>
         </div>
     </div>

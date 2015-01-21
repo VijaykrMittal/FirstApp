@@ -601,6 +601,7 @@ li#undefined table td:nth-child(1) {width:10%;background-size: 66%;}
 #dynamicCl.km-popup-wrapper {height: 264px !important;}
 #aplicn_frm #busInfobx2 .IN4c {width:96%;margin-bottom: 10px;}
 #aplicn_frm .rws.rw2 p {padding-right: 0;}
+html body #aplicn_frm .opt {padding-bottom:0px;}
 }
 @media (min-width:0px) and (max-width:630px) {
 .logo { margin:3% auto;}
@@ -786,6 +787,7 @@ li#undefined table td:nth-child(1) {width:10%;background-size: 66%;background-po
 #scheduleForm li select {height: 42px; font-size:17px;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li {width:48.2%;}
 .schedulePopup h3 {font-size: 18px;}
+#aplicn_frm .rws .lftitb {padding-bottom: 5px;}
 }
 @media (min-width:0px) and (max-width:599px) {
 .docs-header .km-widget .docs-search { width:8%; margin:0;}
@@ -938,7 +940,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 #aplicn_frm .montrnt .IN2 { width: 90%; margin-bottom:10px;}
 #aplicn_frm .IN1{ width:280px; margin-right:8px; margin-bottom:10px;}
 #aplicn_frm .IN1b { width:305px; margin-right:8px; margin-bottom:10px;}
-#debtwrapper p a.rem_col { float:right; margin-bottom:7px;}
+#debtwrapper p a.rem_col {margin-bottom:7px;}
 #aplicn_frm .rws.rw2 .ipsm4, #aplicn_frm select.IN1b.ipsm1, #aplicn_frm .rws.rw2 select.ipsm3, #aplicn_frm .IN1 {width:100%;}
 #aplicn_frm select.IN1b.ipsm3 {width:100%;}
 html body #aplicn_frm ul.low_creditop li.opt2 label.error {font-size:11px;}
@@ -980,6 +982,7 @@ body.horizontal li#undefined table td:nth-child(1).default-icon {background-size
 #scheduleForm li select {font-size: 16px;height: 40px;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 48.1%;}
 #bz_an_mn_pg .ui-slider .ui-slider-tooltip {padding: 2px 2px 0px; font-size:15px;}
+#aplicn_frm #debtwrapper .addons p.imp40 {width: 48% !important;margin: 0 2% 0 0;}
 }
 
 @media (min-width:0px) and (max-width:440px) {

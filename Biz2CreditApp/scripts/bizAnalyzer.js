@@ -23,20 +23,29 @@ app.bizAnalyzer = (function () {
     
         var showAfter=function()
         {
-            var pcsVal =	512;
-            var dtiVal =	100;
-            var tibVal =	55;
-            var cfVal  =	-30;
-            var irVal  =	"High Risk";
-            var crVal  =	"Medium Risk";
-            var arVal  =	25000;
+            console.log(app);
+            var pcsVal =	app.homesetting.viewModel.pcsVal;
+            var dtiVal =	app.homesetting.viewModel.dtiVal;
+            var tibVal =	app.homesetting.viewModel.tibVal;
+            var cfVal  =	app.homesetting.viewModel.cfVal;
+            var irVal  =	app.homesetting.viewModel.irVal;
+            var crVal  =	app.homesetting.viewModel.crVal;
+            var arVal  =	app.homesetting.viewModel.arVal;
+            console.log('pcsVal'+pcsVal);
+            console.log('dtiVal'+dtiVal);
+            console.log('tibVal'+tibVal);
+            console.log('cfVal'+cfVal);
+            console.log('irVal'+irVal);
+            console.log('crVal'+crVal);
+            console.log('arVal'+arVal);
+            
             
             jQuery("#personalCreditSliderTxt").val(pcsVal);
         	jQuery("#debitToIncomeSliderTxt").val(dtiVal);
         	jQuery("#timeInBussinessSliderTxt").val(tibVal);
+            jQuery("#cashFlowSliderTxt").val(cfVal);
         	jQuery("#industryRiskSliderTxt1").val(irVal);
         	jQuery("#corporateRiskSliderTxt1").val(crVal);
-        	jQuery("#cashFlowSliderTxt").val(cfVal);
         	jQuery("#anuRevSliderTxt").val(arVal); 
             
             /*         
@@ -82,13 +91,13 @@ app.bizAnalyzer = (function () {
             
             
 
-            var pcsVal =	512;
-            var dtiVal =	100;
-            var tibVal =	55;
-            var cfVal  =	-30;
-            var irVal  =	1
-            var crVal  =	1;
-            var arVal  =	25000;
+            var pcsVal =	app.homesetting.viewModel.pcsVal;
+            var dtiVal =	app.homesetting.viewModel.dtiVal;
+            var tibVal =	app.homesetting.viewModel.tibVal;
+            var cfVal  =	app.homesetting.viewModel.cfVal;
+            var irVal  =	app.homesetting.viewModel.irVal;
+            var crVal  =	app.homesetting.viewModel.crVal;
+            var arVal  =	app.homesetting.viewModel.arVal;
 
           /*var pcsVal =	parseInt(document.getElementById('personalCreditSliderTxt').value);
             var dtiVal =	Math.round(parseInt(document.getElementById('debitToIncomeSliderTxt').value));

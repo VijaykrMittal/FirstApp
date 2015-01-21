@@ -345,6 +345,9 @@ html body #aplicn_frm .opt {padding-bottom: 25px;}
 #aplicn_frm #busInfobx2 .IN4c {width:100%;}
 #aplicn_frm .showfilds_bx {margin-right:0;}
 #aplicn_frm .smOn.IN3 {width: 98%;}
+#aplicn_frm .rws .rwfil.aut {width:100%;}
+#aplicn_frm .rws p {padding:0;}
+#aplicn_frm.formTw select.IN1b.ipsm3, #aplicn_frm.formTw .zipcod, #aplicn_frm.formTw .IN1b.ipsm1, #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner8 .ipsm1, #aplicn_frm #adddowner8 .ipsm1 {width:100% !important;}
 }
 @media (min-width:0px) and (max-width:768px) {
 .logLogo {margin:1% auto 2%;background-size: 63%;height: 85px;}

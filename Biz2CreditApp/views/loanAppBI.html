@@ -35,8 +35,8 @@
                         <div class="rws clearfix">
                             <div class="lftitb">Legal Business Name</div>
                             <div class="rwfil">
-                                <p><input type="text" name="orgname" class="IN1 ac_input valid" id="orgname" title="Legal Business Name"  data-bind="value: legal_business_name" placeholder="Legal Business Name" required /></p>
-                                <p><input type="text" placeholder="DBA Name" id="dbaname" class="IN1 ipsm3" name="dbaname" data-bind="value: dba_name" original-title="DBA Name" value="Test"></p>
+                                <p><input type="text" name="orgname" class="IN1 width200 ipsm3" id="orgname" title="Legal Business Name"  data-bind="value: legal_business_name" placeholder="Legal Business Name" required /></p>
+                                <p><input type="text" placeholder="DBA Name" id="dbaname" class="IN1 ipsm3 width200" name="dbaname" data-bind="value: dba_name" original-title="DBA Name" value="Test"></p>
                             </div>
                         </div>
 
@@ -45,18 +45,14 @@
                             <div class="rwfil clearfix">
                                 <div class="rw_lin clearfix">
                                     <p>
-                                        <input type="text" class="IN1 ipsm13"  name="civic"  id="civic" title="Street No."  data-bind="value: street_no" placeholder="Street No." required />
+                                        <input type="text" class="IN1 ipsm2"  name="civic"  id="civic" title="Street No."  data-bind="value: street_no" placeholder="Street No." required />
                                     </p>
                                     <p>
-                                        <input type="text" class="IN1 ipsm3"  name="baddr" id="baddr" title="Street Name"  data-bind="value: street_name" placeholder="Street Name" required />
+                                        <input type="text" class="IN1 ipsm2"  name="baddr" id="baddr" title="Street Name"  data-bind="value: street_name" placeholder="Street Name" required />
                                     </p>
                                     <p>
-                                        <input type="text" class="IN1 ipsm3" name="street1" id="street1" title="Apt/Suite/Unit"  data-bind="value: apt_suite_unit" placeholder="Apt/Suite/Unit" />
+                                        <input type="text" class="IN1 ipsm2" name="street1" id="street1" title="Apt/Suite/Unit"  data-bind="value: apt_suite_unit" placeholder="Apt/Suite/Unit" />
                                     </p>
-                                    <br>
-                                </div>
-
-                                <div class="rw_lin clearfix">
                                     <p>
                                         <select class="IN1b ipsm3 valid" name="state"  id="state"  title="Select State"  data-bind="value: select_state"  onchange="createCityCmbFirst(this.value, '');" required>
                                             <option value="" selected="selected">Select State</option>
@@ -115,6 +111,10 @@
                                             <option value="62">Wyoming</option>
                                         </select>
                                     </p>
+                                </div>
+
+                                <div class="rw_lin clearfix">
+                                    
 
                                     <p>
                                         <select title="Select City" class="IN1b ipsm3 valid" id="cmbCity" data-bind="value: select_city" name="cmbCity" required>
@@ -123,10 +123,10 @@
                                     </p>
 
                                     <p>
-                                        <input type="text" class="IN1 ipsm13 valid zipcod" name="zipcode"  id="zipcode" title="Zip Code" data-bind="value: zip_code" placeholder="Zip Code" maxlength="5" required />
+                                        <input type="text" class="IN1 ipsm2" name="zipcode"  id="zipcode" title="Zip Code" data-bind="value: zip_code" placeholder="Zip Code" maxlength="5" required />
                                     </p>
                                     <p class="LargePhone">
-                                        <input type="text" placeholder="Mobile Number" id="businessphone" name="businessphone" data-bind="value: mobile_number" class="IN1 ipsm13 smphone valid" original-title="Mobile Number" value="111-111-1111" maxlength="10">
+                                        <input type="text" placeholder="Mobile Number" id="businessphone" name="businessphone" data-bind="value: mobile_number" class="IN1 ipsm2" original-title="Mobile Number" value="111-111-1111" maxlength="10">
                                     </p>
                                 </div>
                             </div>

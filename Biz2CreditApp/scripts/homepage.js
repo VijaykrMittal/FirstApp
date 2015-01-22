@@ -4,6 +4,7 @@
 
     HomepageViewModel = kendo.data.ObservableObject.extend({
 		Matches:[],
+        BizAnalyzerData:[],
         LoanAmt:"",
         YearsBus:"",
         AnnnualRevenue:"",
@@ -18,14 +19,6 @@
         dButtonText :(window.localStorage.getItem("dButtonText") !== null) ?  localStorage.getItem("dButtonText") : '',
         dButtonLink:(window.localStorage.getItem("dButtonLink") !== null) ?  localStorage.getItem("dButtonLink") : '',
         repaymentStatus:false,
-
-        pcsVal:"",
-        dtiVal:"",
-        tibVal:"",
-        cfVal:"",
-        irVal:"",
-        crVal:"",
-        arVal:"",
         bizStatus:false,
         matchShow:function()
         { 
@@ -641,13 +634,7 @@
         setBizAnalyzerData:function(data)
         {
             var that =this;
-            that.set("pcsVal",data['credittype']['creditscore']);
-            that.set("dtiVal",data['dtiRatio']['dtiRatioVal']);
-            that.set("tibVal",data['ageOfBiss']['age']);
-            that.set("cfVal",data['cashFlowRisk']['cashFlowRiskVal']);
-            that.set("irVal",data['industryRisk']['riskType']);
-            that.set("crVal",data['corpRisk']['riskType']);
-            that.set("arVal",data['annualRevRisk']['annualRevRiskVal']);
+            that.set("BizAnalyzerData",data);
             app.homesetting.viewModel.setBizAnalyzerStatus(true);
         }
 

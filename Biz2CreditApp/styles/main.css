@@ -208,7 +208,7 @@ z-index: 999; }
 .matches-logo { background-image: url(images/back-logo.png); text-align:left; background-repeat:no-repeat; background-size:25%; background-position:10px 14px;height:50px; position:relative; background-color:#e9e9e9; padding:0; width:100%;}
 .matches-logo a {background-color:transparent; border:0; height:auto; font-size:0; display:block; width:25%; font-size:0px; text-indent:-9000px;}
 .reqWindow { border-bottom:1px solid #99cc00;}
-.reqWindow h4 { color:#99cc00; font-size:1.3em; font-weight:normal; margin:15px 10px;}
+.reqWindow h4 { color:#99cc00; font-size:1.3em; font-weight:normal; margin:0; padding:15px 10px; background-color:#f6f6f6;}
 .reqWindow .closeBt { float:right;}
 .reqWindow .closeBt a {background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:0px 5px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0;}
 .reqWindow + .doc-content { padding:0; margin:0;}
@@ -522,3 +522,5 @@ ul#documentList td:nth-child(1) {font-size:1.2em; color:#333; text-indent:20px;}
 #aplicn_frm #outsta_debt .IN4 {width: 167px;}
 #aplicn_frm.formTw select.IN1b.ipsm3, #aplicn_frm.formTw .zipcod, #aplicn_frm.formTw .IN1b.ipsm1{ width:258px!important;}
 #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner8 .ipsm1, #aplicn_frm #adddowner8 .ipsm1 {width: 258px !important}
+p.doc-content ol {padding: 0 0 0 20px;}
+p.doc-content li { padding-bottom:6px;}

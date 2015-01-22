@@ -7,7 +7,28 @@ app.bizAnalyzer = (function () {
          
         var showrefreshBiz=kendo.observable({ 
             showrefreshBizVal: true,
-                
+            
+            personaCreditScore: '',
+            personaCreditRiskType: '',
+            
+            debitToIncomeScore: '',
+            debitToIncomeRiskType: '',
+            
+            timeInBussinessScore:'',
+            timeInBussinessRiskType:'',
+            
+            industryScore:'',
+            industryRiskType:'',
+            
+            corporateScore:'',
+            corporateRiskType:'',
+            
+            cashFlowScore:'',
+            cashFlowRiskType:'',
+            
+            anuRevScore:'',
+            anuRevRiskType:'',
+             
             setShowrefreshBizFalse:function()
             { 
                 var that = this;
@@ -19,18 +40,191 @@ app.bizAnalyzer = (function () {
                 var that = this;
                 that.set("showrefreshBizVal",true);
             },
+            setPersonaCreditStatus:function(data)
+            {
+                var that = this;
+                that.set("personaCreditScore",data.creditscore);
+                that.set("personaCreditRiskType",data.riskType);
+                
+                if(data.riskType==="Low Risk"){	
+                    var grade  =  "Excellent";	
+                    var class1 =  "exc";
+                }
+                if(data.riskType==="Medium Risk"){
+                    var grade  =  "Good";
+                    var class1 =  "goo";
+                }
+                if(data.riskType==="High Risk"){
+                    var grade  =  "Low";
+                    var class1 =  "bav";	
+                }
+                 $('#excpercre span').addClass(class1);
+ 				$('#excpercre span').text(grade);
+            },
+            
+            setDebitToIncomeStatus:function(data)
+            {
+                var that = this;
+                that.set("debitToIncomeScore",data.dtiRatioVal);
+                that.set("debitToIncomeRiskType",data.riskType);
+                if(data.riskType==="Low Risk"){	
+                    var grade  =  "Good";	
+                    var class1 =  "goo";
+                }
+                if(data.riskType==="Medium Risk"){
+                    var grade  =  "Average";
+                    var class1 =  "avg";
+                }
+                if(data.riskType==="High Risk"){
+                    var grade  =  "Low";
+                    var class1 =  "bav";	
+                }
+                $('#gooddebttoinco span').addClass(class1);
+ 			   $('#gooddebttoinco span').text(grade);
+            },
+            setTimeInBussinessStatus:function(data)
+            {
+                var that = this;
+                that.set("timeInBussinessScore",data.age);
+                that.set("timeInBussinessRiskType",data.riskType);
+
+                
+                if(data.age>=0 && data.age<=6){
+                    var class1='bav';
+                    var grade='Low';				
+                } 
+                else if(data.age>6 && data.age<=12){
+                    var class1='avg';
+                    var grade='Average';
+
+                } 
+                else if(data.age>12 && data.age<=36){
+                    var class1='goo';
+                    var grade='Good';
+
+                }
+                else if(data.age>36){
+                    var class1='exc';
+                    var grade='Excellent';
+                }
+                $('#timeinbusiness span').addClass(class1);
+ 			   $('#timeinbusiness span').text(grade);
+            },
+            setIndustryStatus:function(data)
+            {
+                var that = this;
+                that.set("industryScore",data.industryRiskVal);
+                that.set("industryRiskType",data.riskType);
+
+                
+                if(data.riskType==="Low Risk"){
+                    var class1='exc';
+                    var grade='Excellent';
+                }
+                else if(data.riskType==="Medium Risk"){
+                    var class1='goo';
+                    var grade='Good';
+                }
+                else if(data.riskType==="High Risk"){
+                    var class1='bav';
+                    var grade='Low';
+                }
+                $('#poorindusrsk span').addClass(class1);
+ 			   $('#poorindusrsk span').text(grade);
+            },
+            setCorporateStatus:function(data)
+            {
+                var that = this;
+                that.set("corporateScore",data.corpRiskVal);
+                that.set("corporateRiskType",data.riskType);
+
+                
+                if(data.riskType==="High Risk"){
+                    var class1='bav';
+                    var grade='Low';
+                }
+                else if(data.riskType==="Medium Risk"){
+                    var class1='poo';
+                    var grade='Average';
+                }
+                else if(data.riskType==="Low Risk"){
+                    var class1='goo';
+                    var grade='Good';
+                }
+                $('#averagecorporisk span').addClass(class1);
+ 			   $('#averagecorporisk span').text(grade);
+            },
+            setCashFlowStatus:function(data)
+            {
+                var that = this;
+                that.set("cashFlowScore",data.cashFlowRiskVal);
+                that.set("cashFlowRiskType",data.riskType);
+
+                
+                if(data.riskType==="High Risk"){
+                    var class1='bav';
+                    var grade='Low';
+                }
+                else if(data.riskType==="Medium Risk"){
+                    var class1='avg';
+                    var grade='Average';
+                }
+                else if(data.riskType==="Low Risk"){
+                    var class1='goo';
+                    var grade='Good';
+                }
+                
+                $('#belowavgcashflow span').addClass(class1);
+ 			   $('#belowavgcashflow span').text(grade);
+            },
+            setAnuRevStatus:function(data)
+            {
+                var that = this;
+                that.set("anuRevScore",data.annualRevRiskVal);
+                that.set("anuRevRiskType",data.riskType);
+
+                
+                if(data.riskType==="High Risk"){
+                    var class1='bav';
+                    var grade='Low';
+                }
+                else if(data.riskType==="Medium Risk"){
+                    var class1='goo';
+                    var grade='Good';
+                }
+                else if(data.riskType==="Low Risk"){
+                    var class1='exc';
+                    var grade='Excellent';
+                }
+                
+                $('#goodrevenue span').addClass(class1);
+ 			   $('#goodrevenue span').text(grade);
+            },
+            
         });
     
         var showAfter=function()
         {
-            console.log(app);
-            var pcsVal =	app.homesetting.viewModel.pcsVal;
-            var dtiVal =	app.homesetting.viewModel.dtiVal;
-            var tibVal =	app.homesetting.viewModel.tibVal;
-            var cfVal  =	app.homesetting.viewModel.cfVal;
-            var irVal  =	app.homesetting.viewModel.irVal;
-            var crVal  =	app.homesetting.viewModel.crVal;
-            var arVal  =	app.homesetting.viewModel.arVal;
+            
+            var pcsVal =	app.homesetting.viewModel.BizAnalyzerData.credittype.creditscore;
+            var dtiVal =	app.homesetting.viewModel.BizAnalyzerData.dtiRatio.dtiRatioVal;
+            var tibVal =	app.homesetting.viewModel.BizAnalyzerData.ageOfBiss.age;
+            var cfVal  =	escapeHTML(app.homesetting.viewModel.BizAnalyzerData.cashFlowRisk.cashFlowRiskVal);
+            var irVal  =	app.homesetting.viewModel.BizAnalyzerData.industryRisk.riskType;
+            var crVal  =	app.homesetting.viewModel.BizAnalyzerData.corpRisk.riskType;
+            var arVal  =	escapeHTML(app.homesetting.viewModel.BizAnalyzerData.annualRevRisk.annualRevRiskVal);
+            
+            showrefreshBiz.setPersonaCreditStatus(app.homesetting.viewModel.BizAnalyzerData.credittype);
+            showrefreshBiz.setDebitToIncomeStatus(app.homesetting.viewModel.BizAnalyzerData.dtiRatio);
+            showrefreshBiz.setTimeInBussinessStatus(app.homesetting.viewModel.BizAnalyzerData.ageOfBiss);
+            
+            showrefreshBiz.setIndustryStatus(app.homesetting.viewModel.BizAnalyzerData.industryRisk);
+            showrefreshBiz.setCorporateStatus(app.homesetting.viewModel.BizAnalyzerData.corpRisk);
+            showrefreshBiz.setCashFlowStatus(app.homesetting.viewModel.BizAnalyzerData.cashFlowRisk);
+            
+            showrefreshBiz.setAnuRevStatus(app.homesetting.viewModel.BizAnalyzerData.annualRevRisk);
+            
+            
             console.log('pcsVal'+pcsVal);
             console.log('dtiVal'+dtiVal);
             console.log('tibVal'+tibVal);
@@ -48,25 +242,7 @@ app.bizAnalyzer = (function () {
         	jQuery("#corporateRiskSliderTxt1").val(crVal);
         	jQuery("#anuRevSliderTxt").val(arVal); 
             
-            /*         
-            var calcScore = jQuery("#personalCreditSliderTxt").val();
-            var calcDebt = Math.round(jQuery("#debitToIncomeSliderTxt").val());
-            var calcTimeBusin = jQuery("#timeInBussinessSliderTxt").val();
-            var calcIndusRisk = jQuery("#industryRiskSliderTxt1").val();
-            var calcCorpRisk = jQuery("#corporateRiskSliderTxt1").val();
-            var calcCashFlow = Math.round(jQuery("#cashFlowSliderTxt").val());
-            var calanurevFlow = Math.round(jQuery("#anuRevSliderTxt").val());
-
-            console.log('calcScore'+calcScore);
-            console.log('calcDebt'+calcDebt);
-            console.log('calcTimeBusin'+calcTimeBusin);
-            console.log('calcIndusRisk'+calcIndusRisk);
-            console.log('calcCorpRisk'+calcCorpRisk);
-            console.log('calcCashFlow'+calcCashFlow);
-            console.log('calanurevFlow'+calanurevFlow);
-             */
-
-           getTotal();
+            getTotal();
         };
         var show=function()
         {
@@ -90,22 +266,15 @@ app.bizAnalyzer = (function () {
             });
             
             
+            var pcsVal =	app.homesetting.viewModel.BizAnalyzerData.credittype.creditscore;
+            var dtiVal =	app.homesetting.viewModel.BizAnalyzerData.dtiRatio.dtiRatioVal;
+            var tibVal =	app.homesetting.viewModel.BizAnalyzerData.ageOfBiss.age;
+            var cfVal  =	escapeHTML(app.homesetting.viewModel.BizAnalyzerData.cashFlowRisk.cashFlowRiskVal);
+            var irVal  =	checkIndustryRiskType(app.homesetting.viewModel.BizAnalyzerData.industryRisk.riskType);
+            var crVal  =	checkCorporateRiskType(app.homesetting.viewModel.BizAnalyzerData.corpRisk.riskType);
+            var arVal  =	escapeHTML(app.homesetting.viewModel.BizAnalyzerData.annualRevRisk.annualRevRiskVal);
+            
 
-            var pcsVal =	app.homesetting.viewModel.pcsVal;
-            var dtiVal =	app.homesetting.viewModel.dtiVal;
-            var tibVal =	app.homesetting.viewModel.tibVal;
-            var cfVal  =	app.homesetting.viewModel.cfVal;
-            var irVal  =	app.homesetting.viewModel.irVal;
-            var crVal  =	app.homesetting.viewModel.crVal;
-            var arVal  =	app.homesetting.viewModel.arVal;
-
-          /*var pcsVal =	parseInt(document.getElementById('personalCreditSliderTxt').value);
-            var dtiVal =	Math.round(parseInt(document.getElementById('debitToIncomeSliderTxt').value));
-            var tibVal =	parseInt(document.getElementById('timeInBussinessSliderTxt').value);
-            var cfVal  =	Math.round(document.getElementById('cashFlowSliderTxt').value);
-            var irVal  =	parseInt(document.getElementById('industryRiskSliderTxt').value);
-            var crVal  =	parseInt(document.getElementById('corporateRiskSliderTxt').value);
-            var arVal  =	parseInt(document.getElementById('anuRevSliderTxt').value);*/
             
             $(".dgr_chng_scr").delay(5000).fadeOut();		
 
@@ -402,6 +571,45 @@ app.bizAnalyzer = (function () {
                 show();
             }, 100);
               
+        };
+        var  escapeHTML=function(text)
+        {
+            var textVal =text.replace( /[\*\^\'\!\@\$]/g , '');
+            return parseInt(textVal.replace( /,/g , ''));
+        };
+        var checkIndustryRiskType =function(val)
+        {
+
+            if(val ==="High Risk"){
+                
+               return 3;
+            } 
+            if(val ==="Medium Risk"){
+                
+               return 2;
+            } 
+            if(val ==="Low Risk" ){
+                
+               return 1;
+            }
+
+        };
+        var checkCorporateRiskType =function(val)
+        {
+
+            if(val ==="High Risk"){
+                
+               return 1;
+            } 
+            if(val ==="Medium Risk"){
+                
+               return 2;
+            } 
+            if(val ==="Low Risk" ){
+                
+               return 3;
+            }
+
         }
        
 
@@ -411,7 +619,11 @@ app.bizAnalyzer = (function () {
             show: show,
             getTotal: getTotal,
             getSuccessData1: getSuccessData1,
-            refreshViewBiz: refreshViewBiz
+            refreshViewBiz: refreshViewBiz,
+            escapeHTML:escapeHTML,
+            checkIndustryRiskType:checkIndustryRiskType,
+            checkCorporateRiskType:checkCorporateRiskType
+            
         };
 
     }());

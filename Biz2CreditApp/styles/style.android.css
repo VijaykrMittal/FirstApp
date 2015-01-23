@@ -936,7 +936,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 .stpsumry p {color: #333333; font-size: 15px;}
 /* 6 March */
 #aplicn_frm .rws.rw1 p{ display:block; float:none; width:100%; }
-#aplicn_frm .rws.rw1 .IN1 { width: 92%;}
+#aplicn_frm .rws.rw1 .IN1 { width:100%;}
 #aplicn_frm .montrnt .IN2 { width: 90%; margin-bottom:10px;}
 #aplicn_frm .IN1{ width:280px; margin-right:8px; margin-bottom:10px;}
 #aplicn_frm .IN1b { width:305px; margin-right:8px; margin-bottom:10px;}
@@ -983,6 +983,8 @@ body.horizontal li#undefined table td:nth-child(1).default-icon {background-size
 .schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 48.1%;}
 #bz_an_mn_pg .ui-slider .ui-slider-tooltip {padding: 2px 2px 0px; font-size:15px;}
 #aplicn_frm #debtwrapper .addons p.imp40 {width: 48% !important;margin: 0 2% 0 0;}
+.rw_lin.cngopt > p {width: 89% !important;}
+#aplicn_frm .rw_lin.hlp p .IN6 {width: 100%;}
 }
 
 @media (min-width:0px) and (max-width:440px) {

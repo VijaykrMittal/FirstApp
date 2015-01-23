@@ -347,6 +347,12 @@
      
                             
                 }
+                else if(data['0']['results']['faultcode']===4)
+                {
+                    app.loginService.viewModel.setUserLogout();
+                    $msg= "User is block / not exist at Biz2Credit.";
+                    app.loginService.viewModel.mobileNotification($msg,'info');
+                }
                 else
                 {
                     console.log("Error in Dashboard rendering=:="+e);

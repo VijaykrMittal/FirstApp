@@ -209,7 +209,7 @@ app.bizAnalyzer = (function () {
             var pcsVal =	app.homesetting.viewModel.BizAnalyzerData.credittype.creditscore;
             var dtiVal =	app.homesetting.viewModel.BizAnalyzerData.dtiRatio.dtiRatioVal;
             var tibVal =	app.homesetting.viewModel.BizAnalyzerData.ageOfBiss.age;
-            var cfVal  =	escapeHTML(app.homesetting.viewModel.BizAnalyzerData.cashFlowRisk.cashFlowRiskVal);
+            var cfVal  =	40;
             var irVal  =	app.homesetting.viewModel.BizAnalyzerData.industryRisk.riskType;
             var crVal  =	app.homesetting.viewModel.BizAnalyzerData.corpRisk.riskType;
             var arVal  =	escapeHTML(app.homesetting.viewModel.BizAnalyzerData.annualRevRisk.annualRevRiskVal);
@@ -269,7 +269,7 @@ app.bizAnalyzer = (function () {
             var pcsVal =	app.homesetting.viewModel.BizAnalyzerData.credittype.creditscore;
             var dtiVal =	app.homesetting.viewModel.BizAnalyzerData.dtiRatio.dtiRatioVal;
             var tibVal =	app.homesetting.viewModel.BizAnalyzerData.ageOfBiss.age;
-            var cfVal  =	escapeHTML(app.homesetting.viewModel.BizAnalyzerData.cashFlowRisk.cashFlowRiskVal);
+            var cfVal  =	40;
             var irVal  =	checkIndustryRiskType(app.homesetting.viewModel.BizAnalyzerData.industryRisk.riskType);
             var crVal  =	checkCorporateRiskType(app.homesetting.viewModel.BizAnalyzerData.corpRisk.riskType);
             var arVal  =	escapeHTML(app.homesetting.viewModel.BizAnalyzerData.annualRevRisk.annualRevRiskVal);
@@ -582,15 +582,15 @@ app.bizAnalyzer = (function () {
 
             if(val ==="High Risk"){
                 
-               return 3;
+               return 0;
             } 
             if(val ==="Medium Risk"){
                 
-               return 2;
+               return 1;
             } 
             if(val ==="Low Risk" ){
                 
-               return 1;
+               return 2;
             }
 
         };
@@ -599,15 +599,15 @@ app.bizAnalyzer = (function () {
 
             if(val ==="High Risk"){
                 
-               return 1;
+               return 2;
             } 
             if(val ==="Medium Risk"){
                 
-               return 2;
+               return 1;
             } 
             if(val ==="Low Risk" ){
                 
-               return 3;
+               return 0;
             }
 
         }

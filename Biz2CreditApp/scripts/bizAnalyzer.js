@@ -85,7 +85,7 @@ app.bizAnalyzer = (function () {
             setTimeInBussinessStatus:function(data)
             {
                 var that = this;
-                that.set("timeInBussinessScore",data.age);
+                that.set("timeInBussinessScore",getAgeStatus(data.age));
                 that.set("timeInBussinessRiskType",data.riskType);
 
                 
@@ -274,7 +274,14 @@ app.bizAnalyzer = (function () {
             var crVal  =	checkCorporateRiskType(app.homesetting.viewModel.BizAnalyzerData.corpRisk.riskType);
             var arVal  =	escapeHTML(app.homesetting.viewModel.BizAnalyzerData.annualRevRisk.annualRevRiskVal);
             
-
+console.log('pcsVal'+pcsVal);
+            console.log('dtiVal'+dtiVal);
+            console.log('tibVal'+tibVal);
+            console.log('cfVal'+cfVal);
+            console.log('irVal'+irVal);
+            console.log('crVal'+crVal);
+            console.log('arVal'+arVal);
+            
             
             $(".dgr_chng_scr").delay(5000).fadeOut();		
 
@@ -541,7 +548,6 @@ app.bizAnalyzer = (function () {
         };
         var getTotal=function(){
             
-            var url = ("https:" === document.location.protocol ? "https://" : "http://") + "www.biz2beta.com";
             var calcScore = jQuery("#personalCreditSliderTxt").val()
             var calcDebt = Math.round(jQuery("#debitToIncomeSliderTxt").val())
             var calcTimeBusin = jQuery("#timeInBussinessSliderTxt").val()
@@ -549,13 +555,23 @@ app.bizAnalyzer = (function () {
             var calcCorpRisk = jQuery("#corporateRiskSliderTxt1").val()
             var calcCashFlow = Math.round(jQuery("#cashFlowSliderTxt").val())
             var calanurevFlow = Math.round(jQuery("#anuRevSliderTxt").val())
+            
+            var dataParam =  {};
+            dataParam['apiaction']='slidercalculation';
+            dataParam['creditscore']=calcScore;
+            dataParam['dtiratio']=calcDebt;
+            dataParam['ageofbiss']=calcTimeBusin;
+            dataParam['industxt']=calcIndusRisk;
+            dataParam['corptxt']=calcCorpRisk;
+            dataParam['cashmargin']=calcCashFlow;
+            dataParam['anurevenue']=calanurevFlow;
 
-            var newurl=url+"/components/com_bizanalyzertool/sliderCalculation.php";
-            $.post(newurl,{creditScore:calcScore,dtiRatio:calcDebt,ageOfBiss:calcTimeBusin,industxt:calcIndusRisk,corpTxt:calcCorpRisk,cashMargin:calcCashFlow,anuRevenue:calanurevFlow},getSuccessData1,"json");	
+            $.post(localStorage.getItem("urlMobAppApiUser"),dataParam,getSuccessData1,"json");	
         };
 	
     	var getSuccessData1=function(data){ 
-    		jQuery('#netScoreBizanalyserTxt').text(data.total);
+            console.log(data);
+    		jQuery('#netScoreBizanalyserTxt').text(data.results.totalBizscore);
     	};
         
         
@@ -610,7 +626,27 @@ app.bizAnalyzer = (function () {
                return 0;
             }
 
-        }
+        };
+         
+         var getAgeStatus=function(data)
+           {
+               var year,month,yrMonth;
+               
+               if(data>=12)
+               {
+                   month = data%12;
+                   yrMonth = data-month;
+                   year = yrMonth/12;
+               }
+               else
+               {
+                   month=data;
+                   year=0;
+               }
+               
+               return  year+" year(s), "+month+" month(s)";
+               
+           };
        
 
         return {
@@ -622,7 +658,8 @@ app.bizAnalyzer = (function () {
             refreshViewBiz: refreshViewBiz,
             escapeHTML:escapeHTML,
             checkIndustryRiskType:checkIndustryRiskType,
-            checkCorporateRiskType:checkCorporateRiskType
+            checkCorporateRiskType:checkCorporateRiskType,
+            getAgeStatus:getAgeStatus,
             
         };
 

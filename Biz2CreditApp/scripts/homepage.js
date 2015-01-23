@@ -352,6 +352,7 @@
                     app.loginService.viewModel.setUserLogout();
                     $msg= "User is block / not exist at Biz2Credit.";
                     app.loginService.viewModel.mobileNotification($msg,'info');
+                    app.loginService.viewModel.hideloder();
                 }
                 else
                 {

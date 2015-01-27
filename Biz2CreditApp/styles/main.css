@@ -97,12 +97,15 @@ html body .loginSection .km-flat, .km-flat .km-navbar, .km-flat .km-content { co
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 .warps {margin: 0 auto; width: 100%;}
 .clearfix:after { clear: both; content: " "; display: block; font-size: 0; height: 0; visibility: hidden;}
-#blackBlk { padding:1% 0% 0%; display:block; width:96%; margin:0 2%;}
-#blackBlk .desbrdIcon { padding:3%; display:block;}
+#blackBlk { padding:0% 0% 0%; display:block; width:96%; margin:0 2%;}
+#blackBlk .desbrdIcon { padding:2% 0; display:block;}
 #blackBlk .desbrdIcon .dasimg { width:13%; padding:0 2% 0 0 !important; }
 #blackBlk .desbrdIcon .dasimg img {max-width:100%; width:100%; height:auto; display:block;}
-#blackBlk .desbrdIcon .span span { float:left; padding:3% 0 0;}
-#blackBlk .desbrdIcon .span {background-image: url("images/ic_dashboard.png"); background-repeat:no-repeat; background-position: left 2px; background-size:8%; display:block; padding:0.5% 0 1%; color:#fff; font-size:1.2em;}
+#blackBlk .desbrdIcon .span span { float:left; padding:0% 0 0;}
+
+#blackBlk .desbrdIcon .bizscor {float:right; margin-top:2%; text-align:center;}
+#blackBlk .desbrdIcon .bizscor a { display:block; margin-top:5px;  border:1px solid #fff;padding:6px 15px; }
+#blackBlk .desbrdIcon .span {background-image: url("images/ic_dashboard.png"); background-repeat:no-repeat; background-position: left center; background-size:8%; display:block; float:left; width:70%; padding:2% 0 2% 8%; color:#fff; font-size:1.2em;}
 #dashview{ background-color:#FFF; border:3px solid #ececec; -webkit-border-radius: 6px; border-radius: 6px;}
 #dashview .tooltip {background-color: #FFFFFF; border: 1px solid #999999;	box-shadow: 3px 3px 0 0 #e0e0e0; display: none; height: auto; margin: 10px auto 0; padding: 10px 5px 5px; margin: 0 0 0 -40px; text-align: left; width:230px; font-size:11px;	-webkit-border-radius: 3px; border-radius: 3px; z-index: 9999999; }
 #dashview .tooltip span.tpar { background-image: url("images/tootltip_ar.png"); background-position: center top; background-repeat: no-repeat; display: block; height: 17px; margin-top: -32px; position: absolute; width: 250px;

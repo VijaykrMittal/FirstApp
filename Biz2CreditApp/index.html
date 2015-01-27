@@ -39,9 +39,8 @@
                         
                         <div class="warps">
                             <div class="desbrdIcon clearfix">
-                                
-                                <div class="span clearfix"><span class="desText">Dashboard</span> <a herf="#" class="bizscor"><span data-bind="visible:bizStatus,text:bizScore"></span></a></div>
-                                
+                                <div class="span clearfix">Dashboard</div>
+                                <div class="bizscor">BizAnalyzer Score<a herf="#" data-bind="click:goToBizAnalyzerPage,visible:bizStatus,text:bizScore"></a></div>     
                             </div>
                             <article class="clearfix" id="dashview">
                                 <div class="warps clearfix" data-bind="visible: repaymentStatus">

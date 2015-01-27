@@ -37,7 +37,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 3%;}
 #tabstrip-download-file .download-file-name .pdf {padding:15% 0 0;background-image: url(images/pdf.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
 #tabstrip-download-file .download-file-name .png {padding:15% 0 0;background-image: url(images/png.png) !important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
 #tabstrip-download-file .download-file-name .unkown {padding:15% 0 0;background-image: url(images/unknown.png); background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:7.3%;display: block;padding:2.3% 11% 3% 9%;color: #fff;font-size: 1.7em;}
+#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:9%;display: block;color: #fff;font-size: 1.7em;}
 /*********Android css***************/
 .btngr {padding:22px 8px;font-size: 1.5em;}
 .docs-header .km-widget .docs-docu {width:74%; padding:1.7% 0 0 ;font-size: 1.2em;}
@@ -124,7 +124,7 @@ html body .backButton{ height:88px;background-size: 19% !important;background-po
 #tabstrip-download-file .download-file-name .pdf {padding:15% 0 0;background-image: url(images/pdf.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
 #tabstrip-download-file .download-file-name .png {padding:15% 0 0;background-image: url(images/png.png) !important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
 #tabstrip-download-file .download-file-name .unkown {padding:15% 0 0;background-image: url(images/unknown.png); background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#blackBlk .desbrdIcon .span {background-position: left 0%;}
+#blackBlk .desbrdIcon .span {background-position: left center;}
 #blackBlk .desbrdIcon .span{font-size: 1.8em;}
 .logo { margin:3% auto;}
 .documentClick .km-view-title a{padding: 15px 0px 0px;}
@@ -160,7 +160,7 @@ html body .backButton{ height:88px;background-size: 19% !important;background-po
 #tabstrip-Setting .docs-back{height: 80px;background-size: 82%;background-position: 10px 10px;width: 10%;margin-top: 0rem!important;margin-bottom: 0rem !important;}
 #tabstrip-Setting .docs-docu {padding: 2% 0 0;font-size: 1.2em;}
 #tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li{padding:3% 0 2% 10%;background-size: 5%;background-position: 22px 10px;}
-#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:9%;display: block;padding:3% 11% 4%;color: #fff;font-size: 1.5em;}
+#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:13%;display: block;color: #fff;font-size: 1.5em;padding:4% 0 4% 11%;}
 #aplicn_frm .rws .lftitb, #aplicn_frm .rws .rwfil label, #aplicn_frm .rws .rwfilbc label,#aplicn_frm .labl_tx2 { font-size:0.85em;}
 #aplicn_frm select.IN1b.ipsm3 {width:156px;}
 #aplicn_frm .rws .rwfil label{font-size: 0.7em; padding:0 10px 0 2px;}
@@ -348,6 +348,8 @@ html body #aplicn_frm .opt {padding-bottom: 25px;}
 #aplicn_frm .rws .rwfil.aut {width:100%;}
 #aplicn_frm .rws p {padding:0;}
 #aplicn_frm.formTw select.IN1b.ipsm3, #aplicn_frm.formTw .zipcod, #aplicn_frm.formTw .IN1b.ipsm1, #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner8 .ipsm1, #aplicn_frm #adddowner8 .ipsm1 {width:100% !important;}
+#blackBlk .desbrdIcon .span {background-size: 14%;padding: 4% 0 4% 14%;font-size: 1.7em;}
+#blackBlk .desbrdIcon .bizscor {margin-top:1%;}
 }
 @media (min-width:0px) and (max-width:768px) {
 .logLogo {margin:1% auto 2%;background-size: 63%;height: 85px;}
@@ -478,11 +480,11 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 #blackBlk .desbrdIcon .span span {padding: 2% 0 0;}
 #blackBlk .desbrdIcon {padding: 2%;}
 .home .km-rightitem { height:100%; right:0;width: 12%;}
-#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:11%;display: block;padding:2% 13% 4%;color: #fff;font-size: 1.35em;}
+#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:11%;display: block;color: #fff;font-size: 1.35em;}
 /*******Android css************/
 .docs-header .km-widget .docs-docu { width:61%; font-size:1em; padding:1% 0 0;}
 .docs-header .km-widget .docs-back {background-size: 81%;width: 11%;height: 58px;}
-#blackBlk .desbrdIcon .span {background-size: 9%; font-size:1.5em;padding: 3% 13% 3% 11%;}
+#blackBlk .desbrdIcon .span {background-size: 9%; font-size:1.5em;}
 .btngr {padding:9px 8px;font-size: 1.1em;}
 .documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {padding:5px 0%;background-position: 5px 7px;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position:12px 7px;padding: 15px 0; background-size:52%;}
@@ -613,10 +615,10 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 #blackBlk .desbrdIcon .span span {padding: 2% 0 0;}
 #blackBlk .desbrdIcon {padding: 2%;}
 .home .km-rightitem { height:100%; right:0;width: 12%;}
-#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:11%;display: block;padding:2% 13% 4%;color: #fff;font-size: 1.35em;}
+#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:11%;display: block;color: #fff;font-size: 1.35em;}
 /*******Android css************/
 .docs-header .km-widget .docs-docu { width:63%; font-size:1em; padding:2% 0 0;}
-#blackBlk .desbrdIcon .span {background-size: 9%; font-size:1.5em;padding: 3% 13% 3% 11%;}
+#blackBlk .desbrdIcon .span {background-size: 9%; font-size:1.5em;}
 .btngr {padding:9px 8px;font-size: 1.1em;}
 .documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {padding:5px 0%;background-position: 5px 7px;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position:15px 7px;padding: 15px 0; background-size:52%;}
@@ -723,7 +725,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 .modal-mess-one {padding:0; width:98%; margin:0 0 0 1.3%; }
 .folder-events .scheduleSection .buttonArea .km-button{padding:0.6em 0;}
 .docs-header .km-widget .docs-popup {background-image: url(../styles/images/ic_action_overflow.png); text-indent:-9000px; width:55px; background-position:center center; height:40px; background-repeat:no-repeat; margin:0; padding:5px; border:0; background-color:transparent; border-radius:0;}
-#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:9.7%;display: block;padding:3% 13% 5%;color: #fff;font-size: 1.2em;}
+#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:17%;display: block;color: #fff;font-size: 1.5em;}
 .btngr {padding: 7px 8px;font-size: 1.1em;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {padding: 11px 0%;}
 .documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {padding: 11px 0%;background-size:75%;}

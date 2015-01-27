@@ -648,6 +648,10 @@
             that.set("bizScore",data.bizscore+'/100');
             
             app.homesetting.viewModel.setBizAnalyzerStatus(true);
+        },
+        goToBizAnalyzerPage:function()
+        {
+           apps.navigate("views/bizAnalyzerPage.html");
         }
 
   

@@ -40,7 +40,8 @@
                         <div class="warps">
                             <div class="desbrdIcon clearfix">
                                 
-                                <div class="span clearfix">Dashboard </div>
+                                <div class="span clearfix"><span class="desText">Dashboard</span> <a herf="#" class="bizscor"><span data-bind="visible:bizStatus,text:bizScore"></span></a></div>
+                                
                             </div>
                             <article class="clearfix" id="dashview">
                                 <div class="warps clearfix" data-bind="visible: repaymentStatus">
@@ -143,7 +144,7 @@
                         <li data-bind="click: manageApp">Applications</li>
                         <li data-bind="click: mydocuments" >My Documents</li>
                         <li data-bind="click: application" data-mode="fresh" >Get a Loan </li>
-                        <li data-bind="click: bizAnalyzerPage">BizAnalyzer</li>
+                        <li class="bizAnalyzerTab" data-bind="click: bizAnalyzerPage">BizAnalyzer</li>
                         <li data-bind="click: setUserfeedback">Feedback</li>
                         <li data-bind="click: onSettingPage">Settings</li>
                         <li data-bind="click: setUserLogout">Logout</li>

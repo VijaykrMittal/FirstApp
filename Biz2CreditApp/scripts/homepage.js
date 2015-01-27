@@ -20,6 +20,7 @@
         dButtonLink:(window.localStorage.getItem("dButtonLink") !== null) ?  localStorage.getItem("dButtonLink") : '',
         repaymentStatus:false,
         bizStatus:false,
+        bizScore:'',
         matchShow:function()
         { 
 			var latestMatches = app.homesetting.viewModel.Matches;
@@ -86,6 +87,7 @@
                         else
                         {
                            app.homesetting.viewModel.setBizAnalyzerStatus(false);
+                           $("#popover-people ul li").remove(".bizAnalyzerTab");
                         }
                        
                         pos = 1;
@@ -640,8 +642,11 @@
         },
         setBizAnalyzerData:function(data)
         {
+           // console.log(data);
             var that =this;
             that.set("BizAnalyzerData",data);
+            that.set("bizScore",data.bizscore+'/100');
+            
             app.homesetting.viewModel.setBizAnalyzerStatus(true);
         }
 

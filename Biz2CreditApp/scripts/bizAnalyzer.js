@@ -225,15 +225,6 @@ app.bizAnalyzer = (function () {
             showrefreshBiz.setAnuRevStatus(app.homesetting.viewModel.BizAnalyzerData.annualRevRisk);
             
             
-            console.log('pcsVal'+pcsVal);
-            console.log('dtiVal'+dtiVal);
-            console.log('tibVal'+tibVal);
-            console.log('cfVal'+cfVal);
-            console.log('irVal'+irVal);
-            console.log('crVal'+crVal);
-            console.log('arVal'+arVal);
-            
-            
             jQuery("#personalCreditSliderTxt").val(pcsVal);
         	jQuery("#debitToIncomeSliderTxt").val(dtiVal);
         	jQuery("#timeInBussinessSliderTxt").val(tibVal);
@@ -273,14 +264,6 @@ app.bizAnalyzer = (function () {
             var irVal  =	checkIndustryRiskType(app.homesetting.viewModel.BizAnalyzerData.industryRisk.riskType);
             var crVal  =	checkCorporateRiskType(app.homesetting.viewModel.BizAnalyzerData.corpRisk.riskType);
             var arVal  =	escapeHTML(app.homesetting.viewModel.BizAnalyzerData.annualRevRisk.annualRevRiskVal);
-            
-console.log('pcsVal'+pcsVal);
-            console.log('dtiVal'+dtiVal);
-            console.log('tibVal'+tibVal);
-            console.log('cfVal'+cfVal);
-            console.log('irVal'+irVal);
-            console.log('crVal'+crVal);
-            console.log('arVal'+arVal);
             
             
             $(".dgr_chng_scr").delay(5000).fadeOut();		
@@ -570,7 +553,6 @@ console.log('pcsVal'+pcsVal);
         };
 	
     	var getSuccessData1=function(data){ 
-            console.log(data);
     		jQuery('#netScoreBizanalyserTxt').text(data.results.totalBizscore);
     	};
         

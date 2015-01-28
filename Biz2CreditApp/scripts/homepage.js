@@ -82,7 +82,13 @@
                        //console.log(data['0']['results']['data']['postedloan']['status']);
                         if( data['0']['results']['data']['postedloan']['status']=== "1")
                         {
-                           app.homesetting.viewModel.setBizAnalyzerData(data['0']['results']['data']['postedloan']);
+                            app.homesetting.viewModel.setBizAnalyzerData(data['0']['results']['data']['postedloan']);
+                            if(!$('#popover-people ul li').hasClass('bizAnalyzerTab'))
+                            {
+                                $('#popover-people ul li:eq(3)').after('<li class="bizAnalyzerTab" data-bind="click: bizAnalyzerPage">BizAnalyzer</li>');
+                                kendo.bind($("#popover-people ul li"), app.loginService.viewModel);
+                            }
+  
                         }
                         else
                         {

@@ -333,7 +333,7 @@ footer a{ color:#FFF}
 #aplicn_frm .tooltip div span:nth-child(even){ float:right; color:#333; text-align:left}
 #aplicn_frm .edtdet{ text-align:center; padding:30px 0px;}
 #aplicn_frm .tooltip div a.btnblck{ background-image:none; color:#FFF; padding:11px 15px; display:inline-block; margin:0px auto; clear:both}
-#aplicn_frm .rw_lin{ display:block; padding-bottom:7px}
+#aplicn_frm .rw_lin{ display:block; padding-bottom:7px; float:left;}
 #aplicn_frm .rws .rw_lin p{ padding:0px 0px 0px 0px}
 #aplicn_btm{ background-color:#f9f9f9; padding:20px 0px 40px 0px; background-image:url(../styles/layout/shd_btm.png); background-repeat:repeat-x; background-position:top left; text-align:right;}
 #aplicn_frm .rws p{ width:auto; float:left; margin:0px; padding:0px 0px 20px 0px; display:inline-block}
@@ -398,7 +398,7 @@ width: 99%;font-size: 0.8em;position: inherit;margin-top: 0;border: 1px solid #d
 #aplicn_frm .rw_lin #add-ownerForm.add_oth { background-image:url(../styles/layout/ic_add.png); background-repeat:no-repeat; padding:10px 18px 10px 25px; margin-top:20px; background-position:7px 10px; background-color:#99cc00; color:#fff; font-size:16px; line-height:12px; text-decoration:none;border-radius: 4px; font-family:'OpenSansBol', Arial, Helvetica, sans-serif; font-weight:normal; display:inline-block;}
 #aplicn_frm .row_owner p a.rem_col {background-color: #999; background-image: none;border-radius: 3px; color: #fff;font-size: 14px;font-weight: bold;line-height: normal; margin-top: -30px; padding: 6px 10px !important;}
 div.rwfilbc span.opt2 label.error {position:absolute;}
-#crdscorerYes0 h4 { margin:0; padding:0; color:#333; font-family:'OpenSansBol', Arial, Helvetica, sans-serif; font-size:12px;}
+#crdscorerYes0 h4 { margin:0 0 15px; padding:0; color:#333; font-family:'OpenSansBol', Arial, Helvetica, sans-serif; font-size:12px;}
 html body #aplicn_frm ul.low_creditop li.opt2 label.error { left: 3px;position: absolute;top: 18px;}
 #aplicn_frm ul.low_creditop li.opt2 {position:relative; }
 #terms_condition h4, #bus_fin_serv_trm_a_cond h4, #privacy_policy h4 {color: #666; font-family: 'GandhiSans',Arial; font-size: 15px; padding: 10px 0;}

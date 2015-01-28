@@ -103,7 +103,7 @@ html body .loginSection .km-flat, .km-flat .km-navbar, .km-flat .km-content { co
 #blackBlk .desbrdIcon .dasimg img {max-width:100%; width:100%; height:auto; display:block;}
 #blackBlk .desbrdIcon .span span { float:left; padding:0% 0 0;}
 
-#blackBlk .desbrdIcon .bizscor {float:right; margin-top:2%; text-align:center;}
+#blackBlk .desbrdIcon .bizscor {float:right; margin-top:1%; text-align:center;}
 #blackBlk .desbrdIcon .bizscor a { display:block; margin-top:5px;  border:1px solid #fff;padding:6px 15px; }
 #blackBlk .desbrdIcon .span {background-image: url("images/ic_dashboard.png"); background-repeat:no-repeat; background-position: left center; background-size:8%; display:block; float:left; width:70%; padding:2% 0 2% 8%; color:#fff; font-size:1.2em;}
 #dashview{ background-color:#FFF; border:3px solid #ececec; -webkit-border-radius: 6px; border-radius: 6px;}
@@ -525,5 +525,12 @@ ul#documentList td:nth-child(1) {font-size:1.2em; color:#333; text-indent:20px;}
 #aplicn_frm #outsta_debt .IN4 {width: 167px;}
 #aplicn_frm.formTw select.IN1b.ipsm3, #aplicn_frm.formTw .zipcod, #aplicn_frm.formTw .IN1b.ipsm1{ width:258px!important;}
 #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner8 .ipsm1, #aplicn_frm #adddowner8 .ipsm1 {width: 258px !important}
-p.doc-content ol {padding: 0 0 0 20px;}
-p.doc-content li { padding-bottom:6px;}
+
+
+#tabstrip-mess-fourth p.doc-content {padding:0; margin:0;}
+#tabstrip-mess-fourth p.doc-content ol li {padding:10px; border-bottom:1px solid #ccc;}
+#tabstrip-mess-fourth p.doc-content ol li:last-child { border-bottom:0;}
+
+#terms_condition h3, #bus_fin_serv_trm_a_cond h3, #privacy_policy h3{ margin:0;}
+.onecolumnfull {padding-top:15px!important;}
+.onecolumnfull ul {padding: 0;}

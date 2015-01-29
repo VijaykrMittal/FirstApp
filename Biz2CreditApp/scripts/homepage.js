@@ -79,7 +79,6 @@
                    try{
                        
                         app.homesetting.viewModel.setMatches(data['0']['results']['data']['loan']['matchrows']);
-                       //console.log(data['0']['results']['data']['postedloan']['status']);
                         if( data['0']['results']['data']['postedloan']['status']=== "1")
                         {
                             app.homesetting.viewModel.setBizAnalyzerData(data['0']['results']['data']['postedloan']);
@@ -648,7 +647,6 @@
         },
         setBizAnalyzerData:function(data)
         {
-           // console.log(data);
             var that =this;
             that.set("BizAnalyzerData",data);
             that.set("bizScore",data.bizscore+'/100');

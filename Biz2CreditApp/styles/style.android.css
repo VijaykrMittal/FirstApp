@@ -200,7 +200,7 @@ html body .backButton{ height:77px; width:85%;}
 #aplicn_frm #busInfobx2 .IN4c {width: 200px;}
 #blackBlk .desbrdIcon .bizscor {margin-top:2.3%;}
 #row_owners .rws .rwfil.aut {float:left; width:72%; }
-#row_owners .IN1, html body #aplicn_frm #row_owners select.IN1b, html body #aplicn_frm #row_owners .IN1 {width: 335px!important;}
+#row_owners .IN1, html body #aplicn_frm #row_owners select.IN1b, html body #aplicn_frm #row_owners .IN1 {width: 330px!important;}
 .newChkBx{width: 100%!important;}
 #aplicn_frm ul.low_creditop li {width: 50%;padding: 0px 0% 10px 0px;}
 #aplicn_frm .rws .rwfil label {font-size:0.9em;}
@@ -364,6 +364,8 @@ html body #aplicn_frm .opt {padding-bottom: 25px;}
 #blackBlk .desbrdIcon .span {background-size: 14%;padding: 4% 0 4% 14%;font-size: 1.7em;}
 #blackBlk .desbrdIcon .bizscor {margin-top:2%;}
 #row_owners .IN1, html body #aplicn_frm #row_owners select.IN1b, html body #aplicn_frm #row_owners .IN1 {width:100%!important;}
+#aplicn_frm .rw_lin { float:none;}
+.IN4.number, #priority1.IN1.fund, #aplicn_frm .rws .rwfilbc span, #aplicn_frm .rws .lftitb {width: 100%!important;}
 }
 @media (min-width:0px) and (max-width:768px) {
 .logLogo {margin:1% auto 2%;background-size: 63%;height: 85px;}
@@ -419,7 +421,7 @@ ul.mobile li a:hover{ display:block; font-size:14px; background-color:#000; colo
 .titcl {font-size: 19px}
 /* 6 March */
 #aplicn_frm .rws.rw2 .ipsm4 { width:300px;}
-#aplicn_frm .rws .lftitb{ padding-bottom:15px;}
+#aplicn_frm .rws .lftitb{ padding-bottom:15px; font-size:1em; width:100%; }
 #aplicn_frm .rws .rwfilbc { width:auto}
 #aplicn_frm .rws .rwfilbc span { width:230px}
 #aplicn_tp .coln{ width:100%; float:none; margin-bottom:20px; text-align:left}
@@ -480,8 +482,9 @@ li#undefined table td:nth-child(1).default-icon {background-size:50%;}
 #tabstrip-bizAnalyzer .refreshloan {background-position: center 19px;height: 62px;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 48.4%;}
 #dynamicCl.km-popup-wrapper {height: 263px !important;}
-#aplicn_frm #credit_show .IN3, #aplicn_frm #credit_show .ipsm3, #aplicn_frm #credit_show p.imp50 .IN1 {width: 94%;} 
+#aplicn_frm #credit_show .IN3, #aplicn_frm #credit_show .ipsm3, #aplicn_frm #credit_show p.imp50 .IN1 {width: 100%;} 
 #aplicn_frm .rws #credit_show p {width:100%}
+html body #aplicn_frm .opt {padding-bottom: 14px;}
 }
 @media (min-width:0px) and (max-width:640px) {
 .logo { margin:3% auto;}
@@ -541,7 +544,7 @@ body.vertical #tabstrip-download-file.modal-mess-Popup, body.vertical #tabstrip-
 #aplicn_frm .rw_lin.hlp .tooltip p{width:100%; padding-right:0; float:none}
 #aplicn_frm .rw_lin.hlp p .IN5 { width:100%;}
 #aplicn_frm .rw_lin.hlp p .IN6 {width:100%;}
-#aplicn_frm .rws p.imp33 .ipsm1{ width:94%}
+#aplicn_frm .rws p.imp33 .ipsm1{ width:100%}
 #aplicn_frm .rws p.imp50{ width:48%; padding-right:2%; float:left}
 #aplicn_frm .rws p.imp50 .ipsm3{ width:95%}
 #aplicn_frm .rws p.imp40{ width:35%; padding-right:3%; float:left}
@@ -617,6 +620,7 @@ li#undefined table td:nth-child(1) {width:10%;background-size: 66%;}
 #aplicn_frm #busInfobx2 .IN4c {width:96%;margin-bottom: 10px;}
 #aplicn_frm .rws.rw2 p {padding-right: 0;}
 html body #aplicn_frm .opt {padding-bottom:0px;}
+
 }
 @media (min-width:0px) and (max-width:630px) {
 .logo { margin:3% auto;}
@@ -887,7 +891,7 @@ html body .backButton {width: 84%;}
 #dynamicCl.km-popup-wrapper { height:225px !important;}
 #tabstrip-manage-app .refreshloan {background-position: 17px 20px;}
 #tabstrip-manage-app .refresh-loading {background-position: center 15px;}
-#aplicn_frm .rw_lin {float:left;}
+
 #aplicn_frm .rws .lftitb, #aplicn_frm .rws .rwfil label, #aplicn_frm .rws .rwfilbc label, #aplicn_frm .labl_tx2 {font-size: 0.9em;}
 }
 @media (min-width:0px) and (max-width:533px) {
@@ -1068,6 +1072,7 @@ html body .backButton, #tabstrip-manage-app .refresh-loading {height: 53px;}
 #scheduleForm li select {height: 40px;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li .k-select, .schedulePopup .scheduleSection .km-listview-wrapper ul li + li .k-select {background-size: 12%;background-position: 95% 7px;}
 #aplicn_frm .rw_lin {float:none;}
+#dynamicCl.km-popup-wrapper {height: auto !important;}
 }
 @media (min-width:0px) and (max-width:410px) {
 .logLogo {margin: 17% auto;}
@@ -1284,6 +1289,7 @@ li#undefined table td:nth-child(1).default-icon {background-size:45%;}
 #scheduleForm li select {height: 40px;background-size: 21%;}
 .home .popup, #tabstrip-Setting .popup, #tabstrip-loanapp-bi .popup, #tabstrip-loanapp-ci .popup, #tabstrip-loanapp-fp .popup, #tabstrip-loanapp-pi .popup {width: 50px;}
 .home .popup {background-size: 80%;}
+#aplicn_frm .rws .rwfil label {font-size: 0.85em;}
 }
 @media (min-width:0px) and (max-width:320px) {
 #blackBlk .desbrdIcon .dasimg {width:19%;}
@@ -1305,4 +1311,5 @@ html body .backButton {width: 73%;background-position: 5px 11px !important;}
 #tabstrip-forgot-pass .view-content {margin-top: 3em;}
 #newuser {margin: 2em 0;}
 .forgtpass {padding: 12px 0 0px;}
+#dynamicCl.km-popup-wrapper {height: 310px !important;}
 }

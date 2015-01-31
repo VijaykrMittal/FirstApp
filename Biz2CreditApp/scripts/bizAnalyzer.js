@@ -28,7 +28,15 @@ app.bizAnalyzer = (function () {
             
             anuRevScore:'',
             anuRevRiskType:'',
-             
+            
+            bizScore:'',
+            
+            setBizScore:function(total)
+            { 
+                var that = this;
+                that.set("bizScore",total);
+
+            },
             setShowrefreshBizFalse:function()
             { 
                 var that = this;
@@ -213,7 +221,7 @@ app.bizAnalyzer = (function () {
             var irVal  =	app.homesetting.viewModel.BizAnalyzerData.industryRisk.riskType;
             var crVal  =	app.homesetting.viewModel.BizAnalyzerData.corpRisk.riskType;
             var arVal  =	escapeHTML(app.homesetting.viewModel.BizAnalyzerData.annualRevRisk.annualRevRiskVal);
-            
+             
             showrefreshBiz.setPersonaCreditStatus(app.homesetting.viewModel.BizAnalyzerData.credittype);
             showrefreshBiz.setDebitToIncomeStatus(app.homesetting.viewModel.BizAnalyzerData.dtiRatio);
             showrefreshBiz.setTimeInBussinessStatus(app.homesetting.viewModel.BizAnalyzerData.ageOfBiss);
@@ -223,6 +231,8 @@ app.bizAnalyzer = (function () {
             showrefreshBiz.setCashFlowStatus(app.homesetting.viewModel.BizAnalyzerData.cashFlowRisk);
             
             showrefreshBiz.setAnuRevStatus(app.homesetting.viewModel.BizAnalyzerData.annualRevRisk);
+            console.log(app.homesetting.viewModel.BizAnalyzerData);
+            showrefreshBiz.setBizScore(app.homesetting.viewModel.BizAnalyzerData.bizscore);
             
             
             jQuery("#personalCreditSliderTxt").val(pcsVal);

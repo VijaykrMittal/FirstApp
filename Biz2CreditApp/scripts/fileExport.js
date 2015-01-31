@@ -143,7 +143,7 @@
            
             app.fileexportsetting.viewModel.historyPath.shift();
             fileName =  $.trim(sessionStorage.getItem("currentFileName"));
-            filePath = currentDir.fullPath + "\/" + fileName;
+            filePath = currentDir.nativeURL + "\/" + fileName;
             ext = app.documentsetting.viewModel.getFileExtension(fileName);
             $("#tabstrip-download-file").data("kendoMobileModalView").open();
             downloadLink = sessionStorage.getItem("downloadLink");

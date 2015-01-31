@@ -77,7 +77,7 @@
                 if(data['0']['results']['faultcode']===1)
                 {
                    try{
-                       
+                      
                         app.homesetting.viewModel.setMatches(data['0']['results']['data']['loan']['matchrows']);
                         if( data['0']['results']['data']['postedloan']['status']=== "1")
                         {

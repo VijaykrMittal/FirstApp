@@ -77,6 +77,13 @@ html body .backButton {background-size: 20% !important;height: 75px;width: 83%;}
 #aplicn_frm #outsta_debt .IN4 {width: 266px;}
 #aplicn_frm .rws select {height: 36px;}
 #aplicn_frm .rws .rwfilbc {width: 65%;}
+#aplicn_frm .rws .rwfil.aut {width: 70%;}
+#aplicn_frm .IN1 {width: 320px;}
+#aplicn_frm .IN1.width200 {width: 326px;}
+#aplicn_frm.formTw select.IN1b.ipsm3, #aplicn_frm.formTw .zipcod, #aplicn_frm.formTw .IN1b.ipsm1 {width: 211px!important;}
+#aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner8 .ipsm1, #aplicn_frm #adddowner8 .ipsm1 {width: 211px !important;}
+#aplicn_frm .lft.newChkBx {width:100%;}
+#aplicn_frm .labl_tx2 {font-size: 15px;}
 }
 @media (min-width:0px) and (max-width:1024px) {
 #tabstrip-download-file {padding:2%; height:47%; background-color:#fff;}
@@ -139,6 +146,7 @@ html body .backButton {background-size: 20% !important;height: 75px;width: 83%;}
 #bz_an_mn_pg .bz_an_mn_pg_inr_lw_tbs_cont_r {float: right;max-width: 480px;}
 #blackBlk .desbrdIcon .bizscor {margin-top: 2%;}
 #aplicn_frm .ipsm2 {width: 159px;}
+
 }
 
 @media (min-width:0px) and (max-width:800px) {
@@ -173,7 +181,6 @@ html body .backButton {background-size: 20% !important;height: 75px;width: 83%;}
 #aplicn_tp ul.app_nav li span {padding: 35px 0px 39px 40px;margin-right: 0px;margin-left: 13px; font-size:13px;}
 #aplicn_frm .rws .lftitb, #aplicn_frm .rws .rwfil {float:none; width:100%;}
 #aplicn_frm .rws .lftitb, #aplicn_frm .rws .lftit { padding:0 0 10px; font-weight:bold;}
-#aplicn_frm .IN6 {width: 261px;}
 #aplicn_frm {padding: 30px 5%;}
 #aplicn_frm .IN1, #aplicn_frm select.IN1b.ipsm3 {width: 100%;}
 #aplicn_frm .IN1.ipsm13, #aplicn_frm .IN1.ipsm3  {width:100%;}
@@ -207,7 +214,7 @@ html body #tabstrip-manage-app .backButton {background-size: 29% !important;back
 #priority1.IN1.fund, .IN4.number { width:100%!important;}
 #aplicn_frm .rws p.blk { float:none; display:block;}
 .rw_lin.addons_det.clearfix.debt_crecrd p.imp40:first-child input { width:95% !important;}
-.rw_lin.addons_det.clearfix.debt_crecrd p.imp40:nth-child(2) input{ width:95% !important;}
+.rw_lin.addons_det.clearfix.debt_crecrd p.imp40:nth-child(2) input{ width:100% !important;}
 #matchDocList .filesBlock .file-iconjpg {background-size: 78%;}
 #document-attach .km-rightitem { width:15%;}
 #document-attach .km-rightitem a.refresh-com {width:42%;background-size: 90%;}
@@ -219,6 +226,17 @@ html body #tabstrip-manage-app .backButton {background-size: 29% !important;back
 #tabstrip-bizAnalyzer .refreshloan {background-size:32%;background-position: center 19px;height: 65px;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 48.4%;}
 #aplicn_frm .rws p, #aplicn_frm .rw_lin {width: 100%; float:none; }
+.rw_lin.hlp, .rw_lin.cngopt  { float:left !important;}
+.rw_lin.hlp p, .rw_lin.cngopt p.fotPrst {width:95%!important;float:left !important;}
+.rw_lin.hlp a.que_hint, .rw_lin.cngopt a.que_hint { margin-right:0 !important; float:right !important;}
+#aplicn_frm .IN5, #aplicn_frm .IN6, #aplicn_frm .showfilds_bx, #aplicn_frm select.IN1b.ipsm1, #aplicn_frm #credit_show .IN3, #aplicn_frm #credit_show .ipsm3, #aplicn_frm #credit_show p.mercPr .IN3 {width:100%;}
+#aplicn_frm #outsta_debt .rw_lin.addons p {float:left; width:auto;}
+#aplicn_frm #outsta_debt .IN4.number, #aplicn_frm #outsta_debt .IN4, #aplicn_frm #outsta_debt input.IN5, #aplicn_frm #outsta_debt select.debtclass.valid, #aplicn_frm #outsta_debt select.IN5.mb15  { width:100%!important;}
+#aplicn_frm #outsta_debt p.imp40.select_caterm select.debtclass.IN5.valid, #aplicn_frm #outsta_debt .IN5 {width: 100% !important;}
+#aplicn_frm #outsta_debt div.rw_lin.addons p.imp40 select.IN5 {width: 266px !important;}
+#aplicn_frm .IN4c, #aplicn_frm .rws .rwfil.aut, #aplicn_frm.formTw select.IN1b.ipsm3, #aplicn_frm.formTw .zipcod, #aplicn_frm.formTw .IN1b.ipsm1{width: 100% !important;}
+#aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner8 .ipsm1, #aplicn_frm #adddowner8 .ipsm1 {width:100% !important;}
+#b2cApp3 #aplicn_frm .IN3 { width:100%;}
 }
 @media (min-width:0px) and (max-width:768px) {
 .logLogo {margin: 34% auto 10%;}
@@ -238,7 +256,7 @@ html body #tabstrip-manage-app .backButton {background-size: 29% !important;back
 .home .popup {height: 64px;}
 .matches-view li .row1 {padding: 40px 2% 13px 25px;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li .k-select {background-size: 8%;}
-#dynamicCl.km-popup-wrapper {width: 220px !important; height:267px;}
+#dynamicCl.km-popup-wrapper {width: 240px !important; height:auto;}
 }
 @media (min-width:0px) and (max-width:740px) {
 .logLogo {margin:0% auto 0%; background-size:65%;}
@@ -249,7 +267,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 #tabstrip-forgot-pass .view-content {margin-top: 2em;}
 #aplicn_tp ul.app_nav li span {margin-left:3px;}
 #aplicn_frm .rws .rwfilbc { width:100%;}
-#aplicn_frm .IN1.ipsm13, #aplicn_frm .IN1.ipsm3 {width: 207px;}
+#aplicn_frm #outsta_debt div.rw_lin.addons p.imp40 select.IN5 {width: 260px !important;}
 #aplicn_frm .IN1.zipcod {width: 140px;}
 #aplicn_frm .IN4c {width: 190px;}
 #tabstrip-manage-app .recent-activity .applyFrshLon a, #tabstrip-manage-app .recent-activity .rcnt-actty{ font-size:1.2em;}
@@ -274,6 +292,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 #tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height: 56%;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 48.5%;}
 #blackBlk .desbrdIcon .span {font-size: 1.6em;}
+#dynamicCl.km-popup-wrapper {height: 265px;}
 }
 @media (min-width:0px) and (max-width:670px) {
 #aplicn_tp ul.app_nav li {background-position: 8px center;}
@@ -287,7 +306,6 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position: 17px 5px;}
 #aplicn_frm .IN1.ipsm13, #aplicn_frm .IN1.ipsm3 {width: 185px;}
 #aplicn_frm .rws p.fotPrst {width: 42%;}
-#aplicn_frm .rws .rw_lin p.sixtPrst input[type="text"], #aplicn_frm .rws .rw_lin p.sixtPrst select{ width:245px;}
 #aplicn_frm .IN1 {width: 270px;}
 #aplicn_frm select.IN1b.ipsm1 {width: 179px;}
 #matchDocList .filesBlock .file-iconjpg {background-size:90%;height: 37px;}
@@ -316,8 +334,8 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 #aplicn_tp ul.app_nav li.activ span {background-image: url(../styles/layout/ap_ar_up.png);background-repeat: no-repeat;background-position: bottom center;}
 #aplicn_tp ul.app_nav li span {padding:40px 0px 33px 0px;margin-right: 0px;margin-left: 0;font-size: 15px; text-align:center;}
 #aplicn_frm .IN1, #aplicn_frm .rws p, #aplicn_frm select.IN1b.ipsm3,#aplicn_frm .IN1.fund, #aplicn_frm .IN3,#aplicn_frm .IN4,#aplicn_frm .IN4c, #aplicn_frm select.IN1b.ipsm1, #aplicn_frm .IN5 {width:100%; margin-right:0;}
-#aplicn_frm .rws p.sixtPrst {width:85%; margin:0 15px 0 0;}
-#aplicn_frm .rws p.fotPrst {width:85%; margin:0 15px 0 0;}
+.rw_lin.hlp p, .rw_lin.cngopt p.fotPrst {width: 90%!important;}
+#aplicn_frm .rws p.fotPrst {width:85%; margin:0 0px 0 0;}
 #aplicn_frm .rws p.sixtPrst .IN5, #aplicn_frm .rws p.sixtPrst .IN6 {width:97%;}
 #aplicn_frm .rws .rwfilbc { width:100%; float:none;}
 #debtwrapper .rem_col {float:right;}
@@ -452,6 +470,9 @@ html body #tabstrip-manage-app .backButton {background-size: 24% !important;heig
 #tabstrip-bizAnalyzer .refreshloan {height: 55px;background-size: 36%;background-position: center 15px;}
 #scheduleForm li select{font-size: 15px;height: 40px;background-size: 15%;}
 }
+@media (min-width:0px) and (max-width:570px) {
+.home .km-rightitem {width: 14%;}
+}
 @media (min-width:0px) and (max-width:533px) { 
 #blackBlk .desbrdIcon {padding: 2%;display: block;}
 #blackBlk .desbrdIcon .dasimg { width:11%; padding:0 2% 0 0 !important; }
@@ -537,6 +558,7 @@ html body #tabstrip-manage-app .backButton {background-size: 29% !important;heig
 #tabstrip-bizAnalyzer .backButton {width: 73%;background-size: 35% !important;background-position: 5px 13px !important;}
 #tabstrip-bizAnalyzer .refresh-loading {background-size: 59%;background-position: center 10px;}
 #tabstrip-bizAnalyzer .refreshloan {background-size: 44%;background-position: center 16px;}
+#aplicn_frm #outsta_debt div.rw_lin.addons p.imp40 select.IN5 {width: 375px !important;}
 }
 
 @media (min-width:0px) and (max-width:420px) { 
@@ -609,6 +631,8 @@ html body #tabstrip-manage-app .backButton {background-size: 39% !important;widt
 #scheduleForm li select {height: 40px;font-size: 14px;background-size: 21%;}
 #dynamicCl.km-popup-wrapper {height:auto !important;}
 #blackBlk .desbrdIcon .span {padding: 5% 17% 5%;font-size: 1.5em;background-size: 20%;}
+#aplicn_frm #outsta_debt div.rw_lin.addons p.imp40 select.IN5 {width: 270px !important;}
+#aplicn_frm .rws .rwfil label b { margin-right:30px;}
 }
 @media (min-width:0px) and (max-width:390px) { 
 #matchDocList .filesBlock .file-name {width: 56%;font-size: 12px;}
@@ -675,7 +699,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:5%;}
 #aplicn_frm ul.low_creditop li {width:98%;}
 #aplicn_frm .rws p.fotPrst {width:81%;}
 #homePage .testimonials h2 { font-size:1.3em; background-size:8%;margin: 0 0 25px;padding: 2% 0 2% 10%;}
-#aplicn_frm .rws p.sixtPrst {width: 81%;}
+
 #aplicn_frm .IN3.smOn {width:100%;}
 .rw_lin.clearfix.opt.lblBtM > span > label:first-child {display:block;}
 .rw_lin.clearfix.opt.lblBtM > span > label.error { margin:0 }
@@ -733,6 +757,7 @@ html body #tabstrip-manage-app .backButton {background-size: 50% !important;widt
 #tabstrip-bizAnalyzer .backButton {width: 67%;}
 #tabstrip-bizAnalyzer .refresh-loading {background-size: 83%;background-position: center 8px;}
 #tabstrip-bizAnalyzer .refreshloan {height: 50px;background-size: 59%;background-position: center 13px;}
+#aplicn_frm #outsta_debt div.rw_lin.addons p.imp40 select.IN5 {width: 233px !important;}
 }
 @media (min-width:0px) and (max-width:320px) { 
 #blackBlk .desbrdIcon .dasimg {width:19%; }

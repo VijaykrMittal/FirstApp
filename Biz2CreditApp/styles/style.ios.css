@@ -51,6 +51,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 3%;}
 #aplicn_frm .IN6 {width: 292px;}
 #aplicn_frm .ipsm3 {width: 325px;}
 input.IN1.ac_input.valid + .IN1.ipsm3 {width:239px!important;}
+
 input.IN1.ac_input.error + label.error + .IN1.ipsm3{width: 239px!important;}
 #aplicn_frm .rws .rwfil.lft { float:left;} 
 .rwfil.aut > p > select.IN1b.ipsm3 { width:200px!important;}
@@ -257,6 +258,7 @@ html body #tabstrip-manage-app .backButton {background-size: 29% !important;back
 .matches-view li .row1 {padding: 40px 2% 13px 25px;}
 .schedulePopup .scheduleSection .km-listview-wrapper ul li .k-select {background-size: 8%;}
 #dynamicCl.km-popup-wrapper {width: 240px !important; height:auto;}
+#stps ul li article {width: 270px;}
 }
 @media (min-width:0px) and (max-width:740px) {
 .logLogo {margin:0% auto 0%; background-size:65%;}
@@ -559,6 +561,7 @@ html body #tabstrip-manage-app .backButton {background-size: 29% !important;heig
 #tabstrip-bizAnalyzer .refresh-loading {background-size: 59%;background-position: center 10px;}
 #tabstrip-bizAnalyzer .refreshloan {background-size: 44%;background-position: center 16px;}
 #aplicn_frm #outsta_debt div.rw_lin.addons p.imp40 select.IN5 {width: 375px !important;}
+#stps ul li article {width: 265px;}
 }
 
 @media (min-width:0px) and (max-width:420px) { 
@@ -579,11 +582,11 @@ html body #tabstrip-manage-app .backButton {background-size: 39% !important;widt
 .documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-size:80%;width: 14%;}
 .documentContent .km-listview-wrapper ul li table td:nth-child(3) {width: 8%;}
 .documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position: 10px 5px;background-size: 56%;width: 14%;}
-.docs-header .km-widget .refresh-com {background-size: 83%;width: 11%;height: 60px;background-position: right center;}
-.docs-header .km-widget .refresh-loading {background-size:69%;background-position: right 17px;}
+.docs-header .km-widget .refresh-com {background-size: 83%;width: 11%;height: 55px;background-position: center;}
+.docs-header .km-widget .refresh-loading {background-size:59%;background-position: center;}
 .docs-header .km-widget .docs-search{width:12%;background-size: 88%;background-position: center;}
 .docs-header .km-widget .docs-docu{width: 58%;}
-.docs-header .km-widget .docs-back {width: 14%;height: 53px;background-position: left 84%;}
+.docs-header .km-widget .docs-back {width: 16%;height: 53px;background-position: left 69%;}
 #tabstrip-Setting .docs-back {width: 15%;background-position: 5px 8px;background-size: 92%;}
 #tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li {padding: 4% 0 4% 13%;background-size: 7.5%;background-position: 15px 10px;}
 #aplicn_frm .IN1.zipcod {width: 100% !important;}
@@ -614,7 +617,7 @@ html body #tabstrip-manage-app .backButton {background-size: 39% !important;widt
 #matchDocList .upload a {padding: 4px 15px;}
 .docsUpload .uploadBar {margin:7% 5% 6%;}
 #tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { height:31%;}
-.docs-header .km-widget .docs-docu {width:50%;}
+.docs-header .km-widget .docs-docu {width:47%;}
 .docs-header .km-widget .docs-popup {width: 45px;}
 .docs-header .km-widget #docs-filter {width: 74%;}
 .docs-header .km-widget #docs-filter .km-filter-wrap {background-position: center 40px;height: 54px;}

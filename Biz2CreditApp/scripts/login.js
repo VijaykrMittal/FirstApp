@@ -1,5 +1,5 @@
 (function (global,$) {
-    var LoginViewModel,
+    var LoginViewModel,error,
         app = global.app = global.app || {};
 
     LoginViewModel = kendo.data.ObservableObject.extend({
@@ -66,7 +66,7 @@
                         url: localStorage.getItem("urlMobAppApiUser"),
                         type:"POST",
                         dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                        data: { apiaction:"userlogi",userID:username,password:password} // search for tweets that contain "html5"
+                        data: { apiactio:"userlogin",userID:username,password:password} // search for tweets that contain "html5"
                 }
                 },
                 schema: {
@@ -77,10 +77,12 @@
                 },
                 error: function (e) {
                     apps.hideLoading();
-                    var error = {name:'API FAILED BY '+e.errorThrown.name,stack:'Server not responding properly.',message:"API does not load/hit properly during "+e.errorThrown.message +"."};
+                    console.log(e.errorThrown.message);
+                    error = {name:'API FAILED BY '+e.errorThrown.name,stack:'Server is not responding properly.',message:"API does not load/hit properly during "+e.errorThrown.message +"."};
                     navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     function () { }, "Notification", 'OK');
-                    app.analyticsService.viewModel.trackException(error,'API Failed.Get response failed by login API');
+                    console.log(error);
+                    app.analyticsService.viewModel.trackException(error,error.message);
                 }
             });
             dataSource.fetch(function(){

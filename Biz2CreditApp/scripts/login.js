@@ -77,11 +77,11 @@
                 },
                 error: function (e) {
                     apps.hideLoading();
-                    console.log(e.errorThrown.message);
-                    error = {name:'API FAILED BY '+e.errorThrown.name,stack:'Server is not responding properly.',message:"API does not load/hit properly during "+e.errorThrown.message +"."};
+                    
                     navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     function () { }, "Notification", 'OK');
-                    console.log(error);
+                    
+                    error = {name:'API FAILED BY '+e.errorThrown.name,stack:'Server is not responding properly.',message:"API does not load/hit properly during "+e.errorThrown.message +" in login API."};
                     app.analyticsService.viewModel.trackException(error,error.message);
                 }
             });

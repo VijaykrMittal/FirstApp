@@ -19,24 +19,27 @@
             var that = this,
             username = that.get("username").trim(),
             password = that.get("password").trim();
+            
             if (username === "") {
                  navigator.notification.confirm('Please enter your username', function (confirmed) {
-                if (confirmed === true || confirmed === 1) {
-                	$('#loginusername').focus();
-                }
+                    if (confirmed === true || confirmed === 1) {
+                    	$('#loginusername').focus();
+                    }
                 }, 'Notification','OK');
 
                 return;
             }
+            
             if (password === "") {
                  navigator.notification.confirm('Please enter your password', function (confirmed) {
-                if (confirmed === true || confirmed === 1) {
-                	$('#loginpassword').focus();
-                }
+                    if (confirmed === true || confirmed === 1) {
+                    	$('#loginpassword').focus();
+                    }
                 }, 'Notification','OK');
 
                 return;
             }
+            
             if(!window.connectionInfo.checkConnection()){
                     navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
                 	if (confirmed === true || confirmed === 1) {
@@ -56,29 +59,29 @@
             username = that.get("username").trim(),
             password = that.get("password").trim();
             that.showloder();
+            
             var dataSource = new kendo.data.DataSource({
-            transport: {
-            read: {
-                    url: localStorage.getItem("urlMobAppApiUser"),
-                    type:"POST",
-                    dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                    data: { apiaction:"userlogin",userID:username,password:password} // search for tweets that contain "html5"
-            }
-            },
-            schema: {
-                data: function(data)
-            	{
-                	return [data];
-            	}
-            },
-            error: function (e) {
-           	  apps.hideLoading();
-                 navigator.notification.alert("Server not responding properly.Please check your internet connection.",
+                transport: {
+                read: {
+                        url: localStorage.getItem("urlMobAppApiUser"),
+                        type:"POST",
+                        dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        data: { apiaction:"userlogi",userID:username,password:password} // search for tweets that contain "html5"
+                }
+                },
+                schema: {
+                    data: function(data)
+                	{
+                    	return [data];
+                	}
+                },
+                error: function (e) {
+                    apps.hideLoading();
+                    var error = {name:'API FAILED BY '+e.errorThrown.name,stack:'Server not responding properly.',message:"API does not load/hit properly during "+e.errorThrown.message +"."};
+                    navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     function () { }, "Notification", 'OK');
-                
-                    app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in login api.');
-            },
-
+                    app.analyticsService.viewModel.trackException(error,'API Failed.Get response failed by login API');
+                }
             });
             dataSource.fetch(function(){
                 
@@ -87,7 +90,8 @@
                 {
                     that.setUserLogin(data[0]['results']['UserData']);
                 }
-                else{
+                else
+                {
                     that.hideloder();
                     localStorage.setItem("isLoggedIn",false);
                     navigator.notification.alert("Login failed. Invalid username/password",

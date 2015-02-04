@@ -44,7 +44,8 @@
     };
 
     var onDeviceReady = function(e) {
-        feedback.initialize('20b40210-8a67-11e4-aa3f-45a9d1e73d19');
+       // alert("device ready");
+      //  feedback.initialize('20b40210-8a67-11e4-aa3f-45a9d1e73d19');
         StatusBar.overlaysWebView(false);
         StatusBar.backgroundColorByHexString('#99cc00');
         document.addEventListener('backbutton', onBackKeyDown, false);

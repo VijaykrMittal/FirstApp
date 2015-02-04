@@ -2,8 +2,9 @@
     var AnalyticsModel,
         app = global.app = global.app || {};
     
-    var productId = "f19ae305ccd24d2f92598ebd1b88ebf0",
-        version   = "1.6";
+    //var productId = "f19ae305ccd24d2f92598ebd1b88ebf0",
+            var productId = "96e68df3c185474a8cdb22d7348d51e7",
+                version   = "1.6";
     
     AnalyticsModel = kendo.data.ObservableObject.extend({
        
@@ -132,8 +133,10 @@
         },
         trackException:function(e,msg)
         {
+            console.log("hello indiA");
+            console.log(e);
+            console.log(msg);
             var monitor = window.plugins.EqatecAnalytics.Monitor;
-            
             monitor.TrackExceptionMessage(e, msg);
         },
         

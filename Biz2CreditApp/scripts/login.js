@@ -436,7 +436,7 @@
         {
             window.plugins.nativepagetransitions.slide({
                 "href" : href,
-                "duration":200,
+                "duration":300,
                 "slowdownfactor" : 3,
             });
         },
@@ -448,7 +448,9 @@
         {
             window.plugins.nativepagetransitions.slide({
                 "href" : href,
-                "direction":dir
+                "direction":dir,
+                "duration":300,
+                "slowdownfactor" : 3
             });
         },
         

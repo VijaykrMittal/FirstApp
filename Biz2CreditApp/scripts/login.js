@@ -457,15 +457,13 @@
             "fixedPixelsTop"   :    0, // the number of pixels of your fixed header, default 0 (iOS only)
             "fixedPixelsBottom":   60  // the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS only)
             };
-            
-           if(target === "Forgot password?")
-            {
                 window.plugins.nativepagetransitions.slide(
                 options,
                 function (msg){apps.navigate("#tabstrip-forgot-pass");}, // called when the animation has finished
                 function (msg) {alert("error: " + msg)} // called in case you pass in weird values
                 );
-            }
+            
+
            /* window.plugins.nativepagetransitions.slide(
             options,
             function (msg) 

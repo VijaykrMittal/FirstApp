@@ -433,12 +433,14 @@
         },
         slide:function()
         {
-            app.loginService.viewModel.slideOperation('#tabstrip-sign-up');
+            app.loginService.viewModel.slideOperation('#tabstrip-sign-up',"flip");
         },
-        slideOperation:function(href)
+        slideOperation:function(href,direction)
         {
+            
             window.plugins.nativepagetransitions.slide({
-            "href" : href
+            "href" : href,
+             "direction":direction
             });
         },
         slideRight:function()

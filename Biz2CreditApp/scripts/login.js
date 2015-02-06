@@ -440,12 +440,10 @@
         },
         transitionSlideRight:function(dir,href)
         {
-            alert(href);
-            alert(dir);
-            /*window.plugins.nativepagetransitions.slide({
+            window.plugins.nativepagetransitions.slide({
                 "href" : href,
                 "direction":dir
-            });*/
+            });
         },
         
         

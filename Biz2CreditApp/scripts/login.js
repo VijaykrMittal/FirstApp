@@ -436,7 +436,7 @@
         {
             window.plugins.nativepagetransitions.slide({
                 "href" : href,
-                "duration":400,
+                "duration":200,
                 "slowdownfactor" : 3,
             });
         },

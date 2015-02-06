@@ -468,7 +468,25 @@
             function (msg) {alert("error: " + msg)} // called in case you pass in weird values
             );
         },
-        
+        transitionSlideRight:function()
+        {
+            var options = {
+            "direction"        : "right",
+            "duration"         :  400,
+            "slowdownfactor"   :    3,
+            "iosdelay"         :  100,
+            "androiddelay"     :  150,
+            "winphonedelay"    :  250,
+            "fixedPixelsTop"   :    0,
+            "fixedPixelsBottom":   60 
+            };
+            
+            window.plugins.nativepagetransitions.slide(
+            options,
+            function (msg){apps.navigate("#tabstrip-login");}, // called when the animation has finished
+            function (msg) {alert("error: " + msg)} // called in case you pass in weird values
+            );
+        },
         
         
         /*slideLeft:function(e)
@@ -476,7 +494,7 @@
              console.log(e.toElement.text);
             target = e.toElement.text;
             app.loginService.viewModel.slideAnimation("left",target);
-        },*/
+        },
         slide:function()
         {
             app.loginService.viewModel.slideOperation('#tabstrip-sign-up');
@@ -511,7 +529,7 @@
                 );
             
 
-           /* window.plugins.nativepagetransitions.slide(
+           window.plugins.nativepagetransitions.slide(
             options,
             function (msg) 
             {
@@ -519,8 +537,8 @@
                 
             }, // called when the animation has finished
             function (msg) {alert("error: " + msg)} // called in case you pass in weird values
-            );*/
-        }
+            );
+        }*/
         
     });
     

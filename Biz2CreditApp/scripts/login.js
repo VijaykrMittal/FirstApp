@@ -445,11 +445,11 @@
         {
             app.loginService.viewModel.slideAnimation("right");
         },
-        slideAnimation:function(options)
+        slideAnimation:function(option)
         {
             console.log(options);
             var options = {
-            "direction"        : options,
+            "direction"        : option,
             "duration"         :  400,
             "slowdownfactor"   :    3,
             "iosdelay"         :  100,

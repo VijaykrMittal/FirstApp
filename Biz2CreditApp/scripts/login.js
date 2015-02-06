@@ -429,25 +429,23 @@
         {
              console.log(e.toElement.text);
             target = e.toElement.text;
-            app.loginService.viewModel.slideAnimation("left",target);
+            app.loginService.viewModel.slideAnimation("left");
         },
         slide:function()
         {
-            app.loginService.viewModel.slideOperation('#tabstrip-sign-up',"flip");
+            app.loginService.viewModel.slideOperation('#tabstrip-sign-up');
         },
-        slideOperation:function(href,direction)
+        slideOperation:function(href)
         {
-            
             window.plugins.nativepagetransitions.slide({
-            "href" : href,
-             "direction":direction
+                "href" : href
             });
         },
         slideRight:function()
         {
             app.loginService.viewModel.slideAnimation("right");
         },
-        slideAnimation:function(options,target)
+        slideAnimation:function(options)
         {
             var options = {
             "direction"        : options, // 'left|right|up|down', default 'left' (which is like 'next')

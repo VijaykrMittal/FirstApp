@@ -424,41 +424,19 @@
         {
            apps.navigate("views/getStartBizAnalyzer.html");
         },
-        transitionSlideLeft:function()
+        transitionSlideForgot:function()
         {
-            target = e.toElement.text;
-            app.loginService.viewModel.slideLeft("left",target);
+            app.loginService.viewModel.moveToTarget("#tabstrip-forgot-pass");
         },
-        slideLeft:function(direction,target)
+        transitionSlideSignup:function()
         {
-            var options = {
-            "direction"        : direction,
-            "duration"         :  400,
-            "slowdownfactor"   :    3,
-            "iosdelay"         :  100,
-            "androiddelay"     :  150,
-            "winphonedelay"    :  250,
-            "fixedPixelsTop"   :    0,
-            "fixedPixelsBottom":   60 
-            };
-            
-            if(target==="Forgot password?")
-            {
-                app.loginService.viewModel.moveToForgot(options);
-            }
-            
-            if(target==="New User? Create an Account")
-            {
-                app.loginService.viewModel.moveToSignup(options);
-            }
+            app.loginService.viewModel.moveToTarget("#tabstrip-sign-up");
         },
-        moveToForgot:function(options)
+        moveToTarget:function(href)
         {
-            window.plugins.nativepagetransitions.slide(
-            options,
-            function (msg){apps.navigate("#tabstrip-forgot-pass");}, // called when the animation has finished
-            function (msg) {alert("error: " + msg)} // called in case you pass in weird values
-            );
+            window.plugins.nativepagetransitions.slide({
+                "href" : href
+            });
         },
         moveToSignup:function(options)
         {

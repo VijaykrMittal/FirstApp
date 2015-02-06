@@ -429,7 +429,7 @@
         {
             console.log(e.toElement.text);
             target = e.toElement.text;
-           // app.loginService.viewModel.slideAnimation("left",target);
+            app.loginService.viewModel.slideAnimation("left",target);
         },
         slideRight:function()
         {

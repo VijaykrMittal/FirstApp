@@ -431,6 +431,16 @@
             target = e.toElement.text;
             app.loginService.viewModel.slideAnimation("left",target);
         },
+        slide:function()
+        {
+            app.loginService.viewModel.slideOperation("left",'#tabstrip-sign-up');
+        },
+        slideOperation:function(href)
+        {
+            window.plugins.nativepagetransitions.slide({
+            "href" : href
+            });
+        },
         slideRight:function()
         {
             app.loginService.viewModel.slideAnimation("right");

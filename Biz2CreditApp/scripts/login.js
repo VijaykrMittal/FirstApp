@@ -432,10 +432,11 @@
         {
             app.loginService.viewModel.moveToTarget("right","#tabstrip-sign-up");
         },
-        moveToTarget:function(href)
+        moveToTarget:function(dir,href)
         {
             window.plugins.nativepagetransitions.slide({
-                "href" : href
+                "href" : href,
+                "direction":dir
             });
         },
         transitionSlideRight:function()
@@ -453,7 +454,7 @@
             
             window.plugins.nativepagetransitions.slide(
             options,
-            function (msg){apps.navigate("#tabstrip-login");}, // called when the animation has finished
+            function (msg){apps.navigate("index.html");}, // called when the animation has finished
             function (msg) {alert("error: " + msg)} // called in case you pass in weird values
             );
         },

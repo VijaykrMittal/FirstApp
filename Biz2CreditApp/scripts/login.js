@@ -429,7 +429,7 @@
         {
              console.log(e.toElement.text);
             target = e.toElement.text;
-            app.loginService.viewModel.slideAnimation("left");
+            app.loginService.viewModel.slideAnimation("left",target);
         },
         slide:function()
         {
@@ -445,7 +445,7 @@
         {
             app.loginService.viewModel.slideAnimation("right");
         },
-        slideAnimation:function(option)
+        slideAnimation:function(option,target)
         {
             console.log(options);
             var options = {
@@ -460,7 +460,7 @@
             };
                 window.plugins.nativepagetransitions.slide(
                 options,
-                function (msg){alert(msg);}, // called when the animation has finished
+                function (msg){alert(target);}, // called when the animation has finished
                 function (msg) {alert("error: " + msg)} // called in case you pass in weird values
                 );
             

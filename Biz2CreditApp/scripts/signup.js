@@ -199,7 +199,11 @@
         that.set("yourPhone","");
         $("select option[value='0']").attr("selected","selected");
     },
-    
+     
+        slideToHome:function()
+        {
+           app.loginService.viewModel.transitionSlideRight();
+        }
     });
     
     

@@ -438,14 +438,6 @@
                 "href" : href
             });
         },
-        moveToSignup:function(options)
-        {
-            window.plugins.nativepagetransitions.slide(
-            options,
-            function (msg){apps.navigate("#tabstrip-forgot-pass");}, // called when the animation has finished
-            function (msg) {alert("error: " + msg)} // called in case you pass in weird values
-            );
-        },
         transitionSlideRight:function()
         {
             var options = {

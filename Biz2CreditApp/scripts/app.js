@@ -133,7 +133,7 @@
     }
     else
     {
-    	apps = new kendo.mobile.Application(document.body, { layout: "tabstrip-layout",initial: "tabstrip-login",skin: "flat"});
+    	apps = new kendo.mobile.Application(document.body, { layout: "tabstrip-layout",initial: "tabstrip-sign-up",skin: "flat"});
     }
    /* 
     localStorage.setItem("urlMobAppApiFolder","https://www.biz2services.com/mobapp/api/folder/");

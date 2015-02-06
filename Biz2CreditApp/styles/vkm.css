@@ -1,8 +1,8 @@
 body {
 }
 
-.Fbtn{width:25% !important;}
-.km-flat .km-button { background:none !important}
+.Fbtn{width:25% !important;background:none !important}
+.km-flat .km-button { }
 .km-flat .km-button {
 padding: .5em .8em;
 border-style: none !important;

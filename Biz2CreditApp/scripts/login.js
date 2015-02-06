@@ -435,7 +435,9 @@
         moveToTarget:function(href)
         {
             window.plugins.nativepagetransitions.slide({
-                "href" : href
+                "href" : href,
+                "duration":400,
+                "slowdownfactor" : 3,
             });
         },
         transitionSlideRight:function(dir,href)

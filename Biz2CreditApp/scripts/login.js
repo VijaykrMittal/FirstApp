@@ -1,5 +1,5 @@
 (function (global,$) {
-    var LoginViewModel,error,
+    var LoginViewModel,error,target,
         app = global.app = global.app || {};
 
     LoginViewModel = kendo.data.ObservableObject.extend({
@@ -425,15 +425,17 @@
            apps.navigate("views/getStartBizAnalyzer.html");
         },
         
-        slideLeft:function()
+        slideLeft:function(e)
         {
-            app.loginService.viewModel.slideAnimation("left");
+            console.log(e.toElement.text);
+            target = e.toElement.text;
+           // app.loginService.viewModel.slideAnimation("left",target);
         },
         slideRight:function()
         {
             app.loginService.viewModel.slideAnimation("right");
         },
-        slideAnimation:function(options)
+        slideAnimation:function(options,target)
         {
             var options = {
             "direction"        : options, // 'left|right|up|down', default 'left' (which is like 'next')
@@ -447,7 +449,11 @@
             };
             window.plugins.nativepagetransitions.slide(
             options,
-            function (msg) {alert("success: " + msg)}, // called when the animation has finished
+            function (msg) 
+            {
+              alert(target);
+                
+            }, // called when the animation has finished
             function (msg) {alert("error: " + msg)} // called in case you pass in weird values
             );
         }

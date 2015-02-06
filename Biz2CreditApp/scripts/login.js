@@ -440,6 +440,10 @@
                 "slowdownfactor" : 3,
             });
         },
+        slideToBack:function()
+        {
+            app.loginService.viewModel.transitionSlideRight("right","#tabstrip-login");
+        },
         transitionSlideRight:function(dir,href)
         {
             window.plugins.nativepagetransitions.slide({

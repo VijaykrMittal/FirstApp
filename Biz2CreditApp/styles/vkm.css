@@ -1,4 +1,16 @@
 body {
 }
 
-.Fbtn{width:100% !important;}
+.Fbtn{width:25% !important;}
+.km-flat .km-button { background:none !important}
+.km-flat .km-button {
+padding: .5em .8em;
+border-style: none !important;
+border-width: 1px;
+border-radius: 3px;
+}
+
+.km-navbar .km-button {
+margin-top: 0 !important;
+margin-bottom: .5rem;
+}

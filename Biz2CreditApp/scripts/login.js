@@ -444,7 +444,6 @@
                 "href" : href,
                 "direction":dir
             });
-            
         },
         
         

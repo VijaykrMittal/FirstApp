@@ -432,7 +432,7 @@
         {
             app.loginService.viewModel.moveToTarget("#tabstrip-sign-up");
         },
-        moveToTarget:function(dir,href)
+        moveToTarget:function(href)
         {
             window.plugins.nativepagetransitions.slide({
                 "href" : href

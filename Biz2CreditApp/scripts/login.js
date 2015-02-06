@@ -427,13 +427,13 @@
         
         slideLeft:function(e)
         {
-            console.log(e.toElement.text);
+             console.log(e.toElement.text);
             target = e.toElement.text;
             app.loginService.viewModel.slideAnimation("left",target);
         },
         slide:function()
         {
-            app.loginService.viewModel.slideOperation("left",'#tabstrip-sign-up');
+            app.loginService.viewModel.slideOperation('#tabstrip-sign-up');
         },
         slideOperation:function(href)
         {
@@ -449,7 +449,7 @@
         {
             var options = {
             "direction"        : options, // 'left|right|up|down', default 'left' (which is like 'next')
-            "duration"         :  500, // in milliseconds (ms), default 400
+            "duration"         :  400, // in milliseconds (ms), default 400
             "slowdownfactor"   :    3, // overlap views (higher number is more) or no overlap (1), default 4
             "iosdelay"         :  100, // ms to wait for the iOS webview to update before animation kicks in, default 60
             "androiddelay"     :  150, // same as above but for Android, default 70
@@ -457,7 +457,16 @@
             "fixedPixelsTop"   :    0, // the number of pixels of your fixed header, default 0 (iOS only)
             "fixedPixelsBottom":   60  // the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS only)
             };
-            window.plugins.nativepagetransitions.slide(
+            
+           if(target === "Forgot password?")
+            {
+                window.plugins.nativepagetransitions.slide(
+                options,
+                function (msg){apps.navigate("#tabstrip-forgot-pass");}, // called when the animation has finished
+                function (msg) {alert("error: " + msg)} // called in case you pass in weird values
+                );
+            }
+           /* window.plugins.nativepagetransitions.slide(
             options,
             function (msg) 
             {
@@ -465,7 +474,7 @@
                 
             }, // called when the animation has finished
             function (msg) {alert("error: " + msg)} // called in case you pass in weird values
-            );
+            );*/
         }
         
     });

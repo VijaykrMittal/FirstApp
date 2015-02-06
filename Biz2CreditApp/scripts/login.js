@@ -430,7 +430,7 @@
         },
         transitionSlideSignup:function()
         {
-            app.loginService.viewModel.moveToTarget("#tabstrip-sign-up");
+            app.loginService.viewModel.moveToTarget("right","#tabstrip-sign-up");
         },
         moveToTarget:function(href)
         {

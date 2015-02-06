@@ -181,9 +181,9 @@
                         <input type="submit" id="login" data-role="button" data-bind="click: validateUser, invisible: isLoggedIn" class="login-button" value="Login" />
                     </div>
                 </form>
-               <div data-align="left"><a data-transition="slide:left" class="forgtpass">Forgot password?</a></div>
+               <div data-align="left"><a data-bind="click:transitionSlideForgot" class="forgtpass">Forgot password?</a></div>
                 <div data-align="right">
-                    <a data-transition="slide:left" class="forgtpass">New User? Create an Account</a></div>
+                    <a data-bind="click:transitionSlideSignup" class="forgtpass">New User? Create an Account</a></div>
             </div>
 
         </div>

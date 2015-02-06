@@ -202,7 +202,7 @@
      
         slideToHome:function()
         {
-           app.loginService.viewModel.transitionSlideRight();
+           app.loginService.viewModel.transitionSlideRight("right","#tabstrip-login");
         }
     });
     

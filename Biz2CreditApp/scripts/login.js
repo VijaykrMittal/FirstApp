@@ -430,33 +430,22 @@
         },
         transitionSlideSignup:function()
         {
-            app.loginService.viewModel.moveToTarget("right","#tabstrip-sign-up");
+            app.loginService.viewModel.moveToTarget("#tabstrip-sign-up");
         },
         moveToTarget:function(dir,href)
         {
             window.plugins.nativepagetransitions.slide({
-                "href" : href,
-                "direction":dir
+                "href" : href
             });
         },
-        transitionSlideRight:function()
+        transitionSlideRight:function(dir,href)
         {
-            var options = {
-            "direction"        : "right",
-            "duration"         :  400,
-            "slowdownfactor"   :    3,
-            "iosdelay"         :  100,
-            "androiddelay"     :  150,
-            "winphonedelay"    :  250,
-            "fixedPixelsTop"   :    0,
-            "fixedPixelsBottom":   60 
-            };
-            
-            window.plugins.nativepagetransitions.slide(
-            options,
-            function (msg){apps.navigate("index.html");}, // called when the animation has finished
-            function (msg) {alert("error: " + msg)} // called in case you pass in weird values
-            );
+            alert(href);
+            alert(dir);
+            /*window.plugins.nativepagetransitions.slide({
+                "href" : href,
+                "direction":dir
+            });*/
         },
         
         

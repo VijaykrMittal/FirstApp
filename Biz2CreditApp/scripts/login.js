@@ -281,7 +281,8 @@
            	  apps.hideLoading();
                  navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     function () { }, "Notification", 'OK');
-                app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in forgot password api.');
+                error = {name:'API FAILED',stack:'Server is not responding properly.',message:"API does not load/hit properly during "+(e.errorThrown.message) +" in Forgot Password API."};
+                app.analyticsService.viewModel.trackException(error,error.message);
             },
 
             });
@@ -438,7 +439,7 @@
             window.plugins.nativepagetransitions.flip({
                 "href" : href,
                 "duration":300,
-                "slowdownfactor" : 3,
+                "slowdownfactor":3,
             });
         },
         slideToBack:function()
@@ -451,62 +452,9 @@
                 "href" : href,
                 "direction":dir,
                 "duration":300,
-                "slowdownfactor" : 3
+                "slowdownfactor" :3
             });
-        },
-        
-        
-        /*slideLeft:function(e)
-        {
-             console.log(e.toElement.text);
-            target = e.toElement.text;
-            app.loginService.viewModel.slideAnimation("left",target);
-        },
-        slide:function()
-        {
-            app.loginService.viewModel.slideOperation('#tabstrip-sign-up');
-        },
-        slideOperation:function(href)
-        {
-            window.plugins.nativepagetransitions.slide({
-                "href" : href
-            });
-        },
-        slideRight:function()
-        {
-            app.loginService.viewModel.slideAnimation("right");
-        },
-        slideAnimation:function(option,target)
-        {
-            console.log(options);
-            var options = {
-            "direction"        : option,
-            "duration"         :  400,
-            "slowdownfactor"   :    3,
-            "iosdelay"         :  100,
-            "androiddelay"     :  150,
-            "winphonedelay"    :  250,
-            "fixedPixelsTop"   :    0,
-            "fixedPixelsBottom":   60 
-            };
-                window.plugins.nativepagetransitions.slide(
-                options,
-                function (msg){alert(target);}, // called when the animation has finished
-                function (msg) {alert("error: " + msg)} // called in case you pass in weird values
-                );
-            
-
-           window.plugins.nativepagetransitions.slide(
-            options,
-            function (msg) 
-            {
-              alert(target);
-                
-            }, // called when the animation has finished
-            function (msg) {alert("error: " + msg)} // called in case you pass in weird values
-            );
-        }*/
-        
+        }
     });
     
     app.loginService = {

@@ -114,7 +114,7 @@
             localStorage.setItem("userMobile",userinfo['userMobile']);
             app.analyticsService.viewModel.userLoginStatus();
             that.setSettingsPage();
-            that.navigateHome("#tabstrip-home");
+            that.navigateHome();
         },
         
 		
@@ -143,13 +143,23 @@
             //app.analyticsService.viewModel.userStatus();
             
         },
-        navigateHome: function(href)
+        navigateHome: function()
         {  
-            window.plugins.nativepagetransitions.slide({
-                "href" : href,
-                "duration":300,
-                "slowdownfactor" : 3,
-            });
+            var options = {
+            "direction"        : "left",
+            "duration"         :  400,
+            "slowdownfactor"   :    3,
+            "iosdelay"         :  100,
+            "androiddelay"     :  150,
+            "winphonedelay"    :  250,
+            "fixedPixelsTop"   :    0,
+            "fixedPixelsBottom":   60 
+            };
+                window.plugins.nativepagetransitions.flip(
+                options,
+                function (msg){apps.navigate("#tabstrip-home");}, // called when the animation has finished
+                function (msg) {alert("error: " + msg)} // called in case you pass in weird values
+                );
              kendo.history.navigate("#tabstrip-home");
         },
         clearForm: function () {

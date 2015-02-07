@@ -151,7 +151,7 @@
             "slowdownfactor"   :    3,
             "iosdelay"         :  100,
             "androiddelay"     :  150,
-            "winphonedelay"    :  250,
+            "winphonedelay"    :  150,
             "fixedPixelsTop"   :    0,
             "fixedPixelsBottom":   60 
             };

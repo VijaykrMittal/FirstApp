@@ -114,7 +114,7 @@
             localStorage.setItem("userMobile",userinfo['userMobile']);
             app.analyticsService.viewModel.userLoginStatus();
             that.setSettingsPage();
-            that.navigateHome();
+            that.navigateHome("#tabstrip-home");
         },
         
 		
@@ -143,9 +143,13 @@
             //app.analyticsService.viewModel.userStatus();
             
         },
-        navigateHome: function()
-        {   
-             apps.navigate("#tabstrip-home");
+        navigateHome: function(href)
+        {  
+            window.plugins.nativepagetransitions.slide({
+                "href" : href,
+                "duration":300,
+                "slowdownfactor" : 3,
+            });
              kendo.history.navigate("#tabstrip-home");
         },
         clearForm: function () {

@@ -115,8 +115,9 @@
             app.analyticsService.viewModel.userLoginStatus();
             that.setSettingsPage();
             that.navigateHome();
+            
         },
-        
+    
 		
         setUserLogout: function () {
             var that = this;
@@ -144,22 +145,8 @@
             
         },
         navigateHome: function()
-        {  
-            var options = {
-            "direction"        : "left",
-            "duration"         :  400,
-            "slowdownfactor"   :    3,
-            "iosdelay"         :  100,
-            "androiddelay"     :  150,
-            "winphonedelay"    :  150,
-            "fixedPixelsTop"   :    0,
-            "fixedPixelsBottom":   60 
-            };
-                window.plugins.nativepagetransitions.flip(
-                options,
-                function (msg){apps.navigate("#tabstrip-home");}, // called when the animation has finished
-                function (msg) {alert("error: " + msg)} // called in case you pass in weird values
-                );
+        {   
+             apps.navigate("#tabstrip-home");
              kendo.history.navigate("#tabstrip-home");
         },
         clearForm: function () {

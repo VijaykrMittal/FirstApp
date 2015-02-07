@@ -435,7 +435,7 @@
         },
         moveToTarget:function(href)
         {
-            window.plugins.nativepagetransitions.slide({
+            window.plugins.nativepagetransitions.flip({
                 "href" : href,
                 "duration":300,
                 "slowdownfactor" : 3,
@@ -447,7 +447,7 @@
         },
         transitionSlideRight:function(dir,href)
         {
-            window.plugins.nativepagetransitions.slide({
+            window.plugins.nativepagetransitions.flip({
                 "href" : href,
                 "direction":dir,
                 "duration":300,

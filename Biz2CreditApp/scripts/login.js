@@ -443,7 +443,7 @@
         },
         slideToBack:function()
         {
-            app.loginService.viewModel.transitionSlideRight("right","#tabstrip-login");
+            app.loginService.viewModel.transitionSlideRight("left","#tabstrip-login");
         },
         transitionSlideRight:function(dir,href)
         {

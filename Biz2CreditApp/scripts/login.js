@@ -444,14 +444,6 @@
                 "slowdownfactor":3,
             });
         },
-       /* moveToTarget:function(href)
-        {
-            window.plugins.nativepagetransitions.flip({
-                "href" : href,
-                "duration":300,
-                "slowdownfactor":3,
-            });
-        },*/
         slideToBack:function()
         {
             app.loginService.viewModel.transitionSlideRight("left","#tabstrip-login");

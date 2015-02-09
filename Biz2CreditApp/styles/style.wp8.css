@@ -35,10 +35,10 @@ html body .backButton {width: 81%;background-size: 30% !important;background-pos
     
     .nvbar{height:80px}
     .nvbar .spnTxt{line-height:70px;}
-    #stps ul li article {overflow: hidden;box-shadow: 1px 3px 0px #acacac;text-align: left;padding: 10px 5px 5px;background-color: #fff;border: 1px solid #ccc;position: absolute;border-radius: 2px;z-index: 50;top: 80px;width: 250px;}
+    #stps ul li article {overflow: hidden;box-shadow: 1px 3px 0px #acacac;text-align: left;padding: 10px 5px 5px;background-color: #fff;border: 1px solid #ccc;position: absolute;border-radius: 2px;z-index: 50;top: 80px;width: 260px;}
     #stps ul li span {font-size: 13px;color: #ccc;display: block;height: 32px;}
-    #scheduleForm li select {font-size: 15px;position: static;width: 100%;height: 40px;margin: 0;background-image: url(../styles/images/time-schedule-icon.png);background-position: right center;background-size: 34px 24px;background-repeat: no-repeat;}
-    .schedulePopup .scheduleSection .km-listview-wrapper ul {border-left: 0.13em solid #EBEBEB;}
+    #scheduleForm li select {font-size: 15px;position: static;width: 100%;height: 45px;margin: 0;background-image: url(../styles/images/time-schedule-icon.png);background-position: right center;background-size: 34px 24px;background-repeat: no-repeat;}
+    /*.schedulePopup .scheduleSection .km-listview-wrapper ul {border-left: 0.13em solid #EBEBEB;}*/
 }
 @media (min-width:0px) and (max-width:533px) {
 
@@ -78,7 +78,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
     #blackBlk .desbrdIcon .bizscor {float: right;margin-top: -13%;margin-bottom: 6px;text-align: center;}
     #stps ul li article {overflow: hidden;box-shadow: 1px 3px 0px #acacac;text-align: left;padding: 10px 5px 5px;background-color: #fff;border: 1px solid #ccc;position: absolute;border-radius: 2px;z-index: 50;top: 80px;width: 250px;}
     #stps ul li span {font-size: 11px;color: #ccc;display: block;height: 32px;}
-    #scheduleForm li select {font-size: 15px;position: static;width: 100%;height: 40px;margin: 0;background-image: url(../styles/images/time-schedule-icon.png);background-position: right center;background-size: 30px 20px;background-repeat: no-repeat;border-left: 0.13em solid #EBEBEB}
+    #scheduleForm li select {font-size: 15px;position: static;width: 100%;height: 45px;margin: 0;background-image: url(../styles/images/time-schedule-icon.png);background-position: right center;background-size: 30px 20px;background-repeat: no-repeat;}
     #scheduleForm li select option{color:#000 !important}
     #scheduleForm li select:checked{color:red !important}
     #homePage .testimonials .test-content .test-r p {font-size: 1em;line-height: 28px;text-align: justify;}

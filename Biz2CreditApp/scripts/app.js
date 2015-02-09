@@ -23,7 +23,13 @@
         }
         else if(apps.view()['element']['0']['id']==='tabstrip-sign-up' || apps.view()['element']['0']['id']==='tabstrip-forgot-pass')
         {
-        	apps.navigate("#tabstrip-login");
+        	//apps.navigate("#tabstrip-login");
+            window.plugins.nativepagetransitions.flip({
+                "href" : "#tabstrip-login",
+                "direction":"left",
+                "duration":300,
+                "slowdownfactor" :3
+            });
         }
         else
         { 

@@ -29,7 +29,7 @@ label { margin:0; padding:0;}
     .nvbar .spnTxt{line-height:70px;}
     #stps ul li article {overflow: hidden;box-shadow: 1px 3px 0px #acacac;text-align: left;padding: 10px 5px 5px;background-color: #fff;border: 1px solid #ccc;position: absolute;border-radius: 2px;z-index: 50;top: 80px;width: 250px !important;}
     #stps ul li span {font-size: 13px;color: #ccc;display: block;height: 32px;}
-    #scheduleForm li select {font-size: 15px;position: static;width: 100%;height: 45px;margin: 0;background-image: url(../styles/images/time-schedule-icon.png);background-position: right center;background-size: 34px 24px;background-repeat: no-repeat;}
+    #scheduleForm li select {font-size: 15px;position: static;width: 100%;height: 55px;margin: 0;background-image: url(../styles/images/time-schedule-icon.png);background-position: right center;background-size: 34px 24px;background-repeat: no-repeat;}
     /*.schedulePopup .scheduleSection .km-listview-wrapper ul {border-left: 0.13em solid #EBEBEB;}*/
     
     

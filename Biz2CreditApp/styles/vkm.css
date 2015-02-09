@@ -25,3 +25,6 @@ select::-ms-expand {display: none;}
     text-overflow: '';
     }
 */
+
+/*for change the placeholder color*/
+#datepicker:-ms-input-placeholder {color:#a9a9a9;}

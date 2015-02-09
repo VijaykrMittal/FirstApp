@@ -64,7 +64,9 @@
                 	apps.hideLoading();
                 	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                 	function () { }, "Notification", 'OK');
-                    app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in userdashboard api.');
+                   // app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in userdashboard api.');
+                    error = {name:'API FAILED',stack:'Server is not responding properly.',message:"API did not load/hit properly during "+(e.errorThrown.message) +" in Userdashboard API."};
+                    app.analyticsService.viewModel.trackException(error,error.message);
                 },
             });
             
@@ -73,6 +75,7 @@
                 var that = this;
                 app.loginService.viewModel.setSettingsPage();
                 var data = that.data();
+                console.log(data);
                 
                 if(data['0']['results']['faultcode']===1)
                 {

@@ -428,20 +428,30 @@
         },
         transitionSlideForgot:function()
         {
-            app.loginService.viewModel.moveToTarget("#tabstrip-forgot-pass");
+            //app.loginService.viewModel.moveToTarget("#tabstrip-forgot-pass");
+             window.plugins.nativepagetransitions.flip({
+                "href" : "#tabstrip-forgot-pass",
+                "duration":300,
+                "slowdownfactor":3,
+            });
         },
         transitionSlideSignup:function()
         {
-            app.loginService.viewModel.moveToTarget("#tabstrip-sign-up");
+            //app.loginService.viewModel.moveToTarget("#tabstrip-sign-up");
+             window.plugins.nativepagetransitions.flip({
+                "href" : "#tabstrip-sign-up",
+                "duration":300,
+                "slowdownfactor":3,
+            });
         },
-        moveToTarget:function(href)
+       /* moveToTarget:function(href)
         {
             window.plugins.nativepagetransitions.flip({
                 "href" : href,
                 "duration":300,
                 "slowdownfactor":3,
             });
-        },
+        },*/
         slideToBack:function()
         {
             app.loginService.viewModel.transitionSlideRight("left","#tabstrip-login");

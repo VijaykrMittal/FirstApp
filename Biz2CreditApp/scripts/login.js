@@ -438,6 +438,7 @@
         transitionSlideSignup:function()
         {
             //app.loginService.viewModel.moveToTarget("#tabstrip-sign-up");
+            alert("ok");
              window.plugins.nativepagetransitions.flip({
                 "href" : "#tabstrip-sign-up",
                 "duration":300,

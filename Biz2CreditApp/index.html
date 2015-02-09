@@ -362,7 +362,7 @@
                         <li>
                             <label>
                                
-                                <select id="timepicker" placeholder="Select Time">
+                                <select id="timepicker" onchange="ColorMatch();" placeholder="Select Time">
                                     <option value="" selected="">Select Time</option>
                                     <option value="10AM - 12PM">10AM - 12PM</option>
                                     <option value="12PM - 02PM">12PM - 02PM</option>
@@ -384,6 +384,21 @@
             </div>
 
         </div>
+        
+        <!--VKM-->
+        <script>
+            function ColorMatch()
+            {
+                if(document.getElementById('timepicker').value === "")
+                {
+                    document.getElementById("timepicker").style.color = "#a9a9a9";
+                }
+                else
+                {
+                    document.getElementById("timepicker").style.color = "#4D4D4D";
+                }
+            }
+        </script>
          
         <!--home message 3-->
         <div id="tabstrip-mess-third" class="modal-mess-one" data-role="modalview"  data-modal="false"  style="width:100%">

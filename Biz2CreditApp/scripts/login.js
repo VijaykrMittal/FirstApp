@@ -268,7 +268,7 @@
                     url: localStorage.getItem("urlMobAppApiUser"),
                     type:"POST",
                     dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                    data: { apiaction:"forgotpassword",useremail:forgotmail} // search for tweets that contain "html5"
+                    data: { apiactio:"forgotpassword",useremail:forgotmail} // search for tweets that contain "html5"
             }
             },
             schema: {

@@ -119,7 +119,7 @@
                         url: localStorage.getItem("urlMobAppApiUser"),
                         type:"POST",
                         dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
-                        data: { apiactio:"usersignup",FirstName:FirstName,LastName:LastName,Phone:yourPhone,Email:yourEmail,Track:'mobile',Source:'mobile',Revenue:yourAnnualRevenue,LoanAmount:loanAmount,AgeOfBusiness:yearInBussiness,CreditScore:yourCreditScore,partner:'mobile'}
+                        data: { apiaction:"usersignup",FirstName:FirstName,LastName:LastName,Phone:yourPhone,Email:yourEmail,Track:'mobile',Source:'mobile',Revenue:yourAnnualRevenue,LoanAmount:loanAmount,AgeOfBusiness:yearInBussiness,CreditScore:yourCreditScore,partner:'mobile'}
                 }
             },
             schema: {
@@ -133,7 +133,7 @@
                  navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     function () { }, "Notification", 'OK');
                  //app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in usersignup api.');
-                error = {name:'API FAILED',stack:'Server is not responding properly.',message:"API does not load/hit properly during "+(e.errorThrown.message) +" in User Signup API."};
+                error = {name:'API FAILED',stack:'Server is not responding properly.',message:"API did not load/hit properly during "+(e.errorThrown.message) +" in User Signup API."};
                 app.analyticsService.viewModel.trackException(error,error.message);
             },
 

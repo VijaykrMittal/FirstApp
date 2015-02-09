@@ -80,7 +80,7 @@
                     
                     navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     function () { }, "Notification", 'OK');
-                    error = {name:'API FAILED',stack:'Server is not responding properly.',message:"API does not load/hit properly during "+(e.errorThrown.message) +" in login API."};
+                    error = {name:'API FAILED',stack:'Server is not responding properly.',message:"API did not load/hit properly during "+(e.errorThrown.message) +" in login API."};
                     app.analyticsService.viewModel.trackException(error,error.message);
                 }
             });
@@ -281,7 +281,7 @@
            	  apps.hideLoading();
                  navigator.notification.alert("Server not responding properly.Please check your internet connection.",
                     function () { }, "Notification", 'OK');
-                error = {name:'API FAILED',stack:'Server is not responding properly.',message:"API does not load/hit properly during "+(e.errorThrown.message) +" in Forgot Password API."};
+                error = {name:'API FAILED',stack:'Server is not responding properly.',message:"API did not load/hit properly during "+(e.errorThrown.message) +" in Forgot Password API."};
                 app.analyticsService.viewModel.trackException(error,error.message);
             },
 

@@ -81,9 +81,10 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
     #scheduleForm li select {font-size: 15px;position: static;width: 100%;height: 40px;margin: 0;background-image: url(../styles/images/time-schedule-icon.png);background-position: right center;background-size: 30px 20px;background-repeat: no-repeat;border-left: 0.13em solid #EBEBEB}
     #scheduleForm li select option{color:#000 !important}
     #scheduleForm li select:checked{color:red !important}
-    #homePage .testimonials .test-content .test-r p {
+    #homePage .testimonials .test-content .test-r p {font-size: 1em;line-height: 28px;text-align: justify;}
+   #homePage .testimonials .test-content .test-r span {
 font-size: 1em;
-line-height: 28px;text-align: justify;
+margin-bottom: 30px;
 }
     
     

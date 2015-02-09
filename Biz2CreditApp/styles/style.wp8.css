@@ -74,7 +74,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
  
     /*********************************Write By Vijay Mittal**********************************/
     .nvbar{height:80px}
-    .nvbar .spnTxt{line-height:76px;}
+    .nvbar .spnTxt{line-height:70px;}
     #blackBlk .desbrdIcon .bizscor {float: right;margin-top: -13%;margin-bottom: 6px;text-align: center;}
     #stps ul li article {overflow: hidden;box-shadow: 1px 3px 0px #acacac;text-align: left;padding: 10px 5px 5px;background-color: #fff;border: 1px solid #ccc;position: absolute;border-radius: 2px;z-index: 50;top: 80px;width: 250px;}
     #stps ul li span {font-size: 11px;color: #ccc;display: block;height: 32px;}

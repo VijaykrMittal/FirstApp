@@ -881,16 +881,14 @@
                 if(status === false)
                 return false;  
                 dataParam['contact_act'] = 'Next';*/
-                alert("next");
-                apps.navigate('views/loanAppPI.html');
+               alert("next");
             }
             else
             {
            	 //dataParam['contact_act'] ='Save_Exit';
                 alert("save exit");
             }
-            
-           /* var that = this;
+            var that = this;
             dataParam['apiaction']='loanappstep1';
 			ownerFName = that.get("Owner_FirstName").trim();
 			ownerLName = that.get("Owner_LastName").trim(); 
@@ -988,8 +986,9 @@
 
             });
             dataSource.fetch(function(){
-                
+                console.log();
                 var data = this.data();
+                console.log(data);
                 app.loginService.viewModel.hideloder();
                 if(data[0]['results']['faultcode'] === 1 || data[0]['results']['faultcode'] === "1")
                 {
@@ -1031,8 +1030,7 @@
                     return;
                 }           
 
-                }); */
-            
+                });
        },
         addDynamicOwner:function(num)
         {

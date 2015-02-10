@@ -359,7 +359,6 @@
                 if(status === false)
                 return status;  
                 dataParam['personal_act']='Next';*/
-                alert("next");
                 apps.navigate('views/loanAppFP.html');
             }
             else

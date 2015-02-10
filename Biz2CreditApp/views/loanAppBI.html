@@ -1353,7 +1353,10 @@
                           <div class="coln">
                             <!--<input name="" type="submit" data-role="button" value="Next" data-bind="click:loanAppBISubmit" class="BTgry">-->
                             <input name="" type="submit" value="Save &amp; Exit" data-role="button" data-name="Save" data-bind="click: loanAppBISubmit, visible: currentfidStatus" class="BTgry buicancel">
-                              <input name="" type="submit" data-role="button" value="Next" data-name="Next" data-bind="click:loanAppBISubmit" class="BTgren">
+                              <!--<input name="" type="submit" data-role="button" value="Next" data-name="Next" data-bind="click:loanAppBISubmit" class="BTgren">-->
+                              <a data-role="button" name="Next" data-bind="click:loanAppBISubmit" class="BTgren">Next</a>
+                              <button data-click="loanAppBISubmit" data-role="button">Click me</button>
+                              <button data-role="button" name="Next" data-bind="click:loanAppBISubmit" class="BTgren">Next</button>
                         </div>
                     </div>
                 </article>
@@ -1361,6 +1364,13 @@
             </form>
         </section>
     </div>
+    
+    <script>
+        function loanAppBISubmit()
+        {
+            alert("Okkkkkkkkkkkkkkkkkkkkkk");
+        }
+    </script>
  
 </div>
 <script>

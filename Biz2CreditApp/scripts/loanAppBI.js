@@ -1759,6 +1759,11 @@
                 var num2 =  app.scheduleService.viewModel.RemoveRougeChar(num.replace(/(.{3})/g,"$1,").split("").reverse().join(""));
                 return num2;								
             },
+        
+            loanAppBIBTN:function()
+            {
+                alert("done");
+            }
 
     });
    

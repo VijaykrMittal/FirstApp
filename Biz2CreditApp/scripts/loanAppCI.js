@@ -1145,6 +1145,11 @@
             $('#own_city').html('<option value="" selected="selected">Select State</option>');
             viewCModel = kendo.observable();
             $('#add-ownerForm').show();
+        },
+        
+        backtoprev:function()
+        {
+            alert("ok");
         }
   
         

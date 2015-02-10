@@ -1216,7 +1216,7 @@
             {
                 dataParam['business_act'] ='Save_Exit';
             }
-            
+          /*  
             //apps.navigate('views/loanAppCI.html'); 
             var that = this;
             totbusinessDebtYesDiv = that.get("totbusinessDebtYesDiv");
@@ -1621,7 +1621,7 @@
                 }            
 
                 });
-
+*/
             },
             addOutDebtVar:function(num)
             {

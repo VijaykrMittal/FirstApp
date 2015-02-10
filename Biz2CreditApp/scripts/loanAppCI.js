@@ -876,18 +876,21 @@
             if(data.name === "Next")
             {
                 
-                var status = $("#b2cApp1").valid();
+               /* var status = $("#b2cApp1").valid();
                 $("#tabstrip-loanapp-ci").find(".km-scroll-container").css("-webkit-transform", "");
                 if(status === false)
                 return false;  
-                dataParam['contact_act'] = 'Next';
+                dataParam['contact_act'] = 'Next';*/
+                alert("next");
+                apps.navigate('views/loanAppPI.html');
             }
             else
             {
-           	 dataParam['contact_act'] ='Save_Exit';
+           	 //dataParam['contact_act'] ='Save_Exit';
+                alert("save exit");
             }
             
-            var that = this;
+           /* var that = this;
             dataParam['apiaction']='loanappstep1';
 			ownerFName = that.get("Owner_FirstName").trim();
 			ownerLName = that.get("Owner_LastName").trim(); 
@@ -1028,7 +1031,8 @@
                     return;
                 }           
 
-                }); 
+                }); */
+            
        },
         addDynamicOwner:function(num)
         {
@@ -1147,9 +1151,11 @@
             $('#add-ownerForm').show();
         },
         
-        backtoprev:function()
+        backtoprev:function(e)
         {
-            alert("ok");
+            console.log(e);
+            console.log(kendo);
+            
         }
   
         

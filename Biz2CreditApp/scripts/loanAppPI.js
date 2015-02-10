@@ -351,19 +351,24 @@
         loanAppPIpage:function(e)
         {
             dataParam =  {};
-            if(e.sender.element.context.dataset.name === "Next")
+            alert("loanAppPI");
+            var data = e.button.data();
+            if(data.name === "Next")
             {
-                var status = $("#b2cApp3").valid();
+                /*var status = $("#b2cApp3").valid();
                 if(status === false)
                 return status;  
-                dataParam['personal_act']='Next';
+                dataParam['personal_act']='Next';*/
+                alert("next");
+                apps.navigate('views/loanAppFP.html');
             }
             else
             {
-            	dataParam['personal_act']='Save_Exit';
+            	//dataParam['personal_act']='Save_Exit';
+                alert("save exit");
             }
 
-            var that = this;
+            /*var that = this;
             var per_income = that.get("avg_month_income");
             var per_ome	= that.get("avg_month_expense");
             dataParam['apiaction']	= 'loanappstep3';
@@ -499,7 +504,7 @@
                     return;
                 }            
 
-                });
+                });*/
            
         },
         ManageOwnerHideenField:function(dataParam)

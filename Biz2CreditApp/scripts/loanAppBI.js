@@ -1182,8 +1182,8 @@
             alert("ok");
             //console.log(device.platform);
             console.log(e);
-            alert("IOS and ANDROID "+e.sender.element.context.dataset.name);
-            alert("Window "+e.sender.element.context.name);
+           // alert("IOS and ANDROID "+e.sender.element.context.dataset.name);
+           // alert("Window "+e.sender.element.context.name);
             dataParam =  {};
             
             /*if(device.platform === "Win32NT")

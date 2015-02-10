@@ -1187,43 +1187,7 @@
             
             dataParam =  {};
             
-            
-            
-            /*if(device.platform === "Win32NT")
-            {
-                if(e.sender.element.context.name === "Next")
-                {
-                    var status = $("#B2cAppForms").valid();
-                    if(status === false)
-                    return status;  
-                    dataParam['business_act'] = 'Next';
-                }
-                else
-                {
-                    //dataParam['business_act'] ='Save_Exit';
-                    alert(e.sender.element.context.name);
-                }
-            }
-            else
-            {
-                if(e.sender.element.context.dataset.name === "Next")
-                {
-                    var status = $("#B2cAppForms").valid();
-                    if(status === false)
-                    return status;  
-                    dataParam['business_act'] = 'Next';
-                    alert("Next click");
-                }
-                else
-                {
-                    dataParam['business_act'] ='Save_Exit';
-                    alert("save click");
-                }
-            }*/
-            
-            
-            
-            if(data.name === "Next")
+            /*if(e.sender.element.context.dataset.name === "Next")
             {
                 var status = $("#B2cAppForms").valid();
                 if(status === false)
@@ -1235,6 +1199,22 @@
             {
                 dataParam['business_act'] ='Save_Exit';
                 alert("save click");
+            }*/
+            
+            
+            /********VKM**********/
+            
+            if(data.name === "Next")
+            {
+               /* var status = $("#B2cAppForms").valid();
+                if(status === false)
+                return status;  */
+                //dataParam['business_act'] = 'Next';
+                apps.navigate('views/loanAppCI.html');
+            }
+            else
+            {
+                dataParam['business_act'] ='Save_Exit';
             }
             
             //apps.navigate('views/loanAppCI.html'); 

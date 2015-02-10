@@ -870,8 +870,10 @@
         },
         loanAppCISubmit:function(e){
            //apps.navigate('views/loanAppPI.html');
+            alert("loanAppCI");
+            var data = e.button.data();
             dataParam =  {};
-            if(e.sender.element.context.dataset.name === "Next")
+            if(data.name === "Next")
             {
                 
                 var status = $("#b2cApp1").valid();

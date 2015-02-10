@@ -69,10 +69,7 @@
         {
             app.analyticsService.viewModel.setAnalyticMonitor();
         }
-        
-        setTimeout(function() {
-            navigator.splashscreen.hide();
-        }, 10000);
+        navigator.splashscreen.hide();
     };
     
     var oncallback = function(position)

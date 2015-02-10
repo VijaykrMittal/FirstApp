@@ -1179,12 +1179,13 @@
         	
 		loanAppBISubmit:function(e){
           // apps.navigate('views/loanAppCI.html');
+            alert("ok");
             dataParam =  {};
             if(e.sender.element.context.dataset.name === "Next")
             {
-                var status = $("#B2cAppForms").valid();
+                /*var status = $("#B2cAppForms").valid();
                 if(status === false)
-                return status;  
+                return status;  */
                 dataParam['business_act'] = 'Next';
             }
             else

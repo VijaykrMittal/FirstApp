@@ -1225,18 +1225,18 @@
             
             if(data.name === "Next")
             {
-                /* var status = $("#B2cAppForms").valid();
+                var status = $("#B2cAppForms").valid();
                 if(status === false)
                 return status;  
-                dataParam['business_act'] = 'Next';*/
+                dataParam['business_act'] = 'Next';
                 alert("Next click");
             }
             else
             {
-                //dataParam['business_act'] ='Save_Exit';
+                dataParam['business_act'] ='Save_Exit';
                 alert("save click");
             }
-           /* 
+            
             //apps.navigate('views/loanAppCI.html'); 
             var that = this;
             totbusinessDebtYesDiv = that.get("totbusinessDebtYesDiv");
@@ -1642,7 +1642,6 @@
 
                 });
 
-        */
             },
             addOutDebtVar:function(num)
             {

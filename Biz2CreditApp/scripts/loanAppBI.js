@@ -1180,13 +1180,10 @@
 		loanAppBISubmit:function(e){
             
             // apps.navigate('views/loanAppCI.html');
+            
             var data = e.button.data();
             alert("ok");
-            //console.log(device.platform);
             alert(data.name);
-            // alert("IOS and ANDROID "+e.sender.element.context.dataset.name);
-            // alert("Window "+e.sender.element.context.name);
-            
             
             dataParam =  {};
             
@@ -1226,20 +1223,20 @@
             
             
             
-           /* if(e.sender.element.context.dataset.name === "Next")
+            if(data.name === "Next")
             {
-                 var status = $("#B2cAppForms").valid();
+                /* var status = $("#B2cAppForms").valid();
                 if(status === false)
                 return status;  
-                dataParam['business_act'] = 'Next';
+                dataParam['business_act'] = 'Next';*/
                 alert("Next click");
             }
             else
             {
-                dataParam['business_act'] ='Save_Exit';
+                //dataParam['business_act'] ='Save_Exit';
                 alert("save click");
             }
-            
+           /* 
             //apps.navigate('views/loanAppCI.html'); 
             var that = this;
             totbusinessDebtYesDiv = that.get("totbusinessDebtYesDiv");

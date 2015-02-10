@@ -1180,17 +1180,58 @@
 		loanAppBISubmit:function(e){
           // apps.navigate('views/loanAppCI.html');
             alert("ok");
+            //console.log(device.platform);
+            console.log(e);
+            alert("IOS and ANDROID "+e.sender.element.context.dataset.name);
+            alert("Window "+e.sender.element.context.name);
             dataParam =  {};
-            if(e.sender.element.context.dataset.name === "Next")
+            
+            /*if(device.platform === "Win32NT")
             {
-                /*var status = $("#B2cAppForms").valid();
-                if(status === false)
-                return status;  */
-                dataParam['business_act'] = 'Next';
+                if(e.sender.element.context.name === "Next")
+                {
+                    var status = $("#B2cAppForms").valid();
+                    if(status === false)
+                    return status;  
+                    dataParam['business_act'] = 'Next';
+                }
+                else
+                {
+                    //dataParam['business_act'] ='Save_Exit';
+                    alert(e.sender.element.context.name);
+                }
             }
             else
             {
-            	dataParam['business_act'] ='Save_Exit';
+                if(e.sender.element.context.dataset.name === "Next")
+                {
+                    var status = $("#B2cAppForms").valid();
+                    if(status === false)
+                    return status;  
+                    dataParam['business_act'] = 'Next';
+                    alert("Next click");
+                }
+                else
+                {
+                    dataParam['business_act'] ='Save_Exit';
+                    alert("save click");
+                }
+            }*/
+            
+            
+            
+            if(e.sender.element.context.dataset.name === "Next")
+            {
+                /* var status = $("#B2cAppForms").valid();
+                if(status === false)
+                return status;  
+                dataParam['business_act'] = 'Next';*/
+                alert("Next click");
+            }
+            else
+            {
+                //  dataParam['business_act'] ='Save_Exit';
+                alert("save click");
             }
             
             //apps.navigate('views/loanAppCI.html'); 
@@ -1545,6 +1586,7 @@
             });
             dataSource.fetch(function(){
 
+                alert("API");
                 var data = this.data();
                 app.loginService.viewModel.hideloder();
                 if(data[0]['results']['faultcode'] === 1 || data[0]['results']['faultcode'] === "1")

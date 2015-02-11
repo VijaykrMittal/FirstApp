@@ -1182,7 +1182,6 @@
             // apps.navigate('views/loanAppCI.html');
             
             var data = e.button.data();
-            alert("ok");
             alert(data.name);
             
             dataParam =  {};
@@ -1206,17 +1205,17 @@
             
             if(data.name === "Next")
             {
-               /* var status = $("#B2cAppForms").valid();
+                var status = $("#B2cAppForms").valid();
                 if(status === false)
-                return status;  */
-                //dataParam['business_act'] = 'Next';
-                apps.navigate('views/loanAppCI.html');
+                return status;  
+                dataParam['business_act'] = 'Next';
+               // apps.navigate('views/loanAppCI.html');
             }
             else
             {
                 dataParam['business_act'] ='Save_Exit';
             }
-          /*  
+            
             //apps.navigate('views/loanAppCI.html'); 
             var that = this;
             totbusinessDebtYesDiv = that.get("totbusinessDebtYesDiv");
@@ -1621,7 +1620,7 @@
                 }            
 
                 });
-*/
+
             },
             addOutDebtVar:function(num)
             {

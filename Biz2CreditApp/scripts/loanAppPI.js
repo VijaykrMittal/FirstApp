@@ -5,6 +5,7 @@
     loanPIViewModal = kendo.data.ObservableObject.extend({
 		currentfid:(localStorage.getItem("fid") !== '') ?  localStorage.getItem("fid") : '',
         show:function(e) {
+            alert("loan app pi");
             e.sender.reload=false;
             e.view.reload=false;
             $(".km-native-scroller").scrollTop(0);

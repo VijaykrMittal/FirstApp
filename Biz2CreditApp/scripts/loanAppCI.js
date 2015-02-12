@@ -29,6 +29,9 @@
         primaryOwner:'',
         show:function(e) {
             
+            alert("LOAN APP CI");
+            
+            
             e.sender.reload=false;
             e.view.reload=false;
             $(".km-native-scroller").scrollTop(0);
@@ -991,17 +994,28 @@
                 alert("fetch");
                 var data = this.data();
                 console.log(data);
+                alert(data[0]['results']['faultcode']);
+                alert(data[0]['results']['onwerids']);
                 app.loginService.viewModel.hideloder();
                 if(data[0]['results']['faultcode'] === 1 || data[0]['results']['faultcode'] === "1")
                 {
                     if(dataParam['contact_act'] === "Next")
                     {
-                      //  $msg= "Contact Information submitted successfully";
-                      //  app.loginService.viewModel.mobileNotification($msg,'info');
-                        
-                        sessionStorage.setItem("setprefilStatus",'false2');
-                        app.loanAppCI.viewModel.manageHiddenField(data[0]['results']['onwerids']);
-                        apps.navigate('views/loanAppPI.html');
+                        try
+                        {
+                            //  $msg= "Contact Information submitted successfully";
+                            //  app.loginService.viewModel.mobileNotification($msg,'info');
+                            alert("Loan App CI Next");
+                            sessionStorage.setItem("setprefilStatus",'false2');
+                            app.loanAppCI.viewModel.manageHiddenField(data[0]['results']['onwerids']);
+                            apps.navigate('views/loanAppPI.html');
+                        }
+                        catch(ex)
+                        {
+                            alert(ex.name+" "+ex.message);
+                            console.log(ex);
+                        }
+                      
                     }
                     else
                     {

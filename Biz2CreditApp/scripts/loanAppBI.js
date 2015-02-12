@@ -1579,6 +1579,7 @@
                 alert("API");
                 var data = this.data();
                 app.loginService.viewModel.hideloder();
+                alert(data[0]['results']['faultcode']);
                 if(data[0]['results']['faultcode'] === 1 || data[0]['results']['faultcode'] === "1")
                 {
                     if(dataParam['business_act'] === "Next")

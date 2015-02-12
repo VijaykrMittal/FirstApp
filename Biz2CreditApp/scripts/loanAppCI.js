@@ -876,16 +876,18 @@
             if(data.name === "Next")
             {
                 
-               /* var status = $("#b2cApp1").valid();
+                var status = $("#b2cApp1").valid();
                 $("#tabstrip-loanapp-ci").find(".km-scroll-container").css("-webkit-transform", "");
                 if(status === false)
-                return false;  
-                dataParam['contact_act'] = 'Next';*/
-               alert("next");
+                {
+                    return false;
+                } 
+                dataParam['contact_act'] = 'Next';
+                alert(dataParam['contact_act']);
             }
             else
             {
-           	 //dataParam['contact_act'] ='Save_Exit';
+           	 dataParam['contact_act'] ='Save_Exit';
                 alert("save exit");
             }
             var that = this;
@@ -986,7 +988,7 @@
 
             });
             dataSource.fetch(function(){
-                console.log();
+                alert("fetch");
                 var data = this.data();
                 console.log(data);
                 app.loginService.viewModel.hideloder();
@@ -1015,7 +1017,7 @@
                 {
                      $msg= "Contact Information not submitted successfully.";
                      app.loginService.viewModel.mobileNotification($msg,'info'); 
-                    return;
+                     return;
                 }
                 else if(data[0]['results']['faultcode'] === 3 || data[0]['results']['faultcode'] === "3")
                 {
@@ -1147,16 +1149,7 @@
             $('#own_city').html('<option value="" selected="selected">Select State</option>');
             viewCModel = kendo.observable();
             $('#add-ownerForm').show();
-        },
-        
-        backtoprev:function(e)
-        {
-            console.log(e);
-            console.log(kendo);
-            
         }
-  
-        
     });
    
     app.loanAppCI = {

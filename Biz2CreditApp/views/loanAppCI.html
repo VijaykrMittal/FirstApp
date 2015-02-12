@@ -1,8 +1,6 @@
 <div data-role="view" id="tabstrip-loanapp-ci" data-reload="true" data-model="app.loanAppCI.viewModel" data-show="app.loanAppCI.viewModel.show" data-use-native-scrolling="true">
     <div data-role="header">
         <div data-role="navbar">
-            <button data-role="backbutton" data-align="left">Back</button>
-            
             <span data-role="view-title">
                 <div class="logo">
                     <img src="styles/images/bizDoc-logo.png">
@@ -449,10 +447,12 @@
                 <article id="aplicn_btm">
                     <div class="warps">
                         <div class="coln">
-                            <input name="" data-role="backbutton" value="Back" data-back="back" class="BTgry">
-                            <!--<a data-role="backbutton" data-back="back" data-id="loanApp">Back</a>-->
+                            <input type="submit" name="" data-role="backbutton" value="Back" data-back="back" class="BTgry">
                             <input name="" type="submit" data-role="button" value="Save &amp; Exit" data-name="Save" data-bind="click:loanAppCISubmit" class="BTgry">
                             <input name="next" type="submit" id="next" data-role="button" data-name="Next" data-bind ="click:loanAppCISubmit" value="Next"  class="BTgren">
+                            
+                            
+                             <a data-role="backbutton">Click</a>
                         </div>
                         
                     </div>

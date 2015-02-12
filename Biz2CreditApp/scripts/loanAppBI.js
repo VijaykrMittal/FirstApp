@@ -75,6 +75,10 @@
             
             e.sender.reload=false;
             e.view.reload=false;
+           
+            var data = e.sender.params;
+            
+            
             
             $(".km-native-scroller").scrollTop(0);
             $("#add-form").unbind('.myPlugin');
@@ -439,8 +443,9 @@
 
         }); 
             
-        if(e.view.params.param ==='editMode' && sessionStorage.getItem("LoanAppBIEditMode")==='1')
+        if(data.param ==='editMode' && sessionStorage.getItem("LoanAppBIEditMode")==='1')
         {   
+            alert("Edit API CALL");
             app.loginService.viewModel.showloder();
             var dataS = new kendo.data.DataSource({
                 transport: {
@@ -481,7 +486,7 @@
         setBIeditForm:function(data)
         {
             var that = this;
-            
+            alert("setBIeditForm");
             that.set("legal_business_name",data['findetails']['orgname']);
             that.set("dba_name",data['findetails']['dbaname']);
             that.set("street_no",(data['findetails']['civic']!== '0') ? data['findetails']['civic'] : "");
@@ -571,6 +576,7 @@
             }
             else
             {
+                
                 $('#credit_show').hide();
                 $('.crditaccep:radio[value="'+acceptcard+'"]').prop("checked",true);
                 that.set("datefirstProcessed_month","");
@@ -698,6 +704,7 @@
             }
             else
             {
+                alert("oooook");
                 $('.outDebt:radio[value="'+data['findetails']['debttype']+'"]').prop("checked",true);
             } 
             var colArr = data['findetails']['collateral'].split(',');
@@ -1181,10 +1188,9 @@
             
             // apps.navigate('views/loanAppCI.html');
             
+            dataParam =  {};
             var data = e.button.data();
             alert(data.name);
-            
-            dataParam =  {};
             
             /*if(e.sender.element.context.dataset.name === "Next")
             {
@@ -1199,6 +1205,7 @@
                 dataParam['business_act'] ='Save_Exit';
                 alert("save click");
             }*/
+            
             
             
             /********VKM**********/
@@ -1217,6 +1224,7 @@
             }
             
             //apps.navigate('views/loanAppCI.html'); 
+            
             var that = this;
             totbusinessDebtYesDiv = that.get("totbusinessDebtYesDiv");
 			deleteIds = that.get("deleteIds");
@@ -1620,7 +1628,7 @@
                 }            
 
                 });
-
+            
             },
             addOutDebtVar:function(num)
             {

@@ -332,7 +332,7 @@
                 }
             });
             
-            var addownerForm = $("#add-ownerForm");
+            var addownerForm = $("#add-ownerForm1");
             var index = $('#totownerDiv').val(); 
             
 			
@@ -340,9 +340,16 @@
             {
                 viewCModel = kendo.observable();
             }
+            
+            $$("#add-ownerForm").click(function(){
+                alert("ok owner");
+            });
+            
+            
             addownerForm.on("click.myPlugin", function() {
                 
-                app.loanAppCI.viewModel.addDynamicOwner(++index);
+                alert("add owner");
+               /* app.loanAppCI.viewModel.addDynamicOwner(++index);
                 var form = app.loanAppCI.viewModel.getownerForm(index);
                 app.loanAppCI.viewModel.setHiddenField(index);
                 var tot= parseInt($('#ownercurrntControl').val())+1;
@@ -517,7 +524,7 @@
                 $("#tabstrip-loanapp-ci").find(".km-scroll-container").css("-webkit-transform", "");
                 
             });
-
+*/
             });
             if(sessionStorage.getItem("LoanAppCIEditMode") ==='1')
             {
@@ -1001,21 +1008,13 @@
                 {
                     if(dataParam['contact_act'] === "Next")
                     {
-                        try
-                        {
                             //  $msg= "Contact Information submitted successfully";
                             //  app.loginService.viewModel.mobileNotification($msg,'info');
                             alert("Loan App CI Next");
                             sessionStorage.setItem("setprefilStatus",'false2');
                             app.loanAppCI.viewModel.manageHiddenField(data[0]['results']['onwerids']);
                             apps.navigate('views/loanAppPI.html');
-                        }
-                        catch(ex)
-                        {
-                            alert(ex.name+" "+ex.message);
-                            console.log(ex);
-                        }
-                      
+                       
                     }
                     else
                     {
@@ -1114,13 +1113,26 @@
         },
         manageHiddenField:function(data)
         {
+            alert("manageHiddenFields");
+            alert(data['0']);
 			app.loanAppCI.viewModel.own_id0=data['0'];
-            $.map( data, function( val, index ) {
-            if(index !== 0)
+            try
             {
-            	viewCModel['own_id'+index]=val;
+                alert("try");
+                $.map( data, function( val, index ) {
+                    if(index !== 0)
+                    {
+                        alert("own id"+index);
+                        viewCModel['own_id'+index]=val;
+                    }
+                });
             }
-            });
+            catch(e)
+            {
+                alert(e.message);
+                console.log(e);
+            }
+           
             
             
         },

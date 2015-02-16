@@ -1598,7 +1598,8 @@
                             
                         }
                         app.loansetting.viewModel.SetCurrentfidStatus();
-                        apps.navigate('views/loanAppCI.html');
+                        //apps.navigate('views/loanAppCI.html');
+                        alert("first form submit successfully");
                     }
                     else
                     {

@@ -1013,6 +1013,7 @@
                             alert("Loan App CI Next");
                             sessionStorage.setItem("setprefilStatus",'false2');
                             app.loanAppCI.viewModel.manageHiddenField(data[0]['results']['onwerids']);
+                        alert("now navigate");
                             apps.navigate('views/loanAppPI.html');
                        
                     }
@@ -1116,23 +1117,16 @@
             alert("manageHiddenFields");
             alert(data['0']);
 			app.loanAppCI.viewModel.own_id0=data['0'];
-            try
-            {
-                alert("try");
-                $.map( data, function( val, index ) {
-                    if(index !== 0)
-                    {
-                        alert("own id"+index);
-                        viewCModel['own_id'+index]=val;
-                    }
-                });
-            }
-            catch(e)
-            {
-                alert(e.message);
-                console.log(e);
-            }
            
+            $.map( data, function( val, index ) {
+                if(index !== 0)
+                {
+                    alert("own id"+index);
+                    console.log("own id"+index);
+                    viewCModel['own_id'+index]=val;
+                }
+            });
+          
             
             
         },

@@ -78,7 +78,7 @@
            
             var data = e.sender.params;
             
-            
+            console.log(device.platform);
             
             $(".km-native-scroller").scrollTop(0);
             $("#add-form").unbind('.myPlugin');
@@ -1587,7 +1587,12 @@
                        // $msg= "Business Information submitted successfully";
                        // app.loginService.viewModel.mobileNotification($msg,'info');
                        
-                        localStorage.setItem("fid",data[0]['results']['fid']);
+                        //localStorage.setItem("fid",data[0]['results']['fid']);
+                        localStorage.setItem("fid",'92478');
+                        
+                        /*vkm*/
+                        localStorage.setItem("blegal_item",dataParam['blegal']);
+                        
                         if(sessionStorage.getItem("setprefilStatus")==='false')
                         {
                              sessionStorage.setItem("setprefilStatus",'true');
@@ -1598,8 +1603,8 @@
                             
                         }
                         app.loansetting.viewModel.SetCurrentfidStatus();
-                        //apps.navigate('views/loanAppCI.html');
-                        alert("first form submit successfully");
+                        apps.navigate('views/loanAppCI.html');
+                       // alert("first form submit successfully");
                     }
                     else
                     {

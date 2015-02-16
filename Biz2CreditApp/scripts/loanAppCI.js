@@ -31,55 +31,112 @@
             
             alert("LOAN APP CI");
             
-            
             e.sender.reload=false;
             e.view.reload=false;
+            
             $(".km-native-scroller").scrollTop(0);
             if(sessionStorage.getItem("setprefilStatus").trim()==='true' && sessionStorage.getItem("LoanAppCIEditMode") ==='0')
             {
                 autocreateCityCmb(app.loansetting.viewModel.select_state , '');
             }
+            
             $("#add-ownerForm").unbind(".myPlugin");
+            
             blegal;
-            if(blegal === '' || blegal !== app.loansetting.viewModel.select_b_l_s)
+            var str="";
+            if(device.platform === "Win32NT")
             {
-                blegal = app.loansetting.viewModel.select_b_l_s;
-                var str ='';
-                str += '<option value="">Select Job Title</option>';
+                if(blegal === '' || blegal !== localStorage.getItem("blegal_item"))
+                {
+                    blegal = localStorage.getItem("blegal_item");
+                    console.log("window");
+                     console.log(typeof(blegal));
+                    alert(blegal);
+                    var aa =app.loansetting.viewModel;
+                    alert("------------------");
+                    alert(aa.select_b_l_s);
+                    str += '<option value="">Select Job Title</option>';
 
-                if(blegal === 'Sole Proprietorship'){
-                	str += '<option value="Sole Proprietor">Sole Proprietor</option>';
-            }
-            else if(blegal === 'Corporation' || blegal === 'Non Profit Corp'){
-                str += '<option value="Assistant Treasurer">Assistant Treasurer</option>';
-                str += '<option value="Chief Accounting Officer">Chief Accounting Officer</option>';
-                str += '<option value="Chief Executive Officer">Chief Executive Officer</option>';
-                str += '<option value="Chief Financial Officer">Chief Financial Officer</option>';            
-                str += '<option value="Chief Operating Officer">Chief Operating Officer</option>';
-                str += '<option value="Director">Director</option>';
-                str += '<option value="General Manager">General Manager</option>';
-                str += '<option value="Owner">Owner</option>';            
-                str += '<option value="President">President</option>';
-                str += '<option value="Treasurer">Treasurer</option>';
-                str += '<option value="Vice President">Vice President</option>';
+                    if(blegal === 'Sole Proprietorship'){
+                    	str += '<option value="Sole Proprietor">Sole Proprietor</option>';
+                    }
+                    else if(blegal === 'Corporation' || blegal === 'Non Profit Corp'){
+                        str += '<option value="Assistant Treasurer">Assistant Treasurer</option>';
+                        str += '<option value="Chief Accounting Officer">Chief Accounting Officer</option>';
+                        str += '<option value="Chief Executive Officer">Chief Executive Officer</option>';
+                        str += '<option value="Chief Financial Officer">Chief Financial Officer</option>';            
+                        str += '<option value="Chief Operating Officer">Chief Operating Officer</option>';
+                        str += '<option value="Director">Director</option>';
+                        str += '<option value="General Manager">General Manager</option>';
+                        str += '<option value="Owner">Owner</option>';            
+                        str += '<option value="President">President</option>';
+                        str += '<option value="Treasurer">Treasurer</option>';
+                        str += '<option value="Vice President">Vice President</option>';
 
+                    }
+                    else if(blegal === 'Partnership'){
+                    	str += '<option value="Partner">Partner</option>';
+                    }
+                    else if(blegal === 'Limited Partnership'){
+                    	str += '<option value="General Partner">General Partner</option>';
+                    	str += '<option value="Limited Partner">Limited Partner</option>';
+                    }
+                    else if(blegal === 'Limited Liability Company'){
+                    	str += '<option value="Managing Member">Managing Member</option>';
+                    	str += '<option value="Member">Member</option>';
+                    }
+                
+    			console.log(str);
+                    alert(str);
+                    $("#OwnJobTitle").html('');
+                    $("#OwnJobTitle").append(str);
+                }
             }
-            else if(blegal === 'Partnership'){
-            	str += '<option value="Partner">Partner</option>';
-            }
-            else if(blegal === 'Limited Partnership'){
-            	str += '<option value="General Partner">General Partner</option>';
-            	str += '<option value="Limited Partner">Limited Partner</option>';
-            }
-            else if(blegal === 'Limited Liability Company'){
-            	str += '<option value="Managing Member">Managing Member</option>';
-            	str += '<option value="Member">Member</option>';
+            else
+            {
+                if(blegal === '' || blegal !== app.loansetting.viewModel.select_b_l_s)
+                {
+                    blegal = app.loansetting.viewModel.select_b_l_s;
+                    console.log("other");
+                    console.log(typeof(blegal));
+                    str += '<option value="">Select Job Title</option>';
+
+                    if(blegal === 'Sole Proprietorship'){
+                    	str += '<option value="Sole Proprietor">Sole Proprietor</option>';
+                    }
+                    else if(blegal === 'Corporation' || blegal === 'Non Profit Corp'){
+                        str += '<option value="Assistant Treasurer">Assistant Treasurer</option>';
+                        str += '<option value="Chief Accounting Officer">Chief Accounting Officer</option>';
+                        str += '<option value="Chief Executive Officer">Chief Executive Officer</option>';
+                        str += '<option value="Chief Financial Officer">Chief Financial Officer</option>';            
+                        str += '<option value="Chief Operating Officer">Chief Operating Officer</option>';
+                        str += '<option value="Director">Director</option>';
+                        str += '<option value="General Manager">General Manager</option>';
+                        str += '<option value="Owner">Owner</option>';            
+                        str += '<option value="President">President</option>';
+                        str += '<option value="Treasurer">Treasurer</option>';
+                        str += '<option value="Vice President">Vice President</option>';
+
+                    }
+                    else if(blegal === 'Partnership'){
+                    	str += '<option value="Partner">Partner</option>';
+                    }
+                    else if(blegal === 'Limited Partnership'){
+                    	str += '<option value="General Partner">General Partner</option>';
+                    	str += '<option value="Limited Partner">Limited Partner</option>';
+                    }
+                    else if(blegal === 'Limited Liability Company'){
+                    	str += '<option value="Managing Member">Managing Member</option>';
+                    	str += '<option value="Member">Member</option>';
+                    }
+                
+    			
+                    $("#OwnJobTitle").html('');
+                    $("#OwnJobTitle").append(str);
+                }
             }
             
-			
-            $("#OwnJobTitle").html('');
-            $("#OwnJobTitle").append(str);
-                }
+            
             
             
             var DateDiff = { 
@@ -332,7 +389,7 @@
                 }
             });
             
-            var addownerForm = $("#add-ownerForm1");
+            var addownerForm = $("#add-ownerForm");
             var index = $('#totownerDiv').val(); 
             
 			
@@ -341,9 +398,14 @@
                 viewCModel = kendo.observable();
             }
             
-            $$("#add-ownerForm").click(function(){
-                alert("ok owner");
-            });
+           
+            
+            if(device.platform==="Win32NT")
+            {
+                $("#myBTN").click(function(){
+                    alert("ok owner");
+                });
+            }
             
             
             addownerForm.on("click.myPlugin", function() {

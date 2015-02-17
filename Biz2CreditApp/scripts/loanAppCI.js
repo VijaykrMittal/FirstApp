@@ -29,12 +29,23 @@
         primaryOwner:'',
         show:function(e) {
             
-            alert("LOAN APP CI");
+            try
+            {
+                blegal = "";   
+                var str ="";
+            }
+            catch(ex)
+            {
+                alert(ex.name+" : "+ex.message);   
+            }
+            
+            var dataModel = app.loansetting.viewModel;
             
             e.sender.reload=false;
             e.view.reload=false;
             
             $(".km-native-scroller").scrollTop(0);
+            
             if(sessionStorage.getItem("setprefilStatus").trim()==='true' && sessionStorage.getItem("LoanAppCIEditMode") ==='0')
             {
                 autocreateCityCmb(app.loansetting.viewModel.select_state , '');
@@ -42,102 +53,45 @@
             
             $("#add-ownerForm").unbind(".myPlugin");
             
-            blegal;
-            var str="";
-            if(device.platform === "Win32NT")
+            if(blegal === '' || blegal !== dataModel.select_b_l_s)
             {
-                if(blegal === '' || blegal !== localStorage.getItem("blegal_item"))
-                {
-                    blegal = localStorage.getItem("blegal_item");
-                    console.log("window");
-                     console.log(typeof(blegal));
-                    alert(blegal);
-                    var aa =app.loansetting.viewModel;
-                    alert("------------------");
-                    alert(aa.select_b_l_s);
-                    str += '<option value="">Select Job Title</option>';
+                blegal = dataModel.select_b_l_s;
+               
+                str += '<option value="">Select Job Title</option>';
 
-                    if(blegal === 'Sole Proprietorship'){
-                    	str += '<option value="Sole Proprietor">Sole Proprietor</option>';
-                    }
-                    else if(blegal === 'Corporation' || blegal === 'Non Profit Corp'){
-                        str += '<option value="Assistant Treasurer">Assistant Treasurer</option>';
-                        str += '<option value="Chief Accounting Officer">Chief Accounting Officer</option>';
-                        str += '<option value="Chief Executive Officer">Chief Executive Officer</option>';
-                        str += '<option value="Chief Financial Officer">Chief Financial Officer</option>';            
-                        str += '<option value="Chief Operating Officer">Chief Operating Officer</option>';
-                        str += '<option value="Director">Director</option>';
-                        str += '<option value="General Manager">General Manager</option>';
-                        str += '<option value="Owner">Owner</option>';            
-                        str += '<option value="President">President</option>';
-                        str += '<option value="Treasurer">Treasurer</option>';
-                        str += '<option value="Vice President">Vice President</option>';
-
-                    }
-                    else if(blegal === 'Partnership'){
-                    	str += '<option value="Partner">Partner</option>';
-                    }
-                    else if(blegal === 'Limited Partnership'){
-                    	str += '<option value="General Partner">General Partner</option>';
-                    	str += '<option value="Limited Partner">Limited Partner</option>';
-                    }
-                    else if(blegal === 'Limited Liability Company'){
-                    	str += '<option value="Managing Member">Managing Member</option>';
-                    	str += '<option value="Member">Member</option>';
-                    }
-                
-    			console.log(str);
-                    alert(str);
-                    $("#OwnJobTitle").html('');
-                    $("#OwnJobTitle").append(str);
+                if(blegal === 'Sole Proprietorship'){
+                	str += '<option value="Sole Proprietor">Sole Proprietor</option>';
                 }
-            }
-            else
-            {
-                if(blegal === '' || blegal !== app.loansetting.viewModel.select_b_l_s)
-                {
-                    blegal = app.loansetting.viewModel.select_b_l_s;
-                    console.log("other");
-                    console.log(typeof(blegal));
-                    str += '<option value="">Select Job Title</option>';
+                else if(blegal === 'Corporation' || blegal === 'Non Profit Corp'){
+                    str += '<option value="Assistant Treasurer">Assistant Treasurer</option>';
+                    str += '<option value="Chief Accounting Officer">Chief Accounting Officer</option>';
+                    str += '<option value="Chief Executive Officer">Chief Executive Officer</option>';
+                    str += '<option value="Chief Financial Officer">Chief Financial Officer</option>';            
+                    str += '<option value="Chief Operating Officer">Chief Operating Officer</option>';
+                    str += '<option value="Director">Director</option>';
+                    str += '<option value="General Manager">General Manager</option>';
+                    str += '<option value="Owner">Owner</option>';            
+                    str += '<option value="President">President</option>';
+                    str += '<option value="Treasurer">Treasurer</option>';
+                    str += '<option value="Vice President">Vice President</option>';
 
-                    if(blegal === 'Sole Proprietorship'){
-                    	str += '<option value="Sole Proprietor">Sole Proprietor</option>';
-                    }
-                    else if(blegal === 'Corporation' || blegal === 'Non Profit Corp'){
-                        str += '<option value="Assistant Treasurer">Assistant Treasurer</option>';
-                        str += '<option value="Chief Accounting Officer">Chief Accounting Officer</option>';
-                        str += '<option value="Chief Executive Officer">Chief Executive Officer</option>';
-                        str += '<option value="Chief Financial Officer">Chief Financial Officer</option>';            
-                        str += '<option value="Chief Operating Officer">Chief Operating Officer</option>';
-                        str += '<option value="Director">Director</option>';
-                        str += '<option value="General Manager">General Manager</option>';
-                        str += '<option value="Owner">Owner</option>';            
-                        str += '<option value="President">President</option>';
-                        str += '<option value="Treasurer">Treasurer</option>';
-                        str += '<option value="Vice President">Vice President</option>';
-
-                    }
-                    else if(blegal === 'Partnership'){
-                    	str += '<option value="Partner">Partner</option>';
-                    }
-                    else if(blegal === 'Limited Partnership'){
-                    	str += '<option value="General Partner">General Partner</option>';
-                    	str += '<option value="Limited Partner">Limited Partner</option>';
-                    }
-                    else if(blegal === 'Limited Liability Company'){
-                    	str += '<option value="Managing Member">Managing Member</option>';
-                    	str += '<option value="Member">Member</option>';
-                    }
-                
-    			
-                    $("#OwnJobTitle").html('');
-                    $("#OwnJobTitle").append(str);
                 }
+                else if(blegal === 'Partnership'){
+                	str += '<option value="Partner">Partner</option>';
+                }
+                else if(blegal === 'Limited Partnership'){
+                	str += '<option value="General Partner">General Partner</option>';
+                	str += '<option value="Limited Partner">Limited Partner</option>';
+                }
+                else if(blegal === 'Limited Liability Company'){
+                	str += '<option value="Managing Member">Managing Member</option>';
+                	str += '<option value="Member">Member</option>';
+                }
+
+
+                $("#OwnJobTitle").html('');
+                $("#OwnJobTitle").append(str);
             }
-            
-            
-            
             
             var DateDiff = { 
                 inDays: function(d1, d2) {
@@ -410,8 +364,7 @@
             
             addownerForm.on("click.myPlugin", function() {
                 
-                alert("add owner");
-               /* app.loanAppCI.viewModel.addDynamicOwner(++index);
+                app.loanAppCI.viewModel.addDynamicOwner(++index);
                 var form = app.loanAppCI.viewModel.getownerForm(index);
                 app.loanAppCI.viewModel.setHiddenField(index);
                 var tot= parseInt($('#ownercurrntControl').val())+1;
@@ -558,35 +511,37 @@
                 });
                
 
-            //var totalOutstanding=0;               
-            $("#remove-ownerform"+index).on("click", function(e) { 
-				var clickIndex = e.toElement.dataset.index;
-                var strdelownids = $("#deldbownerids").val(); 
-                var aredyodeleteIds = $("#aredyownerdeleteIds").val();
-                var downid = parseInt(viewCModel['own_id'+clickIndex]);
-           
-                if(downid>0){
-                	strdelownids = strdelownids+downid+","; 
+                //var totalOutstanding=0;               
+                $("#remove-ownerform"+index).on("click", function(e) { 
+                    
+                    var clickIndex = $(this).data("index");             /*--------------VKM-----------------*/
+                    //var clickIndex = data.dataset.index;
+                    var strdelownids = $("#deldbownerids").val(); 
+                    var aredyodeleteIds = $("#aredyownerdeleteIds").val();
+                    var downid = parseInt(viewCModel['own_id'+clickIndex]);
+
+                    if(downid>0){
+                    strdelownids = strdelownids+downid+","; 
                     aredyodeleteIds = aredyodeleteIds+index+",";
                     app.loanAppCI.viewModel.setDeldbownerids(strdelownids);
                     app.loanAppCI.viewModel.setAredyownerdeleteIds(aredyodeleteIds);
-                	$("#deldbownerids").val(strdelownids);
+                    $("#deldbownerids").val(strdelownids);
                     $("#aredyownerdeleteIds").val(aredyodeleteIds);
-                }
-                var currentIndex = $(this).data( "index" );                   
-                $("#adddowner" + currentIndex).remove();			
-                $('#ownercurrntControl').val($('#ownercurrntControl').val()-1);
+                    }
+                    var currentIndex = $(this).data( "index" );                   
+                    $("#adddowner" + currentIndex).remove();			
+                    $('#ownercurrntControl').val($('#ownercurrntControl').val()-1);
 
-                var newstrdeldivs = $("#ownerdeleteIds").val(); 
-                newstrdeldivs = newstrdeldivs+currentIndex+',';                                            
-                $("#ownerdeleteIds").val(newstrdeldivs);
-                app.loanAppCI.viewModel.setHiddenFieldDeleteIds(newstrdeldivs);
-                var ownerFlag = app.loanAppCI.viewModel.checkownerFlag();
-                app.loanAppCI.viewModel.deleteOutDebtVar();
-                $("#tabstrip-loanapp-ci").find(".km-scroll-container").css("-webkit-transform", "");
-                
-            });
-*/
+                    var newstrdeldivs = $("#ownerdeleteIds").val(); 
+                    newstrdeldivs = newstrdeldivs+currentIndex+',';                                            
+                    $("#ownerdeleteIds").val(newstrdeldivs);
+                    app.loanAppCI.viewModel.setHiddenFieldDeleteIds(newstrdeldivs);
+                    var ownerFlag = app.loanAppCI.viewModel.checkownerFlag();
+                    app.loanAppCI.viewModel.deleteOutDebtVar();
+                    $("#tabstrip-loanapp-ci").find(".km-scroll-container").css("-webkit-transform", "");
+                    
+                });
+
             });
             if(sessionStorage.getItem("LoanAppCIEditMode") ==='1')
             {
@@ -1060,30 +1015,25 @@
 
             });
             dataSource.fetch(function(){
-                alert("fetch");
                 var data = this.data();
-                console.log(data);
-                alert(data[0]['results']['faultcode']);
-                alert(data[0]['results']['onwerids']);
                 app.loginService.viewModel.hideloder();
+                
                 if(data[0]['results']['faultcode'] === 1 || data[0]['results']['faultcode'] === "1")
                 {
                     if(dataParam['contact_act'] === "Next")
                     {
-                            //  $msg= "Contact Information submitted successfully";
-                            //  app.loginService.viewModel.mobileNotification($msg,'info');
-                            alert("Loan App CI Next");
-                            sessionStorage.setItem("setprefilStatus",'false2');
-                            app.loanAppCI.viewModel.manageHiddenField(data[0]['results']['onwerids']);
-                        alert("now navigate");
-                            apps.navigate('views/loanAppPI.html');
-                       
+                        //  $msg= "Contact Information submitted successfully";
+                        //  app.loginService.viewModel.mobileNotification($msg,'info');
+                        alert("Loan App CI Next");
+                        sessionStorage.setItem("setprefilStatus",'false2');
+                        app.loanAppCI.viewModel.manageHiddenField(data[0]['results']['onwerids']);
+                        apps.navigate('views/loanAppPI.html');
                     }
                     else
                     {
-                      //  $msg= "Contact Information submitted successfully";
-                      //  app.loginService.viewModel.mobileNotification($msg,'info');
-                    	app.loansetting.viewModel.resetLoanAppBIForm();
+                        //  $msg= "Contact Information submitted successfully";
+                        //  app.loginService.viewModel.mobileNotification($msg,'info');
+                        app.loansetting.viewModel.resetLoanAppBIForm();
                         app.loanAppCI.viewModel.resetLoanAppCIForm();
                         apps.navigate('#tabstrip-home');
                     }
@@ -1091,9 +1041,9 @@
                 }
                 else if(data[0]['results']['faultcode'] === 0 || data[0]['results']['faultcode'] === "0")
                 {
-                     $msg= "Contact Information not submitted successfully.";
-                     app.loginService.viewModel.mobileNotification($msg,'info'); 
-                     return;
+                    $msg= "Contact Information not submitted successfully.";
+                    app.loginService.viewModel.mobileNotification($msg,'info'); 
+                    return;
                 }
                 else if(data[0]['results']['faultcode'] === 3 || data[0]['results']['faultcode'] === "3")
                 {
@@ -1101,14 +1051,13 @@
                     app.loginService.viewModel.mobileNotification($msg,'info');
                     return;
                 }
-                else{
-                    
+                else
+                {
                     $msg= "Server not responding properly,Please try again";
                     app.loginService.viewModel.mobileNotification($msg,'info');
                     return;
-                }           
-
-                });
+                } 
+            });
        },
         addDynamicOwner:function(num)
         {

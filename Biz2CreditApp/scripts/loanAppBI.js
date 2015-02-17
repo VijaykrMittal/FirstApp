@@ -1587,12 +1587,7 @@
                        // $msg= "Business Information submitted successfully";
                        // app.loginService.viewModel.mobileNotification($msg,'info');
                        
-                        //localStorage.setItem("fid",data[0]['results']['fid']);
-                        localStorage.setItem("fid",'92478');
-                        
-                        /*vkm*/
-                        localStorage.setItem("blegal_item",dataParam['blegal']);
-                        
+                        localStorage.setItem("fid",data[0]['results']['fid']);
                         if(sessionStorage.getItem("setprefilStatus")==='false')
                         {
                              sessionStorage.setItem("setprefilStatus",'true');
@@ -1604,12 +1599,11 @@
                         }
                         app.loansetting.viewModel.SetCurrentfidStatus();
                         apps.navigate('views/loanAppCI.html');
-                       // alert("first form submit successfully");
                     }
                     else
                     {
                        // $msg= "Business Information submitted successfully";
-                        //localStorage.setItem("fid",data[0]['results']['fid']);
+                        localStorage.setItem("fid",data[0]['results']['fid']);
                        // app.loginService.viewModel.mobileNotification($msg,'info');
                     	app.loansetting.viewModel.resetLoanAppBIForm();
                         apps.navigate('#tabstrip-home');

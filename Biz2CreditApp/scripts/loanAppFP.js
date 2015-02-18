@@ -132,7 +132,7 @@
             alert("ok");
             var status = $("#b2cApp4").valid();
 
-          /*  if(status === false)
+           if(status === false)
             {
             	return false;
             }
@@ -215,7 +215,7 @@
                     return;
                 }            
 
-                });*/
+                });
         },
         resetLoanAppFPForm:function()
         {

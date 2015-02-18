@@ -1394,12 +1394,13 @@
             });
             dataSource.fetch(function(){
                 var view = dataSource.view().sort();
+        console.log(view);
                 view.sort(SortByName);
                 var html='<option value="" selected="selected">Select City</option>';
                 $.each(view, function( index, value ) {
                 	html+='<option value="'+value['pid']+'">'+capitalize(value['city'].toLowerCase())+'</option>';
-                });
         
+                });
                 $("#cmbCity").html(html);
                 $("#loader").remove();
                 $('#cmbCity').removeAttr("disabled");

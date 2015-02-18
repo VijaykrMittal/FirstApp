@@ -513,7 +513,7 @@
 
                 //var totalOutstanding=0;               
                 $("#remove-ownerform"+index).on("click", function(e) { 
-                    
+                    alert("remove button");
                     var clickIndex = $(this).data("index");             /*--------------VKM-----------------*/
                     //var clickIndex = data.dataset.index;
                     var strdelownids = $("#deldbownerids").val(); 

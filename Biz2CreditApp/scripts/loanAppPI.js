@@ -6,6 +6,7 @@
 		currentfid:(localStorage.getItem("fid") !== '') ?  localStorage.getItem("fid") : '',
         show:function(e) {
             alert("loan app pi");
+            
             e.sender.reload=false;
             e.view.reload=false;
             $(".km-native-scroller").scrollTop(0);
@@ -37,6 +38,9 @@
             });
             totaldivs = app.loanAppCI.viewModel.get("totownerDiv");
             d_divids = app.loanAppCI.viewModel.get("ownerdeleteIds");
+            
+            alert("Total Divs : "+totaldivs);
+            alert("delete div ids : "+d_divids);
 
             for(c=0;c<=totaldivs;c++){
                 
@@ -51,7 +55,6 @@
                             //$('#check_credit_score'+c).attr('disabled', 'disabled');
                             $('#crdscorerNo'+c).hide();
                         }
-                          
                     }
                     else
                     {

@@ -502,11 +502,7 @@
             that.set("select_b_l_s",data['findetails']['blegal']);
             that.set("industry",(data['findetails']['loanParentIndustry']!== '0') ? data['findetails']['loanParentIndustry'] : "");
             displayorgCategoryEdit(data['findetails']['loanParentIndustry'],data['findetails']['loanIndustry']);
-           that.set("sub_industry",data['findetails']['loanIndustry']);
-           // that.set("sub_industry","ok");
-            
-            // displayorgCategoryEdit(item['loanParentIndustry'],item['loanIndustry']);
-          //  that.set("sub_industry",item['loanIndustry']);
+            that.set("sub_industry",data['findetails']['loanIndustry']);
             
             if(data['findetails']['dbs_month'] === null || data['findetails']['dbs_year'] === null || data['findetails']['revenue'] === null || data['findetails']['operatingexp'] === null)
             {

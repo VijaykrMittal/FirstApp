@@ -501,7 +501,7 @@
             that.set("mobile_number",data['findetails']['businessphone']);
             that.set("select_b_l_s",data['findetails']['blegal']);
             that.set("industry",(data['findetails']['loanParentIndustry']!== '0') ? data['findetails']['loanParentIndustry'] : "");
-           // displayorgCategoryEdit(data['findetails']['loanParentIndustry'],data['findetails']['loanIndustry']);
+            displayorgCategoryEdit(data['findetails']['loanParentIndustry'],data['findetails']['loanIndustry']);
            that.set("sub_industry",data['findetails']['loanIndustry']);
            // that.set("sub_industry","ok");
             

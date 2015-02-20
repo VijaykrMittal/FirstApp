@@ -1452,6 +1452,9 @@
             },
             filter: { field: "state_id", operator: "eq", value: val }
             });
+        
+        console.log("state data");
+        console.log(dataSource);
             dataSource.fetch(function(){
                 var that = this;
                 var view = dataSource.view().sort();
@@ -1485,14 +1488,15 @@
             },
             filter: { field: "oid", operator: "eq", value: val }
             });
-        
-          dataSource.fetch(function(){
+        alert(dataSource);
+        console.log(dataSource);
+         /* dataSource.fetch(function(){
        
-               var view = dataSource.view().sort();
+               var view = dataSource.view();
             alert(view);
         
-             /*  var html='<option value="" selected="selected">Select Sub Industry</option>';
-              /*  $.each(view, function( index, value ) {
+              var html='<option value="" selected="selected">Select Sub Industry</option>';
+                $.each(view, function( index, value ) {
                     html+='<option value="'+value['cid']+'">'+value['catname']+'</option>';
                 });
               
@@ -1505,8 +1509,8 @@
                 $("#loader").remove();
                 $('#orgcategory').removeAttr("disabled");
                 $('#orgtype').removeAttr("disabled");
-                $("select#orgcategory option[value='"+sub+"']").prop('selected',true);*/
-            });
+                $("select#orgcategory option[value='"+sub+"']").prop('selected',true);
+            });*/
       
     }
     function SortByName(a, b){

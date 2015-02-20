@@ -70,6 +70,8 @@
         {
             app.analyticsService.viewModel.trackFeature("ManageApplication.User click on Application by Edit Mode");
             app.loginService.viewModel.applicationEditMode(e);  
+            console.log("editloan");
+            console.log(e);
         },
         applyFreshLoan:function(e)
         {

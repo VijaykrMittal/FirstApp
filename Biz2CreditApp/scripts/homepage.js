@@ -62,8 +62,7 @@
                 },
                 error: function (e) {
                 	apps.hideLoading();
-                	navigator.notification.alert("Server not responding properly.Please check your internet connection.",
-                	function () { }, "Notification", 'OK');
+                	navigator.notification.alert("Server not responding properly.Please check your internet connection.",function () { }, "Notification", 'OK');
                    // app.analyticsService.viewModel.trackException(e,'Api Call.Unable to get response in userdashboard api.');
                     error = {name:'API FAILED',stack:'Server is not responding properly.',message:"API did not load/hit properly during "+(e.errorThrown.message) +" in Userdashboard API."};
                     app.analyticsService.viewModel.trackException(error,error.message);

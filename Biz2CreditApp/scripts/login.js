@@ -359,10 +359,6 @@
         },
         applicationEditMode:function(e)
         {
-            alert("Application Edit Mode");
-            alert(device.platform);
-           
-            alert("e.data.fid"+e.data.fid);
             app.loansetting.viewModel.resetLoanAppBIForm();
             app.loanAppCI.viewModel.resetLoanAppCIForm();
             app.loanAppPI.viewModel.resetLoanAppPIForm();
@@ -376,14 +372,11 @@
             
             if(device.platform=== 'iOS' || device.platform=== 'Android')
             {
-               // alert("Platform"+e.target.dataset.fid);
-               // localStorage.setItem("fid",e.target.dataset.fid);
+                localStorage.setItem("fid",e.target.dataset.fid);
             }
             else
             {
-               // alert(e.data.fid);
-               // localStorage.setItem("fid",e.data.fid);
-                //localStorage.setItem("fid",e.target.id);
+                localStorage.setItem("fid",e.data.fid);
             }
             
             sessionStorage.setItem("LoanAppBIEditMode",'1');

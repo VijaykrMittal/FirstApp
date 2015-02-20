@@ -78,8 +78,6 @@
            
             var data = e.sender.params;
             
-            console.log(device.platform);
-            
             $(".km-native-scroller").scrollTop(0);
             $("#add-form").unbind('.myPlugin');
             $(".outDebt").unbind(".myPlugin");
@@ -486,14 +484,16 @@
         setBIeditForm:function(data)
         {
             var that = this;
-            alert("setBIeditForm");
+            var item = data['findetails'];
+            console.log(item.orgname);
+            alert(item.orgname);
             that.set("legal_business_name",data['findetails']['orgname']);
             that.set("dba_name",data['findetails']['dbaname']);
             that.set("street_no",(data['findetails']['civic']!== '0') ? data['findetails']['civic'] : "");
             
             that.set("street_name",data['findetails']['baddr']);
             that.set("apt_suite_unit",data['findetails']['street1']);
-            that.set("select_state",(data['findetails']['state']!== '0') ? data['findetails']['state'] : "");
+           that.set("select_state",(data['findetails']['state']!== '0') ? data['findetails']['state'] : "");
             createCityCmbFirstEdit(data['findetails']['state'] ,data['findetails']['cityid']);
             that.set("select_city",data['findetails']['cityid']);
             
@@ -501,8 +501,12 @@
             that.set("mobile_number",data['findetails']['businessphone']);
             that.set("select_b_l_s",data['findetails']['blegal']);
             that.set("industry",(data['findetails']['loanParentIndustry']!== '0') ? data['findetails']['loanParentIndustry'] : "");
-            displayorgCategoryEdit(data['findetails']['loanParentIndustry'],data['findetails']['loanIndustry']);
-            that.set("sub_industry",data['findetails']['loanIndustry']);
+           // displayorgCategoryEdit(data['findetails']['loanParentIndustry'],data['findetails']['loanIndustry']);
+           that.set("sub_industry",data['findetails']['loanIndustry']);
+           // that.set("sub_industry","ok");
+            
+            // displayorgCategoryEdit(item['loanParentIndustry'],item['loanIndustry']);
+          //  that.set("sub_industry",item['loanIndustry']);
             
             if(data['findetails']['dbs_month'] === null || data['findetails']['dbs_year'] === null || data['findetails']['revenue'] === null || data['findetails']['operatingexp'] === null)
             {
@@ -636,6 +640,7 @@
                 var index;
                 $('.outDebt:radio[value="'+data['findetails']['debttype']+'"]').prop("checked",true);
                 var totalDiv = data['findetails']['finloan_details'].length;
+                alert("total div "+totalDiv);
                 for(index=1;index<=totalDiv;index++)
                 { 
                     $('#outsta_debt').show();
@@ -700,11 +705,9 @@
                         viewFModel.set("txtYearTerm"+index,txtYearTermVal);
                     }
                 }
-                
             }
             else
             {
-                alert("oooook");
                 $('.outDebt:radio[value="'+data['findetails']['debttype']+'"]').prop("checked",true);
             } 
             var colArr = data['findetails']['collateral'].split(',');
@@ -725,7 +728,6 @@
 
             });
             app.loansetting.viewModel.SetCurrentfidStatus();
- 
         },
         getForm:function(index, action) {
             

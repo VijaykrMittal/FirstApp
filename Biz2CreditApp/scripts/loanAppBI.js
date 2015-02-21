@@ -442,8 +442,7 @@
         }); 
             
         if(data.param ==='editMode' && sessionStorage.getItem("LoanAppBIEditMode")==='1')
-        {   
-            alert("Edit API CALL");
+        { 
             app.loginService.viewModel.showloder();
             var dataS = new kendo.data.DataSource({
                 transport: {

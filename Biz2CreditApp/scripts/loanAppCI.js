@@ -555,13 +555,16 @@
            
             var that =this;
             var data =manageData;
+            var dataModel = app.loansetting.viewModel;
+            alert(dataModel.select_b_l_s);
             if(typeof data['findetails']['owner_details']  !== "undefined")
             {
                 
-                    app.loginService.viewModel.showloder();
+                   // app.loginService.viewModel.showloder();
                     keyindex=1;
                 
                     $.each(data['findetails']['owner_details'], function( index, value ) {
+                        alert("my own number "+value['own_no']);
                         if(value['own_no']===1 || value['own_no']==='1')
                         {
                             pownemail = value['own_email'];
@@ -569,7 +572,7 @@
                         if(value['own_no']===1 || value['own_no']==='1')
                         {
                             var jobTitleRequest = value['own_jobtitle'];
-                            if(data['findetails']['blegal'] ===app.loansetting.viewModel.select_b_l_s)
+                            if(data['findetails']['blegal'] === dataModel.select_b_l_s)
                             {
                                 $("#OwnJobTitle option[value='"+jobTitleRequest+"']").prop("selected",true); 
                                 that.set("Owner_JobTitle",jobTitleRequest);
@@ -607,17 +610,24 @@
                             that.set("reasonlscore0",value['low_rpt_reason']);
                             
                         }
-                        else
+                       else
                         {
-                            $("#add-ownerForm").trigger('click');
-                            viewCModel.set("OwnerFirstName"+keyindex,(value['own_fname']!== 'undefined') ? value['own_fname'] : "");
+                           /* if($("#add-ownerForm").trigger('click'))
+                            {
+                                alert("ok");
+                            }
+                            else
+                            {
+                                alert("sorry");
+                            }
+                          viewCModel.set("OwnerFirstName"+keyindex,(value['own_fname']!== 'undefined') ? value['own_fname'] : "");
                             viewCModel.set("OwnerLastName"+keyindex,(value['own_lname']!== 'undefined') ? value['own_lname'] : "");
                             viewCModel.set("email"+keyindex,(value['own_email']!== 'undefined') ? value['own_email'] : "");
                             //viewCModel.set("OwnJobTitle"+index,(EditFormData['0']['OwnJobTitle'+index]!== 'undefined') ? EditFormData['0']['OwnJobTitle'+index] : "");
                             viewCModel.set("OwnerCivic"+keyindex,(value['own_civic']!== '0') ? value['own_civic'] : "");
                             viewCModel.set("OwnerStreetAddress"+keyindex,(value['own_street']!== 'undefined') ? value['own_street'] : "");
                             viewCModel.set("own_state"+keyindex,(value['own_state']!== '0') ? value['own_state'] : "");
-                            createCityCmbEdit(keyindex,(value['own_state']!== '0') ? value['own_state'] : "" , value['own_city']);
+                            //createCityCmbEdit(keyindex,(value['own_state']!== '0') ? value['own_state'] : "" , value['own_city']);
                             viewCModel.set("own_city"+keyindex,(value['own_city']!== 'undefined') ? value['own_city'] : "");
                             viewCModel.set("OwnZipCode"+keyindex,(value['own_zip']!== 'undefined') ? value['own_zip'] : "");
                             var own_DOB = value['own_dob'].split('-');
@@ -630,7 +640,7 @@
                             viewCModel.set("isCheckScore"+keyindex,(value['check_credit_score']!== 'undefined') ? value['check_credit_score'] : "");
                             viewCModel.set("creditScore"+keyindex,(value['credittype']!== 'undefined') ? value['credittype'] : "");
                             viewCModel.set("reasonlscore"+keyindex,(value['low_rpt_reason']!== 'undefined') ? value['low_rpt_reason'] : "");
-                            if(data['findetails']['blegal'] === app.loansetting.viewModel.select_b_l_s)
+                            if(data['findetails']['blegal'] === dataModel.select_b_l_s)
                             {
                                 viewCModel.set("OwnJobTitle"+keyindex,value['own_jobtitle']);
                                 $("#OwnJobTitle"+keyindex+" option[value='"+value['own_jobtitle']+"']").prop("selected",true);
@@ -639,12 +649,12 @@
                             {
                                 $('#OwnJobTitle'+keyindex+' option[value=""]').prop("selected",true);
                             }
-                            keyindex++;
+                            keyindex++;*/
                         }
                     	
                 	});      
 
-                    totownerDiv = that.get("totownerDiv");
+                   /* totownerDiv = that.get("totownerDiv");
                     var total_per = 0; 
                     for(var c=0; c<=totownerDiv; c++){ 
                         if(c===0) {
@@ -667,7 +677,7 @@
                     }
                     ownerpValidate();
                     that.set("primaryOwner",pownemail);
-                    $("#cmbowners option[value='"+pownemail+"']").prop("selected", true); 
+                    $("#cmbowners option[value='"+pownemail+"']").prop("selected", true); */
             }
         },
         getownerForm:function(index) {

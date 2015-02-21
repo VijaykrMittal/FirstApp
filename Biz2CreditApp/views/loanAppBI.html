@@ -1456,7 +1456,6 @@
             dataSource.fetch(function(){
                 var that = this;
                 var view = dataSource.view().sort();
-        alert("state length :"+view.length);
                 view.sort(SortByName);
                 var html='<option value="" selected="selected">Select City</option>';
                 $.each(view, function( index, value ) {
@@ -1496,8 +1495,6 @@
                 $.each(view, function( index, value ) {
                 html+='<option value="'+value['cid']+'">'+value['catname']+'</option>';
                 });
-
-                alert(html);
                 $("#orgcategory").html(html);
                 $("#loader").remove();
                 $('#orgcategory').removeAttr("disabled");

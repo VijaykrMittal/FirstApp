@@ -430,20 +430,24 @@
         transitionSlideForgot:function()
         {
             //app.loginService.viewModel.moveToTarget("#tabstrip-forgot-pass");
-             window.plugins.nativepagetransitions.flip({
+            /* window.plugins.nativepagetransitions.flip({
                 "href" : "#tabstrip-forgot-pass",
                 "duration":300,
                 "slowdownfactor":3,
-            });
+            });*/
+            
+            apps.navigate("#tabstrip-forgot-pass");
         },
         transitionSlideSignup:function()
         {
             //app.loginService.viewModel.moveToTarget("#tabstrip-sign-up");
-             window.plugins.nativepagetransitions.flip({
+             /*window.plugins.nativepagetransitions.flip({
                 "href" : "#tabstrip-sign-up",
                 "duration":300,
                 "slowdownfactor":3,
-            });
+            });*/
+            
+            apps.navigate("#tabstrip-sign-up");
         },
         slideToBack:function()
         {

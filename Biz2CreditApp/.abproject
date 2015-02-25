@@ -57,5 +57,6 @@
   "WP8PublisherID": "{10e7cda5-5087-4017-a803-aca65e872f3a}",
   "WP8Publisher": "",
   "Framework": "Cordova",
-  "projectVersion": "1"
+  "projectVersion": "1",
+  "WPSdk": "8.0"
 }

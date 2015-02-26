@@ -1393,7 +1393,12 @@
             }
             else if(device.platform ===  "Win32NT")
             {
-                window.open(fileEntry.fullPath,"_blank","location=yes,hidden=no");
+                                alert("ofullPath="+fileEntry.fullPath);
+                                alert("osDirectory="+fileEntry.isDirectory);
+                                alert("oisFile="+fileEntry.isFile);
+                                alert("oname="+fileEntry.name);
+                                alert("onativeURL="+fileEntry.nativeURL);
+                window.open(fileEntry.fullPath,"_system","location=yes,hidden=no");
             }
             else
             {
@@ -1428,7 +1433,12 @@
                 	}
                     else if(device.platform ===  "Win32NT")
                     {
-                        window.open(fileEntry.fullPath,"_blank","location=yes,hidden=no");
+                         alert("ofullPath="+fileEntry.fullPath);
+                                alert("osDirectory="+fileEntry.isDirectory);
+                                alert("oisFile="+fileEntry.isFile);
+                                alert("oname="+fileEntry.name);
+                                alert("onativeURL="+fileEntry.nativeURL);
+                        window.open(fileEntry.fullPath,"_system","location=yes,hidden=no");
                     }
                 	else
                 	{

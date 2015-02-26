@@ -54,6 +54,7 @@
             	});
 
             var directoryReader = directoryEntry.createReader();
+            console.log(directoryReader);
             directoryReader.readEntries(function(entries){
             var dirContent = $('#dirContent');
             dirContent.empty();

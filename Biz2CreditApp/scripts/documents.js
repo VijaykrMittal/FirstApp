@@ -323,8 +323,9 @@
                 }).kendoTouch({ 
                 	filter: "li",
                   	tap: function (e) {
-                      // e.touch.currentTarget.className='km-state-active';
-							 if(e.touch.initialTouch.dataset.id === "folder")
+                        if (device.platform === "Android" || device.platform === "iOS") 
+                        {  
+							if(e.touch.initialTouch.dataset.id === "folder")
                             { 
                                 if(!hold)
                         		{
@@ -372,6 +373,61 @@
                                     app.documentsetting.viewModel.downloadFile(fileName,folderName);
                                 }
                             }
+                       }
+                      else//for window
+                      {
+
+                          if(e.touch.initialTouch.attributes['data-id'].value === "folder")
+                          { 
+                                if(!hold)
+                        		{
+                                    sessionStorage.currentFId = e.touch.currentTarget.id;
+                            		sessionStorage.currentFName = e.touch.currentTarget.innerText;
+                                    
+                                    if($.trim(e.touch.currentTarget.innerText)==='Shared Files'){
+                                        shareBackHistory.push($.trim(e.touch.currentTarget.innerText));
+                                        
+                                    }
+                                    else if($.trim(e.touch.currentTarget.innerText)==='Shared Folders')
+                                    {
+                                        shareBackHistory.push($.trim(e.touch.currentTarget.innerText));
+                                        
+                                        
+                                    }
+                                    else if(shareBackHistory[shareBackHistory.length-1] ==='Shared Folders' || shareBackHistory[shareBackHistory.length-1] ==='subSharedFolder')
+                                    {
+                                        shareBackHistory.push('subSharedFolder');
+                                    }
+                        		
+                                    if(e.touch.currentTarget.id !== "0")
+                                    {  
+                                    	app.documentsetting.viewModel.setInnerPage();
+                                    	app.documentsetting.viewModel.setParentId(e.touch.currentTarget.id);
+                                    }
+                                    else
+                                    {
+                                    	app.movedocumentsetting.viewModel.setMainPage();
+                                    	app.movedocumentsetting.viewModel.setParentId(0);
+                                    } 
+                                	docsBackHistory.push(e.touch.currentTarget.id);
+                                	app.documentsetting.viewModel.refreshView();
+                                    
+                       		 }
+                            }
+                            else if(e.touch.initialTouch.attributes['data-id'].value === "files")
+                            {
+                                if(!hold)
+                        		{
+                                    sessionStorage.currentFileId = e.touch.currentTarget.id;
+                                    sessionStorage.downloadLink = $.trim(e.touch.currentTarget.className);
+                                    sessionStorage.currentFileName = e.touch.currentTarget.innerText;
+                                    fileName = $.trim(e.touch.currentTarget.innerText);
+                                    folderName = "biz2docs";
+                                    app.documentsetting.viewModel.downloadFile(fileName,folderName);
+                                }
+                            }
+                              
+                      }
                 	}, 
                 	touchstart: function (e) {
                 		hold = false;
@@ -380,95 +436,191 @@
                 	hold: function (e) {
                         hold = true;
                         navigator.notification.vibrate(20);
-						if(e.touch.initialTouch.dataset.id === "folder")
-                        {
-                            sessionStorage.currentFId = e.touch.currentTarget.id;
-                        	sessionStorage.currentFName = e.touch.currentTarget.innerText;
-                            if(e.touch.initialTouch.innerText !== "Shared Files" && e.touch.initialTouch.innerText !== "Shared Folders")
+                        if (device.platform === "Android" || device.platform === "iOS") {
+                            
+    						if(e.touch.initialTouch.dataset.id === "folder")
                             {
-                                if(shareBackHistory[shareBackHistory.length-1]==='Shared Folders')
+                                sessionStorage.currentFId = e.touch.currentTarget.id;
+                            	sessionStorage.currentFName = e.touch.currentTarget.innerText;
+                                if(e.touch.initialTouch.innerText !== "Shared Files" && e.touch.initialTouch.innerText !== "Shared Folders")
                                 {
-                                    $("#tabstrip-share-folder-events").data("kendoMobileModalView").open();
-                                	$("#tabstrip-share-folder-events").find(".km-scroll-container").css("-webkit-transform", "");
-                                }
-                                else if(shareBackHistory[shareBackHistory.length-1]==='subSharedFolder')
-                                {
-                                }
-                                else
-                                {
-                                    $("#tabstrip-folder-events").data("kendoMobileModalView").open();
-                                	$("#tabstrip-folder-events").find(".km-scroll-container").css("-webkit-transform", "");
-                                }
-                    			
-                    			$('.folderName').html('');
-                    			if(e.touch.currentTarget.innerText.length >= 20)
-                                {
-                                   $('.folderName').append('<span>'+e.touch.currentTarget.innerText.substring(0, 15)+'...</span>'); 
-                                }
-                                else
-                                {
-                                    $('.folderName').append('<span>'+e.touch.currentTarget.innerText+'</span>');
-                                }
-                    			$('.folderName').attr("id",e.touch.currentTarget.id)
-                            }
-                            else if(e.touch.initialTouch.innerText === "Shared Files" || e.touch.initialTouch.innerText === "Shared Folders")
-                            {
-                                navigator.notification.alert("This is a default folder. It cannot be shared or removed.",
-                                function () { }, "Notification", 'OK');
-                            }
-                        }
-                        else if(e.touch.initialTouch.dataset.id === "files")
-                        {
-                                sessionStorage.currentFileId = e.touch.currentTarget.id;
-                                sessionStorage.currentFileName = e.touch.currentTarget.innerText;
-                                sessionStorage.downloadLink = $.trim(e.touch.currentTarget.className);
-                                if (device.platform === "Android") {
-                                    if(shareBackHistory[0]==='Shared Files'){
-                                        $("#tabstrip-share-files-file-events").data("kendoMobileModalView").open();
-                                		$("#tabstrip-share-files-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
-                                    }
-                                    else if(shareBackHistory[0]==='Shared Folders')
+                                    if(shareBackHistory[shareBackHistory.length-1]==='Shared Folders')
                                     {
-                                        $("#tabstrip-share-folders-file-events").data("kendoMobileModalView").open();
-                                		$("#tabstrip-share-folders-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                        $("#tabstrip-share-folder-events").data("kendoMobileModalView").open();
+                                    	$("#tabstrip-share-folder-events").find(".km-scroll-container").css("-webkit-transform", "");
+                                    }
+                                    else if(shareBackHistory[shareBackHistory.length-1]==='subSharedFolder')
+                                    {
                                     }
                                     else
                                     {
-                                    	$("#tabstrip-files-events").data("kendoMobileModalView").open();
-                                		$("#tabstrip-files-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                        $("#tabstrip-folder-events").data("kendoMobileModalView").open();
+                                    	$("#tabstrip-folder-events").find(".km-scroll-container").css("-webkit-transform", "");
                                     }
-                            		
-                                }
-                            	else
-                            	{
-                                    if(shareBackHistory[0]==='Shared Files'){
-                                    	$("#tabstrip-share-files-file-events-ios").data("kendoMobileModalView").open();
-                                		$("#tabstrip-share-files-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
-                                    }
-                                    else if(shareBackHistory[0]==='Shared Folders')
+                        			
+                        			$('.folderName').html('');
+                        			if(e.touch.currentTarget.innerText.length >= 20)
                                     {
-                                        $("#tabstrip-share-folders-file-events-ios").data("kendoMobileModalView").open();
-                                		$("#tabstrip-share-folders-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");  
+                                       $('.folderName').append('<span>'+e.touch.currentTarget.innerText.substring(0, 15)+'...</span>'); 
                                     }
                                     else
                                     {
-                                    	$("#tabstrip-files-events-ios").data("kendoMobileModalView").open();
-                                		$("#tabstrip-files-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
+                                        $('.folderName').append('<span>'+e.touch.currentTarget.innerText+'</span>');
+                                    }
+                        			$('.folderName').attr("id",e.touch.currentTarget.id)
+                                }
+                                else if(e.touch.initialTouch.innerText === "Shared Files" || e.touch.initialTouch.innerText === "Shared Folders")
+                                {
+                                    navigator.notification.alert("This is a default folder. It cannot be shared or removed.",
+                                    function () { }, "Notification", 'OK');
+                                }
+                            }
+                            else if(e.touch.initialTouch.dataset.id === "files")
+                            {
+                                    sessionStorage.currentFileId = e.touch.currentTarget.id;
+                                    sessionStorage.currentFileName = e.touch.currentTarget.innerText;
+                                    sessionStorage.downloadLink = $.trim(e.touch.currentTarget.className);
+                                    if (device.platform === "Android") {
+                                        if(shareBackHistory[0]==='Shared Files'){
+                                            $("#tabstrip-share-files-file-events").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-share-files-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                        }
+                                        else if(shareBackHistory[0]==='Shared Folders')
+                                        {
+                                            $("#tabstrip-share-folders-file-events").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-share-folders-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                        }
+                                        else
+                                        {
+                                        	$("#tabstrip-files-events").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-files-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                        }
+                                		
+                                    }
+                                	else
+                                	{
+                                        if(shareBackHistory[0]==='Shared Files'){
+                                        	$("#tabstrip-share-files-file-events-ios").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-share-files-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
+                                        }
+                                        else if(shareBackHistory[0]==='Shared Folders')
+                                        {
+                                            $("#tabstrip-share-folders-file-events-ios").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-share-folders-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");  
+                                        }
+                                        else
+                                        {
+                                        	$("#tabstrip-files-events-ios").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-files-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
+                                        }
+                                        
+                                    }
+                                	$('.folderName').html('');
+                                    if(e.touch.currentTarget.innerText.length >= 20)
+                                    {
+                                       $('.folderName').append('<span>'+e.touch.currentTarget.innerText.substring(0, 15)+'...</span>'); 
+                                    }
+                                    else
+                                    {
+                                        $('.folderName').append('<span>'+e.touch.currentTarget.innerText+'</span>');
                                     }
                                     
-                                }
-                            	$('.folderName').html('');
-                                if(e.touch.currentTarget.innerText.length >= 20)
+                            }
+                          }
+                       else
+                       {
+                           if(e.touch.initialTouch.attributes['data-id'].value === "folder")
+                            {
+                                sessionStorage.currentFId = e.touch.currentTarget.id;
+                            	sessionStorage.currentFName = e.touch.currentTarget.innerText;
+                                if(e.touch.initialTouch.innerText !== "Shared Files" && e.touch.initialTouch.innerText !== "Shared Folders")
                                 {
-                                   $('.folderName').append('<span>'+e.touch.currentTarget.innerText.substring(0, 15)+'...</span>'); 
+                                    if(shareBackHistory[shareBackHistory.length-1]==='Shared Folders')
+                                    {
+                                        $("#tabstrip-share-folder-events").data("kendoMobileModalView").open();
+                                    	$("#tabstrip-share-folder-events").find(".km-scroll-container").css("-webkit-transform", "");
+                                    }
+                                    else if(shareBackHistory[shareBackHistory.length-1]==='subSharedFolder')
+                                    {
+                                    }
+                                    else
+                                    {
+                                        $("#tabstrip-folder-events").data("kendoMobileModalView").open();
+                                    	$("#tabstrip-folder-events").find(".km-scroll-container").css("-webkit-transform", "");
+                                    }
+                        			
+                        			$('.folderName').html('');
+                        			if(e.touch.currentTarget.innerText.length >= 20)
+                                    {
+                                       $('.folderName').append('<span>'+e.touch.currentTarget.innerText.substring(0, 15)+'...</span>'); 
+                                    }
+                                    else
+                                    {
+                                        $('.folderName').append('<span>'+e.touch.currentTarget.innerText+'</span>');
+                                    }
+                        			$('.folderName').attr("id",e.touch.currentTarget.id)
                                 }
-                                else
+                                else if(e.touch.initialTouch.innerText === "Shared Files" || e.touch.initialTouch.innerText === "Shared Folders")
                                 {
-                                    $('.folderName').append('<span>'+e.touch.currentTarget.innerText+'</span>');
+                                    navigator.notification.alert("This is a default folder. It cannot be shared or removed.",
+                                    function () { }, "Notification", 'OK');
                                 }
-                                
-                        }
-                		e.touch.currentTarget.className=''
+                            }
+                            else if(e.touch.initialTouch.attributes['data-id'].value === "files")
+                            {
+                                    sessionStorage.currentFileId = e.touch.currentTarget.id;
+                                    sessionStorage.currentFileName = e.touch.currentTarget.innerText;
+                                    sessionStorage.downloadLink = $.trim(e.touch.currentTarget.className);
+                                    if (device.platform === "Android") {
+                                        if(shareBackHistory[0]==='Shared Files'){
+                                            $("#tabstrip-share-files-file-events").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-share-files-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                        }
+                                        else if(shareBackHistory[0]==='Shared Folders')
+                                        {
+                                            $("#tabstrip-share-folders-file-events").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-share-folders-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                        }
+                                        else
+                                        {
+                                        	$("#tabstrip-files-events").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-files-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                        }
+                                		
+                                    }
+                                	else
+                                	{
+                                        if(shareBackHistory[0]==='Shared Files'){
+                                        	$("#tabstrip-share-files-file-events-ios").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-share-files-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
+                                        }
+                                        else if(shareBackHistory[0]==='Shared Folders')
+                                        {
+                                            $("#tabstrip-share-folders-file-events-ios").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-share-folders-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");  
+                                        }
+                                        else
+                                        {
+                                        	$("#tabstrip-files-events-ios").data("kendoMobileModalView").open();
+                                    		$("#tabstrip-files-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
+                                        }
+                                        
+                                    }
+                                	$('.folderName').html('');
+                                    if(e.touch.currentTarget.innerText.length >= 20)
+                                    {
+                                       $('.folderName').append('<span>'+e.touch.currentTarget.innerText.substring(0, 15)+'...</span>'); 
+                                    }
+                                    else
+                                    {
+                                        $('.folderName').append('<span>'+e.touch.currentTarget.innerText+'</span>');
+                                    }
+                                    
+                            }
+                           
+                            
+                       }
+                		e.touch.currentTarget.className='';
                 	}          
             });
             $("#tabstrip-docs").find(".km-scroll-container").css("-webkit-transform", "");
@@ -527,14 +679,30 @@
 
         
         deleteFolder:function(e)
-        { 
-            if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
-            {
-               closeModalView(e); 
+        {
+            if (device.platform === "Android" || device.platform === "iOS") 
+            { 
+                
+                if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
+                {
+                   closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                }
             }
             else
             {
-                $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                if(typeof e.sender.element.context.attributes['data-src'] === "undefined" || e.sender.element.context.attributes['data-src'].value === "")
+                {
+                   closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                }
+                
             }
             
             $("#tabstrip-delete-folder").data("kendoMobileModalView").open();
@@ -633,15 +801,32 @@
         },
         deleteFile:function(e)
         {
-            if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
+            if (device.platform === "Android" || device.platform === "iOS") 
             {
-               closeModalView(e); 
+                if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
+                {
+                   closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-files-events-popup").data("kendoMobilePopOver").close();
+                    $("#tabstrip-share-files-file-events-popup").data("kendoMobilePopOver").close();
+                } 
             }
             else
             {
-                $("#tabstrip-files-events-popup").data("kendoMobilePopOver").close();
-                $("#tabstrip-share-files-file-events-popup").data("kendoMobilePopOver").close();
+                if(typeof e.sender.element.context.attributes['data-src'] === "undefined" || e.sender.element.context.attributes['data-src'].value === "")
+                {
+                   closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-files-events-popup").data("kendoMobilePopOver").close();
+                    $("#tabstrip-share-files-file-events-popup").data("kendoMobilePopOver").close();
+                } 
+                
             }
+            
            $("#tabstrip-delete-files").data("kendoMobileModalView").open();
         } ,
         thisFileDelete:function(e)
@@ -739,13 +924,27 @@
        
         renameFolder:function(e)
         {
-            if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
-            {
-               closeModalView(e); 
+            if (device.platform === "Android" || device.platform === "iOS") {  
+                if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
+                {
+                    closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                }
             }
             else
             {
-                $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                if(typeof e.sender.element.context.attributes['data-src'] === "undefined" || e.sender.element.context.attributes['data-src'].value === "")
+                {
+                    closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                }
+                
             }
             var that = this;
             that.set("renameFolderName",$.trim(sessionStorage.getItem("currentFName")));
@@ -834,13 +1033,27 @@
         },
         renameFile:function(e)
         {
-            if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
-            {
-               closeModalView(e); 
+            if (device.platform === "Android" || device.platform === "iOS") 
+            {  
+                if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
+                {
+                   closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-files-events-popup").data("kendoMobilePopOver").close();
+                }
             }
             else
             {
-                $("#tabstrip-files-events-popup").data("kendoMobilePopOver").close();
+                if(typeof e.sender.element.context.attributes['data-src'] === "undefined" || e.sender.element.context.attributes['data-src'].value === "")
+                {
+                   closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-files-events-popup").data("kendoMobilePopOver").close();
+                } 
             }
             var that = this;
             that.set("fileExt",$.trim(that.getFileExtension(sessionStorage.getItem("currentFileName"))));
@@ -940,27 +1153,58 @@
             }
         },
         exportFile:function(e)
-        {	
-            if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
+        {
+            if (device.platform === "Android" || device.platform === "iOS")
             {
-               closeModalView(e); 
+                if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
+                {
+                   closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                }   
             }
             else
             {
-                $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                if(typeof e.sender.element.context.attributes['data-src'] === "undefined" || e.sender.element.context.attributes['data-src'].value === "")
+                {
+                   closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                }  
+                
             }
+            
              apps.navigate('views/fileExport.html');
         },
         moveFolder:function(e)
         {
-            if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
+            if (device.platform === "Android" || device.platform === "iOS")
             {
-               closeModalView(e); 
+                if(typeof e.sender.element.context.dataset.src === "undefined" || e.sender.element.context.dataset.src === "")
+                {
+                   closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                }
             }
             else
             {
-                $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                if(typeof e.sender.element.context.attributes['data-src'] === "undefined" || e.sender.element.context.attributes['data-src'].value === "")
+                {
+                   closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-folder-events-popup").data("kendoMobilePopOver").close();
+                } 
             }
+            
             var params = e.button.data();
             apps.navigate('views/movedocs.html?param='+params.checkstatus);
         },
@@ -1110,11 +1354,16 @@
             	app.documentsetting.viewModel.getFilesystem(
             		function(fileSystem) {
             			
-            			if (device.platform === "Android") {
+            			if (device.platform === "Android" || device.platform ===  "Win32NT") {
             				app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
             					filePath = folder.nativeURL + "\/" + fileName;
                                 relPath = folder.name + "\/" + fileName;
-                                //relPath =fileName;
+                                alert("name="+fileSystem.name);
+                                alert("fullPath="+fileSystem.root.fullPath);
+                                alert("isDirectory="+fileSystem.root.isDirectory);
+                                alert("isFile="+fileSystem.root.isFile);
+                                alert("name="+fileSystem.root.name);
+                                alert("nativeURL="+fileSystem.root.nativeURL);
                                 fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
                                 
             				}, function() {
@@ -1137,10 +1386,16 @@
         
         fileExists:function(fileEntry)
         {
-            //console.log(fileEntry);
+            console.log(fileEntry);
             if(device.platform.toLowerCase() === "ios" )
             {
                 window.open(encodeURI(fileEntry.nativeURL),"_blank","location=yes,hidden=no");
+            }
+            else if(device.platform ===  "Win32NT")
+            {
+                alert(fileEntry.fullPath);
+                alert(fileEntry.nativeURL);
+                window.open(fileEntry.fullPath,"_system","location=yes,hidden=no");
             }
             else
             {
@@ -1173,6 +1428,11 @@
                 	{
                 		window.open(encodeURI(fileEntry.nativeURL),"_blank","location=yes,hidden=no");
                 	}
+                    else if(device.platform ===  "Win32NT")
+                    {
+                        alert(fileEntry.fullPath);
+                        window.open(fileEntry.fullPath,"_system","location=yes,hidden=no");
+                    }
                 	else
                 	{
                 		window.open(encodeURI(fileEntry.nativeURL),"_system","location=yes,hidden=no");
@@ -1232,14 +1492,29 @@
         },
         shareVia:function(e)
         {
-            if(typeof e.sender.element.context.dataset.src === 'undefined')
+            if (device.platform === "Android" || device.platform === "iOS")
             {
-               closeModalView(e); 
+                if(typeof e.sender.element.context.dataset.src === 'undefined')
+                {
+                    closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-files-events-popup").data("kendoMobilePopOver").close();
+                }
             }
             else
             {
-                $("#tabstrip-files-events-popup").data("kendoMobilePopOver").close();
+                if(typeof e.sender.element.context.attributes['data-src'] === 'undefined')
+                {
+                    closeModalView(e); 
+                }
+                else
+                {
+                    $("#tabstrip-files-events-popup").data("kendoMobilePopOver").close();
+                } 
             }
+            
             var socialsharing =window.plugins.socialsharing;
             var message ='';
             var subject = '';

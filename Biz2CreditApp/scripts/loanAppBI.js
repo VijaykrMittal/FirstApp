@@ -441,7 +441,7 @@
 
         }); 
             
-        if(data.param ==='editMode' && sessionStorage.getItem("LoanAppBIEditMode")==='1')
+        if(e.sender.params.param ==='editMode' && sessionStorage.getItem("LoanAppBIEditMode")==='1')
         { 
             app.loginService.viewModel.showloder();
             var dataS = new kendo.data.DataSource({
@@ -485,7 +485,6 @@
             var that = this;
             var item = data['findetails'];
             console.log(item.orgname);
-            alert(item.orgname);
             that.set("legal_business_name",data['findetails']['orgname']);
             that.set("dba_name",data['findetails']['dbaname']);
             that.set("street_no",(data['findetails']['civic']!== '0') ? data['findetails']['civic'] : "");
@@ -635,7 +634,6 @@
                 var index;
                 $('.outDebt:radio[value="'+data['findetails']['debttype']+'"]').prop("checked",true);
                 var totalDiv = data['findetails']['finloan_details'].length;
-                alert("total div "+totalDiv);
                 for(index=1;index<=totalDiv;index++)
                 { 
                     $('#outsta_debt').show();
@@ -1186,10 +1184,9 @@
             // apps.navigate('views/loanAppCI.html');
             
             dataParam =  {};
-            var data = e.button.data();
-            alert(data.name);
+          //  var data = e.button.data();
             
-            /*if(e.sender.element.context.dataset.name === "Next")
+            if(e.sender.element.context.attributes["data-name"].value === "Next")
             {
                 var status = $("#B2cAppForms").valid();
                 if(status === false)
@@ -1201,13 +1198,13 @@
             {
                 dataParam['business_act'] ='Save_Exit';
                 alert("save click");
-            }*/
+            }
             
             
             
             /********VKM**********/
             
-            if(data.name === "Next")
+           /* if(data.name === "Next")
             {
                 var status = $("#B2cAppForms").valid();
                 if(status === false)
@@ -1218,7 +1215,7 @@
             else
             {
                 dataParam['business_act'] ='Save_Exit';
-            }
+            }*/
             
             //apps.navigate('views/loanAppCI.html'); 
             
@@ -1573,10 +1570,9 @@
             });
             dataSource.fetch(function(){
 
-                alert("API");
+               
                 var data = this.data();
                 app.loginService.viewModel.hideloder();
-                alert(data[0]['results']['faultcode']);
                 if(data[0]['results']['faultcode'] === 1 || data[0]['results']['faultcode'] === "1")
                 {
                     if(dataParam['business_act'] === "Next")

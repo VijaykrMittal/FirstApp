@@ -539,37 +539,54 @@
 
         });
     }
-    function createCityCmbEdit(NumOfDiv,val , city){	  
-        $('#own_city'+NumOfDiv+'').after('<div id="loader"></div>');
-        $('#own_city'+NumOfDiv+'').attr("disabled","disabled");
-        $('#own_state'+NumOfDiv+'').attr("disabled","disabled");
-        var dataSource = new kendo.data.DataSource({
-            transport: {
-                read: {
-                url: "data/jos_city.json",
-                type:"GET",
-                dataType: "json",
-            	}
-            },
-            filter: { field: "state_id", operator: "eq", value: val }
-        });
-        dataSource.fetch(function(){
-            var view = dataSource.view();
-            view.sort(SortByName);
-            var html='<option value="" selected="selected">Select City</option>';
-            $.each(view, function( index, value ) {
-            	html+='<option value="'+value['pid']+'">'+capitalize(value['city'].toLowerCase())+'</option>';
-        	});
-
-            $('#own_city'+NumOfDiv+'').html(html);
-            $("#loader").remove();
-            $('#own_city'+NumOfDiv+'').removeAttr("disabled");
-            $('#own_state'+NumOfDiv+'').removeAttr("disabled");
-            $("select#own_city"+NumOfDiv+" option[value='"+city+"']").prop('selected',true);
-            app.loginService.viewModel.hideloder();
-
-        });
+    function createCityCmbEdit(NumOfDiv,val , city){
+        
+        
+            $('#own_city'+NumOfDiv+'').after('<div id="loader"></div>');
+            $('#own_city'+NumOfDiv+'').attr("disabled","disabled");
+            $('#own_state'+NumOfDiv+'').attr("disabled","disabled");
+            try
+            {
+                
+                var dataSource = new kendo.data.DataSource({
+                    transport: {
+                        read: {
+                        url: "data/jos_city.json",
+                        dataType: "json",
+                        data:{
+                                Accept:"application/json"
+                            }
+                    	}
+                    },
+                    filter: { field: "state_id", operator: "eq", value: val }
+            
+            });
+            dataSource.fetch(function(){
+                var view = dataSource.view();
+                view.sort(SortByName);
+                var html='<option value="" selected="selected">Select City</option>';
+             
+                $.each(view, function( index, value ) {
+                	html+='<option value="'+value['pid']+'">'+capitalize(value['city'].toLowerCase())+'</option>';
+            	});
+          
+                $('#own_city'+NumOfDiv+'').html(html);
+                $("#loader").remove();
+                $('#own_city'+NumOfDiv+'').removeAttr("disabled");
+                $('#own_state'+NumOfDiv+'').removeAttr("disabled");
+                $("select#own_city"+NumOfDiv+" option[value='"+city+"']").prop('selected',true);
+                app.loginService.viewModel.hideloder();
+            });
+            }
+            catch(ex)
+            {
+                alert("new exception :"+ex.name+" and message "+ex.message);
+            }
+       
     }
+        
+   
+        
     function ownerpValidate(){
         var totaldivs = parseInt($('#totownerDiv').val());
         var ownpers = new Array();   
@@ -632,5 +649,5 @@
                 $('#cmbowners option[value!=""]').remove();
                 $("#secmbowners").hide();
         }
-}
-    </script>
+    }
+</script>

@@ -164,19 +164,56 @@
         },
         downloadAttachFile:function(e)
         {
-            var params = e.sender.element.context.dataset;
-            sessionStorage.currentFileId = params.fid;
-            sessionStorage.downloadLink = params.downurl;
-            sessionStorage.currentFileName = params.filename;
-            fileName = $.trim(params.filename);
-            folderName = "biz2docs";
-            app.documentsetting.viewModel.downloadFile(fileName,folderName);
+            var params;
+            
+            if(device.platform === "Win32NT")
+            {
+                params = e.sender.element.context.attributes;
+                sessionStorage.currentFileId = params['data-id'].value;
+                sessionStorage.downloadLink = params['data-downurl'].value;
+                sessionStorage.currentFileName = params['data-filename'].value;
+                fileName = $.trim(params['data-filename'].value);
+                folderName = "biz2docs";
+                app.documentsetting.viewModel.downloadFile(fileName,folderName);
+            }
+            else
+            {
+                params = e.sender.element.context.dataset;
+                sessionStorage.currentFileId = params.fid;
+                sessionStorage.downloadLink = params.downurl;
+                sessionStorage.currentFileName = params.filename;
+                fileName = $.trim(params.filename);
+                folderName = "biz2docs";
+                app.documentsetting.viewModel.downloadFile(fileName,folderName);
+            }
+            
         },
         deleteDownloadAttachFileConfirm:function(e)
         {
-            var params = e.sender.element.context.dataset;
-            var mapid=params.id;
-            var fileid=params.docsid;
+            console.log("delete");
+            console.log(e);
+            var params;
+            var mapid;
+            var fileid;
+            
+            if(device.platform === "Win32NT")
+            {
+                params = e.sender.element.context.attributes;
+                mapid=params['data-id'].value;
+                fileid=params['data-docsid'].value;
+                console.log("window");
+                console.log(mapid);
+                console.log(fileid);
+            }
+            else
+            {
+                 params = e.sender.element.context.dataset;
+                 mapid=params.id;
+                fileid=params.docsid;
+                console.log("Android");
+                console.log(mapid);
+                console.log(fileid);
+            }
  
             navigator.notification.confirm('Are you sure you wish to delete this file?', function (confirmed) {
             		if (confirmed === true || confirmed === 1) {
@@ -232,6 +269,8 @@
         },
         downloadWetSignatureFile:function(e)
         { 
+            console.log("download");
+            console.log(e);
             var params = e.sender.element.context.dataset;
             sessionStorage.downloadLink = params.downurl;
             sessionStorage.currentFileName = 'Credit_Review_Acknowledgement_'+sessionStorage.getItem("matchesPageFid")+'_'+sessionStorage.getItem("IteriaMatchid")+'.pdf';
@@ -354,11 +393,18 @@
         },
         setuploadParams:function(e)
         {
-            var docsid = e.sender.element.context.dataset.docsid;
-            var docstype = e.sender.element.context.dataset.docstype;
+            alert("upload form");
+            alert(e.event.currentTarget);
+            console.log(e);
+           console.log(e.event.currentTarget);
+           // var docsid = e.sender.element.context.dataset.docsid;
+            var docsid = e.sender.element.context.attributes['data-docsid'].value;
+            var docstype = e.sender.element.context.attributes['data-docstype'].value;
+            console.log("docs id "+docsid);
+            //var docstype = e.sender.element.context.dataset.docstype;
             sessionStorage.setItem("docsid",docsid);
             sessionStorage.setItem("docstype",docstype);
-            $("#inboxActions").data("kendoMobileActionSheet").open(e.event.currentTarget);
+            $("#inboxActions").data("kendoMobileActionSheet").open();
         },
         setDeviceAction:function()
         {

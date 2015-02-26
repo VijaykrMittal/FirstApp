@@ -29,6 +29,9 @@
         primaryOwner:'',
         show:function(e) {
             
+            
+           
+            
             try
             {
                 blegal = "";   
@@ -556,7 +559,6 @@
             var that =this;
             var data =manageData;
             var dataModel = app.loansetting.viewModel;
-            alert(dataModel.select_b_l_s);
             if(typeof data['findetails']['owner_details']  !== "undefined")
             {
                 
@@ -564,65 +566,102 @@
                     keyindex=1;
                 
                     $.each(data['findetails']['owner_details'], function( index, value ) {
-                        alert("my own number "+value['own_no']);
                         if(value['own_no']===1 || value['own_no']==='1')
                         {
                             pownemail = value['own_email'];
                         }
                         if(value['own_no']===1 || value['own_no']==='1')
                         {
-                            /*var jobTitleRequest = value['own_jobtitle'];
-                            if(data['findetails']['blegal'] === dataModel.select_b_l_s)
+                          alert("own city : "+value['own_city'] +" and own state :"+value['own_state']);
+                           try
                             {
-                                $("#OwnJobTitle option[value='"+jobTitleRequest+"']").prop("selected",true); 
-                                that.set("Owner_JobTitle",jobTitleRequest);
+                                var divInd = 0;
+                                var jobTitleRequest = value['own_jobtitle'];
+                                if(data['findetails']['blegal'] === dataModel.select_b_l_s)
+                                {
+                                    $("#OwnJobTitle option[value='"+jobTitleRequest+"']").prop("selected",true); 
+                                    that.set("Owner_JobTitle",jobTitleRequest);
+                                }
+                                else
+                                {
+                                    $("#OwnJobTitle option[value='']").prop("selected",true); 
+                                }
+                                
+                                that.set("Owner_FirstName",value['own_fname']);
+                                that.set("Owner_LastName",value['own_lname']);
+                                that.set("Owner_email",value['own_email']);
+                                
+                                that.set("Owner_Civic",(value['own_civic']!== '0') ? value['own_civic'] : "");
+                                that.set("Owner_StreetAddress",value['own_street']);
+
+                                that.set("state_user",(value['own_state']!== '0') ? value['own_state'] : "");
+
+                                createCityCmbEdit("",(value['own_state']!== '0') ? value['own_state'] : "" , value['own_city']);
+                               that.set("cmbCity",value['own_city']);
+
+                                that.set("OwnZipCode",value['own_zip']);
+                                var oDob = value['own_dob'].split('-');
+                                
+                                that.set("owner_month",(Number(oDob[1])!== 0) ? Number(oDob[1]) : "");
+                                that.set("owner_day",(oDob[2]!== '00') ? oDob[2] : "");
+
+                                that.set("owner_year",(oDob[0]!== '0000') ? oDob[0] : "");
+                                that.set("own_percent",(value['own_percent']!== '0') ? value['own_percent'] : "");
+
+                                that.set("own_id0",value['id']);
+                                that.set("creditScore0",value['credittype']);
+                                that.set("isCheckScore0",value['check_credit_score']);
+                                that.set("reasonlscore0",value['low_rpt_reason']);
                             }
-                            else
+                            catch(ex)
                             {
-                                $("#OwnJobTitle option[value='']").prop("selected",true); 
+                                alert("name : "+ex.name+" and error : "+ex.message);
                             }
-                            
-                            that.set("Owner_FirstName",value['own_fname']);
-                            that.set("Owner_LastName",value['own_lname']);
-                            that.set("Owner_email",value['own_email']);
-                            
-                            that.set("Owner_Civic",(value['own_civic']!== '0') ? value['own_civic'] : "");
-                            that.set("Owner_StreetAddress",value['own_street']);
-
-                            that.set("state_user",(value['own_state']!== '0') ? value['own_state'] : "");
-
-                            createCityCmbEdit('',(value['own_state']!== '0') ? value['own_state'] : "" , value['own_city']);
-
-                            that.set("cmbCity",value['own_city']);
-
-                            that.set("OwnZipCode",value['own_zip']);
-                            var oDob = value['own_dob'].split('-');
-                            
-                            that.set("owner_month",(Number(oDob[1])!== 0) ? Number(oDob[1]) : "");
-                            that.set("owner_day",(oDob[2]!== '00') ? oDob[2] : "");
-
-                            that.set("owner_year",(oDob[0]!== '0000') ? oDob[0] : "");
-                            that.set("own_percent",(value['own_percent']!== '0') ? value['own_percent'] : "");
-
-                            that.set("own_id0",value['id']);
-                            that.set("creditScore0",value['credittype']);
-                            that.set("isCheckScore0",value['check_credit_score']);
-                            that.set("reasonlscore0",value['low_rpt_reason']);*/
                             
                         }
                        else
                         {
-                           $("#add-ownerForm").trigger('click');
-                            console.log("own no "+value['own_fname']);
-                            try
+                           $("#add-ownerForm").triggerHandler('click');
+                            
+                           alert("own city : "+value['own_city'] +" and own state :"+value['own_state']);
+                           try
                             {
                                 viewCModel.set("OwnerFirstName"+keyindex,(value['own_fname']!== 'undefined') ? value['own_fname'] : "");
+                                viewCModel.set("OwnerLastName"+keyindex,(value['own_lname']!== 'undefined') ? value['own_lname'] : "");
+                                viewCModel.set("email"+keyindex,(value['own_email']!== 'undefined') ? value['own_email'] : "");
+                                viewCModel.set("OwnerCivic"+keyindex,(value['own_civic']!== '0') ? value['own_civic'] : "");
+                                if(data['findetails']['blegal'] === dataModel.select_b_l_s)
+                                {
+                                    viewCModel.set("OwnJobTitle"+keyindex,value['own_jobtitle']);
+                                    $("#OwnJobTitle"+keyindex+" option[value='"+value['own_jobtitle']+"']").prop("selected",true);
+                                }
+                                else
+                                {
+                                    $('#OwnJobTitle'+keyindex+' option[value=""]').prop("selected",true);
+                                }
+                                viewCModel.set("OwnerStreetAddress"+keyindex,(value['own_street']!== 'undefined') ? value['own_street'] : "");
+                                viewCModel.set("own_state"+keyindex,(value['own_state']!== '0') ? value['own_state'] : "");
+                                createCityCmbEdit(keyindex,(value['own_state']!== '0') ? value['own_state'] : "" , value['own_city']);
+                                viewCModel.set("own_city"+keyindex,(value['own_city']!== 'undefined') ? value['own_city'] : "");
+                                viewCModel.set("OwnZipCode"+keyindex,(value['own_zip']!== 'undefined') ? value['own_zip'] : "");
+                                var own_DOB = value['own_dob'].split('-');
+                                viewCModel.set("owner_month"+keyindex,(Number(own_DOB[1])!== 0) ? Number(own_DOB[1]) : "");
+                                viewCModel.set("owner_day"+keyindex,(own_DOB[2]!== '00') ? own_DOB[2] : "");
+                                viewCModel.set("owner_year"+keyindex,(own_DOB[0]!== '0000') ? own_DOB[0] : "");
+                                viewCModel.set("own_percent"+keyindex,(value['own_percent']!== '0') ? value['own_percent'] : "");
+                                viewCModel.set("own_id"+keyindex,(value['id']!== 'undefined') ? value['id'] : "");
+                                viewCModel.set("isCheckScore"+keyindex,(value['check_credit_score']!== 'undefined') ? value['check_credit_score'] : "");
+                                viewCModel.set("creditScore"+keyindex,(value['credittype']!== 'undefined') ? value['credittype'] : "");
+                                viewCModel.set("reasonlscore"+keyindex,(value['low_rpt_reason']!== 'undefined') ? value['low_rpt_reason'] : "");
+                                
                             }
                             catch(ex)
                             {
-                                alert(ex.message);
+                                alert("message "+ex.message+" and error name"+ex.name);
+                                console.log(ex);
                             }
-                              
+                           keyindex++;
+                            
                          /* viewCModel.set("OwnerLastName"+keyindex,(value['own_lname']!== '') ? value['own_lname'] : "");
                             viewCModel.set("email"+keyindex,(value['own_email']!== 'undefined') ? value['own_email'] : "");
                             //viewCModel.set("OwnJobTitle"+index,(EditFormData['0']['OwnJobTitle'+index]!== 'undefined') ? EditFormData['0']['OwnJobTitle'+index] : "");
@@ -651,9 +690,6 @@
                             {
                                 $('#OwnJobTitle'+keyindex+' option[value=""]').prop("selected",true);
                             }*/
-                            alert(typeof(viewCModel['OwnerLastName'+keyindex]));
-                             console.log(typeof(viewCModel['OwnerLastName'+keyindex]));
-                            keyindex++;
                         }
                     	
                 	});      

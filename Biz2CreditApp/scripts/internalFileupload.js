@@ -8,12 +8,14 @@
         exportInnerPage:false,
         filedocumentShow:function(e)
         {
+            alert("filedocumentShow");
             app.fileuploadsetting.viewModel.historyPath=[];
             app.fileuploadsetting.viewModel.getFileSystem();
             
         },
         getFileSystem:function()
         {
+            alert("getfilesystem");
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
                 function(fileSystem){ // success get file system
                	 root = fileSystem.root;
@@ -26,6 +28,14 @@
         },
         listDir:function(directoryEntry){
 
+            console.log(directoryEntry);
+            alert("ly list directory");
+            alert(directoryEntry.fullPath);
+             alert(directoryEntry.isDirectory);
+             alert(directoryEntry.isFile);
+             alert(directoryEntry.name);
+            alert(directoryEntry.nativeURL);
+            
             if(app.fileuploadsetting.viewModel.historyPath[app.fileuploadsetting.viewModel.historyPath.length-1] !== directoryEntry.name){
             	app.fileuploadsetting.viewModel.historyPath.push(directoryEntry.name);
             }

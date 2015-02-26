@@ -1341,7 +1341,7 @@
         },
         getFilesystem:function (success, fail) {
         	window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
-       	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, success, fail);
+       	 window.requestFileSystem(LocalFileSystem.TEMPORARY, 1, success, fail);
         },
 
         getFolder: function (fileSystem, folderName, success, fail) {
@@ -1393,9 +1393,7 @@
             }
             else if(device.platform ===  "Win32NT")
             {
-                alert(fileEntry.fullPath);
-                alert(fileEntry.nativeURL);
-                window.open(fileEntry.fullPath,"_system","location=yes,hidden=no");
+                window.open(fileEntry.fullPath,"_blank","location=yes,hidden=no");
             }
             else
             {
@@ -1430,8 +1428,7 @@
                 	}
                     else if(device.platform ===  "Win32NT")
                     {
-                        alert(fileEntry.fullPath);
-                        window.open(fileEntry.fullPath,"_system","location=yes,hidden=no");
+                        window.open(fileEntry.fullPath,"_blank","location=yes,hidden=no");
                     }
                 	else
                 	{

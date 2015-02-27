@@ -13,6 +13,7 @@
         renameFileName:'',
         fileExt:'',
         
+        
         documentBeforeShow:function()
         {
             app.loginService.viewModel.formValidateReset();
@@ -1341,7 +1342,7 @@
         },
         getFilesystem:function (success, fail) {
         	window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
-       	 window.requestFileSystem(LocalFileSystem.TEMPORARY, 1, success, fail);
+       	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 1, success, fail);
         },
 
         getFolder: function (fileSystem, folderName, success, fail) {
@@ -1354,22 +1355,30 @@
             	app.documentsetting.viewModel.getFilesystem(
             		function(fileSystem) {
             			
-            			if (device.platform === "Android" || device.platform ===  "Win32NT") {
-            				app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
-            					filePath = folder.nativeURL + "\/" + fileName;
+            			if (device.platform === "Android") {
+                            app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
+                                filePath = folder.nativeURL + "\/" + fileName;
                                 relPath = folder.name + "\/" + fileName;
-                                alert("name="+fileSystem.name);
-                                alert("fullPath="+fileSystem.root.fullPath);
-                                alert("isDirectory="+fileSystem.root.isDirectory);
-                                alert("isFile="+fileSystem.root.isFile);
-                                alert("name="+fileSystem.root.name);
-                                alert("nativeURL="+fileSystem.root.nativeURL);
+                                //relPath =fileName;
                                 fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
-                                
-            				}, function() {
-            					console.log("Failed to get folder");
-            				});
+
+                            }, function() {
+                                console.log("Failed to get folder");
+                            });
             			}
+                        else if(device.platform ===  "Win32NT")
+                        {
+                            app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
+                                filePath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
+                                relPath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
+                                //relPath =fileName;
+                                fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
+
+                            }, function() {
+                                console.log("Failed to get folder");
+                            });
+                            
+                        }
             			else {
             				filePath = fileSystem.root.nativeURL + "\/" +"biz2docs\/" +fileName;
                             relPath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
@@ -1386,19 +1395,15 @@
         
         fileExists:function(fileEntry)
         {
-            console.log(fileEntry);
+            alert("fileExists");
             if(device.platform.toLowerCase() === "ios" )
             {
                 window.open(encodeURI(fileEntry.nativeURL),"_blank","location=yes,hidden=no");
             }
             else if(device.platform ===  "Win32NT")
             {
-                                alert("ofullPath="+fileEntry.fullPath);
-                                alert("osDirectory="+fileEntry.isDirectory);
-                                alert("oisFile="+fileEntry.isFile);
-                                alert("oname="+fileEntry.name);
-                                alert("onativeURL="+fileEntry.nativeURL);
-                window.open(fileEntry.fullPath,"_system","location=yes,hidden=no");
+                              
+                window.open(fileEntry.fullPath,"_blank","location=yes");
             }
             else
             {
@@ -1408,6 +1413,7 @@
         },
         fileDoesNotExist:function(fileError)
         {
+            alert("fileDoesNotExist");
             fileName = sessionStorage.getItem("currentFileName");
             downloadLink = sessionStorage.getItem("downloadLink");
             ext = app.documentsetting.viewModel.getFileExtension(fileName);
@@ -1419,6 +1425,7 @@
                                 
         },
         transferFile: function (uri, filePath) {
+            alert(filePath);
             try
             {
                 transfer = new FileTransfer();
@@ -1433,12 +1440,8 @@
                 	}
                     else if(device.platform ===  "Win32NT")
                     {
-                         alert("ofullPath="+fileEntry.fullPath);
-                                alert("osDirectory="+fileEntry.isDirectory);
-                                alert("oisFile="+fileEntry.isFile);
-                                alert("oname="+fileEntry.name);
-                                alert("onativeURL="+fileEntry.nativeURL);
-                        window.open(fileEntry.fullPath,"_system","location=yes,hidden=no");
+                        alert(JSON.stringify(fileEntry));
+                        window.open(fileEntry.fullPath,"_blank","location=yes");
                     }
                 	else
                 	{
@@ -1446,6 +1449,7 @@
                 	}	
                 },
                 function(error) {
+                    alert(JSON.stringify(error));
                     $("#tabstrip-download-file").data("kendoMobileModalView").close();
                     app.documentsetting.viewModel.getFilesystem(
                 		function(fileSystem) {

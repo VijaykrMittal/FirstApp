@@ -53,9 +53,9 @@
   "WP8Requirements": [],
   "WP8Capabilities": [
     "ID_CAP_IDENTITY_DEVICE",
-    "ID_CAP_MEDIALIB_PHOTO",
+    "ID_CAP_IDENTITY_USER",
     "ID_CAP_REMOVABLE_STORAGE",
-    "ID_CAP_SENSORS"
+    "ID_CAP_WEBBROWSERCOMPONENT"
   ],
   "WP8TileTitle": "Biz2Credit",
   "WP8ProductID": "{5d00feb1-1b03-4db5-ab13-880140c52318}",

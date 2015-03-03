@@ -17,19 +17,19 @@
         {
         	app.documentsetting.viewModel.set("showfilter", false);
         }
-        else if(apps.view()['element']['0']['id']==='tabstrip-loanapp-bi'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-ci'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-pi'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-fp'|| apps.view()['element']['0']['id']==='tabstrip-matches' || apps.view()['element']['0']['id']==='tabstrip-docs' || apps.view()['element']['0']['id']==='tabstrip-movedocs' || apps.view()['element']['0']['id']==='tabstrip-file-export' || apps.view()['element']['0']['id']==='document-pending' || apps.view()['element']['0']['id']==='tabstrip-manage-app' || apps.view()['element']['0']['id']==='iteriaModalView' || apps.view()['element']['0']['id']==='tabstrip-bizAnalyzer' || apps.view()['element']['0']['id']==='tabstrip-Setting')
+        else if(apps.view()['element']['0']['id']==='tabstrip-loanapp-bi'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-ci'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-pi'|| apps.view()['element']['0']['id']==='tabstrip-loanapp-fp'|| apps.view()['element']['0']['id']==='tabstrip-matches' || apps.view()['element']['0']['id']==='tabstrip-docs' || apps.view()['element']['0']['id']==='tabstrip-movedocs' || apps.view()['element']['0']['id']==='tabstrip-file-export' || apps.view()['element']['0']['id']==='document-pending' ||  apps.view()['element']['0']['id']==='iteriaModalView' || apps.view()['element']['0']['id']==='tabstrip-bizAnalyzer' || apps.view()['element']['0']['id']==='tabstrip-Setting')
         {
         	e.preventDefault();
         }
         else if(apps.view()['element']['0']['id']==='tabstrip-sign-up' || apps.view()['element']['0']['id']==='tabstrip-forgot-pass')
         {
-        	//apps.navigate("#tabstrip-login");
-            window.plugins.nativepagetransitions.flip({
+        	apps.navigate("#tabstrip-login");
+           /* window.plugins.nativepagetransitions.flip({
                 "href" : "#tabstrip-login",
                 "direction":"left",
                 "duration":300,
                 "slowdownfactor" :3
-            });
+            });*/
         }
         else
         { 

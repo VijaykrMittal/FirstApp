@@ -67,7 +67,8 @@
                 newdirArr.nativeURL= entries[i].nativeURL;
                 newdirArr.isDirectory= entries[i].isDirectory;
                 
-            	if( newdirArr.isDirectory && newdirArr.name[0] !== '.' ) dirArr.push(newdirArr);
+            	//if( newdirArr.isDirectory && newdirArr.name[0] !== '.' ) 
+                dirArr.push(newdirArr);
             }
                 
             app.fileexportsetting.viewModel.setExportDocs(dirArr);

@@ -1342,7 +1342,7 @@
         },
         getFilesystem:function (success, fail) {
         	window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
-       	 window.requestFileSystem(LocalFileSystem.PERSISTENT, 1, success, fail);
+       	 window.requestFileSystem(LocalFileSystem.TEMPORARY, 1, success, fail);
         },
 
         getFolder: function (fileSystem, folderName, success, fail) {
@@ -1369,8 +1369,14 @@
                         else if(device.platform ===  "Win32NT")
                         {
                             app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
-                                filePath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
-                                relPath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
+                                console.log(fileSystem);
+                                console.log('********************************');
+                                 console.log(folder);
+                                console.log('********************************');
+                                alert('fullPath'+folder.fullPath);
+                                alert('nativeURL'+folder.nativeURL);
+                                filePath = folder.fullPath + "\/"  +fileName;
+                                relPath =  folder.fullPath + "\/" +fileName;
                                 //relPath =fileName;
                                 fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
 
@@ -1402,8 +1408,9 @@
             }
             else if(device.platform ===  "Win32NT")
             {
-                              
-                window.open(fileEntry.fullPath,"_blank","location=yes");
+                alert(JSON.stringify(fileEntry));             
+                res = window.open(fileEntry.fullPath,"_blank","location=yes");
+                alert(JSON.stringify(res));
             }
             else
             {
@@ -1441,7 +1448,8 @@
                     else if(device.platform ===  "Win32NT")
                     {
                         alert(JSON.stringify(fileEntry));
-                        window.open(fileEntry.fullPath,"_blank","location=yes");
+                        res = window.open(fileEntry.fullPath,"_blank","location=yes");
+                        alert(JSON.stringify(res));
                     }
                 	else
                 	{

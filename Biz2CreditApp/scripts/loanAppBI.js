@@ -75,8 +75,9 @@
             
             e.sender.reload=false;
             e.view.reload=false;
-           
-            var data = e.sender.params;
+           console.log("**************************");
+            console.log(e);
+           // var edidModeParam = e.sender.params;
             
             $(".km-native-scroller").scrollTop(0);
             $("#add-form").unbind('.myPlugin');
@@ -468,6 +469,7 @@
             });
             dataS.fetch(function(){
 
+                alert("edit mode fetch");
                 EditFormData = this.data();  
                 manageData = EditFormData['0']['results'];
                 app.loansetting.viewModel.setBIeditForm(manageData);
@@ -484,7 +486,7 @@
         {
             var that = this;
             var item = data['findetails'];
-            console.log(item.orgname);
+            alert(item.orgname);
             that.set("legal_business_name",data['findetails']['orgname']);
             that.set("dba_name",data['findetails']['dbaname']);
             that.set("street_no",(data['findetails']['civic']!== '0') ? data['findetails']['civic'] : "");

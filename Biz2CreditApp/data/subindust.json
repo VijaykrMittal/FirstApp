@@ -1,6 +1,15 @@
 [
-    {"cid":"4","oid":"1","catname":"Greenhouse &#44; Nursery &#44; and Floriculture Production"},
-    {"cid":"1","oid":"1","catname":"Oilseed and Grain Farming"},
-    {"cid":"2","oid":"1","catname":"Vegetable and Melon Farming"},
-    {"cid":"3","oid":"1","catname":"Fruit and Tree Nut Farming"}
+	{"cid":"4","oid":"1","catname":"Greenhouse &#44; Nursery &#44; and Floriculture Production"},
+	{"cid":"1","oid":"1","catname":"Oilseed and Grain Farming"},
+	{"cid":"2","oid":"1","catname":"Vegetable and Melon Farming"},
+	{"cid":"3","oid":"1","catname":"Fruit and Tree Nut Farming"},
+	{"cid":"5","oid":"1","catname":"Other Crop Farming"},
+	{"cid":"6","oid":"1","catname":"Cattle Ranching and Farming"},
+	{"cid":"7","oid":"1","catname":"Hog and Pig Farming"},
+	{"cid":"8","oid":"1","catname":"Poultry and Egg Production"},
+	{"cid":"9","oid":"1","catname":"Sheep and Goat Farming"},
+	{"cid":"10","oid":"1","catname":"Aquaculture"},
+	{"cid":"11","oid":"1","catname":"Other Animal Production"},
+	{"cid":"12","oid":"1","catname":"Timber Tract Operations"},
+	{"cid":"13","oid":"1","catname":"Forest Nurseries and Gathering of Forest Products"}
 ]

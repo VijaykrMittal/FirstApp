@@ -359,6 +359,7 @@
         },
         applicationEditMode:function(e)
         {
+            alert("edit mode "+e.data.fid);
             app.loansetting.viewModel.resetLoanAppBIForm();
             app.loanAppCI.viewModel.resetLoanAppCIForm();
             app.loanAppPI.viewModel.resetLoanAppPIForm();
@@ -376,12 +377,11 @@
             }
             else
             {
-                localStorage.setItem("fid",e.data.fid);
+                localStorage.setItem("fid",e.target.attributes['data-fid'].value);
             }
             
             sessionStorage.setItem("LoanAppBIEditMode",'1');
-           // apps.navigate("views/loanAppBI.html?param=editMode");
-             apps.navigate("views/loanAppBI.html?param=editMode");
+            apps.navigate("views/loanAppBI.html?param=editMode");
         },
         mydocuments: function()
         {   

@@ -54,11 +54,11 @@
             
             if(!window.connectionInfo.checkConnection()){
             	navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
-        	if (confirmed === true || confirmed === 1) {
-        	app.documentsetting.viewModel.documentShow(e);
-        	}
+        			if (confirmed === true || confirmed === 1) {
+        				app.documentsetting.viewModel.documentShow(e);
+        			}
 
-        	}, 'Connection Error?', 'Retry,Cancel');
+        		}, 'Connection Error?', 'Retry,Cancel');
             }
             else
             {
@@ -113,7 +113,7 @@
                                 else{
                                     docsArray.push(val);
                                 } 
-                    	});
+                    		});
                             if(sharedFiles !== '' && sharedFolders !=='')
                             {
                             	docsArray.unshift(sharedFiles,sharedFolders);
@@ -160,7 +160,7 @@
                                 else{
                                     docsArray.push(val);
                                 } 
-                    	});
+                    		});
                             if(sharedFiles !== '' && sharedFolders !=='')
                             {
                             	docsArray.unshift(sharedFiles,sharedFolders);
@@ -190,9 +190,9 @@
 
             if(!window.connectionInfo.checkConnection()){
             	navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
-            	if (confirmed === true || confirmed === 1) {
-            	app.documentsetting.viewModel.refreshView(e);
-            	}
+            		if (confirmed === true || confirmed === 1) {
+            			app.documentsetting.viewModel.refreshView(e);
+            		}
 
             	}, 'Connection Error?', 'Retry,Cancel');
             }
@@ -244,7 +244,7 @@
                                 else{
                                     docsArray.push(val);
                                 } 
-                    	});
+                    		});
                             if(sharedFiles !== '' && sharedFolders !=='')
                             {
                             	docsArray.unshift(sharedFiles,sharedFolders);
@@ -285,7 +285,7 @@
                                 else{
                                     docsArray.push(val);
                                 } 
-                    	});
+                    		});
                             if(sharedFiles !== '' && sharedFolders !=='')
                             {
                             	docsArray.unshift(sharedFiles,sharedFolders);
@@ -326,12 +326,12 @@
                   	tap: function (e) {
                         if (device.platform === "Android" || device.platform === "iOS") 
                         {  
-	if(e.touch.initialTouch.dataset.id === "folder")
+							if(e.touch.initialTouch.dataset.id === "folder")
                             { 
                                 if(!hold)
-                        	{
+                        		{
                                     sessionStorage.currentFId = e.touch.currentTarget.id;
-                            	sessionStorage.currentFName = e.touch.currentTarget.innerText;
+                            		sessionStorage.currentFName = e.touch.currentTarget.innerText;
                                     if($.trim(e.touch.currentTarget.innerText)==='Shared Files'){
                                         shareBackHistory.push($.trim(e.touch.currentTarget.innerText));
                                         
@@ -346,7 +346,7 @@
                                     {
                                         shareBackHistory.push('subSharedFolder');
                                     }
-                        	
+                        		
                                     if(e.touch.currentTarget.id !== "0")
                                     {  
                                     	app.documentsetting.viewModel.setInnerPage();
@@ -360,12 +360,12 @@
                                 	docsBackHistory.push(e.touch.currentTarget.id);
                                 	app.documentsetting.viewModel.refreshView();
                                     
-                       	 }
+                       		 }
                             }
                             else if(e.touch.initialTouch.dataset.id === "files")
                             {
                                 if(!hold)
-                        	{
+                        		{
                                     sessionStorage.currentFileId = e.touch.currentTarget.id;
                                     sessionStorage.downloadLink = $.trim(e.touch.currentTarget.className);
                                     sessionStorage.currentFileName = e.touch.currentTarget.innerText;
@@ -381,9 +381,9 @@
                           if(e.touch.initialTouch.attributes['data-id'].value === "folder")
                           { 
                                 if(!hold)
-                        	{
+                        		{
                                     sessionStorage.currentFId = e.touch.currentTarget.id;
-                            	sessionStorage.currentFName = e.touch.currentTarget.innerText;
+                            		sessionStorage.currentFName = e.touch.currentTarget.innerText;
                                     
                                     if($.trim(e.touch.currentTarget.innerText)==='Shared Files'){
                                         shareBackHistory.push($.trim(e.touch.currentTarget.innerText));
@@ -399,7 +399,7 @@
                                     {
                                         shareBackHistory.push('subSharedFolder');
                                     }
-                        	
+                        		
                                     if(e.touch.currentTarget.id !== "0")
                                     {  
                                     	app.documentsetting.viewModel.setInnerPage();
@@ -413,12 +413,12 @@
                                 	docsBackHistory.push(e.touch.currentTarget.id);
                                 	app.documentsetting.viewModel.refreshView();
                                     
-                       	 }
+                       		 }
                             }
                             else if(e.touch.initialTouch.attributes['data-id'].value === "files")
                             {
                                 if(!hold)
-                        	{
+                        		{
                                     sessionStorage.currentFileId = e.touch.currentTarget.id;
                                     sessionStorage.downloadLink = $.trim(e.touch.currentTarget.className);
                                     sessionStorage.currentFileName = e.touch.currentTarget.innerText;
@@ -431,7 +431,7 @@
                       }
                 	}, 
                 	touchstart: function (e) {
-                	hold = false;
+                		hold = false;
                         
                	 },
                 	hold: function (e) {
@@ -439,7 +439,7 @@
                         navigator.notification.vibrate(20);
                         if (device.platform === "Android" || device.platform === "iOS") {
                             
-    	if(e.touch.initialTouch.dataset.id === "folder")
+    						if(e.touch.initialTouch.dataset.id === "folder")
                             {
                                 sessionStorage.currentFId = e.touch.currentTarget.id;
                             	sessionStorage.currentFName = e.touch.currentTarget.innerText;
@@ -458,9 +458,9 @@
                                         $("#tabstrip-folder-events").data("kendoMobileModalView").open();
                                     	$("#tabstrip-folder-events").find(".km-scroll-container").css("-webkit-transform", "");
                                     }
-                        	
-                        	$('.folderName').html('');
-                        	if(e.touch.currentTarget.innerText.length >= 20)
+                        			
+                        			$('.folderName').html('');
+                        			if(e.touch.currentTarget.innerText.length >= 20)
                                     {
                                        $('.folderName').append('<span>'+e.touch.currentTarget.innerText.substring(0, 15)+'...</span>'); 
                                     }
@@ -468,7 +468,7 @@
                                     {
                                         $('.folderName').append('<span>'+e.touch.currentTarget.innerText+'</span>');
                                     }
-                        	$('.folderName').attr("id",e.touch.currentTarget.id)
+                        			$('.folderName').attr("id",e.touch.currentTarget.id)
                                 }
                                 else if(e.touch.initialTouch.innerText === "Shared Files" || e.touch.initialTouch.innerText === "Shared Folders")
                                 {
@@ -484,35 +484,35 @@
                                     if (device.platform === "Android") {
                                         if(shareBackHistory[0]==='Shared Files'){
                                             $("#tabstrip-share-files-file-events").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-share-files-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                    		$("#tabstrip-share-files-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
                                         }
                                         else if(shareBackHistory[0]==='Shared Folders')
                                         {
                                             $("#tabstrip-share-folders-file-events").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-share-folders-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                    		$("#tabstrip-share-folders-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
                                         }
                                         else
                                         {
                                         	$("#tabstrip-files-events").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-files-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                    		$("#tabstrip-files-events").find(".km-scroll-container").css("-webkit-transform", "");  
                                         }
-                                	
+                                		
                                     }
                                 	else
                                 	{
                                         if(shareBackHistory[0]==='Shared Files'){
                                         	$("#tabstrip-share-files-file-events-ios").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-share-files-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
+                                    		$("#tabstrip-share-files-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
                                         }
                                         else if(shareBackHistory[0]==='Shared Folders')
                                         {
                                             $("#tabstrip-share-folders-file-events-ios").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-share-folders-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");  
+                                    		$("#tabstrip-share-folders-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");  
                                         }
                                         else
                                         {
                                         	$("#tabstrip-files-events-ios").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-files-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
+                                    		$("#tabstrip-files-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
                                         }
                                         
                                     }
@@ -549,9 +549,9 @@
                                         $("#tabstrip-folder-events").data("kendoMobileModalView").open();
                                     	$("#tabstrip-folder-events").find(".km-scroll-container").css("-webkit-transform", "");
                                     }
-                        	
-                        	$('.folderName').html('');
-                        	if(e.touch.currentTarget.innerText.length >= 20)
+                        			
+                        			$('.folderName').html('');
+                        			if(e.touch.currentTarget.innerText.length >= 20)
                                     {
                                        $('.folderName').append('<span>'+e.touch.currentTarget.innerText.substring(0, 15)+'...</span>'); 
                                     }
@@ -559,7 +559,7 @@
                                     {
                                         $('.folderName').append('<span>'+e.touch.currentTarget.innerText+'</span>');
                                     }
-                        	$('.folderName').attr("id",e.touch.currentTarget.id)
+                        			$('.folderName').attr("id",e.touch.currentTarget.id)
                                 }
                                 else if(e.touch.initialTouch.innerText === "Shared Files" || e.touch.initialTouch.innerText === "Shared Folders")
                                 {
@@ -575,35 +575,35 @@
                                     if (device.platform === "Android") {
                                         if(shareBackHistory[0]==='Shared Files'){
                                             $("#tabstrip-share-files-file-events").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-share-files-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                    		$("#tabstrip-share-files-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
                                         }
                                         else if(shareBackHistory[0]==='Shared Folders')
                                         {
                                             $("#tabstrip-share-folders-file-events").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-share-folders-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                    		$("#tabstrip-share-folders-file-events").find(".km-scroll-container").css("-webkit-transform", "");  
                                         }
                                         else
                                         {
                                         	$("#tabstrip-files-events").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-files-events").find(".km-scroll-container").css("-webkit-transform", "");  
+                                    		$("#tabstrip-files-events").find(".km-scroll-container").css("-webkit-transform", "");  
                                         }
-                                	
+                                		
                                     }
                                 	else
                                 	{
                                         if(shareBackHistory[0]==='Shared Files'){
                                         	$("#tabstrip-share-files-file-events-ios").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-share-files-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
+                                    		$("#tabstrip-share-files-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
                                         }
                                         else if(shareBackHistory[0]==='Shared Folders')
                                         {
                                             $("#tabstrip-share-folders-file-events-ios").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-share-folders-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");  
+                                    		$("#tabstrip-share-folders-file-events-ios").find(".km-scroll-container").css("-webkit-transform", "");  
                                         }
                                         else
                                         {
                                         	$("#tabstrip-files-events-ios").data("kendoMobileModalView").open();
-                                    	$("#tabstrip-files-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
+                                    		$("#tabstrip-files-events-ios").find(".km-scroll-container").css("-webkit-transform", "");
                                         }
                                         
                                     }
@@ -621,7 +621,7 @@
                            
                             
                        }
-                	e.touch.currentTarget.className='';
+                		e.touch.currentTarget.className='';
                 	}          
             });
             $("#tabstrip-docs").find(".km-scroll-container").css("-webkit-transform", "");
@@ -712,9 +712,9 @@
         {
             if(!window.connectionInfo.checkConnection()){
             	navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
-            	if (confirmed === true || confirmed === 1) {
-            	app.documentsetting.viewModel.thisFolderDelete(e);
-            	}
+            		if (confirmed === true || confirmed === 1) {
+            			app.documentsetting.viewModel.thisFolderDelete(e);
+            		}
 
             	}, 'Connection Error?', 'Retry,Cancel');
             }
@@ -774,7 +774,7 @@
 
                     });   
                 }
-    	    
+    		    
                  
                 dataSource.fetch(function(){
                     var data = dataSource.data(); 
@@ -834,9 +834,9 @@
         {
             if(!window.connectionInfo.checkConnection()){
             	navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
-            	if (confirmed === true || confirmed === 1) {
-            	app.documentsetting.viewModel.thisFileDelete(e);
-            	}
+            		if (confirmed === true || confirmed === 1) {
+            			app.documentsetting.viewModel.thisFileDelete(e);
+            		}
 
             	}, 'Connection Error?', 'Retry,Cancel');
             }
@@ -920,7 +920,7 @@
                 }); 
           	  closeModalView(e);
                 app.documentsetting.viewModel.refreshView();
-	}
+			}
         },
        
         renameFolder:function(e)
@@ -962,9 +962,9 @@
         {
             if(!window.connectionInfo.checkConnection()){
             	navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
-            	if (confirmed === true || confirmed === 1) {
-            	app.documentsetting.viewModel.thisFolderRename(e);
-            	}
+            		if (confirmed === true || confirmed === 1) {
+            			app.documentsetting.viewModel.thisFolderRename(e);
+            		}
 
             	}, 'Connection Error?', 'Retry,Cancel');
             }
@@ -984,7 +984,7 @@
 
                     return;
                 }
-    	    var dataSource = new kendo.data.DataSource({
+    		    var dataSource = new kendo.data.DataSource({
                 transport: {
                     read: {
                         url: localStorage.getItem("urlMobAppApiFolder"),
@@ -1074,9 +1074,9 @@
         {
             if(!window.connectionInfo.checkConnection()){
             	navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
-            	if (confirmed === true || confirmed === 1) {
-            	app.documentsetting.viewModel.thisFileRename(e);
-            	}
+            		if (confirmed === true || confirmed === 1) {
+            			app.documentsetting.viewModel.thisFileRename(e);
+            		}
 
             	}, 'Connection Error?', 'Retry,Cancel');
             }
@@ -1086,11 +1086,11 @@
                 var renameFile = that.get("renameFileName");
                 if(that.get("fileExt") === '.' || that.get("fileExt") === '')
                 {
-	renameFileExt = ''; 
+					renameFileExt = ''; 
                 }
                 else
                 {
-    	renameFileExt = '.'+that.get("fileExt");
+    				renameFileExt = '.'+that.get("fileExt");
                 }
                 if (renameFile === "") {
                     navigator.notification.alert("Please enter file name",
@@ -1105,7 +1105,7 @@
                     return;
                 }
                 
-    	    var dataSource = new kendo.data.DataSource({
+    		    var dataSource = new kendo.data.DataSource({
                 transport: {
                     read: {
                         url: localStorage.getItem("urlMobAppApiFile"),
@@ -1241,9 +1241,9 @@
         {
             if(!window.connectionInfo.checkConnection()){
             	navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
-            	if (confirmed === true || confirmed === 1) {
-            	app.documentsetting.viewModel.newFolderCreate(e);
-            	}
+            		if (confirmed === true || confirmed === 1) {
+            			app.documentsetting.viewModel.newFolderCreate(e);
+            		}
 
             	}, 'Connection Error?', 'Retry,Cancel');
             }
@@ -1350,12 +1350,12 @@
         },
         downloadFile:function(fileName,folderName)
         {
-	    
+		    
                 filePath = "";
             	app.documentsetting.viewModel.getFilesystem(
-            	function(fileSystem) {
-            	
-            	if (device.platform === "Android") {
+            		function(fileSystem) {
+            			
+            			if (device.platform === "Android") {
                             app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
                                 filePath = folder.nativeURL + "\/" + fileName;
                                 relPath = folder.name + "\/" + fileName;
@@ -1365,18 +1365,12 @@
                             }, function() {
                                 console.log("Failed to get folder");
                             });
-            	}
+            			}
                         else if(device.platform ===  "Win32NT")
                         {
                             app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
-                                console.log(fileSystem);
-                                console.log('********************************');
-                                 console.log(folder);
-                                console.log('********************************');
-                                alert('fullPath'+folder.fullPath);
-                                alert('nativeURL'+folder.nativeURL);
-                                filePath = folder.fullPath + "\/"  +fileName;
-                                relPath =  folder.fullPath + "\/" +fileName;
+                                filePath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
+                                relPath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
                                 //relPath =fileName;
                                 fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
 
@@ -1385,17 +1379,17 @@
                             });
                             
                         }
-            	else {
-            	filePath = fileSystem.root.nativeURL + "\/" +"biz2docs\/" +fileName;
+            			else {
+            				filePath = fileSystem.root.nativeURL + "\/" +"biz2docs\/" +fileName;
                             relPath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
                             fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
-            	
-            	}
-            	},
-            	function() {
-            	navigator.notification.alert("Failed to get filesystem");
-            	}
-            	);
+            				
+            			}
+            		},
+            		function() {
+            			navigator.notification.alert("Failed to get filesystem");
+            		}
+            		);
            
         },
         
@@ -1408,9 +1402,8 @@
             }
             else if(device.platform ===  "Win32NT")
             {
-                alert(JSON.stringify(fileEntry));             
-                res = window.open(fileEntry.fullPath,"_blank","location=yes");
-                alert(JSON.stringify(res));
+                              
+                window.open(fileEntry.fullPath,"_blank","location=yes");
             }
             else
             {
@@ -1443,29 +1436,28 @@
                    $("#tabstrip-download-file").data("kendoMobileModalView").close();
                     if(device.platform.toLowerCase() === "ios" )
                 	{
-                	window.open(encodeURI(fileEntry.nativeURL),"_blank","location=yes,hidden=no");
+                		window.open(encodeURI(fileEntry.nativeURL),"_blank","location=yes,hidden=no");
                 	}
                     else if(device.platform ===  "Win32NT")
                     {
                         alert(JSON.stringify(fileEntry));
-                        res = window.open(fileEntry.fullPath,"_blank","location=yes");
-                        alert(JSON.stringify(res));
+                        window.open(fileEntry.fullPath,"_blank","location=yes");
                     }
                 	else
                 	{
-                	window.open(encodeURI(fileEntry.nativeURL),"_system","location=yes,hidden=no");
+                		window.open(encodeURI(fileEntry.nativeURL),"_system","location=yes,hidden=no");
                 	}	
                 },
                 function(error) {
                     alert(JSON.stringify(error));
                     $("#tabstrip-download-file").data("kendoMobileModalView").close();
                     app.documentsetting.viewModel.getFilesystem(
-                	function(fileSystem) {
-                	fileSystem.root.getFile(filePath, {create: false,exclusive:true},  app.documentsetting.viewModel.gotRemoveFileEntry,  navigator.notification.alert("Download process aborted",function () { }, "Notification", 'OK'));
-                	},
-                	function() {
-                	console.log("failed to get filesystem");
-                	}
+                		function(fileSystem) {
+                			fileSystem.root.getFile(filePath, {create: false,exclusive:true},  app.documentsetting.viewModel.gotRemoveFileEntry,  navigator.notification.alert("Download process aborted",function () { }, "Notification", 'OK'));
+                		},
+                		function() {
+                			console.log("failed to get filesystem");
+                		}
                 	);
                     
                 }
@@ -1484,10 +1476,10 @@
         gotRemoveFileEntry:function(fileEntry)
         {
           fileEntry.remove(function() {
-                	console.log("File is removed from filesystem");
-                	}, function() {
-                	console.log("File is not removed from filesystem");
-                	});  
+                			console.log("File is removed from filesystem");
+                		}, function() {
+                			console.log("File is not removed from filesystem");
+                		});  
         },
         transferFileAbort:function()
         {
@@ -1556,7 +1548,7 @@
     });
     app.documentsetting = {
         
-	viewModel: new DocumentsViewModel(),     	
+		viewModel: new DocumentsViewModel(),     	
     };
  
 })(window,jQuery);

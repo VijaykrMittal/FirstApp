@@ -15,7 +15,6 @@
   ],
   "CorePlugins": [
     "org.apache.cordova.camera",
-    "org.apache.cordova.console",
     "org.apache.cordova.device",
     "org.apache.cordova.device-orientation",
     "org.apache.cordova.file",
@@ -54,9 +53,9 @@
   "WP8Requirements": [],
   "WP8Capabilities": [
     "ID_CAP_IDENTITY_DEVICE",
-    "ID_CAP_IDENTITY_USER",
+    "ID_CAP_MEDIALIB_PHOTO",
     "ID_CAP_REMOVABLE_STORAGE",
-    "ID_CAP_WEBBROWSERCOMPONENT"
+    "ID_CAP_SENSORS"
   ],
   "WP8TileTitle": "Biz2Credit",
   "WP8ProductID": "{5d00feb1-1b03-4db5-ab13-880140c52318}",
@@ -64,7 +63,5 @@
   "WP8Publisher": "",
   "Framework": "Cordova",
   "projectVersion": "1",
-  "WPSdk": "8.0",
-  "WP8WindowsPublisherName": "CN=Telerik",
-  "WP8PackageIdentityName": "1234Telerik.com.telerik.Biz2CreditApp"
+  "WPSdk": "8.0"
 }

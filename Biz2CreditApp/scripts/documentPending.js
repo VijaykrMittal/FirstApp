@@ -409,7 +409,7 @@
         setDeviceAction:function()
         {
             that =this;
-            if(device.platform=== 'iOS' || device.platform === 'Win32NT')
+            if(device.platform=== 'iOS')
             {
                that.set("iosDeviceAction",false);
             }

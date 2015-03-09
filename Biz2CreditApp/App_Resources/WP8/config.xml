@@ -2,4 +2,3 @@
 <widget>
     <access origin="*" />
 </widget>
-<feature name="InAppBrowser" />

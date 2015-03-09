@@ -1,59 +1,9 @@
-@media (min-width:0px) and (max-width:1280px) {
-.logo {margin: 2% auto 3%;}
-.home .popup, #tabstrip-Setting .popup, #tabstrip-loanapp-bi .popup, #tabstrip-loanapp-ci .popup, #tabstrip-loanapp-fp .popup, #tabstrip-loanapp-pi .popup {width: 70px;}
-#blackBlk .desbrdIcon .span {padding:3% 11% 3%;}
-#homePage .testimonials h2 {padding: 4% 0 2% 10%;font-size: 1.2em;margin-bottom: 10px;}
-#homePage .testimonials .test-content .test-r p {font-size: 1em;line-height: 21px;}
-#homePage .testimonials .test-content .test-r span {font-size: 1em;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li .k-select {background-position: 95% 8px;background-size: 7%;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li + li .k-select {background-position: 96% 8px;background-size: 9%;}
-#newuser ul.km-listinset li {margin-bottom: 1.5%;}
-.matches-logo {background-position: 10px 11px;height: 60px;}
-.loginSection .km-listview-wrapper, .loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) {margin: 0;}
-.loginSection {margin: 25px 10%;}
-label { margin:0; padding:0;}
-.forgtpass {font-size:1em; }
-.km-flat .km-list input[type=password], .km-flat .km-list input[type=search], .km-flat .km-list input[type=number], .km-flat .km-list input[type=tel], .km-flat .km-list input[type=url], .km-flat .km-list input[type=email], .km-flat .km-list input[type=month], .km-flat .km-list input[type=color], .km-flat .km-list input[type=week], .km-flat .km-list input[type=date], .km-flat .km-list input[type=time], .km-flat .km-list input[type=datetime], .km-flat .km-list input[type=datetime-local], .km-flat .km-list input[type=text]:not(.k-input), .km-flat .km-list select:not([multiple]), .km-flat .km-list .k-dropdown-wrap, .km-flat .km-list textarea {padding:0; width:100%; display:block;}
-.loginSection ul {padding:0 !important;}
-#dynamicCl.km-popup-wrapper {width: 240px !important;}
-.documentContent .km-listview-wrapper ul li table td { vertical-align:middle; padding:0;}
-.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder, .documentContent .km-listview-wrapper ul li .default-icon {background-position: center;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(2) {width: 75%;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(3) {width: 10%;}
-#popoverId .km-popup-arrow {margin:0; width:40px;}
-    
-    
-    /*********************************Write By Vijay Mittal**********************************/
-    
-    .nvbar{height:80px}
-    .nvbar .spnTxt{line-height:70px;}
-    #stps ul li article {overflow: hidden;box-shadow: 1px 3px 0px #acacac;text-align: left;padding: 10px 5px 5px;background-color: #fff;border: 1px solid #ccc;position: absolute;border-radius: 2px;z-index: 50;top: 80px;width: 250px !important;}
-    #stps ul li span {font-size: 15px;color: #ccc;display: block;height: 32px;}
-    #scheduleForm li select {font-size: 23px;position: static;width: 100%;height: 52px;margin: 0;background-image: url(../styles/images/time-schedule-icon.png);background-position: right center;background-size: 40px 30px;background-repeat: no-repeat;padding-left:5px;}
-    /*For schedule calander*/
-    .schedulePopup .scheduleSection .km-listview-wrapper ul li .k-picker-wrap .k-input {border-radius: 0;height: auto;padding: 12px 0 12px;font-size: 1em;line-height: normal;color: #2e2e2e;border-right:0.15em solid #EBEBEB}
-    
-    /*.schedulePopup .scheduleSection .km-listview-wrapper ul {border-left: 0.13em solid #EBEBEB;}*/
-    #homePage .testimonials .test-content .test-r p {font-size: 1em;line-height: 28px;text-align: justify;}
-    
-    
-}
 
-@media (min-width:0px) and (max-width:640px) {
-.logLogo {height:170px;background-size:52%; margin:0 auto; background-position:center bottom}
-html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
-#tabstrip-manage-app .refresh-loading {height: 55px;background-size: 53%;background-position: center 10px;}
-#tabstrip-manage-app .refreshloan {height: 55px;}
-html body .backButton {width: 81%;background-size: 30% !important;background-position: 5px 10px !important;}
-#tabstrip-manage-app .docs-popup {width: 60px;}
-    
-    
-}
 @media (min-width:0px) and (max-width:533px) {
 
 html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 .forgtpass {padding: 0px 0 15px;}
-.loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) input[type=submit] { margin-bottom:15px;}
+.loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) input[type=submit] { margin-bottom:0;}
 #homePage .testimonials .test-content .test-l { float:none; display:inline-block; width: 30%;}
 #homePage .testimonials .test-content .test-r { float:none; width:100%;}
 #homePage .testimonials .test-content {text-align:center;}    
@@ -79,520 +29,17 @@ html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
 .stpsumry p {font-size: 15px; margin-bottom:0;}
 #stpSumAc { padding-left:20px; padding-right:20px;}
 #tabstrip-folder-events-popup ul li a span, #tabstrip-files-events-popup ul li a span {padding:50px 0 0 0;}
-    
- 
-    /*********************************Write By Vijay Mittal**********************************/
-    .nvbar{height:80px}
-    .nvbar .spnTxt{line-height:70px;}
-    #blackBlk .desbrdIcon .bizscor {float: right;margin-top: -13%;margin-bottom: 6px;text-align: center;}
-    #stps ul li article {overflow: hidden;box-shadow: 1px 3px 0px #acacac;text-align: left;padding: 10px 5px 5px;background-color: #fff;border: 1px solid #ccc;position: absolute;border-radius: 2px;z-index: 50;top: 80px;width: 250px;}
-    #stps ul li span {font-size: 11px;color: #ccc;display: block;height: 32px;}
-    #scheduleForm li select {font-size: 23px;position: static;width: 100%;height: 52px;margin: 0;background-image: url(../styles/images/time-schedule-icon.png);background-position: right center;background-size: 35px 30px;background-repeat: no-repeat;}
-    #scheduleForm li select option{color:#000 !important}
-    #scheduleForm li select:checked{color:red !important}
-    #homePage .testimonials .test-content .test-r p {font-size: 1em;line-height: 28px;text-align: justify;}
-   #homePage .testimonials .test-content .test-r span {font-size: 1em;margin-bottom: 30px;}
-    
-}
-
-
-@media (min-width:0px) and (max-width:370px) {
-    
-    
-    
-}
-
-
-
-/***************************************************ANDROID CSS***********************************************************************/
-
-@media (min-width:0px) and (max-width:1280px) {
-.loginSection ul li label input[type=text]:not(.k-input), .loginSection ul li label input[type=password]{padding:0.8em !important; font-size:1em !important;}
-.loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) input[type=submit]{padding: 1.05em !important; font-size:1.2em !important;}
-html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 3%;}
-.km-ios .km-list > li, .km-flat .km-list > li {font-size:1.2em;}
-.home .km-rightitem {width:6%;}
-.schedulePopup h3 {font-size: 1.7em;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li .k-select {background-size: 5%;background-position: 97% 50%;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li + li .k-select {background-size: 7%;background-position: 97% 50%;}
-.matches-view li .row3 a.appy, .matches-view li .row3 a.pending {background-size:13%; padding:3em 0em 1em; font-size:1em;}
-.matches-logo {background-size: 15%;height: 70px;}
-.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-position: 15px 7px; padding:25px 0%;background-size: 50%;}
-.documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position: 28px 5px; padding:25px 0%;background-size:33%;}
-#document-attach .km-rightitem a.refresh-com, #tabstrip-manage-app .refresh-loading {background-size:58%;background-position: center 22px;}
-.docs-header .km-widget .docs-docu {width:76%;padding: 2% 0 0;font-size: 1.2em;}
-.docs-header .km-widget .docs-search{ width:6%; background-position:center 0; background-size:66%; margin:1.6% 0 0;}
-.docs-header .km-widget .refresh-com { width:7%; background-position:center 5px; background-size:46%; margin:1.6% 0 0;}
-.docs-header .km-widget .refresh-loading { width:7%; background-position:center 10px; background-size:34%; margin:1.6% 0 0;}
-.inner-docs-back {padding: 1em .7em;}
-.schedulePopup {padding: 8px 3% 0 3.3%;}
-.matches-view li .row2 p a { font-size:1.2em;}
-.reqWindow + .doc-content ol {font-size:1.1em;}
-#dynamicCl.km-popup-wrapper {width: 220px !important;}
-#tabstrip-download-file .downloadWrpr {color: #333; text-align:center;}
-#tabstrip-download-file .downloadWrpr {padding: 2% 2% 0;color: #333;background-color: #fff;}
-#tabstrip-download-file .download-file-name {text-align: center;padding: 0 0 20px;}
-#tabstrip-download-file .status {text-indent: -9000px;background-image: url(images/download-loader.gif);background-repeat: no-repeat;background-position: center 0px;}
-#tabstrip-download-file .downloadWrpr a {background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:5px 5px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0;}
-#tabstrip-download-file .download-file-name .docx {padding:15% 0 0;background-image: url(images/dos.png)!important; background-repeat:no-repeat; background-position:center 7px; }
-#tabstrip-download-file .download-file-name .jpg, #tabstrip-download-file .download-file-name .jpeg {padding:15% 0 0;background-image: url(images/jpg.png)!important; background-repeat:no-repeat; background-size:10%;background-position:center 7px;}
-#tabstrip-download-file .download-file-name .doc {padding:15% 0 0;background-image: url(images/dos.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .txt {padding:15% 0 0;background-image: url(images/text.png)!important; background-repeat:no-repeat; background-size:10%!important; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .gif {padding:15% 0 0;background-image: url(images/GIF-icon.png)!important; background-repeat:no-repeat; background-size:10%!important; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .xls, #tabstrip-download-file .download-file-name .xlsx {padding:15% 0 0;background-image: url(images/xls.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .rtf {padding:15% 0 0;background-image: url(images/rtf-2-icon.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .ppt, #tabstrip-download-file .download-file-name .pptx {padding:15% 0 0;background-image: url(images/ppt-icon.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .pdf {padding:15% 0 0;background-image: url(images/pdf.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .png {padding:15% 0 0;background-image: url(images/png.png) !important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .unkown {padding:15% 0 0;background-image: url(images/unknown.png); background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:9%;display: block;color: #fff;font-size: 1.7em;}
-/*********Android css***************/
-.btngr {padding:22px 8px;font-size: 1.5em;}
-.docs-header .km-widget .docs-docu {width:74%; padding:1.7% 0 0 ;font-size: 1.2em;}
-.docs-header .km-widget .docs-back {background-position: 10px 15px;width: 7.5%;height:88px;background-size:87%;}
-.docs-header .km-widget .docs-popup { width:77px;height: 70px;}
-.folder-events .scheduleSection .buttonArea .km-button{padding: 1em 0;}
-#dynamicCl.km-popup-wrapper {width:330px !important; height:auto !important;}
-#tabstrip-Setting .docs-back {height: 85px;background-size:75%;background-position: 10px 10px;width: 10%;margin-top: 0rem!important;margin-bottom: 0rem !important;}
-#tabstrip-Setting .docs-docu {padding: 2% 0 0;font-size: 1.2em;}
-#tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li {padding: 3% 0 2% 10%;background-size: 5%;background-position:27px 12px;}
-#stps ul li article {width:300px;}
-#stps ul li article span { font-size:12px; padding-bottom:8px;}
-#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {padding: 0;width: 98%;margin: 0 0 0 1.3%;height:38%;}
-#tabstrip-forgot-pass .view-content { margin-top:7em;}
-.forgtpass { font-size:1.1em; padding-top:25px;}
-#newuser {margin:2em 0;}
-#newuser ul.km-listinset li {margin-bottom: 2%;}
-#newuser ul.km-listinset li input[type=text], #newuser ul.km-listinset li select{padding:1em!important;}
-#repypm.repaydetail ul li {width: 20%;}
-#repypm ul li {font-size:0.9em; font-weight:normal;}
-#repypm ul li span.tx{ font-weight:bold; padding:5px 0 0;}
-#dashview .tooltip { width:300px;}
-#tabstrip-forgot-pass .view-content p{font-size:1em;}
-#dashview .tooltip span {font-size:12px; padding-bottom:8px;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(2) {height:60px;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(3) a.docs-popup, .documentContent .km-listview-wrapper ul li table td:nth-child(3) a.k-state-border-down { background-size:55%;background-position: center 6px;}
-#aplicn_frm {padding: 30px 2%;}
-#aplicn_frm .rws .lftitb, #aplicn_frm .rws .rwfil label, #aplicn_frm .rws .rwfilbc label, #aplicn_frm .labl_tx2 { font-size:1em;}
-#aplicn_frm .rws select, #aplicn_frm input[type="text"] { font-size:14px;}
-#blackBlk { margin:0 1%; width:98%;}
-#aplicn_frm select.IN1b.ipsm3 {width:200px;}
-#aplicn_frm .ipsm1 {width: 160px;}
-#aplicn_frm select.IN1b.ipsm1 {width:255px;}
-#row_owners .rw_lin.addons p label {text-align:left;}
-#aplicn_frm .rws .rwfil label{font-size:11px;}
-.newChkBx {width:85%!important;}
-#aplicn_frm ul.low_creditop li {width:48%;}
-#aplicn_frm .IN4c {width: 230px;}
-.rwfil.aut > p > .ipsm1 {width:220px!important;}
-html body .backButton{ height:88px;background-size: 19% !important;background-position: 5px 18px;width:87%; }
-#tabstrip-manage-app #tabstrip .tabOne {margin:4% 0 0;}
-.tabOne .head span:last-child {width:8%;}
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li span:first-child{width:90%;}
-#tabstrip-manage-app #tabstrip ul li a span {line-height:37px; margin:16% 0 0 10%;}
-#tabstrip-manage-app .docs-popup { width:90px;height: 88px;}
-#tabstrip-manage-app #tabstrip ul li a{ font-size:24px;}
-#tabstrip-manage-app #tabstrip ul li a{ height:120px;}
-#tabstrip-manage-app #tabstrip div:nth-child(2) .tabOne .actArw {margin: 0 0 0 14.5%;}
-#tabstrip-manage-app #tabstrip div:nth-child(3) .tabOne .actArw {margin: 0 0 0 48%;}
-#tabstrip-manage-app #tabstrip div:nth-child(4) .tabOne .actArw {margin: 0 0 0 81.5%;}
-#tabstrip-manage-app .refreshloan{width:6%;background-size:42%;background-position: center 29px; height:88px;}
-#tabstrip-manage-app .refresh-loading{height:88px;}
-.home .popup, #tabstrip-Setting .popup, #tabstrip-loanapp-bi .popup, #tabstrip-loanapp-ci .popup, #tabstrip-loanapp-fp .popup, #tabstrip-loanapp-pi .popup{width:75px;}
-.rwfil.aut.clearfix p + p .IN1.ipsm1{ width:250px !important;}
-.documentList .wrap-content .row .num {width: 45px;}
-.documentList .wrap-content .row .name {width: 93%;font-size: 1.2em;}
-#matchDocList .text1 a {font-size:1em;}
-.documentList .wrap-content .row .num span {line-height: 39px;font-size: 23px;width: 40px;height: 40px;}
-.documentList .wrap-content .row .num { margin-top:0;}
-#matchDocList .filesBlock .file-iconjpg { height:49px;}
-#tabstrip-manage-app .refresh-loading, #tabstrip-manage-app .refreshloan { width:6%;}
-.logLogo {margin: 8% auto;}
-.documentList .buttonSet {padding-top: 8px;}
-.schedulePopup .scheduleSection .scall-text {margin: 10px 0;}
-#tabstrip-bizAnalyzer .backButton {width: 85%;}
-
-}
-@media (min-width:0px) and (max-width:1024px) {
-#tabstrip-download-file {padding:2%; height:47%; background-color:#fff;}
-#tabstrip-download-file .downloadWrpr { padding:2%; color:#333; background-color:#fff;}
-#tabstrip-download-file .km-scroll-wrapper { background-color:#fff;}
-#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:48%;}
-#tabstrip-download-file .download-file-name { text-align:center; padding:0 0 20px;}
-#tabstrip-download-file .status {text-indent:-9000px;background-image: url(images/download-loader.gif); background-repeat:no-repeat; background-position:center 0px;}
-#tabstrip-download-file .downloadWrpr a {background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:5px 5px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0;}
-#tabstrip-download-file .download-file-name .docx {padding:15% 0 0;background-image: url(images/dos.png)!important; background-repeat:no-repeat; background-position:center 7px; }
-#tabstrip-download-file .download-file-name .jpg, #tabstrip-download-file .download-file-name .jpeg {padding:15% 0 0;background-image: url(images/jpg.png)!important; background-repeat:no-repeat; background-size:10%;background-position:center 7px;}
-#tabstrip-download-file .download-file-name .doc {padding:15% 0 0;background-image: url(images/dos.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .txt {padding:15% 0 0;background-image: url(images/text.png)!important; background-repeat:no-repeat; background-size:10%!important; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .gif {padding:15% 0 0;background-image: url(images/GIF-icon.png)!important; background-repeat:no-repeat; background-size:10%!important; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .xls, #tabstrip-download-file .download-file-name .xlsx {padding:15% 0 0;background-image: url(images/xls.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .rtf {padding:15% 0 0;background-image: url(images/rtf-2-icon.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .ppt, #tabstrip-download-file .download-file-name .pptx {padding:15% 0 0;background-image: url(images/ppt-icon.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .pdf {padding:15% 0 0;background-image: url(images/pdf.png)!important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .png {padding:15% 0 0;background-image: url(images/png.png) !important; background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#tabstrip-download-file .download-file-name .unkown {padding:15% 0 0;background-image: url(images/unknown.png); background-repeat:no-repeat; background-size:10%; background-position:center 7px;}
-#blackBlk .desbrdIcon .span {background-position: left center;}
-#blackBlk .desbrdIcon .span{font-size: 1.8em;}
-.logo { margin:3% auto;}
-.documentClick .km-view-title a{padding: 15px 0px 0px;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li .k-select{ background-size:6%; background-position:97% 50%;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li + li .k-select{ background-size:7%; background-position:97% 50%;}
-.schedulePopup h3{font-size: 1.7em;}
-.schedulePopup .scheduleSection .scall-text{font-size: 1em;}
-.btngr{ padding: 16px 8px; font-size:1.3em;}
-.stpcurrntAc p a{ padding:15px 15px 15px 35px !important; background-size:15% !important; background-position:5px 11px !important;}
-.matches-logo{ background-size:16.3%; height:77px;background-position: 5px 18px;}
-.home .popup { width:75px; height:75px;}
-.docs-header .km-widget .docs-back {height:80px; background-size:82%; background-position:10px 10px; width:10%;margin-top:0rem!important;margin-bottom:0rem !important;}
-.docs-header .km-widget .docs-docu { width:69%; padding:2% 0 0; font-size:1.2em;}
-.docs-header .km-widget .docs-search{ width:6%; background-position:center 2px; background-size:88%; margin:1.2% 0 0;}
-.docs-header .km-widget .refresh-com { width:8%; background-position:center 0; background-size:60%; margin:1.6% 0 0;height: 64px;}
-.docs-header .km-widget .refresh-loading { width:8%;background-position: center 10px;background-size: 43%; margin:1.3% 0 0;}
-.modal-mess-Popup {padding:0; width:98%; margin:0 0 0 1.3%;}
-.modal-mess-one {padding:0; width:98%; margin:0 0 0 1.3%; }
-.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-position: 15px 7px;padding: 15px 0%;background-size: 60%;}
-.documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position: 25px 6px;padding: 18px 0%;background-size:39%;}
-.documentContent ul.export {list-style:none;}
-.documentContent ul.export li span {padding:17px 10px 17px 10%;background-size:8.3%;}
-.documentContent ul.export li .folder {background-image: url(images/folder.png); background-repeat:no-repeat;background-position:5px 7px;}
-#blackBlk .desbrdIcon {padding: 1%;display: block;}
-#blackBlk .desbrdIcon .dasimg{width:11%;}
-.documentClick .km-view-title a span { font-size:1.3em;}
-.docs-header .km-widget #docs-filter {width:83%; margin:0.7em 0 0;}
-.km-tablet .km-filter-wrap {max-width: 37em;}
-.home .km-rightitem {width:8%;}
-.documentContent .km-listview-wrapper ul li span {padding: 12px 10px 12px 13%; }
-.inner-docs-back {padding: .8em .7em;}
-.matches-view li .row3 a.pending{background-size: 16%;padding: 3em 0em 0.5em;font-size: 1em;}
-#tabstrip-Setting .docs-back{height: 80px;background-size: 82%;background-position: 10px 10px;width: 10%;margin-top: 0rem!important;margin-bottom: 0rem !important;}
-#tabstrip-Setting .docs-docu {padding: 2% 0 0;font-size: 1.2em;}
-#tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li{padding:3% 0 2% 10%;background-size: 5%;background-position: 22px 10px;}
-#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:13%;display: block;color: #fff;font-size: 1.5em;padding:4% 0 4% 11%;}
-#aplicn_frm .rws .lftitb, #aplicn_frm .rws .rwfil label, #aplicn_frm .rws .rwfilbc label,#aplicn_frm .labl_tx2 { font-size:0.85em;}
-#aplicn_frm select.IN1b.ipsm3 {width:156px;}
-#aplicn_frm .rws .rwfil label{font-size: 0.7em; padding:0 10px 0 2px;}
-#aplicn_frm .ipsm13 {width: 130px;}
-#aplicn_frm .IN4c {width: 210px;}
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li span:first-child {width:90%; float:left; font-weight:bold; font-size:18px; }
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li span {float:right; font-size:16px; color:#999; width:10%;}
-.tabOne .head span:last-child { width:10%;}
-#tabstrip-manage-app #tabstrip ul li.k-state-active .actArw { bottom:-103%;left: 45%;}
-#tabstrip-manage-app #tabstrip .tabOne {margin:6% 0 0;}
-#tabstrip-manage-app #tabstrip ul li a span {line-height: 39px;margin: 12% 0 0 10%; height:45px; width:45px;}
-#tabstrip-manage-app #tabstrip ul li a{ height:100px;}
-html body .backButton{ height:77px; width:85%;}
-#tabstrip-manage-app .refreshloan{width:6%;background-size: 57%;background-position: center 21px; height:77px;}
-#tabstrip-manage-app .refresh-loading{height:77px;background-position: center 15px;background-size: 80%;}
-#document-attach .km-rightitem a.refresh-com {background-size: 72%;background-position: center 19px;}
-#document-attach .km-rightitem a.refresh-loading {background-position: center 26px;}
-#matchDocList .filesBlock .file-iconjpg {height: 40px;}
-#tabstrip-manage-app .docs-popup {width: 85px;height: 77px;background-size: 70%;}  
-.docs-header .km-widget .docs-popup {background-size:80%;width: 73px;}
-.logLogo {margin:5% auto;}
-#bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_rw2 .bz_an_mn_pg_inr_lw_rw2_l, #bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_rw2 .bz_an_mn_pg_inr_lw_rw2_r {display:none;}
-#bz_an_mn_pg #bz_an_mn_pg_inr .bz_an_mn_pg_inr_lw .bz_an_mn_pg_inr_lw_tbs .bz_an_mn_pg_inr_lw_tbs_hd li {max-width: 130px;}
-#bz_an_mn_pg .bz_an_mn_pg_inr_lw_tbs_cont_r {max-width: 475px;}
-#tabstrip-bizAnalyzer .backButton {width: 82%;}
-#tabstrip-bizAnalyzer .refreshloan {background-size: 24%;background-position: center 25px; }
-#tabstrip-bizAnalyzer .refresh-loading {background-size: 32%;background-position: center 19px; }
-#aplicn_frm .ipsm3 {width: 320px;}
-#aplicn_frm .ipsm2 {width: 156px;}
-#aplicn_frm select.IN1b.ipsm1 {width: 200px;}
-#aplicn_frm #credit_show .IN3 {width: 304px;}
-#aplicn_frm #credit_show .ipsm3 {width: 306px;}
-#aplicn_frm #outsta_debt .IN5 {width: 295px;}
-#aplicn_frm #outsta_debt .IN4.number {width: 296px!important;}
-#aplicn_frm #outsta_debt .IN4 {width: 143px;}
-#aplicn_frm .rws .rwfilbc {width:330px;}
-#aplicn_frm #busInfobx2 .IN4c {width: 200px;}
-#blackBlk .desbrdIcon .bizscor {margin-top:2.3%;}
-#row_owners .rws .rwfil.aut {float:left; width:72%; }
-#row_owners .IN1, html body #aplicn_frm #row_owners select.IN1b, html body #aplicn_frm #row_owners .IN1 {width: 330px!important;}
-.newChkBx{width: 100%!important;}
-#aplicn_frm ul.low_creditop li {width: 50%;padding: 0px 0% 10px 0px;}
-#aplicn_frm .rws .rwfil label {font-size:0.9em;}
-#aplicn_frm .labl_tx2 {font-weight:bold;}
-
-}
-@media screen and (max-width: 960px){
-.tp-menu{ display:none}
-section{ width:100%; margin:0px auto; }
-#dashview .warps{ width:100%; }
-#articls .warps{ width:100%; }
-#blghelp .warps{ width:100%; }
-#dasbdnav{ padding-left:4%;}
-#fullheds.dashboard .fixdlogo{ margin-left:4%;}
-#menumobile{ position:absolute; top: 0; left:0; padding-left:3%; padding-right:3%; z-index: 100; color: #000; margin-top:0px; width: 20px; height: 45px; cursor:pointer; background-image:url(styles/menu.png); background-repeat:no-repeat; background-position: center 14px; padding-top:0px; text-transform:uppercase; font-size:20px; }
-/* 6 March */
-#aplicn_frm .rws.rw1 p{ width:50%; padding:0px;}
-#aplicn_frm .rws.rw1 .IN1 { width: 90%;}
-#aplicn_frm .rws.rw2 p{ width:auto;}
-#aplicn_frm select.IN1b.ipsm3 {width: 147px;}
-#aplicn_frm .addbtns{ padding-left:0px;}
-#aplicn_frm .rws .rwfilbc { padding-top:0px;}
-#aplicn_frm .rws { padding-bottom:10px;}
-#aplicn_frm .montrnt .IN2 { width: 26.2%;}
-#aplicn_frm .rws .lftit {font-family:'OpenSansBol', Arial, Helvetica, sans-serif; padding-bottom:15px;}
-#aplicn_frm .rws .lftit { padding-bottom:10px; float:none;}
-#aplicn_tp ul.app_nav{ margin:0px; padding:0px; }
-#aplicn_tp ul.app_nav li{display:inline-block; opacity:0.5; text-align:center; font-family:'OpenSansReg', Arial, Helvetica, sans-serif; color:#666; font-size:14px; background-image:url(../styles/layout/ap_ic1.png); background-repeat:no-repeat;
-background-position:center 10px ; text-align:center; width:22.5%; margin-right:2%;}
-#aplicn_tp ul.app_nav li:last-child{ margin-right:0px;}
-#aplicn_tp ul.app_nav li span{ display:inline-block; margin:0px auto; padding:35px 0px 45px 0px; text-align:center; }
-#aplicn_tp ul.app_nav li.activ{font-family:'OpenSansBol', Arial, Helvetica, sans-serif; opacity:1.0 }
-#aplicn_tp ul.app_nav li.activ span{ background-image:url(../styles/layout/ap_ar_up.png); background-repeat:no-repeat; background-position:bottom center}
-#aplicn_tp ul.app_nav li.dn{font-family:'OpenSansReg', Arial, Helvetica, sans-serif; color:#99cc33; opacity:1.0; background-image:url(../styles/layout/ap_ic1b.png) }
-#aplicn_tp ul.app_nav li.dn span{ background-image:url(../styles/layout/ap_ar_dn.png); background-repeat:no-repeat; background-position:center 60px }
-#aplicn_frm .rws.rw2 .ipsm4 { width: 400px;}
-#aplicn_frm .rws .lftitb {padding-bottom:15px; }
-#aplicn_frm .IN1b {width:46.7%;}
-#aplicn_frm .admr { display:inline-block}
-#aplicn_frm .montrnt .artp{ display:none}
-#aplicn_frm .rws .rwfil.aut { float:none;}
-#aplicn_frm .rws #credit_show p {padding:0; float:left; width:auto; display:inline-block;}
-.rw_lin.cngopt { padding-bottom:15px!important;}
-.rw_lin.cngopt > p { width:38% !important; float:left!important;}
-#aplicn_frm .rws p.imp40 {width:50%!important;padding-right: 3%;float: left!important;}
-.forgtpass {padding-top: 17px;}
-html body .backButton {background-size: 20% !important;background-position: 5px 18px !important;}
-#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height: 42%;}
-.docs-header .km-widget .docs-docu {width: 68%;padding: 1.5% 0 0;}
-.docs-header .km-widget .docs-popup {background-size: 68%;width: 82px;}
-.rw_lin.cngopt > p {width: 43% !important;}
-#aplicn_frm .rws .rwfil label {font-size: 0.9em;}
-#aplicn_frm .rws p {width:auto; float:left; display:inline;}
-#aplicn_frm #outsta_debt .IN5, #aplicn_frm #outsta_debt .IN4.number {width: 100%!important;}
-#aplicn_frm #outsta_debt .IN4 {width: 100%;}
-#aplicn_frm .ipsm3 {width: 300px;}
-#aplicn_frm .ipsm2 {width: 146px;}
-#aplicn_frm .IN5, #aplicn_frm .IN6 {width: 265px;}
-#aplicn_frm select.IN1b.ipsm1 {width: 185px;}
-#aplicn_frm #credit_show .IN3 {width: 282px;}
-#aplicn_frm #credit_show .ipsm3 {width: 286px;}
-#aplicn_frm #busInfobx2 .IN4c {width: 185px;}
-#aplicn_frm .rws .rwfilbc {width: 600px;}
-#blackBlk .desbrdIcon .bizscor {margin-top:2%;}
-#row_owners .rws .lftit  {float:left;}
-#row_owners .rws .rwfil.aut{width: 68%;float:left;}
-#row_owners .IN1, html body #aplicn_frm #row_owners select.IN1b, html body #aplicn_frm #row_owners .IN1 {width: 290px!important;}
-#row_owners .rws.rw1 p {width:auto;}
-}
-@media (min-width:0px) and (max-width:800px) {
-.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {}
-.documentContent .km-listview-wrapper ul li span{ padding:12px 10px 12px 13%;}
-.documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position:16px 5px;background-size:47%;}
-.docs-header .km-widget .docs-search{ width:6%; margin:0 2%;background-position: center 16px;height: 73px;}
-.docs-header .km-widget .refresh-com {width:8%;background-position:10px 4px;background-size:67%; margin:0.6em 0 0;height: 60px;}
-.docs-header .km-widget .refresh-loading {width: 8%;margin: 0.3% 0 0;background-position: center 22px;background-size: 46%;}
-#dynamicCl.km-flat .km-header .km-navbar { padding: 0 1% 1%;}
-.docs-header .km-widget .docs-docu{ width:64%; padding:1.9% 0 0 ; font-size:1em;}
-.docs-header .km-widget .docs-back{background-position: left 57%;background-size:95%; width:10%; height:74px;}
-.docs-header .km-widget #docs-filter .km-filter-wrap { background-position:center 35px;}
-.docs-header .km-widget #docs-filter { margin:0.7em 0 0;}
-.docs-header .km-widget #docs-filter .km-filter-wrap input { font-size:0.8em;}
-.home .km-rightitem {width:11%;}
-.matches-view li .row3 a.appy, .matches-view li .row3 a.pending {background-size:17%;padding: 2.5em 0em 0.5em;font-size: 1em;}
-.inner-docs-back {margin: .6em .7em 0.7em; padding:0;}
-.matches-view li .row2 p a { font-size:1em;}
-#dynamicCl.km-popup-wrapper {width:260px !important; height:auto !important;}
-/*******Android css************/
-.folder-events .scheduleSection .buttonArea .km-button{padding:0.8em 0;}
-#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:20%;}
-#tabstrip-Setting .docs-back {height: 80px;background-size: 88%;}
-.matches-logo {background-size: 20%;height: 65px;background-position: 5px 13px;}
-#tabstrip-forgot-pass .view-content { margin-top:18em;}
-#newuser {margin: 4em 0;}
-#newuser ul.km-listinset li {margin-bottom:5%;}
-#newuser ul.km-listinset li input[type=text], #newuser ul.km-listinset li select{padding:1.5em!important;}
-#dashview .tooltip { width:250px;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(2) {height:64px;width: 65%;}
-.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-size:66%;background-position: 7px 7px; padding:15px 0;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(3) a.docs-popup, .documentContent .km-listview-wrapper ul li table td:nth-child(3) a.k-state-border-down {background-size: 80%;}
-#aplicn_frm, #aplicn_btm {padding: 30px 5%;}
-#aplicn_frm .rws.rw2 p {padding-right:0px;}
-#aplicn_frm input[type="text"], #aplicn_frm .rws.rw2 .ipsm3{ width:100%}
-#aplicn_frm .rw_lin.hlp p .IN6 {width: 100%;}
-#aplicn_frm .rws select, #aplicn_frm input[type="text"] { font-size:13px;}
-#blackBlk { margin:0 2%; width:96%;}
-#aplicn_frm .rw_lin.hlp p {width:85%;padding-right: 3%;float: left; padding-bottom:3px;}
-#aplicn_frm .rw_lin.hlp p .IN5 {width: 100%;}
-#aplicn_frm .IN3 {width:100%;}
-#aplicn_frm .rws.rw1 p {display: block;float: none;width: 100%;}
-#aplicn_frm .rws.rw2 .ipsm4 {width: 95%;}
-#B2cAppForms select {background-image:none; background-color:#fff;}
-#aplicn_frm .rws.rw1 .IN1 {width: 100%;margin-bottom: 10px;float: none;}
-#aplicn_frm select.IN1b.ipsm1 {width: 100%;}
-#row_owners .rw_lin.addons p{ text-align:left;}
-#aplicn_frm #credit_show .rws p {display: block;float: left;width:auto;}
-#aplicn_frm #credit_show .rw_lin p.imp33{ width:100%; padding-right:0%; float:none}
-#aplicn_frm .rws p.imp40 .IN5{ width:92%}
-#aplicn_frm .rws .rwfilbc span { width:210px;}
-.IN1.ac_input.error + label.error {position:static;}
-.newChkBx, .rwfil.aut > p > .ipsm1 {width:100%!important;}
-#aplicn_tp ul.app_nav li.dn span {background-position: center 65px;}
-#aplicn_frm .IN4c {width:100%;}
-html body .backButton {height: 62px;background-size:27% !important;width:84%;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li span:first-child, .tabOne .head span:first-child {width:78%;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li span, .tabOne .head span:last-child{ width:22%;}
-#tabstrip-manage-app #tabstrip ul li a{font-size:17px;}#tabstrip-manage-app #tabstrip ul li.k-state-active .actArw {bottom: -84%;}
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li span:first-child{width:86%;}
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li span{width:14%;}
-#tabstrip-manage-app #tabstrip ul li a{ padding:60px 0 0px 0%; text-align:center;font-size: 17px;height:125px;}
-#tabstrip-manage-app #tabstrip ul li a span {margin:9% 0 0 40%; line-height:37px;}
-#tabstrip-manage-app .docs-popup {width:68px;height: 60px;background-size:75%;}
-#tabstrip-manage-app #tabstrip ul li.postd_icn, #tabstrip-manage-app #tabstrip ul li.k-state-active.postd_icn, #tabstrip-manage-app #tabstrip ul li.end_icon, #tabstrip-manage-app #tabstrip ul li.k-state-active.end_icon, #tabstrip-manage-app #tabstrip ul li.k-state-active.sevd_icon, #tabstrip-manage-app #tabstrip ul li.sevd_icon, #tabstrip-manage-app #tabstrip ul li.lon_icon, #tabstrip-manage-app #tabstrip ul li.k-state-active.lon_icon {background-position: center 10px;}
-#tabstrip-manage-app .refresh-loading {background-size:85%;background-position: center 20px;}
-#tabstrip-manage-app .refreshloan {background-size: 63%;background-position:center 25px;}
-.documentList .wrap-content .row .name {width: 89%;}
-#document-attach .km-rightitem {width: 18%;}
-#document-attach .km-rightitem a.docs-popup {height: 58px;}
-#document-attach .km-rightitem a.refresh-com{background-position: center 12px; height:58px;}
-#document-attach .km-rightitem a.refresh-loading {background-position: center 17px;background-size: 52%;}
-.docs-header .km-widget .docs-popup {width: 60px;height: 40px;}
-.logLogo {margin: 40% auto 5%;}
-#biz_analyzernewd_form .frm_outr_cont .frm_cont3 .three-inline .rel-label input {width: 68%;}
-#biz_analyzernewd_form .frm_outr_cont .frm_cont3 {padding: 30px 15px;}
-#tabstrip-bizAnalyzer .backButton {width:80%;}
-#tabstrip-bizAnalyzer .refresh-loading{background-size: 39%;background-position: center 19px;}
-#tabstrip-bizAnalyzer .refreshloan{background-size: 29%;background-position: center 24px;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li .k-select {background-size: 7%;}
-#aplicn_frm #credit_show .IN3, #aplicn_frm #credit_show .ipsm3 {width: 310px;}
-#aplicn_frm .rws .rwfil { width:100%; float:none; }
-#aplicn_frm .rws p {width:100%; float:left; display:block;}
-#aplicn_frm .rws.rw2 p {width: 100%;}
-.rw_lin.cngopt > p {width: 85% !important;}
-html body #aplicn_frm .opt {padding-bottom: 25px;}
-#aplicn_frm #busInfobx2 .IN4c {width:100%;}
-#aplicn_frm .showfilds_bx {margin-right:0;}
-#aplicn_frm .smOn.IN3 {width: 98%;}
-#aplicn_frm .rws .rwfil.aut {width:100%;}
-#aplicn_frm .rws p {padding:0;}
-#aplicn_frm.formTw select.IN1b.ipsm3, #aplicn_frm.formTw .zipcod, #aplicn_frm.formTw .IN1b.ipsm1, #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner1 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner2 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner3 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner4 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner5 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner6 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner7 .ipsm1, #aplicn_frm #adddowner8 .ipsm1, #aplicn_frm #adddowner8 .ipsm1 {width:100% !important;}
-#blackBlk .desbrdIcon .span {background-size: 14%;padding: 4% 0 4% 14%;font-size: 1.7em;}
-#blackBlk .desbrdIcon .bizscor {margin-top:2%;}
-#row_owners .IN1, html body #aplicn_frm #row_owners select.IN1b, html body #aplicn_frm #row_owners .IN1 {width:100%!important;}
-#aplicn_frm .rw_lin { float:none;}
-.IN4.number, #priority1.IN1.fund, #aplicn_frm .rws .rwfilbc span, #aplicn_frm .rws .lftitb {width: 100%!important;}
-}
-@media (min-width:0px) and (max-width:768px) {
-.logLogo {margin:1% auto 2%;background-size: 63%;height: 85px;}
-.documentContent .km-listview-wrapper ul li .Folder {}
-.documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position:18px 5px; padding:15px 0%;}
-.docs-header .km-widget .docs-search {width: 7%;margin: 1% 0.5% 0 2%;background-position: center 3px;background-size: 78%;height: 48px;}
-.docs-header .km-widget .refresh-com {width:8%;background-position: center 5px;background-size: 63%;height: 54px;margin: 0.3em 0 0;}
-.docs-header .km-widget .refresh-loading {background-position: center 11px;width: 8%;background-size: 45%;margin: 0.3em 0 0 ;height: 54px;}
-.schedulePopup {padding: 8px 1.7% 0 2.2%}
-.reqWindow + .doc-content ol {font-size:1em;}
-.matches-view li .row3 a.pending{background-size:17%;padding: 2.5em 0em 0.5em;font-size: 1em;}
-#tabstrip-Setting .docs-back{height: 62px;width: 10%;background-position: center 7px;}
-#tabstrip-Setting .docs-docu {padding: 1.4% 0 0 1.4%;}
-#tabstrip-Setting .Setting-ac, #tabstrip-Setting ul#settingpage li{padding: 3% 0 3% 12%;background-size: 5%;background-position: 22px 10px;}
-#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height: 53%;}
-body.horizontal #tabstrip-download-file.modal-mess-Popup, body.horizontal #tabstrip-upload-file.modal-mess-Popup {height:55%;}
-.matches-logo {background-size:20%;height: 60px;background-position: 5px 12px;}
-#repypm.repaydetail ul li { width:33%;}
-#repypm ul li span.tx {height:30px;}
-#newuser ul.km-listinset li input[type=text], #newuser ul.km-listinset li select {background-size:6%;padding: 0.8em!important;}
-#aplicn_frm .rws .lftitb, #aplicn_frm .rws .rwfil label, #aplicn_frm .rws .rwfilbc label, #aplicn_frm .labl_tx2 { font-size:0.8em;}
-#menumobile{display:none}
-.mobile{display:none}
-ul.mobile li.subnv a{ background-image:url(../styles/layout/downar.png); background-repeat:no-repeat; background-position:right 16px;}
-ul.mobile li.subnv.act a{ background-image:url(../styles/layout/downar.png); background-repeat:no-repeat; background-position:right -16px;}
-.subms li a{ background-image:none !important}
-#dasbdnav{ display:none}
-.nav-menu{ display:none}
-#fullheds.dashboard .fixdlogo{ width:120px; height:34px; float:left}
-#fullheds.dashboard .fixdlogo a{ display:block; height:34px; background-image:url(../styles/layout/b2c.png); background-position:22px -53px; font-size:0px;}
-#wrapper{margin:0 auto; background-color:#FFF; width:100%; position:relative; overflow-x:hidden; z-index:50;}
-.mobile{margin:0; padding:0; position:absolute; height:100%; width:230px; overflow:hidden; left:0px; background:#262626; display:block; overflow:auto; z-index:25; top:0}
-.menu{display:none;}
-header{ width:100%; background-color:#faf8e9; border-bottom:1px solid #E1E1E1; margin-bottom:20px}
-ul.mobile li{ float:none; display:block; border-bottom:1px solid #111111; overflow:hidden; border-top:1px solid #333333; }
-ul.mobile li a { font-family:'OpenSansBol',Arial, Helvetica, sans-serif; background-color: #1E1E1E; background-position: 178px 16px; border-left: 0 none; border-right: 0 none; color: #CCCCCC; display: block; font-size: 14px; font-weight: bold; margin-right: 0; padding: 8px 10px 8px 15px; }
-ul.mobile li span { background-color: #666; background-position: 178px 16px; border-left: 0 none; border-right: 0 none; color: #000; display: block; font-size: 14px; font-weight: bold; margin-right: 0; padding: 4px 10px 4px 15px; display:block }
-ul.mobile li a.activ:hover{ background-color:#FFF; color:#333}
-ul.mobile li a span{ opacity:1.0}
-ul.mobile li a:hover{ display:block; font-size:14px; background-color:#000; color:#aee518 }
-#help{ padding-bottom:10px;}
-.helnum { padding-top: 40px; padding-bottom:0px; }
-.helnum h2{ color:#999}
-.helpcont{width:127px; float:right; position:absolute; top:7px; right:3%;}
-#help h1{ font-size:24px; color:#333333; float:none; padding-bottom:10px; width:100%; display:block}
-#stps ul li span { line-height:14px; }
-#stps ul li strong { height: 38px; }
-.stpsumry{ width:100%; float:none; text-align:center}
-.stpcurrntAc{ width:100%; padding-top:10px; float:none; text-align:center}
-.helpnv{ background-color:#666;}
-.helpnv.act{background-color:#333;}
-.helpcontain ul{ background-color:#333;}
-.titcl {font-size: 19px}
-/* 6 March */
-#aplicn_frm .rws.rw2 .ipsm4 { width:300px;}
-#aplicn_frm .rws .lftitb{ padding-bottom:15px; font-size:1em; width:100%; }
-#aplicn_frm .rws .rwfilbc { width:auto}
-#aplicn_frm .rws .rwfilbc span { width:230px}
-#aplicn_tp .coln{ width:100%; float:none; margin-bottom:20px; text-align:left}
-#aplicn_tp .coln:nth-child(even){ float:none; text-align:left; margin-bottom:10px;}
-#aplicn_tp .BTgry{margin-right:5px; margin-left:0px; }
-#aplicn_tp .BTgren{ margin-right:5px; margin-left:0px; }
-#aplicn_btm .BTgry{margin-right:5px; margin-left:5px; }
-#aplicn_btm .BTgren{ margin-right:5px; margin-left:5px; }
-#aplicn_btm{ text-align:left}
-#aplicn_frm .rws { padding-bottom:10px;}
-#aplicn_frm .rws .rwfil label{font-size: 0.9em; padding-left: 2px;}
-#homePage .testimonials h2 {background-size:7%;}
-.newChkBx {width:100%!important;}
-#tabstrip-manage-app .refresh-loading { height:62px;background-size:86%;background-position: center 12px;}
-html body .backButton { width:84%; background-size:25% !important;background-position: 5px 11px !important;}
-#tabstrip-manage-app #tabstrip div:nth-child(2) .tabOne .actArw {margin: 0 0 0 15%;}
-#tabstrip-manage-app #tabstrip .tabOne {margin:4% 0 0;}
-.rwfil.aut.clearfix p + p .IN1.ipsm1{ width:100% !important;}
-#priority1.IN1.fund, .IN4.number { width:100%!important;}
-#tabstrip-manage-app .refreshloan {width:6%;height: 62px;background-size:63%;background-position:center 17px;}
-#document-attach .km-rightitem a.refresh-com{background-position: center 12px;background-size:70%;}
-#document-attach .km-rightitem a.refresh-loading {background-position: center 18px; background-size:50%;}
-.loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) input[type=submit] {padding: 0.8em !important;}
-#newuser {margin: 2em 0;}
-#newuser ul.km-listinset li {margin-bottom: 1.5%;}
-#newuser .buttonArea input[type=submit] {padding: 0.7em!important;}
-body.horizontal #tabstrip-forgot-pass .view-content {margin-top:5em;}
-#tabstrip-manage-app #tabstrip ul li a {height: 104px;}
-#tabstrip-manage-app #tabstrip ul li a span {margin: 1% 0 0 44%;}
-#tabstrip-manage-app #tabstrip ul li a span {font-size: 16px;}
-.forgtpass { padding-top:15px; padding-bottom:0;}
-#matchDocList .filesBlock .buttonSet .DeleteIC {padding:0;}
-#document-attach .km-rightitem {width: 16%;}
-#tabstrip-manage-app #tabstrip ul li a span {height:35px;width: 35px;line-height:31px;}
-ul#dirContentUpload input[type="checkbox"] {width:20px; height:20px;margin-top: -0.7em;}
-.documentList .wrap-content .row .num span {line-height: 35px;font-size: 20px;width: 33px;height: 33px;}
-.documentContent .km-listview-wrapper ul li table td {width:7%;background-size: 52%;background-position: 18px 7px;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(2) {height: 50px;}
-.documentList .wrap-content .row, .documentList .wrap-content .row.off {background-size:4%;background-position: right center;}
-.documentList .wrap-content .row .name {margin-top: 8px;width: 92%;}
-.docs-header .km-widget .docs-back {background-position: 10px 58%;background-size: 72%;width: 11%;height: 60px;}
-#matchDocList .upload a {font-size:14px; padding:5px 20px;}
-#matchDocList .filesBlock .file-iconjpg {background-size: 75%;background-position: 0px 4px;}
-#tabstrip-manage-app #tabstrip ul li.postd_icn {background-size: 13%;}
-#tabstrip-manage-app #tabstrip ul li a {height: 80px;padding: 45px 0 0px 0%;font-size: 16px;}
-#tabstrip-manage-app #tabstrip ul li.end_icon {background-size: 11%;}
-#tabstrip-manage-app #tabstrip ul li.sevd_icon {background-size: 9%;}
-li#undefined table td:nth-child(1) {width:7%;background-size: 66%;}
-.docsUploadMulti .cancelUpld {width:5.5%;}
-.docsUploadMulti .flNmUpldwrap { width:92%;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(3) a.docs-popup, .documentContent .km-listview-wrapper ul li table td:nth-child(3) a.k-state-border-down {background-size: 53%;}
-.docs-header .km-widget .docs-popup {background-size:67%;height:45px;width:65px;}
-li#undefined table td:nth-child(1).default-icon {background-size:50%;}
-.home .popup {background-size: 60%; }
-.docs-header .km-widget .docs-docu {padding: 1.4% 0 0;width: 63%;}
-.matches-view li .row1 p {padding: 0 0 3px 50px;}
-#tabstrip-bizAnalyzer .refresh-loading {height: 62px;background-position: center 13px;}
-#tabstrip-bizAnalyzer .refreshloan {background-position: center 19px;height: 62px;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 48.4%;}
-#dynamicCl.km-popup-wrapper {height: 263px !important;}
-#aplicn_frm #credit_show .IN3, #aplicn_frm #credit_show .ipsm3, #aplicn_frm #credit_show p.imp50 .IN1 {width: 100%;} 
-#aplicn_frm .rws #credit_show p {width:100%}
-html body #aplicn_frm .opt {padding-bottom: 14px;}
+ /*********************************Write By Vijay Mittal**********************************/
+.nvbar{height:70px}
+.nvbar .spnTxt{line-height:70px;}
+#blackBlk .desbrdIcon .bizscor {float: right;margin-top: -13%;margin-bottom: 6px;text-align: center;}
+#stps ul li article {overflow: hidden;box-shadow: 1px 3px 0px #acacac;text-align: left;padding: 10px 5px 5px;background-color: #fff;border: 1px solid #ccc;position: absolute;border-radius: 2px;z-index: 50;top: 80px;width: 250px;}
+#stps ul li span {font-size: 11px;color: #ccc;display: block;height: 32px;}
+#scheduleForm li select {font-size: 23px;position: static;width: 100%;height: 52px;margin: 0;background-image: url(../styles/images/time-schedule-icon.png);background-position: right center;background-size: 35px 30px;background-repeat: no-repeat;}
+#scheduleForm li select option{color:#000 !important}
+#scheduleForm li select:checked{color:red !important}
+#homePage .testimonials .test-content .test-r p {font-size: 1em;line-height: 28px;text-align: justify;}
+#homePage .testimonials .test-content .test-r span {font-size: 1em;margin-bottom: 30px;} 
 }
 @media (min-width:0px) and (max-width:640px) {
 .logo { margin:3% auto;}
@@ -616,7 +63,7 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 .home .km-rightitem {width: 12%;}
 .modal-mess-Popup {padding:0; width:98%; margin:0 0 0 1.3%;}
 .modal-mess-one {padding:0; width:98%; margin:0 0 0 1.3%; }
-.logLogo {margin: 45% auto 7%;height: 60px;background-size:70%;}
+.logLogo {margin: 3% auto;height: 60px;background-size:65%;}
 #tabstrip-Setting .docs-docu {font-size:0.9em;padding: 1.2% 0 0;}
 #tabstrip-Setting .docs-back {width: 12%;background-position: 5px 7px;background-size:87%;}
 .schedulePopup h3 {font-size:15px;}
@@ -625,13 +72,12 @@ html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
 #tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height:59%;}
 body.vertical #tabstrip-download-file.modal-mess-Popup, body.vertical #tabstrip-upload-file.modal-mess-Popup {height:24%;}
     
-#tabstrip-forgot-pass .view-content { margin-top:19em;}
+#tabstrip-forgot-pass .view-content { margin-top:2em;}
 #stps ul li article {width:260px;}
 #stps ul li article span { font-size:10px; padding-bottom:8px;}
 #newuser ul.km-listinset li {margin-bottom: 3%;}
 #newuser ul.km-listinset li input[type=text], #newuser ul.km-listinset li select {padding: 1em!important;}
 #newuser {margin: 12em 0;}
-.forgtpass {padding:16px 0 5px;}
 .documentContent .km-listview-wrapper ul li table td:nth-child(3) a.docs-popup, .documentContent .km-listview-wrapper ul li table td:nth-child(3) a.k-state-border-down { background-size:75%;background-position: center 6px;}
 .documentContent .km-listview-wrapper ul li table td:nth-child(2) {height:50px; width:80%}
 #aplicn_frm #credit_show p.imp50 { padding:0; width:100%;}
@@ -728,247 +174,16 @@ li#undefined table td:nth-child(1) {width:10%;background-size: 66%;}
 #aplicn_frm #busInfobx2 .IN4c {width:96%;margin-bottom: 10px;}
 #aplicn_frm .rws.rw2 p {padding-right: 0;}
 html body #aplicn_frm .opt {padding-bottom:0px;}
-
-}
-@media (min-width:0px) and (max-width:630px) {
-.logo { margin:3% auto;}
-html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:2%;}
-.documentClick .km-view-title a {padding: 5px 0px 0px;}
-.documentClick .km-view-title a span{ padding-top:10px;}
-#blackBlk .desbrdIcon .dasimg {width: 10%;}
-#blackBlk .desbrdIcon .span {font-size: 1.2em;}
-#blackBlk .desbrdIcon .span span {padding: 2% 0 0;}
-#blackBlk .desbrdIcon {padding: 2%;}
-.home .km-rightitem { height:100%; right:0;width: 12%;}
-#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:11%;display: block;color: #fff;font-size: 1.35em;}
-/*******Android css************/
-.docs-header .km-widget .docs-docu { width:63%; font-size:1em; padding:2% 0 0;}
-#blackBlk .desbrdIcon .span {background-size: 9%; font-size:1.5em;}
-.btngr {padding:9px 8px;font-size: 1.1em;}
-.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {padding:5px 0%;background-position: 5px 7px;}
-.documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position:15px 7px;padding: 15px 0; background-size:52%;}
-#tabstrip-files-events.modal-mess-Popup {}
-.home .km-rightitem {width: 12%;}
-.modal-mess-Popup {padding:0; width:98%; margin:0 0 0 1.3%;}
-.modal-mess-one {padding:0; width:98%; margin:0 0 0 1.3%; }
-#tabstrip-Setting .docs-docu {font-size:0.9em;padding: 1.2% 0 0;}
-#tabstrip-Setting .docs-back {width: 12%;background-position: 5px 7px;background-size:87%;}
-.schedulePopup h3 {font-size:15px;}
-.schedulePopup .scheduleSection .scall-text {font-size:11px;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li .k-picker-wrap .k-input {border-radius: 0;height: auto;}
-#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height:59%;}
-#tabstrip-forgot-pass .view-content { margin-top:1.2em;}
-#stps ul li article {width:260px;}
-#stps ul li article span { font-size:10px; padding-bottom:8px;}
-#newuser ul.km-listinset li {margin-bottom: 3%;}
-#newuser ul.km-listinset li input[type=text], #newuser ul.km-listinset li select {padding: 1em!important;}
-#newuser {margin: 2em 0;}
-.logLogo {margin: 1% auto;height: 60px;background-size: 50%;}
-.forgtpass {padding: 9px 0 5px;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(3) a.docs-popup, .documentContent .km-listview-wrapper ul li table td:nth-child(3) a.k-state-border-down { background-size:80%;background-position: center 6px;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(2) {height:50px; width:80%}
-#aplicn_frm #credit_show p.imp50 { padding:0; width:100%;}
-#aplicn_frm #credit_show p.imp50 .IN1 {width:100%;}
-#aplicn_frm #debtwrapper .addons p.imp40 {width:50% !important;}
-#aplicn_frm #debtwrapper .addons_det p.imp40 {width:100%!important;}
-#aplicn_frm #debtwrapper .addons_det p.imp40 .IN5 {width:100%;}
-#aplicn_frm select.IN1b.ipsm3, #aplicn_frm .IN4 {width:100%;}
-#aplicn_frm select.IN1b.ipsm1 {width: 100%;}
-.srh_men{ display:none}
-#wrapper{ min-width:320px; width:100%;}
-.colLf{ width:100%; float:none; clear:left; padding-bottom:50px;}
-.colRg{ width:100%; float:none; clear:left; padding-bottom:10px;}
-.colRg.helpful{ width:94%; float:none; padding:2.8%;}
-.helpcont{width:100%; float:none}
-.helpcontain{height:1px; padding-top:2px; float:right; display:block;}
-.helpcontain ul{ margin:0px 0px 0px -215px;}
-#top_rh .myacc { width: 110px;}
-#aplicn_frm .rw_lin.hlp .tooltip p{width:100%; padding-right:0; float:none}
-#aplicn_frm .rw_lin.hlp p .IN5 { width:100%;}
-#aplicn_frm .rw_lin.hlp p .IN6 {width:91%;}
-#aplicn_frm .rws p.imp33 .ipsm1{ width:94%}
-#aplicn_frm .rws p.imp50{ width:48%; padding-right:2%; float:left}
-#aplicn_frm .rws p.imp50 .ipsm3{ width:95%}
-#aplicn_frm .rws p.imp40{ width:35%; padding-right:3%; float:left}
-#aplicn_frm .rws p.imp40 .IN5{ width:92%}
-#aplicn_frm .IN1 { width:100%}
-#aplicn_frm .rws.rw1 p{ display:block; float:none; width:100%; }
-#aplicn_frm .rws.rw3 p{ width:33%; float:left}
-#aplicn_frm .rws.rw2 select.ipsm3 { width: 100%;}
-#credScr .IN1, #credScr .inp2, #credScr .IN3, #aplicn_frm .ipsm1 { width:95%; margin-bottom:10px; float:none}
-#aplicn_frm .rws .lftitb { width:100%; padding-right:20px;}
-#aplicn_frm .rws.rw2 .ipsm4 { width:95%; }
-#aplicn_frm .rws .rwfilb span { width:auto}
-#aplicn_frm .montrnt .IN2 { width: 23%;}
-#aplicn_tp ul.app_nav li span{padding:35px 0px 30px 0px; }
-#aplicn_tp ul.app_nav li{ font-size:13px; margin-right:1%;}
-#aplicn_frm .IN2 { width:65%;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.k-state-active .actArw {left:47%; bottom:-92%; background-size:78%;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li a{ font-size:14px; height:65px;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.postd_icn{ background-size:16%;background-position: 20px 22px!important;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.end_icon{ background-size:13%;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.sevd_icon{ background-size:11%;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.lon_icon{ background-size:14%;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li a span {height:30px; width:30px; line-height:26px;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.k-state-active .actArw {left: 42%;bottom: -78%;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.lon_icon, #tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.sevd_icon, #tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.end_icon, #tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.k-state-active.postd_icn { background-position: 20px 22px !important;}
-#tabstrip-manage-app .recent-activity .rcnt-actty, #tabstrip-manage-app .recent-activity .applyFrshLon a { font-size:1.1em; }
-#tabstrip-manage-app .recent-activity .rcnt-actty {font-weight:bold;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li { padding:15px;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li span, #tabstrip-manage-app #tabstrip .k-content ul.tabui li span:first-child {font-size:14px;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li a span{left: 40%;}
-.tabOne .head {display:block; padding: 15px;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li span:first-child, .tabOne .head span:first-child {width:87%;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li span, .tabOne .head span:last-child{ width:13%;}
-#tabstrip-manage-app .refreshloan {width:17%;height: 62px;background-size:29%;background-position: 17px 18px;}
-#tabstrip-manage-app #tabstrip ul li a { height:85px;padding: 43px 0 0px 0%;}
-#tabstrip-manage-app #tabstrip ul li a span{margin:3% 0 0 42%; height:35px; width:35px; line-height:30px;}
-.tabOne.withMatch .head span:nth-child(2) { font-size:15px;}
-#aplicn_frm .rws p.imp33 .ipsm1, #aplicn_frm #credit_show .IN3 {width: 100%;}
-}
-
-@media (min-width:0px) and (max-width:600px) {
-.docs-header .km-widget .docs-search { width:8%; margin:0;}
-.docs-header .km-widget .refresh-com, .docs-header .km-widget .refresh-loading { width:11%; margin:0.2em 0 0; background-position:center 7px;background-size: 56%;}
-.docs-header .km-widget .refresh-loading { background-position: center 13px;background-size:40%;}
-.docs-header .km-widget .docs-back { height:53px;background-position: 10px 72%;background-size: 76%;width: 12%;}
-.documentContent .km-listview-wrapper ul li span {padding: 12px 10px 12px 16%;}
-.documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position: 13px 5px; background-size:56%;}
-.documentContent ul.export {list-style:none;}
-.documentContent ul.export li span {padding:12px 10px 12px 15%;background-size: 12%;}
-.documentContent ul.export li .folder {background-image: url(images/folder.png); background-repeat:no-repeat;background-position:5px 7px;}
-.documentClick .km-view-title a span{ padding-top:13px; font-size:1.3em;}
-.docs-header .km-widget .docs-search {width: 7%;margin: 1% 0% 0 2%;background-size:100%;background-position: center 2px;}
-.docs-header .km-widget #docs-filter {margin:0.4em 0 0;}
-.km-ios .km-list > li, .km-flat .km-list > li {font-size: 1em;}
-.matches-view li .row2 p a { font-size:0.9em;}
-#dynamicCl.km-popup-wrapper {width: 220px !important; height:auto !important;}
-/*******Android css************/
-.docs-header .km-widget .docs-docu { width:60%; font-size:1em; padding:1.3% 0 0;}
-
-.modal-mess-Popup {padding:0; width:98%; margin:0 0 0 1.3%; }
-.modal-mess-one {padding:0; width:98%; margin:0 0 0 1.3%; }
-.folder-events .scheduleSection .buttonArea .km-button{padding:0.6em 0;}
-.docs-header .km-widget .docs-popup {background-image: url(../styles/images/ic_action_overflow.png); text-indent:-9000px; width:55px; background-position:center center; height:40px; background-repeat:no-repeat; margin:0; padding:5px; border:0; background-color:transparent; border-radius:0;}
-#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:17%;display: block;color: #fff;font-size: 1.5em;}
-.btngr {padding: 7px 8px;font-size: 1.1em;}
-.documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {padding: 11px 0%;}
-.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {padding: 11px 0%;background-size:75%;}
-.home .km-rightitem {width:13%;}
-.home .popup {height: 60px;}
-#tabstrip-Setting .docs-back {background-position: center 10px;}
-#tabstrip-Setting .docs-docu {font-size:1em; padding:1.2% 0 0;}
-#tabstrip-Setting .docs-back{height: 53px;background-size:88%;}
-.logLogo {margin:35% auto 15%;height:85px;background-size:60%;}
-.loginSection ul li label input[type=text]:not(.k-input), .loginSection ul li label input[type=password] {padding: 1em !important;font-size: 1em !important;}
-.loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) input[type=submit] {padding: 0.8em !important;font-size: 1.2em !important;}
-#tabstrip-download-file .download-file-name {text-align: center;height: 110px;padding: 0 0 20px;}
-#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height: 24%;}
-#tabstrip-forgot-pass .view-content { margin-top:17em;}
-#tabstrip-forgot-pass .view-content p{font-size:0.85em;}
-#dashview .tooltip span {font-size:10px; padding-bottom:6px;}
-#dashview .tooltip { width:230px;}
-#newuser {margin:12em 0;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(3) a.docs-popup, .documentContent .km-listview-wrapper ul li table td:nth-child(3) a.k-state-border-down{background-size: 90%;}
-#homePage .testimonials h2 { font-size:1.3em; background-size:6%;margin: 0 0 25px;padding: 2% 0 2% 8%;}
-#homePage .testimonials .test-content .test-r p {font-size:1em; text-align:justify; margin:15px 0;}
-#homePage .testimonials .test-content .test-l {float:none; margin:0 0 20px; width:100%;text-align:center;}
-#homePage .testimonials .test-content .test-r { width:100%; float:none; }
-#homePage .testimonials .test-content .test-l img { max-width:40%; margin:0 auto;}
-#homePage .testimonials .test-content .test-r span { text-align:center; font-size:1.1em;}
-#homePage .testimonials { padding:2% 3% 5%; }
-#tabstrip-manage-app #tabstrip ul li.k-state-active .actArw {bottom: -68%;}
-.tabOne .head, #tabstrip-manage-app #tabstrip .tabOne ul.tabui li span:first-child{ font-size:14px;}
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li{ padding:15px;}
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li span:first-child, .tabOne .head span:first-child {width: 85%;}
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li span, .tabOne .head span:last-child{width: 14%;}
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li a, #tabstrip-manage-app #tabstrip .tabOne ul.tabui li span { font-size:14px;}
-#tabstrip-manage-app #tabstrip ul li.postd_icn, #tabstrip-manage-app #tabstrip ul li.k-state-active.postd_icn, #tabstrip-manage-app #tabstrip ul li.end_icon, #tabstrip-manage-app #tabstrip ul li.k-state-active.end_icon, #tabstrip-manage-app #tabstrip ul li.k-state-active.sevd_icon, #tabstrip-manage-app #tabstrip ul li.sevd_icon, #tabstrip-manage-app #tabstrip ul li.lon_icon, #tabstrip-manage-app #tabstrip ul li.k-state-active.lon_icon {background-position: center 8px;}
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li a{text-align:left;}
-#tabstrip-manage-app #tabstrip ul li a span{ height:32px; width:32px; line-height:26px; font-size:15px;margin:2% 0 0 42%;}
-#tabstrip-manage-app #tabstrip ul li a {padding:47px 0 0px 0%;height: 85px;}
-#tabstrip-manage-app .refreshloan {width:6%;height: 62px;background-size: 75%;background-position:center 18px;}
-.documentList .wrap-content .row .num span {line-height: 35px;font-size: 20px;width: 35px;height: 35px;}
-.documentList .wrap-content .row .num {width: 35px;}
-.documentList .wrap-content .row, .documentList .wrap-content .row.off {background-size: 5%;background-position: right 17px;}
-.documentList .wrap-content .row .name {width: 91%;}
-#matchDocList .lastSubmit {padding: 0.3em 0.7em!important;}
-.matches-logo {background-position: 5px 16px;}
-#matchDocList .filesBlock .file-iconjpg {height: 40px;background-size: 70%;width: 8%;}
-#matchDocList .filesBlock .file-name{font-size: 17px;padding: 11px 0 0 0;}
-.documentList .buttonSet{ width:100px;}
-#matchDocList .filesBlock .buttonSet .downloadBtn {padding:0%;}
-.sub-row {padding: 9px 18px 7px 18px;}
-#matchDocList .upload a {padding: 7px 13px;font-size: 14px;}
-ul#documentList td:nth-child(1) {font-size: 1em;}
-#tabstrip-manage-app .refresh-loading {background-size: 100%;background-position: center 13px;}
-html body .backButton{background-position: 5px 15px !important;}
-.forgtpass {padding: 20px 0 0px;}
-#tabstrip-manage-app #tabstrip ul li.postd_icn {background-size: 17%;}
-#tabstrip-manage-app #tabstrip ul li.end_icon {background-size: 15%;}
-#tabstrip-manage-app #tabstrip ul li.sevd_icon {background-size: 12%;}
-.documentContent .km-listview-wrapper ul li table td {width: 10%;}
-.docs-header .km-widget .docs-popup {background-size:75%;}
-.matches-logo {background-size: 23.5%;}
-li#undefined table td:nth-child(1) {width:10%;background-size: 66%;background-position: 13px 7px;}
-#scheduleForm li select {height: 42px; font-size:17px;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li {width:48.2%;}
-.schedulePopup h3 {font-size: 18px;}
-#aplicn_frm .rws .lftitb {padding-bottom: 5px;}
-#blackBlk .desbrdIcon .bizscor {margin-top:1.5%;}
-#aplicn_frm .rws .rwfilbc {width:100%;}
-}
-@media (min-width:0px) and (max-width:599px) {
-.docs-header .km-widget .docs-search { width:8%; margin:0;}
-.docs-header .km-widget .refresh-com, .docs-header .km-widget .refresh-loading { width:11%; margin:0; background-position:center 12px;}
-.docs-header .km-widget .refresh-loading { background-position: center 17px;}
-.docs-header .km-widget .docs-back { height:57px;}
-.documentContent .km-listview-wrapper ul li span {padding: 12px 10px 12px 16%;}
-.documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position: 20px 5px;}
-.documentContent ul.export {list-style:none;}
-.documentContent ul.export li span {padding:12px 10px 12px 15%;background-size: 12%;}
-.documentContent ul.export li .folder {background-image: url(images/folder.png); background-repeat:no-repeat;background-position:5px 7px;}
-.documentClick .km-view-title a span{ padding-top:13px; font-size:1.3em;}
-.docs-header .km-widget .docs-search {width: 7%;margin: 1% 0.5% 0 2%;background-size:100%;background-position: center 7px;}
-.docs-header .km-widget #docs-filter {margin: 0.2em 0 0;}
-.km-ios .km-list > li, .km-flat .km-list > li {font-size: 1em;}
-.matches-view li .row2 p a { font-size:0.9em;}
-#dynamicCl.km-popup-wrapper {width: 220px !important;}
-/*******Android css************/
-.docs-header .km-widget .docs-docu { width:63%; font-size:1em; padding:2% 0 0;}
-.modal-mess-Popup {padding:0; width:98%; margin:0 0 0 1.3%;}
-.modal-mess-one {padding:0; width:98%; margin:0 0 0 1.3%; }
-.folder-events .scheduleSection .buttonArea .km-button{padding:0.6em 0;}
-.docs-header .km-widget .docs-popup {background-image: url(../styles/images/ic_action_overflow.png); text-indent:-9000px; width:40px; background-position:center center; height:40px; background-repeat:no-repeat; margin:0; padding:5px; border:0; background-color:transparent; border-radius:0;}
-#blackBlk .desbrdIcon .span {/*background-image: url("images/dshbord-bgIcon.png"); background-repeat:no-repeat; */ background-size:9.7%;display: block;padding:3% 13% 5%;color: #fff;font-size: 1.2em;}
-.btngr {padding: 7px 8px;font-size: 1.1em;}
-.documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {padding: 11px 0%;}
-.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-position:7px 7px;padding: 11px 14%;}
-.logLogo {margin:4% auto;height:85px;background-size:60%;}
-#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:56%;}
-#tabstrip-forgot-pass .view-content {margin-top:3em;}
-#newuser ul.km-listinset li select {background-size:6%;}
-#aplicn_frm .rw_lin.hlp p {width: 89%;}
-#aplicn_frm .rws p.imp40{ width:42%; padding-right:0%; float:left}
-#aplicn_frm select.IN1b.ipsm1 {width: 100%;}
-#aplicn_frm .ipsm1 {width: 110px;}
-#aplicn_frm .rws select.smOn { width:100%; margin-right:0;}
-#merchantid.IN3 {width:94% !important;}
-#aplicn_frm .rws p.imp33 {width:100%; padding:0; float: none;}
-#aplicn_frm .rws p.imp33 .ipsm1, #credit_show .IN3, #credit_show .IN1 {width:100%;}
-#aplicn_frm ul.low_creditop li {width:100%; padding:0 0 10px;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li span:first-child, .tabOne .head span:first-child {width:85%;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li span, .tabOne .head span:last-child{ width:15%;}
-#tabstrip-manage-app #tabstrip ul li a { height:75px;padding: 37px 0 0px 0%;}
-#tabstrip-manage-app .recent-activity { padding:10px;}
-html body .backButton {width: 84%;}
-#tabstrip-manage-app .refresh-loading {background-size: 56%;}
-#aplicn_tp ul.app_nav li.dn span {background-position: center 50px;}
-#matchDocList .upload { text-align:center;}
-#matchDocList .upload a {padding: 5px 7px;font-size: 12px;}
-.folder-events .scheduleSection {padding: 15px 5px 10px;}
-.matches-view li .row1 span img { width:70%}
-#aplicn_frm .rws .rwfil.lft {margin-top:15px;}
+.loginSection ul li label input[type=text]:not(.k-input), .loginSection ul li label input[type=password] {padding: 0.8em !important;font-size: 0.95em !important;}
+.loginSection {margin: 25px 10% 15px;}
+.forgtpass {font-size: 0.95em;padding: 10px 0 5px;}
+#newuser ul.km-listinset li input[type=text], #newuser ul.km-listinset li select {font-size: 0.65em;}
+html body .loginSection .km-list:not(.km-virtual-list)>li {margin: 0 0 2%;}
+#tabstrip-manage-app .refresh-loading {height: 55px;background-size: 53%;background-position: center 10px;}
+#tabstrip-manage-app .refreshloan {height: 55px;}
+html body .backButton {width: 81%;background-size: 30% !important;background-position: 5px 10px !important;}
+#tabstrip-manage-app .docs-popup {width: 60px;}
+.loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) input[type=submit] {font-size: 1em;}
 }
 @media (min-width:0px) and (max-width:580px) {
 .logLogo {margin: 2% auto 1%;background-size: 50%;}
@@ -999,10 +214,8 @@ html body .backButton {width: 84%;}
 #dynamicCl.km-popup-wrapper { height:225px !important;}
 #tabstrip-manage-app .refreshloan {background-position: 17px 20px;}
 #tabstrip-manage-app .refresh-loading {background-position: center 15px;}
-
+.loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) input[type=submit] {font-size:0.75em !important;}
 #aplicn_frm .rws .lftitb, #aplicn_frm .rws .rwfil label, #aplicn_frm .rws .rwfilbc label, #aplicn_frm .labl_tx2 {font-size: 0.9em;}
-}
-@media (min-width:0px) and (max-width:533px) {
 #blackBlk .desbrdIcon {padding: 2%;display: block;}
 #blackBlk .desbrdIcon .dasimg { width:11%; padding:0 2% 0 0 !important; }
 #blackBlk .desbrdIcon .span span { float:left; padding:2% 0 0;}
@@ -1119,151 +332,10 @@ body.horizontal li#undefined table td:nth-child(1).default-icon {background-size
 #aplicn_frm .rw_lin.hlp p .IN6 {width: 100%;}
 #blackBlk .desbrdIcon .bizscor {margin-top: 0;}
 html body #aplicn_frm .opt {padding-bottom: 15px;}
-}
-
-@media (min-width:0px) and (max-width:440px) {
-#tabstrip-manage-app .refresh-loading, #tabstrip-manage-app .refreshloan {width:8%;}
-#tabstrip-manage-app .refresh-loading { background-size:95%;background-position: center 12px;}
-#tabstrip-manage-app .refreshloan { background-position: center 16px; height:53px;background-size: 70%;}
-html body .backButton {width:78%;background-size:38% !important;background-position: 5px 12px !important;}
-.logLogo {margin: 50% auto 8%;height: 60px;background-size: 61%;}
-.documentList .wrap-content h2 { font-size:20px;}
-.documentList .wrap-content .row .num {width: 30px;}
-.documentList .wrap-content .row .name {width: 89%;margin-top:11px;}
-.documentList .wrap-content .row .num span {line-height: 30px;font-size: 18px;width: 30px;height: 30px;}
-.documentList .wrap-content .row .name{font-size:1em;}
-.documentList .wrap-content .row, .documentList .wrap-content .row.off {background-size: 7%;background-position: right 18px;}
-#matchDocList .text1 a {font-size: 0.8em;}
-#matchDocList .filesBlock .file-iconjpg {height: 43px;background-size:93%;width: 9%;}
-#matchDocList .filesBlock .file-name {font-size: 16px;padding: 11px 0 0 10px;}
-#document-attach .km-rightitem {width: 26%;}
-.matches-logo {background-size: 30%;background-position: 5px 12px;}
-.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {background-size:79%;background-position: 5px 10px;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(2) {width: 70%; font-size:0.9em;}
-.docsUploadMulti .cancelUpld {background-size: 70%; width:8%;}
-.docsUploadMulti .flNmUpldwrap {width: 90%;}
-.sub-row {padding: 9px 4px 7px 18px;}
-.inner-docs-back span {font-size: 1em;padding: 0 0 0 38px;background-size: 23%;}
-.docs-header .km-widget .docs-back {width: 13%;background-position: 5px 8px;background-size: 94%;}
-.documentContent .km-listview-wrapper ul li table td {width:11%;background-size: 75%;background-position: 10px 10px;}
-#tabstrip-manage-app #tabstrip ul li.postd_icn {background-size: 18%;}
-#tabstrip-manage-app #tabstrip ul li.end_icon {background-size: 15%;}
-#tabstrip-manage-app #tabstrip ul li.sevd_icon {background-size: 12%;}
-#tabstrip-manage-app #tabstrip div:nth-child(2) .tabOne .actArw {margin: 0 0 0 14%;}
-.docs-header .km-widget .docs-docu {width:55%;padding: 5px 0 0 1%;}
-.docs-header .km-widget .docs-search {width: 9%;}
-.docs-header .km-widget .refresh-com {width: 12%;background-position: center 9px;}
-.docs-header .km-widget .refresh-loading {width: 12%;}
-.rw_lin.cngopt > p {width: 89% !important;}
-#aplicn_frm .rws .rwfil label {font-size: 1em;}
-#tabstrip-Setting .docs-back {width: 13%;background-position: 5px 8px;background-size: 94%;}
-#tabstrip-Setting .docs-docu {padding: 5px 0 0 2%;}
-#tabstrip-Setting .popup {width: 50px;}
-html body .backButton, #tabstrip-manage-app .refresh-loading {height: 53px;}
-.docs-header .km-widget .docs-popup {background-size: 86%;width: 50px;}
-#tabstrip-manage-app .docs-popup {height: 55px;}
-.home .km-rightitem {width: 13%;}
-.docs-header .km-widget #docs-filter {width: 77%;}
-.documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-size: 60%;}
-#matchDocList .filesBlock .file-name {width:60%;}
-#matchDocList .filesBlock .buttonSet .downloadBtn {background-size: 57%;}
-#matchDocList .filesBlock .buttonSet .DeleteIC {background-size: 63%;}
-.docs-header .km-widget #docs-filter {margin: 0.1em 0 0;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(3) {width: 6%;}
-#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup {height: 24%;}
-.matches-view li .row1 {min-height:50px; height:auto; float:none; padding:10px 0; width:100%; display:block;}
-.matches-view li .rowwrap { float:left; width:73%; margin:0 2% 0 0;}
-#tabstrip-bizAnalyzer .km-rightitem .docs-popup { width:50px;}
-#tabstrip-bizAnalyzer .refresh-loading {height: 50px;background-size:70%;background-position: center 7px;}
-#tabstrip-bizAnalyzer .refreshloan {height: 50px;background-size:51%;background-position: center 14px; }
-#tabstrip-bizAnalyzer .backButton {width:75%;}
-#scheduleForm li select {height: 40px;}
-.schedulePopup .scheduleSection .km-listview-wrapper ul li .k-select, .schedulePopup .scheduleSection .km-listview-wrapper ul li + li .k-select {background-size: 12%;background-position: 95% 7px;}
-#aplicn_frm .rw_lin {float:none;}
-#dynamicCl.km-popup-wrapper {height: auto !important;}
-}
-@media (min-width:0px) and (max-width:410px) {
-.logLogo {margin: 17% auto;}
-.documentContent .km-listview-wrapper ul li .docx, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .default-icon, .documentContent .km-listview-wrapper ul li .jpg, .documentContent .km-listview-wrapper ul li .doc, .documentContent .km-listview-wrapper ul li .txt, .documentContent .km-listview-wrapper ul li .xls, .documentContent .km-listview-wrapper ul li .pdf, .documentContent .km-listview-wrapper ul li .png {background-position:16px 3px;padding: 5px 0%; background-size:45%;}
-.docs-header .km-widget .refresh-com {width: 14%;background-position: center 9px;background-size: 77%;}
-.docs-search {width: 12%;background-position: center 7px;margin: 0;}
-.docs-header .km-widget .refresh-loading {width: 15%;}
-.docs-header .km-widget .docs-back {width: 18%;}
-.docs-header .km-widget .docs-docu { padding:3px 0 0; width:46%;}
-.docs-header .km-widget .docs-search {width: 12%;background-position: center 7px;margin: 0;}
-.matches-logo {background-size: 35%;height: 50px;background-position: 10px 12px;}
-#tabstrip-download-file.modal-mess-Popup, #tabstrip-upload-file.modal-mess-Popup { padding: 0;width: 98%;margin: 0 0 0 1.3%;height:33%;}
-#tabstrip-forgot-pass .view-content { margin-top:8em;}
-#newuser ul.km-listinset li { margin-bottom:4%;}
-#newuser ul.km-listinset li input[type=text], #newuser ul.km-listinset li select{ padding:0.9em !important;}
-#newuser {margin: 2.5em 0;}
-#repypm ul li {font-size:0.85em;}
-#newuser ul.km-listinset li select {background-size:10%;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(2) {height: 50px;width: 32%;}
-.documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {padding: 11px 0%;background-size: 65%;}
-.documentContent .km-listview-wrapper ul li table td:nth-child(3) a.docs-popup, .documentContent .km-listview-wrapper ul li table td:nth-child(3) a.k-state-border-down { background-size:72%;}
-#aplicn_frm .rw_lin.hlp p {width: 86%;}
-.rw_lin.cngopt > p { width:65% !important; float:left!important;}
-.rw_lin.cngopt > p label { width:280px;}
-#aplicn_frm #debtwrapper p .IN5 { width:100%; margin-right:0;}
-#aplicn_frm #debtwrapper .addons p.imp40 {width:100% !important;}
-#homePage .testimonials h2 { font-size:1.3em; background-size:8%;margin: 0 0 25px;padding: 2% 0 2% 10%;}
-#aplicn_tp ul.app_nav li.dn span {background-position: center 72px;}
-#tabstrip-manage-app .recent-activity {padding:10px 0;}
-#tabstrip-manage-app .recent-activity .rcnt-actty {border-bottom:1px solid #e5e5e5; padding-bottom:5px; margin-bottom:10px; text-align:center; font-size:1em; font-weight:bold; float:none; width:100%;}
-#tabstrip-manage-app .recent-activity .applyFrshLon {width:100%; float:none; text-align:center; padding:5px 0;}
-#tabstrip-manage-app .recent-activity .applyFrshLon a { font-size:1em;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li a span {width:25px; height:25px; font-size:12px; line-height:21px; left:34%;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.end_icon, #tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.sevd_icon, #tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.lon_icon{ background-size:18%; background-position:center 10px!important;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li a {padding: 29px 0 0px 0;font-size: 12px; text-align:center; height:55px;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.postd_icn {background-size:20px;background-position:center 10px!important;}
-#tabstrip-manage-app #tabstrip .k-content{margin: 14% 0 0;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li{ padding:15px;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li span:first-child, #tabstrip-manage-app #tabstrip .k-content ul.tabui li span{font-size:12px;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.k-state-active .actArw {left: 33%;bottom: -87%;}
-#tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.lon_icon, #tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.sevd_icon, #tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.end_icon, #tabstrip-manage-app #tabstrip ul.k-tabstrip-items li.k-state-active.postd_icn {background-position: center 10px !important;}
-html body .backButton {background-size:37% !important;height: 50px;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li span:first-child, .tabOne .head span:first-child {width:78%;}
-#tabstrip-manage-app #tabstrip .k-content ul.tabui li span, .tabOne .head span:last-child{ width:22%;}
-#tabstrip-manage-app #tabstrip ul li a{font-size:12px;}
-#tabstrip-manage-app #tabstrip .tabOne {margin: 13.2% 0 0;}
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li span:first-child, .tabOne .head span:first-child {width: 80%;}
-#tabstrip-manage-app #tabstrip .tabOne ul.tabui li span, .tabOne .head span:last-child {width:20%;}
-#tabstrip-manage-app #tabstrip ul li a span {margin:10% 0 0 35%;}
-#tabstrip-manage-app #tabstrip div:nth-child(2) .tabOne .actArw {margin: 0 0 0 9%;}
-#tabstrip-manage-app #tabstrip div:nth-child(3) .tabOne .actArw {margin: 0 0 0 35%;}
-#tabstrip-manage-app #tabstrip div:nth-child(4) .tabOne .actArw {margin: 0 0 0 59%;}
-#tabstrip-manage-app #tabstrip div .tabOne .actArw {margin: 0 0 0 84%;}
-#tabstrip-manage-app #tabstrip ul li a {padding: 35px 0 0px 0%; height:75px;}
-html body .backButton {background-size: 50% !important;width: 73%;background-position: 5px 11px !important;}
-#tabstrip-manage-app .refreshloan {background-position:6px 14px;height:50px;width:10%;background-size:74%;}
-#tabstrip-manage-app .refresh-loading {background-position: center 9px;background-size:100%;width: 10%;height: 50px;}
-#tabstrip-manage-app .docs-popup {width: 47px;}
-#aplicn_frm #credit_show p.mercPr .IN3, #aplicn_frm select.IN1b.ipsm1, #aplicn_frm #credit_show .rw_lin p.imp33,#aplicn_frm .rws.rw1 .IN1 {width: 100% !important;}
-.tabOne.withMatch .head span:nth-child(2) { font-size:12px;}
-.documentList .wrap-content .row .name {width:88%;margin-top: 4px;font-size: 15px;}
-.documentList .wrap-content .row .num span {line-height: 25px;font-size: 14px;width: 25px;height: 25px;}
-.documentList .wrap-content .row .num {width: 26px;margin-right: 5px;}
-#matchDocList .filesBlock .file-iconjpg {height:38px;background-size: 100%;width: 9%;}
-#matchDocList .filesBlock .file-name {width:60%;margin-right: 5px;}
-#matchDocList .filesBlock .file-name {font-size: 12px;padding: 7px 0 0 10px;}
-.documentList .buttonSet {width:85px;padding-top: 0;}
-#matchDocList .filesBlock .buttonSet .DeleteIC {padding: 0; width:30%;background-size: 82%;}
-#matchDocList .filesBlock .buttonSet .downloadBtn {padding:0;}
-.docsUpload .flNmUpld {padding: 20px 10px;font-size: 1em;}
-.docsUpload .cancelUpld {padding:0.38em 1em;}
-body.vertical #tabstrip-upload-file.modal-mess-Popup{ height:33%;}
-li#undefined table td:nth-child(1) {width: 9%;}
-#tabstrip-download-file .download-file-name .unkown {font-size:12px;}
-.matches-view li .row3 {padding: 35px 0 0 0;}
-#tabstrip-bizAnalyzer .km-rightitem .docs-popup { width:50px;}
-#tabstrip-bizAnalyzer .refresh-loading {height: 50px;background-size: 86%;background-position: center 7px;}
-#tabstrip-bizAnalyzer .refreshloan {height: 50px;background-size:65%;background-position: center 12px;}
-#tabstrip-bizAnalyzer .backButton {width:68%;}
-#scheduleForm li select {font-size: 13px;}
-#blackBlk .desbrdIcon .span {width:50%;padding: 15px 0 15px 17%;}
-#blackBlk .desbrdIcon .bizscor {margin-top: 0;}
-#blackBlk .desbrdIcon .bizscor {font-size: 12px;}
+.km-flat .km-list input[type=password], .km-flat .km-list input[type=search], .km-flat .km-list input[type=number], .km-flat .km-list input[type=tel], .km-flat .km-list input[type=url], .km-flat .km-list input[type=email], .km-flat .km-list input[type=month], .km-flat .km-list input[type=color], .km-flat .km-list input[type=week], .km-flat .km-list input[type=date], .km-flat .km-list input[type=time], .km-flat .km-list input[type=datetime], .km-flat .km-list input[type=datetime-local], .km-flat .km-list input[type=text]:not(.k-input), .km-flat .km-list select:not([multiple]), .km-flat .km-list .k-dropdown-wrap, .km-flat .km-list textarea, .loginSection ul li label input[type=text]:not(.k-input), .loginSection ul li label input[type=password], .loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) input[type=submit] {width: 99.9%;}
+.loginSection {margin: 15px 10% 15px;}
+html body .loginSection .km-list:not(.km-virtual-list)>li {margin-bottom: 4%;}
+.loginSection .km-listview-wrapper+*:not(.km-listview-wrapper) input[type=submit] {font-size:1em !important;}
 }
 @media (min-width:0px) and (max-width:390px) { 
 html body .backButton {background-size: 50% !important;width: 76%;}
@@ -1282,9 +354,12 @@ html body .backButton {width: 75%;background-position: 5px 8px !important;}
 #tabstrip-Setting .docs-back {width: 15%;}
 .matches-view li .row2 p {font-size:0.8em;}
 #dynamicCl.km-popup-wrapper {height: auto !important;}
+#blackBlk .desbrdIcon .span {background-size: 28%;}
+.km-ios .km-list > li, .km-flat .km-list > li {font-size: 13px;}
+.schedulePopup .scheduleSection .km-listview-wrapper ul li {width: 49%;}
 }
 @media (min-width:0px) and (max-width:370px) {
-.logo { margin:6% auto;}
+.logo { margin:4% auto;}
 .logLogo { margin:17% auto;height: 60px;background-size:50%;}
 html body .loginSection .km-list:not(.km-virtual-list)>li { margin-bottom:5%;}
 .documentContent .km-listview-wrapper ul li .sharedfolder, .documentContent .km-listview-wrapper ul li .Folder {padding: 5px 0;background-position: 5px 7px;}
@@ -1398,8 +473,6 @@ li#undefined table td:nth-child(1).default-icon {background-size:45%;}
 .home .popup, #tabstrip-Setting .popup, #tabstrip-loanapp-bi .popup, #tabstrip-loanapp-ci .popup, #tabstrip-loanapp-fp .popup, #tabstrip-loanapp-pi .popup {width: 50px;}
 .home .popup {background-size: 80%;}
 #aplicn_frm .rws .rwfil label {font-size: 0.85em;}
-}
-@media (min-width:0px) and (max-width:320px) {
 #blackBlk .desbrdIcon .dasimg {width:19%;}
 #blackBlk .desbrdIcon {padding: 2%;}
 #blackBlk .desbrdIcon .span span {padding:0% 0 0;}
@@ -1413,12 +486,12 @@ li#undefined table td:nth-child(1).default-icon {background-size: 54%;}
 #tabstrip-manage-app .refresh-loading, #tabstrip-manage-app .refreshloan {width: 11%;}
 html body .backButton {width: 73%;background-position: 5px 11px !important;}
 #aplicn_frm .rws .rwfil label {font-size: 0.9em;}
-}
-@media screen and ( max-height: 390px ){
-.logLogo {margin: 2% auto 3%;}
+.logLogo {margin: 2% auto 3%;height: 55px;background-size: 64%;}
 #tabstrip-forgot-pass .view-content {margin-top: 3em;}
 #newuser {margin: 2em 0;}
-.forgtpass {padding: 12px 0 0px;}
+.forgtpass {padding: 10px 0 0px;}
 #dynamicCl.km-popup-wrapper {height: 310px !important;}
 }
-
+@media screen and ( max-height: 320px ){
+.logLogo {margin: 2% auto 2%;height: 48px;background-size: 55%;}
+}

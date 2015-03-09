@@ -1370,12 +1370,10 @@
                         {
                             app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
                                 
-                                
-                                alert('fileSystem.root.fullPath'+fileSystem.root.fullPath);
-                                alert('fullPath'+fileSystem.root.toURL());
-                                
-                                filePath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
-                                relPath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
+                                console.log(cordova);
+                              //  console.log(cordova.file.externalDataDirectory);
+                                filePath = fileSystem.root.fullPath + "\/" + fileName;
+                                relPath = fileSystem.root.fullPath + "\/" + fileName;
                                 //relPath =fileName;
                                 fileSystem.root.getFile(relPath, { create: false }, app.documentsetting.viewModel.fileExists, app.documentsetting.viewModel.fileDoesNotExist);
 
@@ -1408,7 +1406,7 @@
             else if(device.platform ===  "Win32NT")
             {
                               
-                window.open(fileEntry.fullPath,"_blank","location=yes");
+               window.open("file://"+fileEntry.fullPath,"_blank","location=yes,hidden=no");
             }
             else
             {
@@ -1431,6 +1429,7 @@
         },
         transferFile: function (uri, filePath) {
             alert(filePath);
+            uri = encodeURI("http://www.telerik.com/sfimages/default-source/logos/app_builder.png");
             try
             {
                 transfer = new FileTransfer();
@@ -1438,6 +1437,7 @@
                 uri,
                 filePath,
                 function(fileEntry) { 
+                    console.log(JSON.stringify(fileEntry));
                    $("#tabstrip-download-file").data("kendoMobileModalView").close();
                     if(device.platform.toLowerCase() === "ios" )
                 	{
@@ -1446,7 +1446,7 @@
                     else if(device.platform ===  "Win32NT")
                     {
                         alert(JSON.stringify(fileEntry));
-                        window.open(fileEntry.fullPath,"_blank","location=yes");
+                        window.open("file://"+fileEntry.fullPath,"_blank","location=yes,hidden=no");
                     }
                 	else
                 	{

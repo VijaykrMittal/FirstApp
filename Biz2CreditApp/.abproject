@@ -15,6 +15,7 @@
   ],
   "CorePlugins": [
     "org.apache.cordova.camera",
+    "org.apache.cordova.console",
     "org.apache.cordova.device",
     "org.apache.cordova.device-orientation",
     "org.apache.cordova.file",

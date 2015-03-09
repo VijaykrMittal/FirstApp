@@ -438,7 +438,7 @@
         	}
 
         }); 
-            
+            alert(e.sender.params.param);
         if(e.sender.params.param ==='editMode' && sessionStorage.getItem("LoanAppBIEditMode")==='1')
         { 
             app.loginService.viewModel.showloder();

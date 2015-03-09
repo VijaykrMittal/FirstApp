@@ -409,7 +409,7 @@
         setDeviceAction:function()
         {
             that =this;
-            if(device.platform=== 'iOS')
+            if(device.platform=== 'iOS' || device.platform==="Win32NT")
             {
                that.set("iosDeviceAction",false);
             }
@@ -467,6 +467,7 @@
         },
         setSubmitDocspendingStatus:function(data)
         {
+            console.log(data);
             that = this;
             that.set("userName",localStorage.getItem("userFName"));
             for(i=0;i<=data.length;i++)

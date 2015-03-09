@@ -486,6 +486,7 @@
         });
         dataSource.fetch(function(){
             var view = dataSource.view();
+        console.log(view);
             view.sort(SortByName);
             var html='<option value="" selected="selected">Select City</option>';
             $.each(view, function( index, value ) {
@@ -526,6 +527,8 @@
         });
         dataSource.fetch(function(){
             var view = dataSource.view();
+        alert(view.length);
+        console.log(view.length);
             view.sort(SortByName);
             var html='<option value="" selected="selected">Select City</option>';
             $.each(view, function( index, value ) {

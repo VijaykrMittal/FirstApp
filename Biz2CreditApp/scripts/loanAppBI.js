@@ -75,8 +75,6 @@
             
             e.sender.reload=false;
             e.view.reload=false;
-           
-            var data = e.sender.params;
             
             $(".km-native-scroller").scrollTop(0);
             $("#add-form").unbind('.myPlugin');
@@ -483,21 +481,22 @@
         setBIeditForm:function(data)
         {
             var that = this;
-            var item = data['findetails'];
-            console.log(item.orgname);
+            
             that.set("legal_business_name",data['findetails']['orgname']);
             that.set("dba_name",data['findetails']['dbaname']);
             that.set("street_no",(data['findetails']['civic']!== '0') ? data['findetails']['civic'] : "");
             
             that.set("street_name",data['findetails']['baddr']);
             that.set("apt_suite_unit",data['findetails']['street1']);
-           that.set("select_state",(data['findetails']['state']!== '0') ? data['findetails']['state'] : "");
+            
+            that.set("select_state",(data['findetails']['state']!== '0') ? data['findetails']['state'] : "");
             createCityCmbFirstEdit(data['findetails']['state'] ,data['findetails']['cityid']);
             that.set("select_city",data['findetails']['cityid']);
             
             that.set("zip_code",data['findetails']['zipcode']);
             that.set("mobile_number",data['findetails']['businessphone']);
             that.set("select_b_l_s",data['findetails']['blegal']);
+            
             that.set("industry",(data['findetails']['loanParentIndustry']!== '0') ? data['findetails']['loanParentIndustry'] : "");
             displayorgCategoryEdit(data['findetails']['loanParentIndustry'],data['findetails']['loanIndustry']);
             that.set("sub_industry",data['findetails']['loanIndustry']);
@@ -1181,25 +1180,40 @@
         	
 		loanAppBISubmit:function(e){
             
-            // apps.navigate('views/loanAppCI.html');
-            
             dataParam =  {};
-          //  var data = e.button.data();
             
-            if(e.sender.element.context.attributes["data-name"].value === "Next")
+            var status ="";
+            
+            if(device.platform === "Win32NT")
             {
-                var status = $("#B2cAppForms").valid();
-                if(status === false)
-                return status;  
-                dataParam['business_act'] = 'Next';
-                alert("Next click");
+                if(e.sender.element.context.attributes["data-name"].value === "Next")
+                {
+                    status = $("#B2cAppForms").valid();
+                    if(status === false)
+                    return status;  
+                    dataParam['business_act'] = 'Next';
+                }
+                else
+                {
+                    dataParam['business_act'] ='Save_Exit';
+                    alert("save click");
+                }
             }
             else
             {
-                dataParam['business_act'] ='Save_Exit';
-                alert("save click");
+                if(e.sender.element.context.dataset.name === "Next")
+                {
+                    status = $("#B2cAppForms").valid();
+                    if(status === false)
+                    return status;  
+                    dataParam['business_act'] = 'Next';
+                }
+                else
+                {
+                    dataParam['business_act'] ='Save_Exit';
+                    alert("save click");
+                }
             }
-            
             
             
             /********VKM**********/

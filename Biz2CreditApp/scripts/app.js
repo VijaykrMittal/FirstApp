@@ -23,13 +23,13 @@
         }
         else if(apps.view()['element']['0']['id']==='tabstrip-sign-up' || apps.view()['element']['0']['id']==='tabstrip-forgot-pass')
         {
-        	//apps.navigate("#tabstrip-login");
-            window.plugins.nativepagetransitions.flip({
+        	apps.navigate("#tabstrip-login");
+           /* window.plugins.nativepagetransitions.flip({
                 "href" : "#tabstrip-login",
                 "direction":"left",
                 "duration":300,
                 "slowdownfactor" :3
-            });
+            });*/
         }
         else
         { 
@@ -52,7 +52,7 @@
     var onDeviceReady = function(e) {
        // alert("device ready");
       //  feedback.initialize('20b40210-8a67-11e4-aa3f-45a9d1e73d19');
-        console.log("device "+device.platform);
+        console.log(device.platform);
         StatusBar.overlaysWebView(false);
         StatusBar.backgroundColorByHexString('#99cc00');
         document.addEventListener('backbutton', onBackKeyDown, false);

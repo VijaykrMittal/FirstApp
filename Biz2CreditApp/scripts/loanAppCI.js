@@ -727,7 +727,6 @@
         createFormfields:function (NumOfDiv) {
             
             //var value = $("#divId"+NumOfDiv).val().trim();
-           // alert(value);
             var dataModel = app.loansetting.viewModel;
             var blegal = dataModel.select_b_l_s;
             var str="<div class='rws rw1 clearfix' ><div class='lftit'>Applicant/Owner</div>";
@@ -946,27 +945,49 @@
                 that.set("aredyownerdeleteIds",ids);
         },
         loanAppCISubmit:function(e){
-           //apps.navigate('views/loanAppPI.html');
-            alert("loanAppCI");
-            var data = e.button.data();
+            
             dataParam =  {};
-            if(data.name === "Next")
+            
+            var status ="";
+            
+            if(device.platform === "Win32NT")
             {
-                
-                var status = $("#b2cApp1").valid();
-                $("#tabstrip-loanapp-ci").find(".km-scroll-container").css("-webkit-transform", "");
-                if(status === false)
+                if(e.sender.element.context.attributes["data-name"].value === "Next")
                 {
-                    return false;
-                } 
-                dataParam['contact_act'] = 'Next';
-                alert(dataParam['contact_act']);
+                    
+                    status = $("#b2cApp1").valid();
+                    $("#tabstrip-loanapp-ci").find(".km-scroll-container").css("-webkit-transform", "");
+                    if(status === false)
+                    {
+                        return false;
+                    } 
+                    dataParam['contact_act'] = 'Next';
+                }
+                else
+                {
+               	 dataParam['contact_act'] ='Save_Exit';
+                }
             }
             else
             {
-           	 dataParam['contact_act'] ='Save_Exit';
-                alert("save exit");
+                if(e.sender.element.context.dataset.name === "Next")
+                {
+                    
+                    status = $("#b2cApp1").valid();
+                    $("#tabstrip-loanapp-ci").find(".km-scroll-container").css("-webkit-transform", "");
+                    if(status === false)
+                    {
+                        return false;
+                    } 
+                    dataParam['contact_act'] = 'Next';
+                }
+                else
+                {
+               	 dataParam['contact_act'] ='Save_Exit';
+                }
             }
+            
+            
             var that = this;
             dataParam['apiaction']='loanappstep1';
 			ownerFName = that.get("Owner_FirstName").trim();
@@ -1175,15 +1196,11 @@
         },
         manageHiddenField:function(data)
         {
-            alert("manageHiddenFields");
-            alert(data['0']);
 			app.loanAppCI.viewModel.own_id0=data['0'];
            
             $.map( data, function( val, index ) {
                 if(index !== 0)
                 {
-                    alert("own id"+index);
-                    console.log("own id"+index);
                     viewCModel['own_id'+index]=val;
                 }
             });

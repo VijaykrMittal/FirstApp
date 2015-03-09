@@ -355,9 +355,8 @@
         loanAppPIpage:function(e)
         {
             dataParam =  {};
-            alert("loanAppPI");
-            var data = e.button.data();
-            if(data.name === "Next")
+            
+            if(e.sender.element.context.attributes["data-name"].value === "Next")
             {
                 var status = $("#b2cApp3").valid();
                 if(status === false)

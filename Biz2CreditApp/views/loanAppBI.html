@@ -1394,7 +1394,8 @@
             });
             dataSource.fetch(function(){
                 var view = dataSource.view().sort();
-        console.log(view);
+        alert(view.length);
+         console.log(view.length);
                 view.sort(SortByName);
                 var html='<option value="" selected="selected">Select City</option>';
                 $.each(view, function( index, value ) {

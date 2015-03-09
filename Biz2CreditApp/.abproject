@@ -64,7 +64,7 @@
   "WP8Publisher": "",
   "Framework": "Cordova",
   "projectVersion": "1",
-  "WPSdk": "8.1",
+  "WPSdk": "8.0",
   "WP8WindowsPublisherName": "CN=Telerik",
   "WP8PackageIdentityName": "1234Telerik.com.telerik.Biz2CreditApp"
 }

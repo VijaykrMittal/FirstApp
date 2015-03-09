@@ -1369,6 +1369,11 @@
                         else if(device.platform ===  "Win32NT")
                         {
                             app.documentsetting.viewModel.getFolder(fileSystem, folderName, function(folder) {
+                                
+                                
+                                alert('fileSystem.root.fullPath'+fileSystem.root.fullPath);
+                                alert('fullPath'+fileSystem.root.toURL());
+                                
                                 filePath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
                                 relPath = fileSystem.root.fullPath + "\/" +"biz2docs\/" +fileName;
                                 //relPath =fileName;

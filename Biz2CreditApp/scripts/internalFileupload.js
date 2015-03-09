@@ -148,6 +148,9 @@
                 }).kendoTouch({ 
                 	filter: ">li",
                   	tap: function (e) { 
+                          
+                        if (device.platform === "Android" || device.platform === "iOS") 
+                        { 
                             if(e.touch.initialTouch.dataset.id==="folder")
                             {
                                 app.fileuploadsetting.viewModel.setExportInnerPage();
@@ -159,7 +162,23 @@
                                 var fileNativeUrl = e.touch.initialTouch.dataset.url;
                                 app.fileuploadsetting.viewModel.uploadFileToServer(fileNativeUrl);
                             }
-                          
+                         }
+                         else
+                         {
+                            if(e.touch.initialTouch.attributes['data-id'].value==="folder")
+                            {
+                                app.fileuploadsetting.viewModel.setExportInnerPage();
+                                app.fileuploadsetting.viewModel.getActiveItem(e.touch.initialTouch.attributes['data-name'].value);
+
+                            }
+                            if(e.touch.initialTouch.attributes['data-id'].value==="files")
+                            {
+                                var fileNativeUrl = e.touch.initialTouch.attributes['data-url'].value;
+                                app.fileuploadsetting.viewModel.uploadFileToServer(fileNativeUrl);
+                                
+                            }
+                              
+                         }
 
                 	},
                 
@@ -228,7 +247,7 @@
             console.log('Fail to getMIME type');
         },
         uploadFileToServer:function(imageURI) {
-            //alert(imageURI);
+            alert(imageURI);
 
             try {
                     pb.value(0);

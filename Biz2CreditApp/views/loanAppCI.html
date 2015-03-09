@@ -541,7 +541,7 @@
     function createCityCmbEdit(NumOfDiv,val , city){
         
         
-            $('#own_city'+NumOfDiv+'').after('<div id="loader"></div>');
+            /*$('#own_city'+NumOfDiv+'').after('<div id="loader"></div>');
             $('#own_city'+NumOfDiv+'').attr("disabled","disabled");
             $('#own_state'+NumOfDiv+'').attr("disabled","disabled");
             try
@@ -551,15 +551,14 @@
                     transport: {
                         read: {
                         url: "data/jos_city.json",
-                        dataType: "json",
-                        data:{
-                                Accept:"application/json"
-                            }
+                        dataType: "json"
                     	}
                     },
                     filter: { field: "state_id", operator: "eq", value: val }
             
             });
+        console.log("-------------------------");
+        console.log(dataSource);
             dataSource.fetch(function(){
                 var view = dataSource.view();
                 view.sort(SortByName);
@@ -580,7 +579,98 @@
             catch(ex)
             {
                 alert("new exception :"+ex.name+" and message "+ex.message);
+            }*/
+        
+        
+        if(NumOfDiv === "")
+        {
+            $('#own_city').after('<div id="loader"></div>');
+            $('#own_city').attr("disabled","disabled");
+            $('#own_state').attr("disabled","disabled");
+            try
+            {
+                
+                var dataSource = new kendo.data.DataSource({
+                    transport: {
+                        read: {
+                        url: "data/jos_city.json",
+                        dataType: "json"
+                    	}
+                    },
+                    filter: { field: "state_id", operator: "eq", value: val }
+            
+            });
+        console.log("-------------------------");
+        console.log(dataSource);
+            dataSource.fetch(function(){
+                var view = dataSource.view();
+        console.log(view.length);
+                view.sort(SortByName);
+                var html='<option value="" selected="selected">Select City</option>';
+             
+                $.each(view, function( index, value ) {
+                	html+='<option value="'+value['pid']+'">'+capitalize(value['city'].toLowerCase())+'</option>';
+            	});
+          
+                $('#own_city').html(html);
+                $("#loader").remove();
+                $('#own_city').removeAttr("disabled");
+                $('#own_state').removeAttr("disabled");
+                $("select#own_city option[value='"+city+"']").prop('selected',true);
+                app.loginService.viewModel.hideloder();
+            });
             }
+            catch(ex)
+            {
+                alert("new exception :"+ex.name+" and message "+ex.message);
+            }
+        }
+        else
+        {
+            alert("div"+NumOfDiv);
+            $('#own_city'+NumOfDiv+'').after('<div id="loader"></div>');
+            $('#own_city'+NumOfDiv+'').attr("disabled","disabled");
+            $('#own_state'+NumOfDiv+'').attr("disabled","disabled");
+            try
+            {
+
+            var dataSource = new kendo.data.DataSource({
+            transport: {
+            read: {
+            url: "data/jos_city.json",
+            dataType: "json"
+            }
+            },
+            filter: { field: "state_id", operator: "eq", value: val }
+
+            });
+            console.log("-------------------------");
+            console.log(dataSource);
+            dataSource.fetch(function(){
+            var view = dataSource.view();
+         console.log(view.length);
+            view.sort(SortByName);
+            var html='<option value="" selected="selected">Select City</option>';
+
+            $.each(view, function( index, value ) {
+            html+='<option value="'+value['pid']+'">'+capitalize(value['city'].toLowerCase())+'</option>';
+            });
+
+            $('#own_city'+NumOfDiv+'').html(html);
+            $("#loader").remove();
+            $('#own_city'+NumOfDiv+'').removeAttr("disabled");
+            $('#own_state'+NumOfDiv+'').removeAttr("disabled");
+            $("select#own_city"+NumOfDiv+" option[value='"+city+"']").prop('selected',true);
+            app.loginService.viewModel.hideloder();
+            });
+            }
+            catch(ex)
+            {
+            alert("new exception :"+ex.name+" and message "+ex.message);
+            }
+        }
+        
+        
        
     }
         

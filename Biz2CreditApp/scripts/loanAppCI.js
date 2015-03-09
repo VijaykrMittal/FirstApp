@@ -566,15 +566,15 @@
                     keyindex=1;
                 
                     $.each(data['findetails']['owner_details'], function( index, value ) {
-                        if(value['own_no']===1 || value['own_no']==='1')
+                       /* if(value['own_no']===1 || value['own_no']==='1')
                         {
                             pownemail = value['own_email'];
-                        }
+                        }*/
                         if(value['own_no']===1 || value['own_no']==='1')
                         {
-                          alert("own city : "+value['own_city'] +" and own state :"+value['own_state']);
                            try
                             {
+                                pownemail = value['own_email'];
                                 var divInd = 0;
                                 var jobTitleRequest = value['own_jobtitle'];
                                 if(data['findetails']['blegal'] === dataModel.select_b_l_s)
@@ -621,9 +621,7 @@
                         }
                        else
                         {
-                           $("#add-ownerForm").triggerHandler('click');
-                            
-                           alert("own city : "+value['own_city'] +" and own state :"+value['own_state']);
+                           $("#add-ownerForm").trigger('click');
                            try
                             {
                                 viewCModel.set("OwnerFirstName"+keyindex,(value['own_fname']!== 'undefined') ? value['own_fname'] : "");
@@ -653,14 +651,14 @@
                                 viewCModel.set("isCheckScore"+keyindex,(value['check_credit_score']!== 'undefined') ? value['check_credit_score'] : "");
                                 viewCModel.set("creditScore"+keyindex,(value['credittype']!== 'undefined') ? value['credittype'] : "");
                                 viewCModel.set("reasonlscore"+keyindex,(value['low_rpt_reason']!== 'undefined') ? value['low_rpt_reason'] : "");
-                                
+                                keyindex++;
                             }
                             catch(ex)
                             {
                                 alert("message "+ex.message+" and error name"+ex.name);
                                 console.log(ex);
                             }
-                           keyindex++;
+                           
                             
                          /* viewCModel.set("OwnerLastName"+keyindex,(value['own_lname']!== '') ? value['own_lname'] : "");
                             viewCModel.set("email"+keyindex,(value['own_email']!== 'undefined') ? value['own_email'] : "");
@@ -819,7 +817,7 @@
                         dataType: "json",
                     }
             },
-            filter: { field: "countryid", operator: "eq", value: 253 }
+            //filter: { field: "countryid", operator: "eq", value: 253 }
             });
             dataSource.fetch(function(){
                 var view = dataSource.view();
@@ -829,7 +827,7 @@
             	});
 
                 str = "<select name='own_state"+NumOfDiv+"' id='own_state"+NumOfDiv+"' class='IN1b ipsm1' data-bind='value:own_state"+NumOfDiv+"' original-title='Select State' onChange='javascript:createCityCmb(this.value, "+NumOfDiv +")'>"+html+"</select>";                    
-                $('#ownerState'+NumOfDiv+'').html(str); 
+                $('#ownerState'+NumOfDiv+'').html(str);
                 $('#own_city'+NumOfDiv+'').removeAttr("disabled","disabled");
                 kendo.bind($("#own_state"+NumOfDiv), viewCModel);
                 return str;                
